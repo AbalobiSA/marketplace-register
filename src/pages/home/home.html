@@ -1,15 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Register for ABALOBI marketplace
+      Register for ABALOBI Marketplace
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page1">
-  <img src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
   <form id="page-form1">
     <div id="page-markdown1" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">
+      <p id="header-text" style="color:#000000;">
         Complete this form if you&#39;d like to be able to
         <strong>
           BUY seafood
@@ -24,19 +24,19 @@
       <ion-label>
         Email
       </ion-label>
-      <ion-input type="email" placeholder="e.g. jsmith@gmail.com"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"></ion-input>
     </ion-item>
     <ion-item id="page-input3">
       <ion-label>
         Password
       </ion-label>
-      <ion-input type="password" placeholder=""></ion-input>
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>
     </ion-item>
     <ion-item id="page-input4">
       <ion-label>
         Repeat Password
       </ion-label>
-      <ion-input type="password" placeholder=""></ion-input>
+      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>
     </ion-item>
   </form>
   <form id="page-form3">
@@ -47,19 +47,19 @@
       <ion-label>
         Name
       </ion-label>
-      <ion-input type="text" placeholder="e.g. John"></ion-input>
+      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>
     </ion-item>
     <ion-item id="page-input9">
       <ion-label>
         Surname
       </ion-label>
-      <ion-input type="text" placeholder="e.g. Smith"></ion-input>
+      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>
     </ion-item>
     <ion-item id="page-input10">
       <ion-label>
         Cell Number
       </ion-label>
-      <ion-input type="tel" placeholder="e.g. 0821234567"></ion-input>
+      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>
     </ion-item>
   </form>
   <form id="page-form5">
@@ -70,22 +70,16 @@
       <ion-label stacked>
         Name of establishment
       </ion-label>
-      <ion-input type="text" placeholder="The name shown to the client"></ion-input>
+      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>
     </ion-item>
     <ion-item id="page-input15">
       <ion-label stacked>
         Company details
       </ion-label>
-      <ion-input type="text" placeholder="What you want printed on the invoices"></ion-input>
-    </ion-item>
-    <ion-item id="page-input16">
-      <ion-label>
-        Cell Number
-      </ion-label>
-      <ion-input type="tel" placeholder="e.g. 0821234567"></ion-input>
+      <ion-input [(ngModel)]="company_details" name="company_details" type="text" placeholder="What you want printed on the invoices"></ion-input>
     </ion-item>
     <div id="page-container1"></div>
-    <button id="page-button1" ion-button color="positive" block>
+    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>
       Register
     </button>
   </form>
