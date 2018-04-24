@@ -59,22 +59,17 @@ export class HomePage {
         reject("Please enter a valid phone number");
       }
 
-      // all checks passed on the client side
-      resolve();
-
-    }).then(() => {
-
       // check that the user does not already exist
-      return this.marketplaceService.checkIfUserAlreadyExists();
-    }).then((userAlreadyExists) => {
+      this.marketplaceService.checkIfUserAlreadyExists(this.email).then((user) => {
 
-      if(userAlreadyExists) {
-        throw("The given email address has already been registered with ABALOBI Marketplace");
-      }
-
-      // all checks passed on the server side
-      this.dismissLoader();
-      return Promise.resolve();
+        if(user[0]) {
+          reject("This username is already taken");
+        } else {
+          resolve();
+        }
+      }).catch((error) => {
+        alert(error);
+      });
 
     }).catch((error) => {
 
