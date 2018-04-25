@@ -8,11 +8,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {MarketplaceService} from "../providers/MarketplaceService";
 import {HttpClientModule} from "@angular/common/http";
+import {AfterRegisterPage} from "../pages/after-register/after-register";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AfterRegisterPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AfterRegisterPage
   ],
   providers: [
     StatusBar,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
+import {AfterRegisterPage} from "../after-register/after-register";
 
 @Component({
   selector: 'page-home',
@@ -22,30 +23,49 @@ export class HomePage {
   loading: any;
 
   constructor(public loadingCtrl: LoadingController,
-              public  marketplaceService: MarketplaceService) {
+              public  marketplaceService: MarketplaceService,
+              public navCtrl: NavController) {
 
   }
 
   // called from the UI when the register button has been clicked
   registerBtnClick() {
 
+    this.showLoader('Attempting to register...');
+
     // validate the user's input
     this.validate().then(() => {
       // after validation -> attempt to register the user
       return this.register();
     }).then(() => {
-      // on succesful registration -> alert the user and navigate to the successful sign up page
+
+      // on succesful registration -> alert the user
       alert("You have successfully been registered with ABALOBI Marketplace");
+
+      // clear fields
+      this.email = null;
+      this.password = null;
+      this.repeat_password = null;
+      this.name = null;
+      this.surname = null;
+      this.cell_number = null;
+      this.name_of_establishment = null;
+      this.company_details = null;
+
+      // navigate to the successful sign up page
+      this.navCtrl.push(AfterRegisterPage);
+
+      this.dismissLoader();
+
     }).catch((error) => {
       // alert the user to any errors that may have occurred
       alert(error);
+      this.dismissLoader();
     })
   }
 
   // validates the user on the client and server side to ensure that they can be registered
   validate(): Promise<any> {
-
-    this.showLoader('Checking to see if you can be registered...');
 
     return new Promise((resolve, reject) => {
 
@@ -70,24 +90,21 @@ export class HomePage {
         if(user[0]) {
           reject("This username is already taken");
         } else {
-          this.dismissLoader();
           resolve();
         }
       }).catch((error) => {
-        alert(error);
+        console.log(error);
+        // alert(error);
       });
 
     }).catch((error) => {
 
-      this.dismissLoader();
       return Promise.reject(error);
     });
   }
 
   // attempts to register the user on the marketplace
   register() {
-
-    this.showLoader('Attempting to register your account...');
 
     const user = {
       username: this.email,
@@ -102,10 +119,8 @@ export class HomePage {
     }
 
     return this.marketplaceService.registerUser(user).then(() => {
-      this.dismissLoader();
       return Promise.resolve();
     }).catch((error) => {
-      this.dismissLoader();
       return Promise.reject(error);
     });
   }
@@ -114,6 +129,7 @@ export class HomePage {
     this.loading = this.loadingCtrl.create({
       content: msg
     });
+    this.loading.present();
   }
 
   dismissLoader() {
