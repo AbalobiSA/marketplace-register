@@ -40,8 +40,9 @@ webpackEmptyAsyncContext.id = 152;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__after_register_after_register__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,30 +55,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = /** @class */ (function () {
-    function HomePage(loadingCtrl, marketplaceService) {
+    function HomePage(loadingCtrl, marketplaceService, navCtrl) {
         this.loadingCtrl = loadingCtrl;
         this.marketplaceService = marketplaceService;
+        this.navCtrl = navCtrl;
     }
     // called from the UI when the register button has been clicked
     HomePage.prototype.registerBtnClick = function () {
         var _this = this;
+        this.showLoader('Attempting to register...');
         // validate the user's input
         this.validate().then(function () {
             // after validation -> attempt to register the user
             return _this.register();
         }).then(function () {
-            // on succesful registration -> alert the user and navigate to the successful sign up page
+            // on succesful registration -> alert the user
             alert("You have successfully been registered with ABALOBI Marketplace");
+            // clear fields
+            _this.email = null;
+            _this.password = null;
+            _this.repeat_password = null;
+            _this.name = null;
+            _this.surname = null;
+            _this.cell_number = null;
+            _this.name_of_establishment = null;
+            _this.company_details = null;
+            // navigate to the successful sign up page
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__after_register_after_register__["a" /* AfterRegisterPage */]);
+            _this.dismissLoader();
         }).catch(function (error) {
             // alert the user to any errors that may have occurred
             alert(error);
+            _this.dismissLoader();
         });
     };
     // validates the user on the client and server side to ensure that they can be registered
     HomePage.prototype.validate = function () {
         var _this = this;
-        this.showLoader('Checking to see if you can be registered...');
         return new Promise(function (resolve, reject) {
             // check that all fields are filled in
             if (!(_this.email && _this.password && _this.name && _this.surname && _this.cell_number && _this.name_of_establishment && _this.company_details)) {
@@ -97,21 +113,18 @@ var HomePage = /** @class */ (function () {
                     reject("This username is already taken");
                 }
                 else {
-                    _this.dismissLoader();
                     resolve();
                 }
             }).catch(function (error) {
-                alert(error);
+                console.log(error);
+                // alert(error);
             });
         }).catch(function (error) {
-            _this.dismissLoader();
             return Promise.reject(error);
         });
     };
     // attempts to register the user on the marketplace
     HomePage.prototype.register = function () {
-        var _this = this;
-        this.showLoader('Attempting to register your account...');
         var user = {
             username: this.email,
             password: this.password,
@@ -124,10 +137,8 @@ var HomePage = /** @class */ (function () {
             cell_number: this.cell_number
         };
         return this.marketplaceService.registerUser(user).then(function () {
-            _this.dismissLoader();
             return Promise.resolve();
         }).catch(function (error) {
-            _this.dismissLoader();
             return Promise.reject(error);
         });
     };
@@ -135,18 +146,19 @@ var HomePage = /** @class */ (function () {
         this.loading = this.loadingCtrl.create({
             content: msg
         });
+        this.loading.present();
     };
     HomePage.prototype.dismissLoader = function () {
         this.loading.dismiss();
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Register for ABALOBI Marketplace\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page1">\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n  <form id="page-form1">\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n      <p id="header-text" style="color:#000000;">\n        Complete this form if you&#39;d like to be able to\n        <strong>\n          BUY seafood\n        </strong>\n        using the ABALOBI Marketplace app\n      </p>\n    </div>\n    <ion-item-divider color="light" id="page-list-item-divider1">\n      Login Details\n    </ion-item-divider>\n    <ion-item id="page-input2">\n      <ion-label>\n        Email\n      </ion-label>\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"></ion-input>\n    </ion-item>\n    <ion-item id="page-input3">\n      <ion-label>\n        Password\n      </ion-label>\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n    </ion-item>\n    <ion-item id="page-input4">\n      <ion-label>\n        Repeat Password\n      </ion-label>\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n    </ion-item>\n  </form>\n  <form id="page-form3">\n    <ion-item-divider color="light" id="page-list-item-divider3">\n      Your Details\n    </ion-item-divider>\n    <ion-item id="page-input8">\n      <ion-label>\n        Name\n      </ion-label>\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n    </ion-item>\n    <ion-item id="page-input9">\n      <ion-label>\n        Surname\n      </ion-label>\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n    </ion-item>\n    <ion-item id="page-input10">\n      <ion-label>\n        Cell Number\n      </ion-label>\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>\n    </ion-item>\n  </form>\n  <form id="page-form5">\n    <ion-item-divider color="light" id="page-list-item-divider5">\n      Your Company\n    </ion-item-divider>\n    <ion-item id="page-input14">\n      <ion-label stacked>\n        Name of establishment\n      </ion-label>\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>\n    </ion-item>\n    <ion-item id="page-input15">\n      <ion-label stacked>\n        Company details (multiple lines allowed)\n      </ion-label>\n      <ion-textarea [(ngModel)]="company_details" name="company_details" type="text" placeholder="What you want printed on the invoices"></ion-textarea>>\n    </ion-item>\n    <div id="page-container1"></div>\n    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n      Register\n    </button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Register for ABALOBI Marketplace\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n      <p id="header-text" style="color:#000000;">\n\n        Complete this form if you&#39;d like to be able to\n\n        <strong>\n\n          BUY seafood\n\n        </strong>\n\n        using the ABALOBI Marketplace app\n\n      </p>\n\n    </div>\n\n    <ion-item-divider color="light" id="page-list-item-divider1">\n\n      Login Details\n\n    </ion-item-divider>\n\n    <ion-item id="page-input2">\n\n      <ion-label>\n\n        Email\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"></ion-input>\n\n    </ion-item>\n\n    <ion-item id="page-input3">\n\n      <ion-label>\n\n        Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n    <ion-item id="page-input4">\n\n      <ion-label>\n\n        Repeat Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n  </form>\n\n  <form id="page-form3">\n\n    <ion-item-divider color="light" id="page-list-item-divider3">\n\n      Your Details\n\n    </ion-item-divider>\n\n    <ion-item id="page-input8">\n\n      <ion-label>\n\n        Name\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n\n    </ion-item>\n\n    <ion-item id="page-input9">\n\n      <ion-label>\n\n        Surname\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n\n    </ion-item>\n\n    <ion-item id="page-input10">\n\n      <ion-label>\n\n        Cell Number\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>\n\n    </ion-item>\n\n  </form>\n\n  <form id="page-form5">\n\n    <ion-item-divider color="light" id="page-list-item-divider5">\n\n      Your Company\n\n    </ion-item-divider>\n\n    <ion-item id="page-input14">\n\n      <ion-label stacked>\n\n        Name of establishment\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>\n\n    </ion-item>\n\n    <ion-item id="page-input15">\n\n      <ion-label stacked>\n\n        Company details (multiple lines allowed)\n\n      </ion-label>\n\n      <ion-textarea [(ngModel)]="company_details" name="company_details" type="text" placeholder="What you want printed on the invoices"></ion-textarea>>\n\n    </ion-item>\n\n    <div id="page-container1"></div>\n\n    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n\n      Register\n\n    </button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _c || Object])
     ], HomePage);
     return HomePage;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -185,10 +197,9 @@ var MarketplaceService = /** @class */ (function () {
     };
     MarketplaceService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], MarketplaceService);
     return MarketplaceService;
-    var _a;
 }());
 
 //# sourceMappingURL=MarketplaceService.js.map
@@ -199,9 +210,41 @@ var MarketplaceService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterRegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AfterRegisterPage = /** @class */ (function () {
+    function AfterRegisterPage() {
+    }
+    AfterRegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'after-register',template:/*ion-inline-start:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\pages\after-register\after-register.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Registered for ABALOBI Marketplace\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content id="content" padding>\n  <strong><p>Thank you for joining ABALOBI Marketplace!</p></strong>\n  <p>You will now be able to log in with your chosen username and password</p>\n  <a href="https://play.google.com/store/apps/details?id=com.abalobi.marketplace">\n    <button ion-button color="positive" block>\n      Download ABALOBI Marketplace\n    </button>\n  </a>\n  <a href="http://abalobi.info/"><button ion-button color="positive" block>\n    ABALOBI Website\n  </button></a>\n</ion-content>\n'/*ion-inline-end:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\pages\after-register\after-register.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], AfterRegisterPage);
+    return AfterRegisterPage;
+}());
+
+//# sourceMappingURL=after-register.js.map
+
+/***/ }),
+
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(221);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -209,26 +252,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_MarketplaceService__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_after_register_after_register__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -245,7 +290,8 @@ var AppModule = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_after_register_after_register__["a" /* AfterRegisterPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -257,7 +303,8 @@ var AppModule = /** @class */ (function () {
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_after_register_after_register__["a" /* AfterRegisterPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -274,13 +321,13 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 270:
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(196);
@@ -311,7 +358,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"D:\Benjamin\Documents\Techairos\Markeplace Clones\marketplace-register\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -320,5 +367,5 @@ var MyApp = /** @class */ (function () {
 
 /***/ })
 
-},[199]);
+},[200]);
 //# sourceMappingURL=main.js.map
