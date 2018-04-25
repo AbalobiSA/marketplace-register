@@ -8,6 +8,7 @@ import {MarketplaceService} from "../../providers/MarketplaceService";
 })
 export class HomePage {
 
+  // ngModel variables
   email: string;
   password: string;
   repeat_password: string;
@@ -16,6 +17,8 @@ export class HomePage {
   cell_number: string;
   name_of_establishment: any;
   company_details: string;
+
+  // loading progress dialog
   loading: any;
 
   constructor(public loadingCtrl: LoadingController,
@@ -65,6 +68,7 @@ export class HomePage {
         if(user[0]) {
           reject("This username is already taken");
         } else {
+          this.dismissLoader();
           resolve();
         }
       }).catch((error) => {
@@ -80,10 +84,26 @@ export class HomePage {
 
   // attempts to register the user on the marketplace
   register() {
-    return this.marketplaceService.registerUser().then(() => {
+
+    this.showLoader('Attempting to register your account...');
+
+    const user = {
+      username: this.email,
+      password: this.password,
+      firstname: this.name,
+      lastname: this.surname,
+      h2c_buyer_company : this.name_of_establishment,
+      buyer_details : [this.company_details],
+      sellerEnabled: false,
+      abalobiId: null,
+      cell_number: this.cell_number
+    }
+
+    return this.marketplaceService.registerUser(user).then(() => {
+      this.dismissLoader();
       return Promise.resolve();
     }).catch((error) => {
-
+      this.dismissLoader();
       return Promise.reject(error);
     });
   }
