@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 export class MarketplaceService {
 
   // SERVER_URL = "http://localhost:1337";
-  SERVER_URL = "http://169.239.183.156:1337:1337";
+  SERVER_URL = "http://169.239.183.156:1337";
 
   constructor(private http: HttpClient) {
 
