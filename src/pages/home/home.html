@@ -74,9 +74,9 @@
     </ion-item>
     <ion-item id="page-input15">
       <ion-label stacked>
-        Company details
+        Company details (multiple lines allowed)
       </ion-label>
-      <ion-input [(ngModel)]="company_details" name="company_details" type="text" placeholder="What you want printed on the invoices"></ion-input>
+      <ion-textarea [(ngModel)]="company_details" name="company_details" type="text" placeholder="What you want printed on the invoices"></ion-textarea>>
     </ion-item>
     <div id="page-container1"></div>
     <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>

@@ -15,7 +15,7 @@ export class HomePage {
   name: string;
   surname: string;
   cell_number: string;
-  name_of_establishment: any;
+  name_of_establishment: string;
   company_details: string;
 
   // loading progress dialog
@@ -26,13 +26,15 @@ export class HomePage {
 
   }
 
+  // called from the UI when the register button has been clicked
   registerBtnClick() {
 
     // validate the user's input
     this.validate().then(() => {
-
+      // after validation -> attempt to register the user
       return this.register();
     }).then(() => {
+      // on succesful registration -> alert the user and navigate to the successful sign up page
       alert("You have successfully been registered with ABALOBI Marketplace");
     }).catch((error) => {
       // alert the user to any errors that may have occurred
@@ -93,7 +95,7 @@ export class HomePage {
       firstname: this.name,
       lastname: this.surname,
       h2c_buyer_company : this.name_of_establishment,
-      buyer_details : [this.company_details],
+      buyer_details : this.company_details.split("\n"),
       sellerEnabled: false,
       abalobiId: null,
       cell_number: this.cell_number
