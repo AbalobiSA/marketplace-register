@@ -31,7 +31,7 @@ export class HomePage {
   // called from the UI when the register button has been clicked
   registerBtnClick() {
 
-    this.showLoader('Attempting to register...');
+    this.showLoader('Submitting your details');
 
     // validate the user's input
     this.validate().then(() => {
@@ -115,7 +115,8 @@ export class HomePage {
       buyer_details : this.company_details.split("\n"),
       sellerEnabled: false,
       abalobiId: null,
-      cell_number: this.cell_number
+      cell_number: this.cell_number,
+      approved: false
     }
 
     return this.marketplaceService.registerUser(user).then(() => {
