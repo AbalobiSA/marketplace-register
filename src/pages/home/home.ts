@@ -18,6 +18,11 @@ export class HomePage {
   cell_number: string;
   name_of_establishment: string;
   company_details: string;
+  extra_email_1: string;
+  extra_email_2: string;
+  extra_email_3: string;
+  extra_email_4: string;
+  extra_email_5: string;
 
   // loading progress dialog
   loading: any;
@@ -51,6 +56,11 @@ export class HomePage {
       this.cell_number = null;
       this.name_of_establishment = null;
       this.company_details = null;
+      this.extra_email_1 = null;
+      this.extra_email_2 = null;
+      this.extra_email_3 = null;
+      this.extra_email_4 = null;
+      this.extra_email_5 = null;
 
       // navigate to the successful sign up page
       this.navCtrl.push(AfterRegisterPage);
@@ -116,8 +126,15 @@ export class HomePage {
       sellerEnabled: false,
       abalobiId: null,
       cell_number: this.cell_number,
-      approved: false
-    }
+      approved: false,
+      buyer_notifications: {
+        extra_invoice_1: this.extra_email_1,
+        extra_invoice_2: this.extra_email_2,
+        extra_qr_1: this.extra_email_3,
+        extra_qr_2: this.extra_email_4,
+        extra_qr_3: this.extra_email_5
+      }
+    };
 
     return this.marketplaceService.registerUser(user).then(() => {
       return Promise.resolve();
