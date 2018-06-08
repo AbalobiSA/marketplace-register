@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
 import {AfterRegisterPage} from "../after-register/after-register";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -27,9 +28,13 @@ export class HomePage {
   // loading progress dialog
   loading: any;
 
+  private captchaPassed: boolean = false;
+  private captchaResponse: string;
+
   constructor(public loadingCtrl: LoadingController,
               public  marketplaceService: MarketplaceService,
-              public navCtrl: NavController) {
+              public navCtrl: NavController,
+              private http: HttpClient, private zone: NgZone) {
 
   }
 
@@ -83,6 +88,20 @@ export class HomePage {
   validate(): Promise<any> {
 
     return new Promise((resolve, reject) => {
+      // check that the recaptcha was solved
+      if (!this.captchaPassed) {
+        reject("Please solve the reCAPTCHA problem");
+      }
+
+      // TODO: Fix this check to make a request to the main server
+      // reCAPTCHA has been solved, make request to server to verify
+      let data = {
+        captchaResponse: this.captchaResponse
+      };
+
+      this.http.post('http://localhost:8080/api/users/recaptcha', data).subscribe(res => {
+        console.log(res);
+      });
 
       // check that all fields are filled in
       if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_details)) {
@@ -193,5 +212,30 @@ export class HomePage {
   dismissLoader() {
     this.loading.dismiss();
   }
+
+  captchaResolved(response: string): void {
+    console.log(`captchaResolved`);
+    console.log(response);
+    this.zone.run(() => {
+      // If the recaptcha expired then reset the state
+      if (response) {
+        this.captchaPassed = true;
+      }
+      else {
+        this.captchaPassed = false;
+      }
+      this.captchaResponse = response;
+    });
+  }
+
+  // sendForm(): void {
+  //
+  //     let data = {
+  //       captchaResponse: this.captchaResponse
+  //     };
+  //
+  //   this.http.post('http://localhost:8080/test', data).subscribe(res => {
+  //     console.log(res);
+  //   });
 
 }

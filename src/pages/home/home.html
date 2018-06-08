@@ -129,6 +129,7 @@
       </ion-label>
       <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
+    <re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>
     <div id="page-container1"></div>
     <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>
       Register
