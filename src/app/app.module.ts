@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import {MarketplaceService} from "../providers/MarketplaceService";
 import {HttpClientModule} from "@angular/common/http";
 import {AfterRegisterPage} from "../pages/after-register/after-register";
+import {RecaptchaModule} from "ng-recaptcha";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AfterRegisterPage} from "../pages/after-register/after-register";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
