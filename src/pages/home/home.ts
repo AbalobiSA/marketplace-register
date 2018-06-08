@@ -74,6 +74,11 @@ export class HomePage {
     })
   }
 
+  validateEmail(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   // validates the user on the client and server side to ensure that they can be registered
   validate(): Promise<any> {
 
@@ -82,6 +87,41 @@ export class HomePage {
       // check that all fields are filled in
       if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_details)) {
         reject("Please fill in all the fields");
+      }
+
+      // Validate e-mail address(es)
+      if (!this.validateEmail(this.email)) {
+        reject("Please use a valid e-mail address");
+      }
+
+      if (this.extra_email_1) {
+        if (!this.validateEmail(this.extra_email_1)) {
+          reject("Please use a valid e-mail address for notifications e-mail 1");
+        }
+      }
+
+      if (this.extra_email_2) {
+        if (!this.validateEmail(this.extra_email_2)) {
+          reject("Please use a valid e-mail address for notifications e-mail 2");
+        }
+      }
+
+      if (this.extra_email_3) {
+        if (!this.validateEmail(this.extra_email_3)) {
+          reject("Please use a valid e-mail address for notifications e-mail 3");
+        }
+      }
+
+      if (this.extra_email_4) {
+        if (!this.validateEmail(this.extra_email_4)) {
+          reject("Please use a valid e-mail address for notifications e-mail 4");
+        }
+      }
+
+      if (this.extra_email_5) {
+        if (!this.validateEmail(this.extra_email_5)) {
+          reject("Please use a valid e-mail address for notifications e-mail 5");
+        }
       }
 
       // check that the passwords match

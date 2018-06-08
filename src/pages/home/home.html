@@ -36,7 +36,7 @@
       <ion-label>
         Email
       </ion-label>
-      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input3">
       <ion-label>
@@ -103,31 +103,31 @@
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input17">
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input18">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input19">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input20">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <div id="page-container1"></div>
     <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>
