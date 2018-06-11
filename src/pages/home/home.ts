@@ -45,6 +45,9 @@ export class HomePage {
 
     // validate the user's input
     this.validate().then(() => {
+      // validate the captcha
+      return this.validateCaptcha();
+    }).then(() => {
       // after validation -> attempt to register the user
       return this.register();
     }).then(() => {
@@ -84,25 +87,33 @@ export class HomePage {
     return re.test(String(email).toLowerCase());
   }
 
+  validateCaptcha(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (!this.captchaPassed) {
+        reject("Please solve the captcha before continuing");
+      }
+      else {
+        let data = {
+          captchaResponse: this.captchaResponse
+        };
+
+        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(res => {
+            resolve();
+          },
+          error => {
+            console.log(`Got error`);
+            reject("Failed validating reCAPTCHA with server. Please try refreshing page");
+          });
+      }
+    })
+  }
+
   // validates the user on the client and server side to ensure that they can be registered
   validate(): Promise<any> {
+    // if (!this.validateCaptcha())
+    //   return Promise.reject("Failed validating captcha.  Please try refreshing page");
 
     return new Promise((resolve, reject) => {
-      // check that the recaptcha was solved
-      if (!this.captchaPassed) {
-        reject("Please solve the reCAPTCHA problem");
-      }
-
-      // TODO: Fix this check to make a request to the main server
-      // reCAPTCHA has been solved, make request to server to verify
-      let data = {
-        captchaResponse: this.captchaResponse
-      };
-
-      this.http.post('http://localhost:8080/api/users/recaptcha', data).subscribe(res => {
-        console.log(res);
-      });
-
       // check that all fields are filled in
       if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_details)) {
         reject("Please fill in all the fields");
@@ -227,15 +238,5 @@ export class HomePage {
       this.captchaResponse = response;
     });
   }
-
-  // sendForm(): void {
-  //
-  //     let data = {
-  //       captchaResponse: this.captchaResponse
-  //     };
-  //
-  //   this.http.post('http://localhost:8080/test', data).subscribe(res => {
-  //     console.log(res);
-  //   });
 
 }
