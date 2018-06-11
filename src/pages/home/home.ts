@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
 import {AfterRegisterPage} from "../after-register/after-register";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -27,9 +28,13 @@ export class HomePage {
   // loading progress dialog
   loading: any;
 
+  private captchaPassed: boolean = false;
+  private captchaResponse: string;
+
   constructor(public loadingCtrl: LoadingController,
               public  marketplaceService: MarketplaceService,
-              public navCtrl: NavController) {
+              public navCtrl: NavController,
+              private http: HttpClient, private zone: NgZone) {
 
   }
 
@@ -40,6 +45,9 @@ export class HomePage {
 
     // validate the user's input
     this.validate().then(() => {
+      // validate the captcha
+      return this.validateCaptcha();
+    }).then(() => {
       // after validation -> attempt to register the user
       return this.register();
     }).then(() => {
@@ -74,14 +82,76 @@ export class HomePage {
     })
   }
 
+  validateEmail(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  validateCaptcha(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (!this.captchaPassed) {
+        reject("Please solve the captcha before continuing");
+      }
+      else {
+        let data = {
+          captchaResponse: this.captchaResponse
+        };
+
+        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(res => {
+            resolve();
+          },
+          error => {
+            console.log(`Got error`);
+            reject("Failed validating reCAPTCHA with server. Please try refreshing page");
+          });
+      }
+    })
+  }
+
   // validates the user on the client and server side to ensure that they can be registered
   validate(): Promise<any> {
+    // if (!this.validateCaptcha())
+    //   return Promise.reject("Failed validating captcha.  Please try refreshing page");
 
     return new Promise((resolve, reject) => {
-
       // check that all fields are filled in
       if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_details)) {
         reject("Please fill in all the fields");
+      }
+
+      // Validate e-mail address(es)
+      if (!this.validateEmail(this.email)) {
+        reject("Please use a valid e-mail address");
+      }
+
+      if (this.extra_email_1) {
+        if (!this.validateEmail(this.extra_email_1)) {
+          reject("Please use a valid e-mail address for notifications e-mail 1");
+        }
+      }
+
+      if (this.extra_email_2) {
+        if (!this.validateEmail(this.extra_email_2)) {
+          reject("Please use a valid e-mail address for notifications e-mail 2");
+        }
+      }
+
+      if (this.extra_email_3) {
+        if (!this.validateEmail(this.extra_email_3)) {
+          reject("Please use a valid e-mail address for notifications e-mail 3");
+        }
+      }
+
+      if (this.extra_email_4) {
+        if (!this.validateEmail(this.extra_email_4)) {
+          reject("Please use a valid e-mail address for notifications e-mail 4");
+        }
+      }
+
+      if (this.extra_email_5) {
+        if (!this.validateEmail(this.extra_email_5)) {
+          reject("Please use a valid e-mail address for notifications e-mail 5");
+        }
       }
 
       // check that the passwords match
@@ -152,6 +222,21 @@ export class HomePage {
 
   dismissLoader() {
     this.loading.dismiss();
+  }
+
+  captchaResolved(response: string): void {
+    console.log(`captchaResolved`);
+    console.log(response);
+    this.zone.run(() => {
+      // If the recaptcha expired then reset the state
+      if (response) {
+        this.captchaPassed = true;
+      }
+      else {
+        this.captchaPassed = false;
+      }
+      this.captchaResponse = response;
+    });
   }
 
 }

@@ -16,6 +16,19 @@
         </strong>
         using the ABALOBI Marketplace app
       </p>
+      <hr>
+      <p>
+        Thank you for your interest in sourcing traceable, storied seafood by empowered small-scale fishers!
+      </p>
+      <p>
+        Use of the Marketplace app is not (yet) open to the general public - our group of users is being grown with
+        hand-picked restaurants and chefs who understand and buy into what we're trying to achieve through Abalobi.
+      </p>
+      <p>
+        If you feel that you fit the bill and are keen to become (or already are) an ambassador for traceable, storied
+        seafood by empowered small-scale fishers, then please register here and send a short motivation to
+        <a href="mailto:hello@abalobi.org">hello@abalobi.org</a> - we'd love to hear more about your enterprise.
+      </p>
     </div>
     <ion-item-divider color="light" id="page-list-item-divider1">
       Login Details
@@ -24,7 +37,7 @@
       <ion-label>
         Email
       </ion-label>
-      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input3">
       <ion-label>
@@ -87,36 +100,38 @@
     <ion-item-divider color="light" id="page-list-item-divider6">
       Notifications
     </ion-item-divider>
+    <div>Invoices and QR codes are sent to you by e-mail. Please list any others who should receive these too (e.g. finance department, floor manager etc. )</div>
     <ion-item id="page-input16">
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input17">
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input18">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input19">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
     <ion-item id="page-input20">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="text" placeholder="Optional"></ion-input>
+      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
+    <re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>
     <div id="page-container1"></div>
     <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>
       Register
