@@ -27,6 +27,7 @@ export class HomePage {
 
   // loading progress dialog
   loading: any;
+  loaderShowing = false;
 
   private captchaPassed: boolean = false;
   private captchaResponse: string;
@@ -40,15 +41,13 @@ export class HomePage {
 
   // called from the UI when the register button has been clicked
   registerBtnClick() {
-
-    this.showLoader('Submitting your details');
-
     // validate the user's input
     this.validate().then(() => {
       // validate the captcha
       return this.validateCaptcha();
     }).then(() => {
       // after validation -> attempt to register the user
+      this.showLoader('Submitting your details');
       return this.register();
     }).then(() => {
 
@@ -90,7 +89,7 @@ export class HomePage {
   validateCaptcha(): Promise<any> {
     return new Promise((resolve, reject) => {
       if (!this.captchaPassed) {
-        reject("Please solve the captcha before continuing");
+        reject(`Please tick the "I'm not a robot" box at the bottom`);
       }
       else {
         let data = {
@@ -161,7 +160,7 @@ export class HomePage {
 
       // rudimentarily check that the cell number is valid
       if(this.cell_number.length !== 10 || isNaN(parseFloat(this.cell_number))) {
-        reject("Please enter a valid phone number");
+        reject("Please enter a valid phone number. Phone numbers should contain 10 digits. Only South African numbers are allowed at present. Example: 0821234567");
       }
 
       // check that the user does not already exist
@@ -218,10 +217,14 @@ export class HomePage {
       content: msg
     });
     this.loading.present();
+    this.loaderShowing = true;
   }
 
   dismissLoader() {
-    this.loading.dismiss();
+    if (this.loaderShowing) {
+      this.loading.dismiss();
+      this.loaderShowing = false;
+    }
   }
 
   captchaResolved(response: string): void {
