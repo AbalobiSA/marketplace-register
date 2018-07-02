@@ -1,0 +1,54 @@
+
+<ion-header>
+    <ion-navbar>
+            <ion-title>Abalobi Register</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding title="Abalobi Register-role" id="fisher-role-form">
+    <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+
+    <form [formGroup] = "roleForm">
+
+                <div id="page-markdown1" class="show-list-numbers-and-dots">
+                        <p id="header-text" style="color:#000000;">
+                            Complete this form if you&#39;d like to be able to
+                            <strong>
+                                LOG YOUR CATCH
+                            </strong>
+                            on the ABALOBI Fisher app.
+                        </p>
+                        <hr>
+                </div>
+
+                <ion-list radio-group type="text" formControlName='role' (ionChange)="roleChanged()">
+                        <ion-item>
+                                <ion-label text-wrap>Fisher</ion-label>
+                                <ion-radio  type="text" value ="fisher" ></ion-radio>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label text-wrap>Local Fisher Assistant</ion-label>
+                                <ion-radio type="text" value ="fisher_manager"></ion-radio>
+                        </ion-item>
+
+
+                        <ion-item>
+                                <ion-label text-wrap>Local Assistant AND Fisher (I will be logging my own catch)</ion-label>
+                                <ion-radio type="text" value ="fisher,fisher_manager"></ion-radio>
+                        </ion-item>
+                </ion-list>
+
+                <div style="color:red" text-wrap align="center" class="validation-errors">
+                        <ng-container *ngFor="let validation of validation_messages.role" >
+                                <div class="error-message" *ngIf="roleForm.get('role').hasError(validation.type)"> <!-- && (roleForm.get('role').dirty || roleForm.get('role').touched)"-->
+                                        {{ validation.message }}
+                                </div>
+                        </ng-container>
+                </div>
+
+            <button ion-button full [disabled]="!roleForm.valid" (click)="nextFromFisherRole()">Next</button>
+    </form>
+
+</ion-content>
