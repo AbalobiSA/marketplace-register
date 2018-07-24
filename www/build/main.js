@@ -4,6 +4,200 @@ webpackJsonp([8],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherCommunityPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_community_class__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+//Imported page classes
+
+//Imported services
+
+//Imported non-page classes
+
+
+
+function isInThisProvince(comms, provinceFull) {
+    return this.province_abbrev == getProvinceAbbrev(provinceFull);
+}
+//TODO- provinces would have to be added as they arise
+function getProvinceAbbrev(province) {
+    switch (province) {
+        case "Western Cape": {
+            return "WC";
+        }
+        case "KwaZulu-Natal": {
+            return "KZN";
+        }
+        case "Northern Cape": {
+            return "NC";
+        }
+        //add more cases as they arise
+        default: {
+            return "abbrev not found";
+        }
+    } //end switch
+}
+//Function to check that custom community has been entered
+function customCommEntered(selectedCommKey, customCommKey) {
+    return function (group) {
+        var selectedComm = group.controls[selectedCommKey];
+        var customComm = group.controls[customCommKey];
+        if ((selectedComm.value == 'Other') && (!customComm.value)) {
+            return {
+                missingCustomComm: true
+            };
+        }
+    };
+}
+var FisherCommunityPage = /** @class */ (function () {
+    function FisherCommunityPage(navCtrl, navParams, fisherService, formBuilder) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.fisherService = fisherService;
+        this.formBuilder = formBuilder;
+        this.all_comms = [];
+        this.filtered_comms = []; //communities filtered according to province selected
+        this.community_info = new __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__["a" /* CommunityInfoClass */]();
+        this.confirm_personal = new Object();
+        this.hideCustomComm = true; //hide the option to enter a custom community on DOM
+        this.validation_messages = {
+            'province': [
+                { type: 'required', message: 'Please select a province.' }
+            ],
+            'community': [
+                { type: 'required', message: 'Please select a community.' }
+            ],
+        };
+        //TODO -- improve this to read these communities from a csv file/from an API call
+        this.list_of_communities = [
+            "name_key,province,name_Eng,name_Afr,region",
+            "arniston,WC,Arniston,Waenhuiskrans,west_coast",
+            "bellville,WC,Bellville,Bellville,west_coast",
+            "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
+            "capetown,WC,Cape Town,Cape Town,west_coast",
+            "coffeebay,KZN,Coffee Bay,Koffiebaai,kwazulunatal eastern_cape",
+            "democommunity,WC,Demo Community,Demo Gemeenskap,west_coast",
+            "doringbaai,WC,Doring Bay,Doringbaai,west_coast",
+            "elandsbaai,WC,Elands Bay,Elandsbaai,west_coast",
+            "gordons_bay,WC,Gordon's Bay,Gordonsbaai,west_coast",
+            "grassy_park,WC,Grassy Park,Grassy Park,west_coast",
+            "hermanus,WC,Hermanus,Hermanus,west_coast",
+            "hondeklipbaai,NC,Hondeklip Bay,Hondeklipbaai,west_coast",
+            "hout_bay,WC,Hout Bay,Houtbaai,west_coast",
+            "kalk_bay,WC,Kalk Bay,Kalkbaai,west_coast",
+            "kleinmond,WC,Kleinmond,Kleinmond,west_coast",
+            "lambertsbaai,WC,Lamberts Bay,Lambertsbaai,west_coast",
+            "langebaan,WC,Langebaan,Langebaan,west_coast",
+            "muizenberg,WC,Muizenberg,Muizenberg,west_coast",
+            "ocean_view,WC,Ocean View,Ocean View,west_coast",
+            "olifants,WC,Olifants,Olifants,west_coast",
+            "paternoster,WC,Paternoster,Paternoster,west_coast",
+            "portnolloth,NC,Port Nolloth,Port Nolloth,west_coast",
+            "pringlebay,WC,Pringle Bay,Pringlebaai,west_coast",
+            "sainthelena,WC,Saint Helena,Saint Helena,west_coast",
+            "simonstown,WC,Simon's Town,Simonstad,west_coast",
+            "sainthelenaisland,SHI,St Helena Island,St Helena Eiland,saint_helena_island",
+            "strand,WC,Strand,Strand,west_coast",
+            "strandfontein_falsebay,WC,Strandfontein (False Bay),Strandfontein (Valsbaai),west_coast",
+            "struisbaai,WC,Struis Bay,Struisbaai,west_coast",
+        ];
+        this.communityForm = this.formBuilder.group({
+            "province": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* Validators */].required],
+            "community": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* Validators */].required],
+            "custom": [null, null],
+        }, { validator: customCommEntered('community', 'custom') });
+        //construct the list of all communities upon and creation instantiate once
+        for (var i = 1; i < this.list_of_communities.length; i++) {
+            var line = (this.list_of_communities[i]).split(",");
+            this.all_comms.push(new __WEBPACK_IMPORTED_MODULE_5__classes_community_class__["a" /* CommunityClass */](line[0], line[1], line[2]));
+        }
+    }
+    FisherCommunityPage.prototype.provinceChanged = function () {
+        this.community_info.comm_province = this.communityForm.get('province').value;
+        this.filtered_comms = this.filterComms(this.all_comms, this.community_info.comm_province); //generate trhe filtered comms based on province selection
+    };
+    FisherCommunityPage.prototype.communityChanged = function () {
+        var selectedCommunity = this.communityForm.get('community').value;
+        if (selectedCommunity !== 'Other') {
+            this.hideCustomComm = true;
+            this.community_info.comm_community = this.parseCommunity(selectedCommunity);
+        }
+        else {
+            this.community_info.comm_community = 'other';
+            this.hideCustomComm = false;
+        }
+    };
+    //Record the name of the entered custom community
+    FisherCommunityPage.prototype.customCommunityEntered = function () {
+        this.community_info.custom_community = this.communityForm.get('custom').value;
+    };
+    FisherCommunityPage.prototype.parseCommunity = function (name_Eng) {
+        var comm_ID = "";
+        for (var i = 0; i < this.all_comms.length; i++) {
+            if (this.all_comms[i].name_Eng == name_Eng) {
+                comm_ID = this.all_comms[i].name_key;
+                break; //we found the desired community, abort the search loop
+            }
+        }
+        return comm_ID;
+    };
+    FisherCommunityPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad FisherCommunityPage");
+        //package the info needed by the confirmation page for propagation ahead to the register page
+        this.confirm_personal = {
+            surname: this.navParams.get('personal_surname'),
+            firstname: this.navParams.get('personal_firstname'),
+            IDnum: this.navParams.get('personal_IDnum'),
+            cellNo: this.navParams.get('personal_cellNo'),
+        };
+    };
+    FisherCommunityPage.prototype.onFisherFinishCommunity = function () {
+        this.fisherService.fisherUpdateCommunity(this.community_info);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__["a" /* FisherConfirmPage */], this.confirm_personal);
+    };
+    //TODO - improve this implementation to use the fiter() function
+    //TODO - there may be need to sort the list as well, for now the list happens to be sorted already.
+    FisherCommunityPage.prototype.filterComms = function (comms, provinceFull) {
+        var filtered = [];
+        for (var i = 0; i < comms.length; i++) {
+            if (getProvinceAbbrev(provinceFull) == comms[i].province_abbrev) {
+                filtered.push(comms[i]);
+            }
+        }
+        return filtered;
+    };
+    FisherCommunityPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-fisher-community',template:/*ion-inline-start:"C:\dev\register\src\pages\fisher-community\fisher-community.html"*/'<!--\n\n  Generated template for the FisherCommunityPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n        <ion-navbar>\n\n              <ion-title>Abalobi Register</ion-title>\n\n        </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n        <form [formGroup] = "communityForm">\n\n\n\n\n\n                <p style="text-align:center"><b>Community / Landing</b></p>\n\n\n\n                <ion-item>\n\n                        <ion-label text-wrap>Please select  your province\n\n                        </ion-label>\n\n                                <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">\n\n                                        <ion-option value="Western Cape">Western Cape</ion-option>\n\n                                        <ion-option value="Northern Cape">Northern Cape</ion-option>\n\n                                        <ion-option value="Eastern Cape">Eastern Cape</ion-option>\n\n                                        <ion-option value="North West"> North West</ion-option>\n\n                                        <ion-option value="Mpumalanga">Mpumalanga</ion-option>\n\n                                        <ion-option value="Limpopo">Limpopo</ion-option>\n\n                                        <ion-option value="Gauteng">Gauteng</ion-option>\n\n                                        <ion-option value="Free State">Free State</ion-option>\n\n                                        <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>\n\n                                </ion-select>\n\n                </ion-item>\n\n\n\n                <div class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'province\').hasError(validation.type) && (communityForm.get(\'province\').dirty || communityForm.get(\'province\').touched)">\n\n                                        {{ validation.message }}\n\n                                </div>\n\n                        </ng-container>\n\n                </div>\n\n\n\n\n\n                <ion-item >\n\n                            <ion-label text-wrap>Please select  your community\n\n                            </ion-label>\n\n                                        <ion-select text-wrap formControlName="community" (ionChange)=" communityChanged()">\n\n                                                <ion-option  text-wrap *ngFor="let c of filterComms(all_comms, communityForm.get(\'province\').value)">{{c.name_Eng}}</ion-option>\n\n                                                <ion-option  text-wrap value="Other">Other</ion-option>\n\n                                        </ion-select>\n\n                </ion-item>\n\n\n\n\n\n                <div class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.community" >\n\n                                 <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'community\').hasError(validation.type) && (communityForm.get(\'community\').dirty || communityForm.get(\'community\').touched)">\n\n                                        {{ validation.message }}\n\n                                 </div>\n\n                        </ng-container>\n\n                </div>\n\n\n\n\n\n\n\n                <ion-item [hidden]="hideCustomComm">\n\n                        <ion-label text-wrap stacked>Please enter your community</ion-label>\n\n                        <ion-input  type="text" formControlName="custom" placeholder="Enter your community here" (ionChange)="customCommunityEntered()"></ion-input>\n\n                </ion-item>\n\n\n\n                <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="communityForm.hasError(\'missingCustomComm\')">Custom community required.</span>\n\n\n\n\n\n\n\n\n\n\n\n                <p style="text-align:center"><b>Do you have a fishing permit ?</b></p>\n\n\n\n\n\n                <ion-list >\n\n                        <ion-item>\n\n                                <ion-label> IRP / Exemption</ion-label>\n\n                                <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n\n                        </ion-item>\n\n\n\n                        <ion-item>\n\n                                <ion-label> Commercial</ion-label>\n\n                                <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n\n                        </ion-item>\n\n\n\n                        <ion-item>\n\n                                <ion-label> Recreational</ion-label>\n\n                                <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n\n                        </ion-item>\n\n\n\n                        <ion-item>\n\n                                <ion-label> Other</ion-label>\n\n                                <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n\n                        </ion-item>\n\n\n\n                </ion-list>\n\n\n\n                <button ion-button full  [disabled]="!communityForm.valid" (click)="onFisherFinishCommunity()">Next</button>\n\n        </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\register\src\pages\fisher-community\fisher-community.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]])
+    ], FisherCommunityPage);
+    return FisherCommunityPage;
+}()); //end class
+
+//# sourceMappingURL=fisher-community.js.map
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherConfirmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
@@ -531,6 +725,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 function isInThisProvince(comms, provinceFull) {
     return this.province_abbrev == getProvinceAbbrev(provinceFull);
 }
+<<<<<<< HEAD
+=======
+//TODO- provinces would have to be added as they arise
+>>>>>>> f3cf89a9... Try to clean up this mess
 function getProvinceAbbrev(province) {
     switch (province) {
         case "Western Cape": {
@@ -666,7 +864,12 @@ var FisherCommunityPage = /** @class */ (function () {
         this.fisherService.fisherUpdateCommunity(this.community_info);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__["a" /* FisherConfirmPage */], this.confirm_personal);
     };
+<<<<<<< HEAD
     //Can be implemented more elegantly with filter() function, just havent figure out how yet
+=======
+    //TODO - improve this implementation to use the fiter() function
+    //TODO - there may be need to sort the list as well, for now the list happens to be sorted already.
+>>>>>>> f3cf89a9... Try to clean up this mess
     FisherCommunityPage.prototype.filterComms = function (comms, provinceFull) {
         var filtered = [];
         for (var i = 0; i < comms.length; i++) {
@@ -680,9 +883,16 @@ var FisherCommunityPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-community',template:/*ion-inline-start:"/Users/techairos/JOSHUA_WORK/register/src/pages/fisher-community/fisher-community.html"*/'<!--\n  Generated template for the FisherCommunityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n        <ion-navbar>\n              <ion-title>Abalobi Register</ion-title>\n        </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n        <form [formGroup] = "communityForm">\n\n\n                <p style="text-align:center"><b>Community / Landing</b></p>\n\n                <ion-item>\n                        <ion-label text-wrap>Please select  your province\n                        </ion-label>\n                                <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">\n                                        <ion-option value="Western Cape">Western Cape</ion-option>\n                                        <ion-option value="Northern Cape">Northern Cape</ion-option>\n                                        <ion-option value="Eastern Cape">Eastern Cape</ion-option>\n                                        <ion-option value="North West"> North West</ion-option>\n                                        <ion-option value="Mpumalanga">Mpumalanga</ion-option>\n                                        <ion-option value="Limpopo">Limpopo</ion-option>\n                                        <ion-option value="Gauteng">Gauteng</ion-option>\n                                        <ion-option value="Free State">Free State</ion-option>\n                                        <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>\n                                </ion-select>\n                </ion-item>\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'province\').hasError(validation.type) && (communityForm.get(\'province\').dirty || communityForm.get(\'province\').touched)">\n                                        {{ validation.message }}\n                                </div>\n                        </ng-container>\n                </div>\n\n\n                <ion-item >\n                            <ion-label text-wrap>Please select  your community\n                            </ion-label>\n                                        <ion-select text-wrap formControlName="community" (ionChange)=" communityChanged()">\n                                                <ion-option  text-wrap *ngFor="let c of filterComms(all_comms, communityForm.get(\'province\').value)">{{c.name_Eng}}</ion-option>\n                                                <ion-option  text-wrap value="Other">Other</ion-option>\n                                        </ion-select>\n                </ion-item>\n\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.community" >\n                                 <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'community\').hasError(validation.type) && (communityForm.get(\'community\').dirty || communityForm.get(\'community\').touched)">\n                                        {{ validation.message }}\n                                 </div>\n                        </ng-container>\n                </div>\n\n\n\n                <ion-item [hidden]="hideCustomComm">\n                        <ion-label text-wrap stacked>Please enter your community</ion-label>\n                        <ion-input  type="text" formControlName="custom" placeholder="Enter your community here" (ionChange)="customCommunityEntered()"></ion-input>\n                </ion-item>\n\n                <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="communityForm.hasError(\'missingCustomComm\')">Custom community required.</span>\n\n\n\n\n\n                <p style="text-align:center"><b>Do you have a fishing permit ?</b></p>\n\n\n                <ion-list >\n                        <ion-item>\n                                <ion-label> IRP / Exemption</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Commercial</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Recreational</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Other</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                </ion-list>\n\n                <button ion-button full  [disabled]="!communityForm.valid" (click)="onFisherFinishCommunity()">Next</button>\n        </form>\n\n</ion-content>\n'/*ion-inline-end:"/Users/techairos/JOSHUA_WORK/register/src/pages/fisher-community/fisher-community.html"*/,
         }),
+<<<<<<< HEAD
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]])
     ], FisherCommunityPage);
     return FisherCommunityPage;
+=======
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object])
+    ], FisherCommunityPage);
+    return FisherCommunityPage;
+    var _a, _b, _c, _d;
+>>>>>>> f3cf89a9... Try to clean up this mess
 }()); //end class
 
 //# sourceMappingURL=fisher-community.js.map
