@@ -14,10 +14,12 @@ import {PersonalInfoClass}    from "../../classes/personal_info_class";
 
 
 //Function to check for matching passwords
-function goodPasswords(passwordKey: string, confirmPasswordKey: string) {
+function goodPasswords(passwordKey: string, confirmPasswordKey: string, nameKey: string, surnameKey: string) {
     return (group: FormGroup): {[key: string]: any} => {
         let password = group.controls[passwordKey];
         let confirmPassword = group.controls[confirmPasswordKey];
+        let name = group.controls[nameKey];
+        let surname = group.controls[surnameKey];
 
         //Passwords mismatch
         if (password.value !== confirmPassword.value) {//passwords do not match
@@ -32,6 +34,47 @@ function goodPasswords(passwordKey: string, confirmPasswordKey: string) {
             if (password.value.length < 6) {
                 return {
                     badPasswords: true
+                };
+            }
+
+            // Check that password doesn't contain copy of name, surname or "password"
+            let re = /password/gi;
+            console.log(password.value);
+            console.log(re);
+            if (password.value.search(re) !== -1 ) {
+                console.log(`Password contains 'password'`);
+                return {
+                    containsInvalidWords: true
+                };
+            }
+
+            console.log(name.value);
+            let expression = "99999999999";
+            if (name.value !== "") {
+                expression = name.value;
+            }
+            re = new RegExp(expression, 'gi');
+            console.log(`RegExp`);
+            console.log(re);
+            if (re.test(password.value)) {
+                console.log(`Password contains name`);
+                return {
+                    containsInvalidName: true
+                };
+            }
+
+            console.log(name.value);
+            expression = "99999999999";
+            if (surname.value !== "") {
+                expression = surname.value;
+            }
+            re = new RegExp(expression, 'gi');
+            console.log(`RegExp`);
+            console.log(re);
+            if (re.test(password.value)) {
+                console.log(`Password contains name`);
+                return {
+                    containsInvalidSurname: true
                 };
             }
 
@@ -123,6 +166,7 @@ function hasNum(password: string): boolean {//return true if a digit has been fo
 export class FisherPersonalPage {
 
         personal_info : PersonalInfoClass = new PersonalInfoClass();
+        passwordContainsInvalidWords: boolean = false;
         public personalForm: any;
         validation_messages = {
             'surname': [
@@ -179,7 +223,7 @@ export class FisherPersonalPage {
                         "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(10), Validators.maxLength(10)])],
                         "password1":['', Validators.required],
                         "password2":['', Validators.required]
-                    } , {validator: goodPasswords('password1', 'password2')})
+                    } , {validator: goodPasswords('password1', 'password2', 'name', 'surname')})
             }
 
 
