@@ -43,6 +43,8 @@
                           <ion-input placeholder=""></ion-input>
                     </ion-item>
 
+            <re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>
+
               <button text-wrap="true" ion-button full  (click)="onFisherSubmit()">Register</button>
           </form>
 
