@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, NgZone} from '@angular/core';
 import { IonicPage, NavController, NavParams,LoadingController } from 'ionic-angular';
 
 //Imported services
@@ -8,6 +8,7 @@ import{Fisher} from "../../classes/fisher-class";
 import {FisherRegisterSuccessPage} from "../fisher-register-success/fisher-register-success";
 import {FisherNotUniquePage} from "../fisher-not-unique/fisher-not-unique";
 import {FisherRegisterFailurePage} from "../fisher-register-failure/fisher-register-failure";
+import {HttpClient} from "@angular/common/http";
 
 
 @IonicPage()
@@ -23,8 +24,15 @@ import {FisherRegisterFailurePage} from "../fisher-register-failure/fisher-regis
     public confirm_info: PersonalInfoClass = new PersonalInfoClass();
     fisher: Fisher;
 
+    private captchaPassed: boolean = false;
+    private captchaResponse: string;
 
-    constructor( public loadingCtrl: LoadingController, public navParams: NavParams, public fisherService: FisherService,public navController: NavController) {
+    constructor( public loadingCtrl: LoadingController,
+                 public navParams: NavParams,
+                 public fisherService: FisherService,
+                 public navController: NavController,
+                 private http: HttpClient,
+                 private zone: NgZone) {
     }
 
     ionViewDidLoad() {
@@ -40,39 +48,82 @@ import {FisherRegisterFailurePage} from "../fisher-register-failure/fisher-regis
         //TODO - consider improving such that the pages persists the data in storage so user can come back and edit
         // TODO - currently, if registration fails, user has to start all over again
 
-        //TODO - The loading controller works perfect but the the spinner is not showing
-        let reg = this.loadingCtrl.create({
-                spinner             : 'Show iOS',
-                content             : 'Registration in progress..',
-                dismissOnPageChange : true,
-                showBackdrop        : true
+        // Validate captcha before continuing
+        this.validateCaptcha().then(result => {
+          //TODO - The loading controller works perfect but the the spinner is not showing
+          let reg = this.loadingCtrl.create({
+            spinner             : 'Show iOS',
+            content             : 'Registration in progress..',
+            dismissOnPageChange : true,
+            showBackdrop        : true
 
-        });
+          });
 
-        reg.present();
+          reg.present();
 
-        this.fisher = this.fisherService.fisherBuild();
+          this.fisher = this.fisherService.fisherBuild();
 
-        this.fisherService.checkIfFisherAlreadyExists(this.fisher.id)//first promise check if the ID number has already been taken
-           .then(()=>{//ID is unique
-               //Go ahead and attempt to register unique fisher
-               //alert('ID number is unique');
-               this.fisherService.registerFisher(this.fisher)//attempts to register user
-                   .then (()=> {
+          this.fisherService.checkIfFisherAlreadyExists(this.fisher.id)//first promise check if the ID number has already been taken
+            .then(()=>{//ID is unique
+              //Go ahead and attempt to register unique fisher
+              //alert('ID number is unique');
+              this.fisherService.registerFisher(this.fisher)//attempts to register user
+                .then (()=> {
 
-                       //alert('User registration successful');
-                       this.navController.push(FisherRegisterSuccessPage);
-                   })
-                   .catch( ()=>{//failure to register , but ID is unique
-                       //alert('User registration failed');
-                       this.navController.push(FisherRegisterFailurePage);
+                  //alert('User registration successful');
+                  this.navController.push(FisherRegisterSuccessPage);
+                })
+                .catch( ()=>{//failure to register , but ID is unique
+                  //alert('User registration failed');
+                  this.navController.push(FisherRegisterFailurePage);
 
-                   })
-           })
-            .catch(()=>{//ID number already taken
-                //.alert('ID number already exists');
-                this.navController.push(FisherNotUniquePage);
+                })
             })
+            .catch(()=>{//ID number already taken
+              //.alert('ID number already exists');
+              this.navController.push(FisherNotUniquePage);
+            })
+        }).catch(error => {
+            alert(error);
+        });
     }//end method onFisherSubmit
 
-}//end class
+    captchaResolved(response: string): void {
+      console.log(`captchaResolved`);
+      console.log(response);
+      this.zone.run(() => {
+        // If the recaptcha expired then reset the state
+        if (response) {
+          this.captchaPassed = true;
+        }
+        else {
+          this.captchaPassed = false;
+        }
+        this.captchaResponse = response;
+      });
+    }
+
+  validateCaptcha(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (!this.captchaPassed) {
+        reject(`Please tick the "I'm not a robot" box at the bottom`);
+      }
+      else {
+        let data = {
+          captchaResponse: this.captchaResponse
+        };
+
+        console.log(`Validating captcha`);
+        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(res => {
+            resolve();
+          },
+          error => {
+            console.log(`Got error`);
+            reject("Failed validating reCAPTCHA with server. Please try refreshing page");
+          });
+      }
+    })
+  }
+
+
+  }//end class
