@@ -122,7 +122,7 @@ export class MarketplaceHome {
     return new Promise((resolve, reject) => {
       // check that all fields are filled in
       if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_details)) {
-        reject("Please fill in all the fields");
+        reject("Please fill in all required fields (marked with an '*')");
       }
 
       // Validate e-mail address(es)
