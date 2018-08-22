@@ -27,6 +27,7 @@ import { MarketplaceHome }      from '../pages/marketplace-home/marketplace-home
 import {MarketplaceService}     from "../providers/MarketplaceService";
 import{FisherService}           from "../providers/FisherService";
 import{Registree}               from "../classes/registree_class";
+import {AfterRegisterPage} from "../pages/after-register/after-register";
 
 
 
@@ -43,7 +44,8 @@ import{Registree}               from "../classes/registree_class";
       FisherRegisterSuccessPage,
       FisherNotUniquePage,
       FisherRegisterFailurePage,
-    MarketplaceHome
+    MarketplaceHome,
+    AfterRegisterPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import{Registree}               from "../classes/registree_class";
       FisherRegisterSuccessPage,
       FisherNotUniquePage,
       FisherRegisterFailurePage,
-    MarketplaceHome
+    MarketplaceHome,
+    AfterRegisterPage
   ],
   providers: [
     StatusBar,
