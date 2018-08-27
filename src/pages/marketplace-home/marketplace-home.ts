@@ -6,9 +6,8 @@
  */
 
 import {Component, NgZone } from '@angular/core';
-import {LoadingController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
-//import {AfterRegisterPage} from "../after-register/after-register";
 import {HttpClient } from '@angular/common/http';
 import {AfterRegisterPage} from "../after-register/after-register";
 
@@ -26,12 +25,17 @@ export class MarketplaceHome {
   surname: string;
   cell_number: string;
   name_of_establishment: string;
-  company_details: string;
+  // company_details: string;
   extra_email_1: string;
   extra_email_2: string;
   extra_email_3: string;
   extra_email_4: string;
   extra_email_5: string;
+  company_name: string;
+  vat_number: string;
+  address: string;
+  city: string;
+  postal_code: string;
 
   // loading progress dialog
   loading: any;
@@ -70,12 +74,17 @@ export class MarketplaceHome {
       this.surname = null;
       this.cell_number = null;
       this.name_of_establishment = null;
-      this.company_details = null;
+      // this.company_details = null;
       this.extra_email_1 = null;
       this.extra_email_2 = null;
       this.extra_email_3 = null;
       this.extra_email_4 = null;
       this.extra_email_5 = null;
+      this.company_name = null;
+      this.vat_number = null;
+      this.address = null;
+      this.city = null;
+      this.postal_code = null;
 
       // navigate to the successful sign up page
       this.navCtrl.push(AfterRegisterPage);
@@ -104,10 +113,10 @@ export class MarketplaceHome {
           captchaResponse: this.captchaResponse
         };
 
-        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(res => {
+        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(() => {
             resolve();
           },
-          error => {
+          () => {
             console.log(`Got error`);
             reject("Failed validating reCAPTCHA with server. Please try refreshing page");
           });
@@ -122,7 +131,7 @@ export class MarketplaceHome {
 
     return new Promise((resolve, reject) => {
       // check that all fields are filled in
-      if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_details)) {
+      if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && this.vat_number)) {
         reject("Please fill in all required fields (marked with an '*')");
       }
 
@@ -173,7 +182,6 @@ export class MarketplaceHome {
 
       // check that the user does not already exist
       this.marketplaceService.checkIfUserAlreadyExists(this.email).then((user) => {
-``
         if(user[0]) {
           reject("This username is already taken");
         } else {
@@ -199,7 +207,14 @@ export class MarketplaceHome {
       firstname: this.name,
       lastname: this.surname,
       h2c_buyer_company : this.name_of_establishment,
-      buyer_details : this.company_details.split("\n"),
+      // buyer_details : this.company_details.split("\n"),
+      buyer_details : {
+        company_name: this.company_name,
+        vat_number: this.vat_number,
+        address: this.address,
+        city: this.city,
+        postal_code: this.postal_code
+      },
       sellerEnabled: false,
       abalobiId: null,
       cell_number: this.cell_number,
@@ -240,12 +255,7 @@ export class MarketplaceHome {
     console.log(response);
     this.zone.run(() => {
       // If the recaptcha expired then reset the state
-      if (response) {
-        this.captchaPassed = true;
-      }
-      else {
-        this.captchaPassed = false;
-      }
+      this.captchaPassed = !!response;
       this.captchaResponse = response;
     });
   }
