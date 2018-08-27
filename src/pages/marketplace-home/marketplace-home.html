@@ -112,14 +112,38 @@
 
     <ion-item id="page-input15">
       <ion-label stacked>
-        * Company details (multiple lines allowed)
+        * Company Name (for invoice)
       </ion-label>
-      <ion-textarea [(ngModel)]="company_details" name="company_details" type="text" placeholder="What you want printed on the invoices"></ion-textarea>>
+      <ion-input [(ngModel)]="company_name" name="company_name" type="text" placeholder="The name of the company as shown on invoice"></ion-input>>
     </ion-item>
-    <!--<div id="page-container1"></div>-->
-    <!--<button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>-->
-    <!--Register-->
-    <!--</button>-->
+
+    <ion-item id="page-input16">
+      <ion-label stacked>
+        * VAT number
+      </ion-label>
+      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="The VAT number of the company"></ion-input>>
+    </ion-item>
+
+    <ion-item id="page-input17">
+      <ion-label stacked>
+        Address (mutiple lines allowed)
+      </ion-label>
+      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>>
+    </ion-item>
+
+    <ion-item id="page-input18">
+      <ion-label stacked>
+        Town/City
+      </ion-label>
+      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>>
+    </ion-item>
+
+    <ion-item id="page-input19">
+      <ion-label stacked>
+        Postal Code
+      </ion-label>
+      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>>
+    </ion-item>
   </form>
 
 
@@ -136,35 +160,35 @@
     </div>
 
 
-    <ion-item id="page-input16">
+    <ion-item id="page-input20">
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
       <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
 
-    <ion-item id="page-input17">
+    <ion-item id="page-input21">
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
       <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
 
-    <ion-item id="page-input18">
+    <ion-item id="page-input22">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
       <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
 
-    <ion-item id="page-input19">
+    <ion-item id="page-input23">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
       <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>
     </ion-item>
 
-    <ion-item id="page-input20">
+    <ion-item id="page-input24">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
