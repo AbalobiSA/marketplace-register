@@ -124,12 +124,69 @@ export class MarketplaceHome {
     })
   }
 
+  trimFields() {
+    // Trim all fields
+    if (this.email) {
+      this.email = this.email.trim();
+    }
+    if (this.password) {
+      this.password = this.password.trim();
+    }
+    if (this.repeat_password) {
+      this.repeat_password = this.repeat_password.trim();
+    }
+    if (this.name) {
+      this.name = this.name.trim();
+    }
+    if (this.surname) {
+      this.surname = this.surname.trim();
+    }
+    if (this.cell_number) {
+      this.cell_number = this.cell_number.trim();
+    }
+    if (this.name_of_establishment) {
+      this.name_of_establishment = this.name_of_establishment.trim();
+    }
+    if (this.extra_email_1) {
+      this.extra_email_1 = this.extra_email_1.trim();
+    }
+    if (this.extra_email_2) {
+      this.extra_email_2 = this.extra_email_2.trim();
+    }
+    if (this.extra_email_3) {
+      this.extra_email_3 = this.extra_email_3.trim();
+    }
+    if (this.extra_email_4) {
+      this.extra_email_4 = this.extra_email_4.trim();
+    }
+    if (this.extra_email_5) {
+      this.extra_email_5 = this.extra_email_5.trim();
+    }
+    if (this.company_name) {
+      this.company_name = this.company_name.trim();
+    }
+    if (this.vat_number) {
+      this.vat_number = this.vat_number.trim();
+    }
+    if (this.address) {
+      this.address = this.address.trim();
+    }
+    if (this.city) {
+      this.city = this.city.trim();
+    }
+    if (this.postal_code) {
+      this.postal_code = this.postal_code.trim();
+    }
+  }
+
   // validates the user on the client and server side to ensure that they can be registered
   validate(): Promise<any> {
     // if (!this.validateCaptcha())
     //   return Promise.reject("Failed validating captcha.  Please try refreshing page");
 
     return new Promise((resolve, reject) => {
+      this.trimFields();
+
       // check that all fields are filled in
       if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && this.vat_number)) {
         reject("Please fill in all required fields (marked with an '*')");
