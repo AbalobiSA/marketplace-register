@@ -156,6 +156,7 @@ export class FisherCommunityPage {
             "arniston,WC,Arniston,Waenhuiskrans,west_coast",
             "bellville,WC,Bellville,Bellville,west_coast",
             "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
+            "buffelsjagbaai,WC,Buffeljagsbaai,Buffeljagsbaai,west_coast",
             "capetown,WC,Cape Town,Cape Town,west_coast",
             "coffeebay,KZN,Coffee Bay,Koffiebaai,kwazulunatal eastern_cape",
             "democommunity,WC,Demo Community,Demo Gemeenskap,west_coast",
