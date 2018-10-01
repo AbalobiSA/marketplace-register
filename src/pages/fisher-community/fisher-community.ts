@@ -162,6 +162,7 @@ export class FisherCommunityPage {
             "democommunity,WC,Demo Community,Demo Gemeenskap,west_coast",
             "doringbaai,WC,Doring Bay,Doringbaai,west_coast",
             "elandsbaai,WC,Elands Bay,Elandsbaai,west_coast",
+            "fishhoek,WC,Fishhoek,Vishoek,west_coast",
             "gordons_bay,WC,Gordon's Bay,Gordonsbaai,west_coast",
             "grassy_park,WC,Grassy Park,Grassy Park,west_coast",
             "hermanus,WC,Hermanus,Hermanus,west_coast",
