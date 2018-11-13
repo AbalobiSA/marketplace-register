@@ -55,9 +55,12 @@ export class MarketplaceHome {
   registerBtnClick() {
     // validate the user's input
     this.validate().then(() => {
+
+      // TODO: Re-enable this again when the time comes
       // validate the captcha
-      return this.validateCaptcha();
-    }).then(() => {
+    //   return this.validateCaptcha();
+    // }).then(() => {
+
       // after validation -> attempt to register the user
       this.showLoader('Submitting your details');
       return this.register();
