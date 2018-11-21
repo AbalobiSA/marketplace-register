@@ -36,6 +36,7 @@ export class MarketplaceHome {
   address: string;
   city: string;
   postal_code: string;
+  instagram_handle: string;
 
   // loading progress dialog
   loading: any;
@@ -88,6 +89,7 @@ export class MarketplaceHome {
       this.address = null;
       this.city = null;
       this.postal_code = null;
+      this.instagram_handle = null;
 
       // navigate to the successful sign up page
       this.navCtrl.push(AfterRegisterPage);
@@ -179,6 +181,9 @@ export class MarketplaceHome {
     }
     if (this.postal_code) {
       this.postal_code = this.postal_code.trim();
+    }
+    if (this.instagram_handle) {
+      this.instagram_handle = this.instagram_handle.trim();
     }
   }
 
@@ -278,6 +283,7 @@ export class MarketplaceHome {
       sellerEnabled: false,
       abalobiId: null,
       cell_number: this.cell_number,
+      instagram_handle: this.instagram_handle,
       approved: false,
       buyer_notifications: {
         extra_invoice_1: this.extra_email_1,
