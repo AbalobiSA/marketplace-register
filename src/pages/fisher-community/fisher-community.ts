@@ -157,6 +157,7 @@ export class FisherCommunityPage {
             "bellville,WC,Bellville,Bellville,west_coast",
             "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
             "buffelsjagbaai,WC,Buffeljagsbaai,Buffeljagsbaai,west_coast",
+            "cape_flats,WC,Cape Flats,Cape Flats,west_coast",
             "capetown,WC,Cape Town,Cape Town,west_coast",
             "coffeebay,KZN,Coffee Bay,Koffiebaai,kwazulunatal eastern_cape",
             "democommunity,WC,Demo Community,Demo Gemeenskap,west_coast",
@@ -172,6 +173,7 @@ export class FisherCommunityPage {
             "kleinmond,WC,Kleinmond,Kleinmond,west_coast",
             "lambertsbaai,WC,Lamberts Bay,Lambertsbaai,west_coast",
             "langebaan,WC,Langebaan,Langebaan,west_coast",
+            "millers_point,WC,Millers Point,Millers Point,west_coast",
             "muizenberg,WC,Muizenberg,Muizenberg,west_coast",
             "ocean_view,WC,Ocean View,Ocean View,west_coast",
             "olifants,WC,Olifants,Olifants,west_coast",
@@ -184,7 +186,8 @@ export class FisherCommunityPage {
             "strand,WC,Strand,Strand,west_coast",
             "strandfontein_falsebay,WC,Strandfontein (False Bay),Strandfontein (Valsbaai),west_coast",
             "struisbaai,WC,Struis Bay,Struisbaai,west_coast",
-];
+            "yzerfontein,WC,Yzerfontein,Yzerfontein,west_coast"
+        ];
 
 
     //TODO - improve this implementation to use the fiter() function
