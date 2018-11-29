@@ -4,55 +4,10 @@ webpackJsonp([9],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterRegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the AfterRegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AfterRegisterPage = /** @class */ (function () {
-    function AfterRegisterPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    AfterRegisterPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AfterRegisterPage');
-    };
-    AfterRegisterPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-after-register',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/'<!--\n\n  Generated template for the AfterRegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registration successful</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <p>Thank you for registering for ABALOBI Marketplace.</p>\n\n  <p><strong>Note that you can\'t login yet - a human needs to approve your application.</strong></p>\n\n  <p>Please watch your e-mail for further details.</p>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], AfterRegisterPage);
-    return AfterRegisterPage;
-}());
-
-//# sourceMappingURL=after-register.js.map
-
-/***/ }),
-
-/***/ 105:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherCommunityPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_community_class__ = __webpack_require__(274);
@@ -244,7 +199,7 @@ var FisherCommunityPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -253,7 +208,7 @@ var FisherCommunityPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_FisherService__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_personal_info_class__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fisher_not_unique_fisher_not_unique__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fisher_register_failure_fisher_register_failure__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(36);
@@ -385,7 +340,7 @@ var FisherConfirmPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 107:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -426,6 +381,51 @@ var FisherRegisterSuccessPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=fisher-register-success.js.map
+
+/***/ }),
+
+/***/ 107:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterRegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AfterRegisterPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AfterRegisterPage = /** @class */ (function () {
+    function AfterRegisterPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    AfterRegisterPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AfterRegisterPage');
+    };
+    AfterRegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-after-register',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/'<!--\n\n  Generated template for the AfterRegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registration successful</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <p>Thank you for registering for ABALOBI Marketplace.</p>\n\n  <p><strong>Note that you can\'t login yet - a human needs to approve your application.</strong></p>\n\n  <p>Please watch your e-mail for further details.</p>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], AfterRegisterPage);
+    return AfterRegisterPage;
+}());
+
+//# sourceMappingURL=after-register.js.map
 
 /***/ }),
 
@@ -568,7 +568,7 @@ var FisherUsetermsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fisher_community_fisher_community__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fisher_community_fisher_community__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_FisherService__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_personal_info_class__ = __webpack_require__(172);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -924,11 +924,11 @@ webpackEmptyAsyncContext.id = 125;
 
 var map = {
 	"../pages/after-register/after-register.module": [
-		301,
+		302,
 		8
 	],
 	"../pages/fisher-community/fisher-community.module": [
-		302,
+		301,
 		7
 	],
 	"../pages/fisher-confirm/fisher-confirm.module": [
@@ -1036,8 +1036,8 @@ var Registree = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Secrets; });
 var Secrets = /** @class */ (function () {
     function Secrets() {
-        this.marketplaceCheckUserURL = "http://169.239.183.156:1337/api/users/find/?username=";
-        this.marketplaceAddUserURL = "http://169.239.183.156:1337/api/users/create/";
+        this.marketplaceCheckUserURL = "https://market.abalobi.live/api/users/find/?username=";
+        this.marketplaceAddUserURL = "https://market.abalobi.live/api/users/create/";
         this.fisherCheckUserIDurl = "http://server.abalobi.info/api/users/id/checkidexists?id=";
         this.fisherAddUserURL = "https://www.openfn.org/inbox/3afab0f1-3937-4ca8-95a3-5491f6f32a4e";
         this.testPostURL = "http://server.abalobi.info/api/testpost";
@@ -1081,7 +1081,7 @@ var PersonalInfoClass = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__after_register_after_register__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__after_register_after_register__ = __webpack_require__(107);
 /**
  * Generated class for the MarketplaceHomePage page.
  *
@@ -1360,7 +1360,7 @@ var MarketplaceHome = /** @class */ (function () {
     };
     MarketplaceHome = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-marketplace-home',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Register for ABALOBI Marketplace\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding id="page1">\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n  <form id="page-form1">\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n      <p id="header-text" style="color:#000000;">\n        Complete this form if you&#39;d like to be able to\n        <strong>\n          BUY seafood\n        </strong>\n        using the ABALOBI Marketplace app\n      </p>\n      <hr>\n\n      <p>\n        Thank you for your interest in sourcing traceable, storied seafood by empowered small-scale fishers!\n      </p>\n\n      <p>\n        Use of the Marketplace app is not (yet) open to the general public - our group of users is being grown with\n        hand-picked restaurants and chefs who understand and buy into what we\'re trying to achieve through ABALOBI.\n      </p>\n\n      <p>\n        If you feel that you fit the bill and are keen to become (or already are) an ambassador for traceable, storied\n        seafood by empowered small-scale fishers, then please register here and send a short motivation to\n        <a href="mailto:hello@abalobi.org">hello@abalobi.org</a> - we\'d love to hear more about your enterprise.\n      </p>\n    </div>\n\n\n\n    <ion-item-divider color="light" id="page-list-item-divider1">\n      Login Details\n    </ion-item-divider>\n\n    <ion-item id="page-input2">\n      <ion-label>\n        * Email\n      </ion-label>\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com" [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input3">\n      <ion-label>\n        * Password\n      </ion-label>\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input4">\n      <ion-label>\n        * Repeat Password\n      </ion-label>\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n    </ion-item>\n  </form>\n\n\n\n\n\n  <form id="page-form3">\n    <ion-item-divider color="light" id="page-list-item-divider3">\n      Your Details\n    </ion-item-divider>\n\n    <ion-item id="page-input8">\n      <ion-label>\n        * Name\n      </ion-label>\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input9">\n      <ion-label>\n        * Surname\n      </ion-label>\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input10">\n      <ion-label>\n        * Cell Number\n      </ion-label>\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>\n    </ion-item>\n  </form>\n\n\n\n\n  <form id="page-form5">\n    <ion-item-divider color="light" id="page-list-item-divider5">\n      Your Company\n    </ion-item-divider>\n\n    <ion-item id="page-input14">\n      <ion-label stacked>\n        * Name of establishment\n      </ion-label>\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input15">\n      <ion-label stacked>\n        * Company Name (for invoice)\n      </ion-label>\n      <ion-input [(ngModel)]="company_name" name="company_name" type="text" placeholder="The name of the company as shown on invoice"></ion-input>>\n    </ion-item>\n\n    <ion-item id="page-input16">\n      <ion-label stacked>\n        * VAT number\n      </ion-label>\n      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="The VAT number of the company"></ion-input>>\n    </ion-item>\n\n    <ion-item id="page-input17">\n      <ion-label stacked>\n        Address (mutiple lines allowed)\n      </ion-label>\n      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>>\n    </ion-item>\n\n    <ion-item id="page-input18">\n      <ion-label stacked>\n        Town/City\n      </ion-label>\n      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>>\n    </ion-item>\n\n    <ion-item id="page-input19">\n      <ion-label stacked>\n        Postal Code\n      </ion-label>\n      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>>\n    </ion-item>\n  </form>\n\n  <form id="page-form6">\n    <ion-item-divider color="light" id="page-list-item-divider6">\n      Social Media\n    </ion-item-divider>\n\n    <ion-item id="page-input20">\n      <ion-label stacked>\n        Instagram handle\n      </ion-label>\n      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>>\n    </ion-item>\n  </form>\n\n  <form id="page-form7">\n    <ion-item-divider color="light" id="page-list-item-divider7">\n      Notifications\n    </ion-item-divider>\n\n    <div>Invoices and QR codes are sent to you by e-mail. Please list any others who should receive these too (e.g.\n      finance department, floor manager etc.) The QR codes are for printing and displaying to restaurant patrons -\n      they scan these to view the HookToCook page for the seafood. New QR codes are provided with each purchase from\n      ABALOBI Marketplace.\n    </div>\n\n\n    <ion-item id="page-input21">\n      <ion-label stacked>\n        Also e-mail invoices and QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input22">\n      <ion-label stacked>\n        Also e-mail invoices and QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input23">\n      <ion-label stacked>\n        Also e-mail QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input24">\n      <ion-label stacked>\n        Also e-mail QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input25">\n      <ion-label stacked>\n        Also e-mail QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>\n    </ion-item>\n\n    <!-- TODO: Re-enable this again when the word comes -->\n    <!--<re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>-->\n    <div id="page-container1"></div>\n\n    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n      Register\n    </button>\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/
+            selector: 'page-marketplace-home',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Register for ABALOBI Marketplace\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n      <p id="header-text" style="color:#000000;">\n\n        Complete this form if you&#39;d like to be able to\n\n        <strong>\n\n          BUY seafood\n\n        </strong>\n\n        using the ABALOBI Marketplace app\n\n      </p>\n\n      <hr>\n\n\n\n      <p>\n\n        Thank you for your interest in sourcing traceable, storied seafood by empowered small-scale fishers!\n\n      </p>\n\n\n\n      <p>\n\n        Use of the Marketplace app is not (yet) open to the general public - our group of users is being grown with\n\n        hand-picked restaurants and chefs who understand and buy into what we\'re trying to achieve through ABALOBI.\n\n      </p>\n\n\n\n      <p>\n\n        If you feel that you fit the bill and are keen to become (or already are) an ambassador for traceable, storied\n\n        seafood by empowered small-scale fishers, then please register here and send a short motivation to\n\n        <a href="mailto:hello@abalobi.org">hello@abalobi.org</a> - we\'d love to hear more about your enterprise.\n\n      </p>\n\n    </div>\n\n\n\n\n\n\n\n    <ion-item-divider color="light" id="page-list-item-divider1">\n\n      Login Details\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input2">\n\n      <ion-label>\n\n        * Email\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input3">\n\n      <ion-label>\n\n        * Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input4">\n\n      <ion-label>\n\n        * Repeat Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n  </form>\n\n\n\n\n\n\n\n\n\n\n\n  <form id="page-form3">\n\n    <ion-item-divider color="light" id="page-list-item-divider3">\n\n      Your Details\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input8">\n\n      <ion-label>\n\n        * Name\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input9">\n\n      <ion-label>\n\n        * Surname\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input10">\n\n      <ion-label>\n\n        * Cell Number\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>\n\n    </ion-item>\n\n  </form>\n\n\n\n\n\n\n\n\n\n  <form id="page-form5">\n\n    <ion-item-divider color="light" id="page-list-item-divider5">\n\n      Your Company\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input14">\n\n      <ion-label stacked>\n\n        * Name of establishment\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input15">\n\n      <ion-label stacked>\n\n        * Company Name (for invoice)\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="company_name" name="company_name" type="text" placeholder="The name of the company as shown on invoice"></ion-input>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input16">\n\n      <ion-label stacked>\n\n        * VAT number\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="The VAT number of the company"></ion-input>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input17">\n\n      <ion-label stacked>\n\n        Address (mutiple lines allowed)\n\n      </ion-label>\n\n      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input18">\n\n      <ion-label stacked>\n\n        Town/City\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input19">\n\n      <ion-label stacked>\n\n        Postal Code\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>>\n\n    </ion-item>\n\n  </form>\n\n\n\n  <form id="page-form6">\n\n    <ion-item-divider color="light" id="page-list-item-divider6">\n\n      Social Media\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input20">\n\n      <ion-label stacked>\n\n        Instagram handle\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>>\n\n    </ion-item>\n\n  </form>\n\n\n\n  <form id="page-form7">\n\n    <ion-item-divider color="light" id="page-list-item-divider7">\n\n      Notifications\n\n    </ion-item-divider>\n\n\n\n    <div>Invoices and QR codes are sent to you by e-mail. Please list any others who should receive these too (e.g.\n\n      finance department, floor manager etc.) The QR codes are for printing and displaying to restaurant patrons -\n\n      they scan these to view the HookToCook page for the seafood. New QR codes are provided with each purchase from\n\n      ABALOBI Marketplace.\n\n    </div>\n\n\n\n\n\n    <ion-item id="page-input21">\n\n      <ion-label stacked>\n\n        Also e-mail invoices and QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input22">\n\n      <ion-label stacked>\n\n        Also e-mail invoices and QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input23">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input24">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input25">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <!-- TODO: Re-enable this again when the word comes -->\n\n    <!--<re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>-->\n\n    <div id="page-container1"></div>\n\n\n\n    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n\n      Register\n\n    </button>\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */],
@@ -1445,19 +1445,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_fisher_community_fisher_community__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_fisher_confirm_fisher_confirm__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_fisher_community_fisher_community__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_fisher_confirm_fisher_confirm__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_fisher_personal_fisher_personal__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_fisher_role_fisher_role__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_fisher_useterms_fisher_useterms__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fisher_register_success_fisher_register_success__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fisher_register_success_fisher_register_success__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fisher_not_unique_fisher_not_unique__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fisher_register_failure_fisher_register_failure__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_marketplace_home_marketplace_home__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_MarketplaceService__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_FisherService__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__classes_registree_class__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_after_register_after_register__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_after_register_after_register__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1515,8 +1515,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/after-register/after-register.module#AfterRegisterPageModule', name: 'AfterRegisterPage', segment: 'after-register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-community/fisher-community.module#FisherCommunityPageModule', name: 'FisherCommunityPage', segment: 'fisher-community', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/after-register/after-register.module#AfterRegisterPageModule', name: 'AfterRegisterPage', segment: 'after-register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-confirm/fisher-confirm.module#FisherConfirmPageModule', name: 'FisherConfirmPage', segment: 'fisher-confirm', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-not-unique/fisher-not-unique.module#FisherNotUniqueModule', name: 'FisherNotUniquePage', segment: 'fisher-not-unique', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
