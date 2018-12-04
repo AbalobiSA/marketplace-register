@@ -46,7 +46,7 @@ function getProvinceAbbrev(province) {
         case "Northern Cape": {
             return "NC";
         }
-        case "Seychelles":{
+        case "Seychelles": {
             return "SEY";
         }
         //add more cases as they arise
@@ -952,15 +952,15 @@ var map = {
 		5
 	],
 	"../pages/fisher-personal/fisher-personal.module": [
-		305,
+		307,
 		4
 	],
 	"../pages/fisher-register-failure/fisher-register-failure.module": [
-		306,
+		305,
 		3
 	],
 	"../pages/fisher-register-success/fisher-register-success.module": [
-		307,
+		306,
 		2
 	],
 	"../pages/fisher-role/fisher-role.module": [
@@ -1531,9 +1531,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/after-register/after-register.module#AfterRegisterPageModule', name: 'AfterRegisterPage', segment: 'after-register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-confirm/fisher-confirm.module#FisherConfirmPageModule', name: 'FisherConfirmPage', segment: 'fisher-confirm', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-not-unique/fisher-not-unique.module#FisherNotUniqueModule', name: 'FisherNotUniquePage', segment: 'fisher-not-unique', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-register-failure/fisher-register-failure.module#FisherRegisterFailurePageModule', name: 'FisherRegisterFailurePage', segment: 'fisher-register-failure', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-register-success/fisher-register-success.module#FisherRegisterSuccessPageModule', name: 'FisherRegisterSuccessPage', segment: 'fisher-register-success', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-role/fisher-role.module#FisherRolePageModule', name: 'FisherRolePage', segment: 'fisher-role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-useterms/fisher-useterms.module#FisherUsetermsPageModule', name: 'FisherUsetermsPage', segment: 'fisher-useterms', priority: 'low', defaultHistory: [] }
                     ]
