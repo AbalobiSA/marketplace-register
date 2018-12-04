@@ -26,12 +26,14 @@ function getProvinceAbbrev(province: string): string {
         case "Western Cape":{
             return "WC";
         }
-
         case "KwaZulu-Natal":{
             return "KZN";
         }
         case "Northern Cape":{
             return "NC";
+        }
+        case "Seychelles":{
+            return "SEY";
         }
 
         //add more cases as they arise
@@ -153,6 +155,15 @@ export class FisherCommunityPage {
         //TODO -- improve this to read these communities from a csv file/from an API call
         private list_of_communities = [
             "name_key,province,name_Eng,name_Afr,region",
+            "sey_mahe_anseauxpins,SEY,Mahé - Anse Aux Pins,Mahé - Anse Aux Pins,seychelles",
+            "sey_mahe_anseroyale,SEY,Mahé - Anse Royale,Mahé - Anse Royale,seychelles",
+            "sey_mahe_beauvallon,SEY,Mahé - Beau Vallon,Mahé - Beau Vallon,seychelles",
+            "sey_mahe_edenisland,SEY,Mahé - Roche Caiman (Eden Island),Mahé - Roche Caiman (Eden Island),seychelles",
+            "sey_mahe_grandanse,SEY,Mahé - Grand Anse,Mahé - Grand Anse,seychelles",
+            "sey_mahe_takamaka,SEY,Mahé - Takamaka,Mahé - Takamaka,seychelles",
+            "sey_mahe_victoria,SEY,Mahé - Victoria,Mahé - Victoria,seychelles",
+            "sey_ladigues,SEY,La Digues,La Digues,seychelles",
+            "sey_praslin,SEY,Praslin,Praslin,seychelles",
             "arniston,WC,Arniston,Waenhuiskrans,west_coast",
             "bellville,WC,Bellville,Bellville,west_coast",
             "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
