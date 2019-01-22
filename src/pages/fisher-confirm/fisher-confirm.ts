@@ -45,47 +45,42 @@ import {HttpClient} from "@angular/common/http";
 
     onFisherSubmit() {
 
-        //TODO - consider improving such that the pages persists the data in storage so user can come back and edit
-        // TODO - currently, if registration fails, user has to start all over again
+      //TODO - consider improving such that the pages persists the data in storage so user can come back and edit
+      // TODO - currently, if registration fails, user has to start all over again
 
-        // Validate captcha before continuing
-        this.validateCaptcha().then(result => {
-          //TODO - The loading controller works perfect but the the spinner is not showing
-          let reg = this.loadingCtrl.create({
-            spinner             : 'Show iOS',
-            content             : 'Registration in progress..',
-            dismissOnPageChange : true,
-            showBackdrop        : true
+      //TODO - The loading controller works perfect but the the spinner is not showing
+      let reg = this.loadingCtrl.create({
+        spinner             : 'Show iOS',
+        content             : 'Registration in progress..',
+        dismissOnPageChange : true,
+        showBackdrop        : true
 
-          });
+      });
 
-          reg.present();
+      reg.present();
 
-          this.fisher = this.fisherService.fisherBuild();
+      this.fisher = this.fisherService.fisherBuild();
 
-          this.fisherService.checkIfFisherAlreadyExists(this.fisher.id)//first promise check if the ID number has already been taken
-            .then(()=>{//ID is unique
-              //Go ahead and attempt to register unique fisher
-              //alert('ID number is unique');
-              this.fisherService.registerFisher(this.fisher)//attempts to register user
-                .then (()=> {
+      this.fisherService.checkIfFisherAlreadyExists(this.fisher.id)//first promise check if the ID number has already been taken
+        .then(()=>{//ID is unique
+          //Go ahead and attempt to register unique fisher
+          //alert('ID number is unique');
+          this.fisherService.registerFisher(this.fisher)//attempts to register user
+            .then (()=> {
 
-                  //alert('User registration successful');
-                  this.navController.push(FisherRegisterSuccessPage);
-                })
-                .catch( ()=>{//failure to register , but ID is unique
-                  //alert('User registration failed');
-                  this.navController.push(FisherRegisterFailurePage);
-
-                })
+              //alert('User registration successful');
+              this.navController.push(FisherRegisterSuccessPage);
             })
-            .catch(()=>{//ID number already taken
-              //.alert('ID number already exists');
-              this.navController.push(FisherNotUniquePage);
+            .catch( ()=>{//failure to register , but ID is unique
+              //alert('User registration failed');
+              this.navController.push(FisherRegisterFailurePage);
+
             })
-        }).catch(error => {
-            alert(error);
-        });
+        })
+        .catch(()=>{//ID number already taken
+          //.alert('ID number already exists');
+          this.navController.push(FisherNotUniquePage);
+        })
     }//end method onFisherSubmit
 
     captchaResolved(response: string): void {
