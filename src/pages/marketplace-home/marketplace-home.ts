@@ -118,7 +118,7 @@ export class MarketplaceHome {
           captchaResponse: this.captchaResponse
         };
 
-        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(() => {
+        this.http.post('http://server.abalobi-test.com:8080/api/users/recaptcha', data).toPromise().then(() => {
             resolve();
           },
           () => {

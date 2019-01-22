@@ -114,7 +114,7 @@ import {HttpClient} from "@angular/common/http";
         };
 
         console.log(`Validating captcha`);
-        this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(res => {
+        this.http.post('http://server.abalobi-test.com:8080/api/users/recaptcha', data).toPromise().then(res => {
             resolve();
           },
           error => {
