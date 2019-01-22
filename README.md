@@ -9,7 +9,27 @@ meant to be deployed as mobile apps, not as websites (this also means that there
 so please read this whole document as background before starting). New updates can now be deployed by simply pushing to the `deploy` branch, 
 Heroku tracks this branch and once it sees any changes it will update the deployed website automatically.
 
-## Deploying an Ionic app to Heroku
+## Deploying to AWS
+
+### 1. Download dependencies
+```bash
+npm install
+```
+
+### 2. Run cordova build
+```bash
+ionic cordova build browser
+```
+
+### 3. Upload to S3 Bucket
+upload `./platforms/browser/www/* ` to the root of the S3 Bucket
+
+## Todo
+
+- Fix splash screen
+- change build command to `ionic cordova build browser --prod`
+
+## **LEGACY**: Deploying an Ionic app to Heroku
 
 ### 1. Setting up a Node server
 Normally Ionic apps can be deployed in a browser by running `$ ionic serve`. This builds the Ionic app to the `/www` directory and then 
