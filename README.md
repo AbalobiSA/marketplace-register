@@ -31,6 +31,8 @@ upload `./platforms/browser/www/* ` to the root of the S3 Bucket
 
 ## **LEGACY**: Deploying an Ionic app to Heroku
 
+The final commit used on heroku has been tagged `heroku` with commit id `8db8a82ee18e5658a1173e8b612e5172e2054928`
+
 ### 1. Setting up a Node server
 Normally Ionic apps can be deployed in a browser by running `$ ionic serve`. This builds the Ionic app to the `/www` directory and then 
 automatically opens a localhost port through which the build is served. This is similar to the function performed by `ng serve` in Angular 
