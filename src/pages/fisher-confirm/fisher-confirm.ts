@@ -109,7 +109,7 @@ import {HttpClient} from "@angular/common/http";
         };
 
         console.log(`Validating captcha`);
-        this.http.post('http://server.abalobi-test.com/api/users/recaptcha', data).toPromise().then(res => {
+        this.http.post('https://server.abalobi.org/api/users/recaptcha', data).toPromise().then(res => {
             resolve();
           },
           error => {
