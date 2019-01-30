@@ -8,13 +8,13 @@ import {PersonalInfoClass}      from "../classes/personal_info_class";
 import {CommunityInfoClass}     from "../classes/community_info_class";
 
 import{Fisher} from "../classes/fisher-class";
-import {Secrets} from "../classes/secrets";
+import {BaseUrls} from "../classes/base_urls";
 
 
 @Injectable()
 export class FisherService {
 
-    secrets:Secrets = new Secrets();
+    urls: BaseUrls = new BaseUrls();
 
 
     constructor(private http: HttpClient, public registree: Registree ) {
@@ -132,7 +132,7 @@ export class FisherService {
   checkIfFisherAlreadyExists(ID: string): Promise<any> {
 
       return new Promise((resolve, reject) => {
-              this.http.get(this.secrets.fisherCheckUserIDurl + ID).toPromise()
+              this.http.get(this.urls.fisherCheckUserIDurl + ID).toPromise()
                   .then(() => {
                       reject();
                   })
@@ -146,7 +146,7 @@ export class FisherService {
   //Go ahead and actually try to register the fisher
   registerFisher(fisher): Promise<any> {
         //console.log("Posting fisher registration")
-      return this.http.post(this.secrets.fisherAddUserURL, fisher).toPromise();
+      return this.http.post(this.urls.fisherAddUserURL, fisher).toPromise();
   }
 
 }//end class

@@ -1,22 +1,22 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import{Secrets} from "../classes/secrets";
+import{BaseUrls} from "../classes/base_urls";
 
 @Injectable()
 export class MarketplaceService {
 
-secrets: Secrets = new Secrets();
+urls: BaseUrls = new BaseUrls();
 
   constructor(private http: HttpClient) {
 
   }
 
   checkIfUserAlreadyExists(username: string): Promise<any> {
-    return this.http.get(this.secrets.marketplaceCheckUserURL + username).toPromise();
+    return this.http.get(this.urls.marketplaceCheckUserURL + username).toPromise();
   }
 
   registerUser(user): Promise<any> {
-    return this.http.post(this.secrets.marketplaceAddUserURL, user).toPromise();
+    return this.http.post(this.urls.marketplaceAddUserURL, user).toPromise();
   }
 }
 
