@@ -18,8 +18,12 @@ npm install
 
 ### 2. Run cordova build
 ```bash
-ionic cordova build browser
+ionic cordova build browser --prod
 ```
+
+Please ensure that it can be built with the "--prod" flag before deploying to S3.  If any errors occur on build be sure to fix those.
+
+One possible error has been described on https://forum.ionicframework.com/t/ionic-build-prod-error-type-in-is-part-of-the-declarations-of-2-modules/87350/9
 
 ### 3. Upload to S3 Bucket
 upload `./platforms/browser/www/* ` to the root of the S3 Bucket
@@ -27,7 +31,6 @@ upload `./platforms/browser/www/* ` to the root of the S3 Bucket
 ## Todo
 
 - Fix splash screen
-- change build command to `ionic cordova build browser --prod`
 
 ## **LEGACY**: Deploying an Ionic app to Heroku
 
