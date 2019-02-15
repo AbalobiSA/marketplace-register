@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
 
+@IonicPage()
 @Component({
   selector: 'page-fisher-register-failure',
   templateUrl: 'fisher-register-failure.html',

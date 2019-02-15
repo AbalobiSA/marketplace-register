@@ -28,7 +28,6 @@ import {MarketplaceService}     from "../providers/MarketplaceService";
 import{FisherService}           from "../providers/FisherService";
 import{Registree}               from "../classes/registree_class";
 import {AfterRegisterPage} from "../pages/after-register/after-register";
-import {confirmEqualValidatorsDirective} from "../classes/confirm-password-validator-directive";
 
 
 
@@ -46,8 +45,7 @@ import {confirmEqualValidatorsDirective} from "../classes/confirm-password-valid
       FisherNotUniquePage,
       FisherRegisterFailurePage,
     MarketplaceHome,
-    AfterRegisterPage,
-    confirmEqualValidatorsDirective
+    AfterRegisterPage
   ],
   imports: [
     BrowserModule,

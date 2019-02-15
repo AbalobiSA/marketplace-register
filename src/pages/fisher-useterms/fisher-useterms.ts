@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 //Imported page classes
 import {FisherPersonalPage} from "../fisher-personal/fisher-personal";
@@ -11,6 +11,7 @@ import{FisherService} from "../../providers/FisherService";
 import {FisherUsetermsClass} from "../../classes/fisher-useterms_class";
 import {FormBuilder, Validators} from "@angular/forms";
 
+@IonicPage()
 @Component({
   selector: 'page-fisher-useterms',
   templateUrl: 'fisher-useterms.html',

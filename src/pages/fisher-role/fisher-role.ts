@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FisherUsetermsPage} from "../fisher-useterms/fisher-useterms";
 //Imported service
 import{FisherService} from "../../providers/FisherService";
 import{FormBuilder, Validators} from "@angular/forms";
 
 
+@IonicPage()
 @Component({
   selector: 'page-fisher-role',
   templateUrl: 'fisher-role.html',
