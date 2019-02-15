@@ -28,6 +28,16 @@ import {MarketplaceService}     from "../providers/MarketplaceService";
 import{FisherService}           from "../providers/FisherService";
 import{Registree}               from "../classes/registree_class";
 import {AfterRegisterPage} from "../pages/after-register/after-register";
+import {AfterRegisterPageModule} from "../pages/after-register/after-register.module";
+import {FisherCommunityPageModule} from "../pages/fisher-community/fisher-community.module";
+import {FisherConfirmPageModule} from "../pages/fisher-confirm/fisher-confirm.module";
+import {FisherNotUniqueModule} from "../pages/fisher-not-unique/fisher-not-unique.module";
+import {FisherPersonalPageModule} from "../pages/fisher-personal/fisher-personal.module";
+import {FisherRegisterFailurePageModule} from "../pages/fisher-register-failure/fisher-register-failure.module";
+import {FisherRegisterSuccessPageModule} from "../pages/fisher-register-success/fisher-register-success.module";
+import {FisherRolePageModule} from "../pages/fisher-role/fisher-role.module";
+import {FisherUsetermsPageModule} from "../pages/fisher-useterms/fisher-useterms.module";
+import {confirmEqualValidatorsDirective} from "../classes/confirm-password-validator-directive";
 
 
 
@@ -36,37 +46,29 @@ import {AfterRegisterPage} from "../pages/after-register/after-register";
   declarations: [
     MyApp,
     HomePage,
-    FisherCommunityPage,
-    FisherConfirmPage,
-    FisherPersonalPage,
-    FisherRolePage,
-    FisherUsetermsPage,
-      FisherRegisterSuccessPage,
-      FisherNotUniquePage,
-      FisherRegisterFailurePage,
     MarketplaceHome,
-    AfterRegisterPage
+    confirmEqualValidatorsDirective
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    RecaptchaModule.forRoot()
+    RecaptchaModule.forRoot(),
+    AfterRegisterPageModule,
+    FisherCommunityPageModule,
+    FisherConfirmPageModule,
+    FisherNotUniqueModule,
+    FisherPersonalPageModule,
+    FisherRegisterFailurePageModule,
+    FisherRegisterSuccessPageModule,
+    FisherRolePageModule,
+    FisherUsetermsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    FisherCommunityPage,
-    FisherConfirmPage,
-    FisherPersonalPage,
-    FisherRolePage,
-    FisherUsetermsPage,
-      FisherRegisterSuccessPage,
-      FisherNotUniquePage,
-      FisherRegisterFailurePage,
-    MarketplaceHome,
-    AfterRegisterPage
+    MarketplaceHome
   ],
   providers: [
     StatusBar,
