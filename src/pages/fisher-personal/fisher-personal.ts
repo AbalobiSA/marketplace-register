@@ -1,14 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormBuilder, FormGroup, Validators, FormControl, AbstractControl} from "@angular/forms";
-
-//Imported page classes
+import {FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {FisherCommunityPage}  from "../fisher-community/fisher-community";
-
-//Imported services
 import{FisherService}         from "../../providers/FisherService";
-
-//Imported non-page classes
 import {PersonalInfoClass}    from "../../classes/personal_info_class";
 
 
@@ -107,53 +101,53 @@ function goodPasswords(passwordKey: string, confirmPasswordKey: string, nameKey:
 }
 
 
-function hasUpperCase(password: string): boolean {//check if the given string has at least one Uppercase Letter
-    if(password.length < 1){//safety check string is not empty
-        return false;
-    }
-
-    else{
-            for(let i = 0;i<password.length;i++){
-                let char = password.charAt(i);
-                if(/[A-Z]/.test(char)){
-                    return true;
-                }
-            }
-        return false;
-    }
-}
-
-function hasLowerCase(password: string): boolean {//return true if a Lowercase has been found
-    if(password.length < 1){//safety check string is not empty
-        return false;
-    }
-
-    else {
-        for (let i = 0; i < password.length; i++) {
-            let char = password.charAt(i);
-            if(/[a-z]/.test(char)){
-                return true;
-            }
-        }
-        return false;
-    }
-}
-
-function hasNum(password: string): boolean {//return true if a digit has been found
-    if(password.length < 1){//safety check string is not empty
-        return false;
-    }
-
-    else {
-        for (let i = 0; i < password.length; i++) {
-            let char = password.charAt(i);
-            if(/^\d+$/.test(char)){
-                return true;
-            }
-        }
-        return false;
-    }
-}
+// function hasUpperCase(password: string): boolean {//check if the given string has at least one Uppercase Letter
+//     if(password.length < 1){//safety check string is not empty
+//         return false;
+//     }
+//
+//     else{
+//             for(let i = 0;i<password.length;i++){
+//                 let char = password.charAt(i);
+//                 if(/[A-Z]/.test(char)){
+//                     return true;
+//                 }
+//             }
+//         return false;
+//     }
+// }
+//
+// function hasLowerCase(password: string): boolean {//return true if a Lowercase has been found
+//     if(password.length < 1){//safety check string is not empty
+//         return false;
+//     }
+//
+//     else {
+//         for (let i = 0; i < password.length; i++) {
+//             let char = password.charAt(i);
+//             if(/[a-z]/.test(char)){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
+//
+// function hasNum(password: string): boolean {//return true if a digit has been found
+//     if(password.length < 1){//safety check string is not empty
+//         return false;
+//     }
+//
+//     else {
+//         for (let i = 0; i < password.length; i++) {
+//             let char = password.charAt(i);
+//             if(/^\d+$/.test(char)){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
 
 
 

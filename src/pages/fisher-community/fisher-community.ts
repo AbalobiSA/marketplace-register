@@ -1,22 +1,16 @@
-import {Component, Injectable} from '@angular/core';
+import {Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-//Imported page classes
 import {FisherConfirmPage} from "../fisher-confirm/fisher-confirm";
-
-//Imported services
 import {FisherService} from "../../providers/FisherService";
-
-//Imported non-page classes
 import{CommunityInfoClass} from "../../classes/community_info_class";
 import {CommunityClass} from "../../classes/community_class";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 
 
-function isInThisProvince(comms: CommunityClass, provinceFull : string){
-    return  this.province_abbrev == getProvinceAbbrev(provinceFull);
-}
+// function isInThisProvince(comms: CommunityClass, provinceFull : string){
+//     return  this.province_abbrev == getProvinceAbbrev(provinceFull);
+// }
 
 //TODO- provinces would have to be added as they arise
 function getProvinceAbbrev(province: string): string {
