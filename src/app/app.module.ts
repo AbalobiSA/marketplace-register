@@ -12,14 +12,6 @@ import { MyApp }                from './app.component';
 //Common landing page
 import { HomePage }               from '../pages/home/home';
 //Fisher registration pages
-import { FisherCommunityPage }    from '../pages/fisher-community/fisher-community';
-import { FisherConfirmPage }      from '../pages/fisher-confirm/fisher-confirm';
-import { FisherPersonalPage }     from '../pages/fisher-personal/fisher-personal';
-import { FisherRolePage }         from '../pages/fisher-role/fisher-role';
-import { FisherUsetermsPage }     from '../pages/fisher-useterms/fisher-useterms';
-import{FisherRegisterSuccessPage}  from "../pages/fisher-register-success/fisher-register-success";
-import{FisherNotUniquePage}        from "../pages/fisher-not-unique/fisher-not-unique";
-import {FisherRegisterFailurePage} from "../pages/fisher-register-failure/fisher-register-failure";
 //Marketplace registration pages
 import { MarketplaceHome }      from '../pages/marketplace-home/marketplace-home';
 
@@ -27,7 +19,6 @@ import { MarketplaceHome }      from '../pages/marketplace-home/marketplace-home
 import {MarketplaceService}     from "../providers/MarketplaceService";
 import{FisherService}           from "../providers/FisherService";
 import{Registree}               from "../classes/registree_class";
-import {AfterRegisterPage} from "../pages/after-register/after-register";
 import {AfterRegisterPageModule} from "../pages/after-register/after-register.module";
 import {FisherCommunityPageModule} from "../pages/fisher-community/fisher-community.module";
 import {FisherConfirmPageModule} from "../pages/fisher-confirm/fisher-confirm.module";
