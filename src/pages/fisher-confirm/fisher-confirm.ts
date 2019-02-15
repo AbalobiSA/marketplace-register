@@ -1,7 +1,5 @@
 import {Component, NgZone} from '@angular/core';
-import { IonicPage, NavController, NavParams,LoadingController } from 'ionic-angular';
-
-//Imported services
+import { NavController, NavParams,LoadingController } from 'ionic-angular';
 import{FisherService} from "../../providers/FisherService";
 import {PersonalInfoClass} from "../../classes/personal_info_class";
 import{Fisher} from "../../classes/fisher-class";
@@ -11,7 +9,6 @@ import {FisherRegisterFailurePage} from "../fisher-register-failure/fisher-regis
 import {HttpClient} from "@angular/common/http";
 
 
-@IonicPage()
     @Component({
               selector: 'page-fisher-confirm',
               templateUrl: 'fisher-confirm.html',

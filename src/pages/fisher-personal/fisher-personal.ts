@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {FisherCommunityPage}  from "../fisher-community/fisher-community";
 import{FisherService}         from "../../providers/FisherService";
@@ -152,7 +152,6 @@ function goodPasswords(passwordKey: string, confirmPasswordKey: string, nameKey:
 
 
 
-@IonicPage()
 @Component({
       selector: 'page-fisher-personal',
       templateUrl: 'fisher-personal.html',

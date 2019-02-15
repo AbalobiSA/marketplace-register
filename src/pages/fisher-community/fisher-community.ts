@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {FisherConfirmPage} from "../fisher-confirm/fisher-confirm";
 import {FisherService} from "../../providers/FisherService";
 import{CommunityInfoClass} from "../../classes/community_info_class";
@@ -55,7 +55,6 @@ function customCommEntered(selectedCommKey: string, customCommKey: string) {
 }
 
 
-@IonicPage()
 @Component({
         selector: 'page-fisher-community',
         templateUrl: 'fisher-community.html',
