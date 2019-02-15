@@ -7,7 +7,8 @@
 </ion-header>
 
 <ion-content padding id="page1">
-  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png"
+       style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
 
   <form id="page-form1">
     <div id="page-markdown1" class="show-list-numbers-and-dots">
@@ -37,7 +38,6 @@
     </div>
 
 
-
     <ion-item-divider color="light" id="page-list-item-divider1">
       Login Details
     </ion-item-divider>
@@ -46,7 +46,8 @@
       <ion-label>
         * Email
       </ion-label>
-      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com" [email]="true"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"
+                 [email]="true"></ion-input>
     </ion-item>
 
     <ion-item id="page-input3">
@@ -63,9 +64,6 @@
       <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>
     </ion-item>
   </form>
-
-
-
 
 
   <form id="page-form3">
@@ -96,8 +94,6 @@
   </form>
 
 
-
-
   <form id="page-form5">
     <ion-item-divider color="light" id="page-list-item-divider5">
       Your Company
@@ -107,42 +103,49 @@
       <ion-label stacked>
         * Name of establishment
       </ion-label>
-      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>
+      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text"
+                 placeholder="The name shown to the client"></ion-input>
     </ion-item>
 
     <ion-item id="page-input15">
       <ion-label stacked>
         * Company Name (for invoice)
       </ion-label>
-      <ion-input [(ngModel)]="company_name" name="company_name" type="text" placeholder="The name of the company as shown on invoice"></ion-input>>
+      <ion-input [(ngModel)]="company_name" name="company_name" type="text"
+                 placeholder="The name of the company as shown on invoice"></ion-input>
+      >
     </ion-item>
 
     <ion-item id="page-input16">
       <ion-label stacked>
         VAT number of Company
       </ion-label>
-      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="Optional"></ion-input>>
+      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="Optional"></ion-input>
+      >
     </ion-item>
 
     <ion-item id="page-input17">
       <ion-label stacked>
         Address (mutiple lines allowed)
       </ion-label>
-      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>>
+      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>
+      >
     </ion-item>
 
     <ion-item id="page-input18">
       <ion-label stacked>
         Town/City
       </ion-label>
-      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>>
+      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>
+      >
     </ion-item>
 
     <ion-item id="page-input19">
       <ion-label stacked>
         Postal Code
       </ion-label>
-      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>>
+      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>
+      >
     </ion-item>
   </form>
 
@@ -155,7 +158,8 @@
       <ion-label stacked>
         Instagram handle
       </ion-label>
-      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>>
+      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>
+      >
     </ion-item>
   </form>
 
@@ -175,35 +179,40 @@
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>
+      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional"
+                 [email]="true"></ion-input>
     </ion-item>
 
     <ion-item id="page-input22">
       <ion-label stacked>
         Also e-mail invoices and QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>
+      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional"
+                 [email]="true"></ion-input>
     </ion-item>
 
     <ion-item id="page-input23">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>
+      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional"
+                 [email]="true"></ion-input>
     </ion-item>
 
     <ion-item id="page-input24">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>
+      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional"
+                 [email]="true"></ion-input>
     </ion-item>
 
     <ion-item id="page-input25">
       <ion-label stacked>
         Also e-mail QR codes to
       </ion-label>
-      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>
+      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional"
+                 [email]="true"></ion-input>
     </ion-item>
 
     <!-- TODO: Re-enable this again when the word comes -->

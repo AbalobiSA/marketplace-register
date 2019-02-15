@@ -5,10 +5,10 @@
  * Ionic pages and navigation.
  */
 
-import {Component, NgZone } from '@angular/core';
+import {Component, NgZone} from '@angular/core';
 import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
-import {HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {AfterRegisterPage} from "../after-register/after-register";
 
 @Component({
@@ -59,8 +59,8 @@ export class MarketplaceHome {
 
       // TODO: Re-enable this again when the time comes
       // validate the captcha
-    //   return this.validateCaptcha();
-    // }).then(() => {
+      //   return this.validateCaptcha();
+      // }).then(() => {
 
       // after validation -> attempt to register the user
       this.showLoader('Submitting your details');
@@ -196,7 +196,7 @@ export class MarketplaceHome {
       this.trimFields();
 
       // check that all fields are filled in
-      if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name)) {
+      if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name)) {
         reject("Please fill in all required fields (marked with an '*')");
       }
 
@@ -236,18 +236,18 @@ export class MarketplaceHome {
       }
 
       // check that the passwords match
-      if(this.password !== this.repeat_password) {
+      if (this.password !== this.repeat_password) {
         reject("The passwords you have entered do not match");
       }
 
       // rudimentarily check that the cell number is valid
-      if(this.cell_number.length !== 10 || isNaN(parseFloat(this.cell_number))) {
+      if (this.cell_number.length !== 10 || isNaN(parseFloat(this.cell_number))) {
         reject("Please enter a valid phone number. Phone numbers should contain 10 digits. Only South African numbers are allowed at present. Example: 0821234567");
       }
 
       // check that the user does not already exist
       this.marketplaceService.checkIfUserAlreadyExists(this.email).then((user) => {
-        if(user[0]) {
+        if (user[0]) {
           reject("This username is already taken");
         } else {
           resolve();
@@ -275,9 +275,9 @@ export class MarketplaceHome {
       password: this.password,
       firstname: this.name,
       lastname: this.surname,
-      h2c_buyer_company : this.name_of_establishment,
+      h2c_buyer_company: this.name_of_establishment,
       // buyer_details : this.company_details.split("\n"),
-      buyer_details : {
+      buyer_details: {
         company_name: this.company_name,
         vat_number: this.vat_number,
         address: this.address,
