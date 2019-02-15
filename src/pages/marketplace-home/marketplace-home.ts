@@ -196,7 +196,7 @@ export class MarketplaceHome {
       this.trimFields();
 
       // check that all fields are filled in
-      if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && this.vat_number)) {
+      if(!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name)) {
         reject("Please fill in all required fields (marked with an '*')");
       }
 
@@ -265,6 +265,10 @@ export class MarketplaceHome {
 
   // attempts to register the user on the marketplace
   register() {
+    console.log(`Register clicked: VAT number = ${this.vat_number}`);
+    if (!this.vat_number) {
+      this.vat_number = '-';
+    }
 
     const user = {
       username: this.email,
