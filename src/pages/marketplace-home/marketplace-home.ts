@@ -37,10 +37,15 @@ export class MarketplaceHome {
   city: string;
   postal_code: string;
   instagram_handle: string;
+  location_address: string;
+  location_city: string;
+  location_postal_code: string;
 
   // loading progress dialog
   loading: any;
   loaderShowing = false;
+
+  matchingAddresses = false;
 
   private captchaPassed: boolean = false;
   private captchaResponse: string;
@@ -90,6 +95,9 @@ export class MarketplaceHome {
       this.city = null;
       this.postal_code = null;
       this.instagram_handle = null;
+      this.location_address = null;
+      this.location_city = null;
+      this.location_postal_code = null;
 
       // navigate to the successful sign up page
       this.navCtrl.push(AfterRegisterPage);
@@ -270,6 +278,12 @@ export class MarketplaceHome {
       this.vat_number = '-';
     }
 
+    if (this.matchingAddresses) {
+      this.location_address = this.address;
+      this.location_city = this.city;
+      this.location_postal_code = this.postal_code;
+    }
+
     const user = {
       username: this.email,
       password: this.password,
@@ -295,6 +309,13 @@ export class MarketplaceHome {
         extra_qr_1: this.extra_email_3,
         extra_qr_2: this.extra_email_4,
         extra_qr_3: this.extra_email_5
+      },
+      location: {
+        lat: null,
+        lon: null,
+        loc_address: this.location_address,
+        loc_city: this.location_city,
+        loc_postal_code: this.location_postal_code
       }
     };
 
