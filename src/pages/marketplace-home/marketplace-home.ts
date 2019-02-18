@@ -42,6 +42,8 @@ export class MarketplaceHome {
   loading: any;
   loaderShowing = false;
 
+  matchingAddresses = false;
+
   private captchaPassed: boolean = false;
   private captchaResponse: string;
 
