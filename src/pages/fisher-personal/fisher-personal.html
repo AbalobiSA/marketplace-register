@@ -52,20 +52,20 @@
 
 
             <ion-item>
-                    <ion-label stacked>* Gender (Required)
+                    <ion-label stacked>Gender
                     </ion-label>
                         <ion-select formControlName="gender" (ionChange)=" genderChanged()">
                                   <ion-option value = "male">Male</ion-option>
                                   <ion-option value = "female">Female</ion-option>
                         </ion-select>
             </ion-item>
-            <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.gender" >
-                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get('gender').hasError(validation.type) && (personalForm.get('gender').dirty || personalForm.get('gender').touched)">
-                                    {{ validation.message }}
-                            </div>
-                    </ng-container>
-            </div>
+            <!--<div class="validation-errors">-->
+                    <!--<ng-container *ngFor="let validation of validation_messages.gender" >-->
+                            <!--<div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get('gender').hasError(validation.type) && (personalForm.get('gender').dirty || personalForm.get('gender').touched)">-->
+                                    <!--{{ validation.message }}-->
+                            <!--</div>-->
+                    <!--</ng-container>-->
+            <!--</div>-->
 
 
             <ion-item>

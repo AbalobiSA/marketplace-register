@@ -175,9 +175,9 @@ export class FisherPersonalPage {
                 {type: 'required', message: 'Nickame is required.'}
             ],
 
-            'gender': [
-                {type: 'required', message: 'Gender is required.'}
-            ],
+            // 'gender': [
+            //     {type: 'required', message: 'Gender is required.'}
+            // ],
 
             'ID': [
                 {type: 'required',  message: 'ID is required.'},
@@ -212,7 +212,7 @@ export class FisherPersonalPage {
                         "surname":  ['', Validators.required],
                         "name":     ['', Validators.required],
                         "nickname": ['', Validators.required],
-                        "gender":   ['', Validators.required],
+                        "gender":   ['', ],
                         "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(13), Validators.maxLength(13)])],
                         "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(10), Validators.maxLength(10)])],
                         "password1":['', Validators.required],

@@ -1,16 +1,202 @@
-webpackJsonp([9],{
+webpackJsonp([0],{
 
-/***/ 104:
+/***/ 116:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 116;
+
+/***/ }),
+
+/***/ 160:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/after-register/after-register.module": [
+		161
+	],
+	"../pages/fisher-community/fisher-community.module": [
+		163
+	],
+	"../pages/fisher-confirm/fisher-confirm.module": [
+		177
+	],
+	"../pages/fisher-not-unique/fisher-not-unique.module": [
+		178
+	],
+	"../pages/fisher-personal/fisher-personal.module": [
+		179
+	],
+	"../pages/fisher-register-failure/fisher-register-failure.module": [
+		180
+	],
+	"../pages/fisher-register-success/fisher-register-success.module": [
+		181
+	],
+	"../pages/fisher-role/fisher-role.module": [
+		182
+	],
+	"../pages/fisher-useterms/fisher-useterms.module": [
+		183
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 160;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 161:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AfterRegisterPageModule", function() { return AfterRegisterPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__after_register__ = __webpack_require__(162);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AfterRegisterPageModule = /** @class */ (function () {
+    function AfterRegisterPageModule() {
+    }
+    AfterRegisterPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__after_register__["a" /* AfterRegisterPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__after_register__["a" /* AfterRegisterPage */]),
+            ],
+        })
+    ], AfterRegisterPageModule);
+    return AfterRegisterPageModule;
+}());
+
+//# sourceMappingURL=after-register.module.js.map
+
+/***/ }),
+
+/***/ 162:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterRegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AfterRegisterPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AfterRegisterPage = /** @class */ (function () {
+    function AfterRegisterPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    AfterRegisterPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AfterRegisterPage');
+    };
+    AfterRegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-after-register',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/'<!--\n\n  Generated template for the AfterRegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registration successful</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <p>Thank you for registering for ABALOBI Marketplace.</p>\n\n  <p><strong>Note that you can\'t login yet - a human needs to approve your application.</strong></p>\n\n  <p>Please watch your e-mail for further details.</p>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], AfterRegisterPage);
+    return AfterRegisterPage;
+}());
+
+//# sourceMappingURL=after-register.js.map
+
+/***/ }),
+
+/***/ 163:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherCommunityPageModule", function() { return FisherCommunityPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_community__ = __webpack_require__(164);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherCommunityPageModule = /** @class */ (function () {
+    function FisherCommunityPageModule() {
+    }
+    FisherCommunityPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_community__["a" /* FisherCommunityPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_community__["a" /* FisherCommunityPage */]),
+            ],
+        })
+    ], FisherCommunityPageModule);
+    return FisherCommunityPageModule;
+}());
+
+//# sourceMappingURL=fisher-community.module.js.map
+
+/***/ }),
+
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherCommunityPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_confirm_fisher_confirm__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_community_class__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_community_class__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -23,17 +209,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-//Imported page classes
-
-//Imported services
-
-//Imported non-page classes
 
 
 
-function isInThisProvince(comms, provinceFull) {
-    return this.province_abbrev == getProvinceAbbrev(provinceFull);
-}
+
+
+// function isInThisProvince(comms: CommunityClass, provinceFull : string){
+//     return  this.province_abbrev == getProvinceAbbrev(provinceFull);
+// }
 //TODO- provinces would have to be added as they arise
 function getProvinceAbbrev(province) {
     switch (province) {
@@ -134,8 +317,8 @@ var FisherCommunityPage = /** @class */ (function () {
             "yzerfontein,WC,Yzerfontein,Yzerfontein,west_coast"
         ];
         this.communityForm = this.formBuilder.group({
-            "province": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* Validators */].required],
-            "community": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* Validators */].required],
+            "province": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* Validators */].required],
+            "community": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* Validators */].required],
             "custom": [null, null],
         }, { validator: customCommEntered('community', 'custom') });
         //construct the list of all communities upon and creation instantiate once
@@ -211,18 +394,18 @@ var FisherCommunityPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 105:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherConfirmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_FisherService__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_personal_info_class__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fisher_not_unique_fisher_not_unique__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fisher_register_failure_fisher_register_failure__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_personal_info_class__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fisher_not_unique_fisher_not_unique__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fisher_register_failure_fisher_register_failure__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -266,37 +449,32 @@ var FisherConfirmPage = /** @class */ (function () {
         //TODO - consider improving such that the pages persists the data in storage so user can come back and edit
         // TODO - currently, if registration fails, user has to start all over again
         var _this = this;
-        // Validate captcha before continuing
-        this.validateCaptcha().then(function (result) {
-            //TODO - The loading controller works perfect but the the spinner is not showing
-            var reg = _this.loadingCtrl.create({
-                spinner: 'Show iOS',
-                content: 'Registration in progress..',
-                dismissOnPageChange: true,
-                showBackdrop: true
-            });
-            reg.present();
-            _this.fisher = _this.fisherService.fisherBuild();
-            _this.fisherService.checkIfFisherAlreadyExists(_this.fisher.id) //first promise check if the ID number has already been taken
+        //TODO - The loading controller works perfect but the the spinner is not showing
+        var reg = this.loadingCtrl.create({
+            spinner: 'Show iOS',
+            content: 'Registration in progress..',
+            dismissOnPageChange: true,
+            showBackdrop: true
+        });
+        reg.present();
+        this.fisher = this.fisherService.fisherBuild();
+        this.fisherService.checkIfFisherAlreadyExists(this.fisher.id) //first promise check if the ID number has already been taken
+            .then(function () {
+            //Go ahead and attempt to register unique fisher
+            //alert('ID number is unique');
+            _this.fisherService.registerFisher(_this.fisher) //attempts to register user
                 .then(function () {
-                //Go ahead and attempt to register unique fisher
-                //alert('ID number is unique');
-                _this.fisherService.registerFisher(_this.fisher) //attempts to register user
-                    .then(function () {
-                    //alert('User registration successful');
-                    _this.navController.push(__WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__["a" /* FisherRegisterSuccessPage */]);
-                })
-                    .catch(function () {
-                    //alert('User registration failed');
-                    _this.navController.push(__WEBPACK_IMPORTED_MODULE_6__fisher_register_failure_fisher_register_failure__["a" /* FisherRegisterFailurePage */]);
-                });
+                //alert('User registration successful');
+                _this.navController.push(__WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__["a" /* FisherRegisterSuccessPage */]);
             })
                 .catch(function () {
-                //.alert('ID number already exists');
-                _this.navController.push(__WEBPACK_IMPORTED_MODULE_5__fisher_not_unique_fisher_not_unique__["a" /* FisherNotUniquePage */]);
+                //alert('User registration failed');
+                _this.navController.push(__WEBPACK_IMPORTED_MODULE_6__fisher_register_failure_fisher_register_failure__["a" /* FisherRegisterFailurePage */]);
             });
-        }).catch(function (error) {
-            alert(error);
+        })
+            .catch(function () {
+            //.alert('ID number already exists');
+            _this.navController.push(__WEBPACK_IMPORTED_MODULE_5__fisher_not_unique_fisher_not_unique__["a" /* FisherNotUniquePage */]);
         });
     }; //end method onFisherSubmit
     FisherConfirmPage.prototype.captchaResolved = function (response) {
@@ -325,7 +503,7 @@ var FisherConfirmPage = /** @class */ (function () {
                     captchaResponse: _this.captchaResponse
                 };
                 console.log("Validating captcha");
-                _this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(function (res) {
+                _this.http.post('https://server.abalobi.org/api/users/recaptcha', data).toPromise().then(function (res) {
                     resolve();
                 }, function (error) {
                     console.log("Got error");
@@ -336,7 +514,7 @@ var FisherConfirmPage = /** @class */ (function () {
     };
     FisherConfirmPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-fisher-confirm',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-confirm\fisher-confirm.html"*/'<!--\n\n  Generated template for the FisherConfirmPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n          <ion-navbar>\n\n                  <ion-title>Abalobi Register</ion-title>\n\n          </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding title="Abalobi Register-confirm" id="fisher-register-confirm">\n\n\n\n          <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n\n                    If everything is correct please press the Register button below. Otherwise please go back and correct the info.\n\n          </p>\n\n\n\n          <form text-wrap>\n\n                    <ion-item>\n\n                          <ion-label>Name: {{confirm_info.personal_firstname}}</ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>Surname: {{confirm_info.personal_surname}}</ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>ID Number: {{confirm_info.personal_IDnum}} </ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>Cell Number:{{confirm_info.personal_cellNo}} </ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n            <re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>\n\n\n\n              <button text-wrap="true" ion-button full  (click)="onFisherSubmit()">Register</button>\n\n          </form>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-confirm\fisher-confirm.html"*/,
+            selector: 'page-fisher-confirm',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-confirm\fisher-confirm.html"*/'<!--\n\n  Generated template for the FisherConfirmPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n          <ion-navbar>\n\n                  <ion-title>Abalobi Register</ion-title>\n\n          </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding title="Abalobi Register-confirm" id="fisher-register-confirm">\n\n\n\n          <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n\n                    If everything is correct please press the Register button below. Otherwise please go back and correct the info.\n\n          </p>\n\n\n\n          <form text-wrap>\n\n                    <ion-item>\n\n                          <ion-label>Name: {{confirm_info.personal_firstname}}</ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>Surname: {{confirm_info.personal_surname}}</ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>ID Number: {{confirm_info.personal_IDnum}} </ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>Cell Number:{{confirm_info.personal_cellNo}} </ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n              <button text-wrap="true" ion-button full  (click)="onFisherSubmit()">Register</button>\n\n          </form>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-confirm\fisher-confirm.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -352,13 +530,109 @@ var FisherConfirmPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
+/***/ 166:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Registree; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var Registree = /** @class */ (function () {
+    function Registree() {
+        //Role details
+        this.role = "";
+        //Terms of use details
+        this.terms_agreed = false;
+        this.assistant_agreed = false;
+        this.DAFF_agreed = false;
+        //Personal details
+        this.surname = "";
+        this.firstname = "";
+        this.nickname = "";
+        this.gender = "";
+        this.IDnum = "";
+        this.cellNo = "";
+        this.password = "";
+        //Community details
+        this.province = "";
+        this.community = "";
+        this.custom_community = "";
+        this.comm_not_listed = false;
+        this.IRP_selected = false;
+        this.commercial_selected = false;
+        this.recreational_selected = false;
+        this.other_seleted = false;
+    }
+    Registree = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], Registree);
+    return Registree;
+}()); //end class registree
+
+//# sourceMappingURL=registree_class.js.map
+
+/***/ }),
+
+/***/ 167:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseUrls; });
+var BaseUrls = /** @class */ (function () {
+    function BaseUrls() {
+        this.marketplaceCheckUserURL = "https://market.abalobi.org/api/users/find/?username=";
+        this.marketplaceAddUserURL = "https://market.abalobi.org/api/users/create/";
+        this.fisherCheckUserIDurl = "http://server.abalobi.org/api/users/id/checkidexists?id=";
+        this.fisherAddUserURL = "https://server.abalobi.org/register";
+        this.testPostURL = "http://server.abalobi.org/api/testpost";
+    }
+    return BaseUrls;
+}());
+
+//# sourceMappingURL=base_urls.js.map
+
+/***/ }),
+
+/***/ 168:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonalInfoClass; });
+var PersonalInfoClass = /** @class */ (function () {
+    function PersonalInfoClass() {
+        this.personal_surname = "";
+        this.personal_firstname = "";
+        this.personal_nickname = "";
+        this.personal_gender = "";
+        this.personal_IDnum = "";
+        this.personal_cellNo = "";
+        this.personal_password1 = "";
+        this.personal_password2 = "";
+    }
+    return PersonalInfoClass;
+}());
+
+//# sourceMappingURL=personal_info_class.js.map
+
+/***/ }),
+
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherRegisterSuccessPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -396,13 +670,22 @@ var FisherRegisterSuccessPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 107:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterRegisterPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketplaceHome; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__after_register_after_register__ = __webpack_require__(162);
+/**
+ * Generated class for the MarketplaceHomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -414,41 +697,351 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the AfterRegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AfterRegisterPage = /** @class */ (function () {
-    function AfterRegisterPage(navCtrl, navParams) {
+
+
+
+var MarketplaceHome = /** @class */ (function () {
+    function MarketplaceHome(loadingCtrl, marketplaceService, navCtrl, http, zone) {
+        this.loadingCtrl = loadingCtrl;
+        this.marketplaceService = marketplaceService;
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
+        this.http = http;
+        this.zone = zone;
+        this.loaderShowing = false;
+        this.matchingAddresses = false;
+        this.captchaPassed = false;
     }
-    AfterRegisterPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AfterRegisterPage');
+    // called from the UI when the register button has been clicked
+    MarketplaceHome.prototype.registerBtnClick = function () {
+        var _this = this;
+        // validate the user's input
+        this.validate().then(function () {
+            // TODO: Re-enable this again when the time comes
+            // validate the captcha
+            //   return this.validateCaptcha();
+            // }).then(() => {
+            // after validation -> attempt to register the user
+            _this.showLoader('Submitting your details');
+            return _this.register();
+        }).then(function () {
+            // on succesful registration -> alert the user
+            // alert("You have successfully been registered with ABALOBI Marketplace");
+            // clear fields
+            _this.email = null;
+            _this.password = null;
+            _this.repeat_password = null;
+            _this.name = null;
+            _this.surname = null;
+            _this.cell_number = null;
+            _this.name_of_establishment = null;
+            // this.company_details = null;
+            _this.extra_email_1 = null;
+            _this.extra_email_2 = null;
+            _this.extra_email_3 = null;
+            _this.extra_email_4 = null;
+            _this.extra_email_5 = null;
+            _this.company_name = null;
+            _this.vat_number = null;
+            _this.address = null;
+            _this.city = null;
+            _this.postal_code = null;
+            _this.instagram_handle = null;
+            _this.location_address = null;
+            _this.location_city = null;
+            _this.location_postal_code = null;
+            // navigate to the successful sign up page
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__after_register_after_register__["a" /* AfterRegisterPage */]);
+            _this.dismissLoader();
+        }).catch(function (error) {
+            // alert the user to any errors that may have occurred
+            alert(error);
+            _this.dismissLoader();
+        });
     };
-    AfterRegisterPage = __decorate([
+    MarketplaceHome.prototype.validateEmail = function (email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    };
+    MarketplaceHome.prototype.validateCaptcha = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (!_this.captchaPassed) {
+                reject("Please tick the \"I'm not a robot\" box at the bottom");
+            }
+            else {
+                var data = {
+                    captchaResponse: _this.captchaResponse
+                };
+                _this.http.post('https://server.abalobi.org/api/users/recaptcha', data).toPromise().then(function () {
+                    resolve();
+                }, function () {
+                    console.log("Got error");
+                    reject("Failed validating reCAPTCHA with server. Please try refreshing page");
+                });
+            }
+        });
+    };
+    MarketplaceHome.prototype.trimFields = function () {
+        // Trim all fields
+        if (this.email) {
+            this.email = this.email.trim();
+        }
+        if (this.password) {
+            this.password = this.password.trim();
+        }
+        if (this.repeat_password) {
+            this.repeat_password = this.repeat_password.trim();
+        }
+        if (this.name) {
+            this.name = this.name.trim();
+        }
+        if (this.surname) {
+            this.surname = this.surname.trim();
+        }
+        if (this.cell_number) {
+            this.cell_number = this.cell_number.trim();
+        }
+        if (this.name_of_establishment) {
+            this.name_of_establishment = this.name_of_establishment.trim();
+        }
+        if (this.extra_email_1) {
+            this.extra_email_1 = this.extra_email_1.trim();
+        }
+        if (this.extra_email_2) {
+            this.extra_email_2 = this.extra_email_2.trim();
+        }
+        if (this.extra_email_3) {
+            this.extra_email_3 = this.extra_email_3.trim();
+        }
+        if (this.extra_email_4) {
+            this.extra_email_4 = this.extra_email_4.trim();
+        }
+        if (this.extra_email_5) {
+            this.extra_email_5 = this.extra_email_5.trim();
+        }
+        if (this.company_name) {
+            this.company_name = this.company_name.trim();
+        }
+        if (this.vat_number) {
+            this.vat_number = this.vat_number.trim();
+        }
+        if (this.address) {
+            this.address = this.address.trim();
+        }
+        if (this.city) {
+            this.city = this.city.trim();
+        }
+        if (this.postal_code) {
+            this.postal_code = this.postal_code.trim();
+        }
+        if (this.instagram_handle) {
+            this.instagram_handle = this.instagram_handle.trim();
+        }
+    };
+    // validates the user on the client and server side to ensure that they can be registered
+    MarketplaceHome.prototype.validate = function () {
+        // if (!this.validateCaptcha())
+        //   return Promise.reject("Failed validating captcha.  Please try refreshing page");
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.trimFields();
+            // check that all fields are filled in
+            if (!(_this.email && _this.password && _this.name && _this.surname && _this.cell_number && _this.name_of_establishment && _this.company_name)) {
+                reject("Please fill in all required fields (marked with an '*')");
+            }
+            // Validate e-mail address(es)
+            if (!_this.validateEmail(_this.email)) {
+                reject("Please use a valid e-mail address");
+            }
+            if (_this.extra_email_1) {
+                if (!_this.validateEmail(_this.extra_email_1)) {
+                    reject("Please use a valid e-mail address for notifications e-mail 1");
+                }
+            }
+            if (_this.extra_email_2) {
+                if (!_this.validateEmail(_this.extra_email_2)) {
+                    reject("Please use a valid e-mail address for notifications e-mail 2");
+                }
+            }
+            if (_this.extra_email_3) {
+                if (!_this.validateEmail(_this.extra_email_3)) {
+                    reject("Please use a valid e-mail address for notifications e-mail 3");
+                }
+            }
+            if (_this.extra_email_4) {
+                if (!_this.validateEmail(_this.extra_email_4)) {
+                    reject("Please use a valid e-mail address for notifications e-mail 4");
+                }
+            }
+            if (_this.extra_email_5) {
+                if (!_this.validateEmail(_this.extra_email_5)) {
+                    reject("Please use a valid e-mail address for notifications e-mail 5");
+                }
+            }
+            // check that the passwords match
+            if (_this.password !== _this.repeat_password) {
+                reject("The passwords you have entered do not match");
+            }
+            // rudimentarily check that the cell number is valid
+            if (_this.cell_number.length !== 10 || isNaN(parseFloat(_this.cell_number))) {
+                reject("Please enter a valid phone number. Phone numbers should contain 10 digits. Only South African numbers are allowed at present. Example: 0821234567");
+            }
+            // check that the user does not already exist
+            _this.marketplaceService.checkIfUserAlreadyExists(_this.email).then(function (user) {
+                if (user[0]) {
+                    reject("This username is already taken");
+                }
+                else {
+                    resolve();
+                }
+            }).catch(function (error) {
+                console.log(error);
+                // alert(error);
+            });
+        }).catch(function (error) {
+            return Promise.reject(error);
+        });
+    };
+    // attempts to register the user on the marketplace
+    MarketplaceHome.prototype.register = function () {
+        console.log("Register clicked: VAT number = " + this.vat_number);
+        if (!this.vat_number) {
+            this.vat_number = '-';
+        }
+        if (this.matchingAddresses) {
+            this.location_address = this.address;
+            this.location_city = this.city;
+            this.location_postal_code = this.postal_code;
+        }
+        var user = {
+            username: this.email,
+            password: this.password,
+            firstname: this.name,
+            lastname: this.surname,
+            h2c_buyer_company: this.name_of_establishment,
+            // buyer_details : this.company_details.split("\n"),
+            buyer_details: {
+                company_name: this.company_name,
+                vat_number: this.vat_number,
+                address: this.address,
+                city: this.city,
+                postal_code: this.postal_code
+            },
+            sellerEnabled: false,
+            abalobiId: null,
+            cell_number: this.cell_number,
+            instagram_handle: this.instagram_handle,
+            approved: false,
+            buyer_notifications: {
+                extra_invoice_1: this.extra_email_1,
+                extra_invoice_2: this.extra_email_2,
+                extra_qr_1: this.extra_email_3,
+                extra_qr_2: this.extra_email_4,
+                extra_qr_3: this.extra_email_5
+            },
+            location: {
+                lat: null,
+                lon: null,
+                loc_address: this.location_address,
+                loc_city: this.location_city,
+                loc_postal_code: this.location_postal_code
+            }
+        };
+        return this.marketplaceService.registerUser(user).then(function () {
+            return Promise.resolve();
+        }).catch(function (error) {
+            return Promise.reject(error);
+        });
+    };
+    MarketplaceHome.prototype.showLoader = function (msg) {
+        this.loading = this.loadingCtrl.create({
+            content: msg
+        });
+        this.loading.present();
+        this.loaderShowing = true;
+    };
+    MarketplaceHome.prototype.dismissLoader = function () {
+        if (this.loaderShowing) {
+            this.loading.dismiss();
+            this.loaderShowing = false;
+        }
+    };
+    MarketplaceHome.prototype.captchaResolved = function (response) {
+        var _this = this;
+        console.log("captchaResolved");
+        console.log(response);
+        this.zone.run(function () {
+            // If the recaptcha expired then reset the state
+            _this.captchaPassed = !!response;
+            _this.captchaResponse = response;
+        });
+    };
+    MarketplaceHome = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-after-register',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/'<!--\n\n  Generated template for the AfterRegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registration successful</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <p>Thank you for registering for ABALOBI Marketplace.</p>\n\n  <p><strong>Note that you can\'t login yet - a human needs to approve your application.</strong></p>\n\n  <p>Please watch your e-mail for further details.</p>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/,
+            selector: 'page-marketplace-home',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Register for ABALOBI Marketplace\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png"\n\n       style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>\n\n\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n      <p id="header-text" style="color:#000000;">\n\n        Complete this form if you&#39;d like to be able to\n\n        <strong>\n\n          BUY seafood\n\n        </strong>\n\n        using the ABALOBI Marketplace app\n\n      </p>\n\n      <hr>\n\n\n\n      <p>\n\n        Thank you for your interest in sourcing traceable, storied seafood by empowered small-scale fishers!\n\n      </p>\n\n\n\n      <p>\n\n        Use of the Marketplace app is not (yet) open to the general public - our group of users is being grown with\n\n        hand-picked restaurants and chefs who understand and buy into what we\'re trying to achieve through ABALOBI.\n\n      </p>\n\n\n\n      <p>\n\n        If you feel that you fit the bill and are keen to become (or already are) an ambassador for traceable, storied\n\n        seafood by empowered small-scale fishers, then please register here and send a short motivation to\n\n        <a href="mailto:hello@abalobi.org">hello@abalobi.org</a> - we\'d love to hear more about your enterprise.\n\n      </p>\n\n    </div>\n\n\n\n\n\n    <ion-item-divider color="light" id="page-list-item-divider1">\n\n      Login Details\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input2">\n\n      <ion-label>\n\n        * Email\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"\n\n                 [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input3">\n\n      <ion-label>\n\n        * Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input4">\n\n      <ion-label>\n\n        * Repeat Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n  </form>\n\n\n\n\n\n  <form id="page-form3">\n\n    <ion-item-divider color="light" id="page-list-item-divider3">\n\n      Your Details\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input8">\n\n      <ion-label>\n\n        * Name\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input9">\n\n      <ion-label>\n\n        * Surname\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input10">\n\n      <ion-label>\n\n        * Cell Number\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>\n\n    </ion-item>\n\n  </form>\n\n\n\n\n\n  <form id="page-form5">\n\n    <ion-item-divider color="light" id="page-list-item-divider5">\n\n      Your Company\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input14">\n\n      <ion-label stacked>\n\n        * Name of establishment\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text"\n\n                 placeholder="The name shown to the client"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input15">\n\n      <ion-label stacked>\n\n        * Company Name (for invoice)\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="company_name" name="company_name" type="text"\n\n                 placeholder="The name of the company as shown on invoice"></ion-input>\n\n      >\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input16">\n\n      <ion-label stacked>\n\n        VAT number of Company\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="Optional"></ion-input>\n\n      >\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input17">\n\n      <ion-label stacked>\n\n        Address (mutiple lines allowed)\n\n      </ion-label>\n\n      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>\n\n      >\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input18">\n\n      <ion-label stacked>\n\n        Town/City\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>\n\n      >\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input19">\n\n      <ion-label stacked>\n\n        Postal Code\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>\n\n      >\n\n    </ion-item>\n\n  </form>\n\n\n\n  <ion-item>\n\n    <ion-label>Physical location is same as above address</ion-label>\n\n    <ion-checkbox checked="false" [(ngModel)]="matchingAddresses"></ion-checkbox>\n\n  </ion-item>\n\n\n\n  <form *ngIf="!matchingAddresses" id="page-form6">\n\n    <ion-item-divider color="light" id="page-list-item-divider6">\n\n      Location\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input20">\n\n      <ion-label stacked>\n\n        Address (mutiple lines allowed)\n\n      </ion-label>\n\n      <ion-textarea [(ngModel)]="location_address" name="address" type="text" placeholder="Optional"></ion-textarea>\n\n      >\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input21">\n\n      <ion-label stacked>\n\n        Town/City\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="location_city" name="city" type="text" placeholder="Optional"></ion-input>\n\n      >\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input22">\n\n      <ion-label stacked>\n\n        Postal Code\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="location_postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>\n\n      >\n\n    </ion-item>\n\n  </form>\n\n\n\n  <form id="page-form7">\n\n    <ion-item-divider color="light" id="page-list-item-divider7">\n\n      Social Media\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input23">\n\n      <ion-label stacked>\n\n        Instagram handle\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>\n\n      >\n\n    </ion-item>\n\n  </form>\n\n\n\n  <form id="page-form8">\n\n    <ion-item-divider color="light" id="page-list-item-divider8">\n\n      Notifications\n\n    </ion-item-divider>\n\n\n\n    <div>Invoices and QR codes are sent to you by e-mail. Please list any others who should receive these too (e.g.\n\n      finance department, floor manager etc.) The QR codes are for printing and displaying to restaurant patrons -\n\n      they scan these to view the HookToCook page for the seafood. New QR codes are provided with each purchase from\n\n      ABALOBI Marketplace.\n\n    </div>\n\n\n\n\n\n    <ion-item id="page-input24">\n\n      <ion-label stacked>\n\n        Also e-mail invoices and QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional"\n\n                 [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input25">\n\n      <ion-label stacked>\n\n        Also e-mail invoices and QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional"\n\n                 [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input26">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional"\n\n                 [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input27">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional"\n\n                 [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input28">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional"\n\n                 [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <!-- TODO: Re-enable this again when the word comes -->\n\n    <!--<re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>-->\n\n    <div id="page-container1"></div>\n\n\n\n    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n\n      Register\n\n    </button>\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], AfterRegisterPage);
-    return AfterRegisterPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]])
+    ], MarketplaceHome);
+    return MarketplaceHome;
 }());
 
-//# sourceMappingURL=after-register.js.map
+//# sourceMappingURL=marketplace-home.js.map
 
 /***/ }),
 
-/***/ 108:
+/***/ 171:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketplaceService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_base_urls__ = __webpack_require__(167);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MarketplaceService = /** @class */ (function () {
+    function MarketplaceService(http) {
+        this.http = http;
+        this.urls = new __WEBPACK_IMPORTED_MODULE_2__classes_base_urls__["a" /* BaseUrls */]();
+    }
+    MarketplaceService.prototype.checkIfUserAlreadyExists = function (username) {
+        return this.http.get(this.urls.marketplaceCheckUserURL + username).toPromise();
+    };
+    MarketplaceService.prototype.registerUser = function (user) {
+        return this.http.post(this.urls.marketplaceAddUserURL, user).toPromise();
+    };
+    MarketplaceService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], MarketplaceService);
+    return MarketplaceService;
+}());
+
+//# sourceMappingURL=MarketplaceService.js.map
+
+/***/ }),
+
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherRolePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_useterms_fisher_useterms__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_useterms_fisher_useterms__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -478,7 +1071,7 @@ var FisherRolePage = /** @class */ (function () {
             ],
         };
         this.roleForm = this.formBuilder.group({
-            "role": ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
+            "role": ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["g" /* Validators */].required],
         });
     }
     FisherRolePage.prototype.ionViewDidLoad = function () {
@@ -504,16 +1097,16 @@ var FisherRolePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 109:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherUsetermsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal_fisher_personal__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal_fisher_personal__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_fisher_useterms_class__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_fisher_useterms_class__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -546,7 +1139,7 @@ var FisherUsetermsPage = /** @class */ (function () {
             ],
         };
         this.termsForm = this.formBuilder.group({
-            'agree': ['', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["f" /* Validators */].requiredTrue],
+            'agree': ['', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["g" /* Validators */].requiredTrue],
         });
         this.termsForm.reset('agree'); //reset the checkbox upon creation
     }
@@ -572,17 +1165,17 @@ var FisherUsetermsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 110:
+/***/ 174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherPersonalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fisher_community_fisher_community__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fisher_community_fisher_community__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_FisherService__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_personal_info_class__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_personal_info_class__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -595,11 +1188,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//Imported page classes
 
-//Imported services
 
-//Imported non-page classes
 
 //Function to check for matching passwords
 function goodPasswords(passwordKey, confirmPasswordKey, nameKey, surnameKey) {
@@ -685,48 +1275,53 @@ function goodPasswords(passwordKey, confirmPasswordKey, nameKey, surnameKey) {
         }
     };
 }
-function hasUpperCase(password) {
-    if (password.length < 1) {
-        return false;
-    }
-    else {
-        for (var i = 0; i < password.length; i++) {
-            var char = password.charAt(i);
-            if (/[A-Z]/.test(char)) {
-                return true;
-            }
-        }
-        return false;
-    }
-}
-function hasLowerCase(password) {
-    if (password.length < 1) {
-        return false;
-    }
-    else {
-        for (var i = 0; i < password.length; i++) {
-            var char = password.charAt(i);
-            if (/[a-z]/.test(char)) {
-                return true;
-            }
-        }
-        return false;
-    }
-}
-function hasNum(password) {
-    if (password.length < 1) {
-        return false;
-    }
-    else {
-        for (var i = 0; i < password.length; i++) {
-            var char = password.charAt(i);
-            if (/^\d+$/.test(char)) {
-                return true;
-            }
-        }
-        return false;
-    }
-}
+// function hasUpperCase(password: string): boolean {//check if the given string has at least one Uppercase Letter
+//     if(password.length < 1){//safety check string is not empty
+//         return false;
+//     }
+//
+//     else{
+//             for(let i = 0;i<password.length;i++){
+//                 let char = password.charAt(i);
+//                 if(/[A-Z]/.test(char)){
+//                     return true;
+//                 }
+//             }
+//         return false;
+//     }
+// }
+//
+// function hasLowerCase(password: string): boolean {//return true if a Lowercase has been found
+//     if(password.length < 1){//safety check string is not empty
+//         return false;
+//     }
+//
+//     else {
+//         for (let i = 0; i < password.length; i++) {
+//             let char = password.charAt(i);
+//             if(/[a-z]/.test(char)){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
+//
+// function hasNum(password: string): boolean {//return true if a digit has been found
+//     if(password.length < 1){//safety check string is not empty
+//         return false;
+//     }
+//
+//     else {
+//         for (let i = 0; i < password.length; i++) {
+//             let char = password.charAt(i);
+//             if(/^\d+$/.test(char)){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
 var FisherPersonalPage = /** @class */ (function () {
     function FisherPersonalPage(navCtrl, navParams, fisherService, formBuilder) {
         this.navCtrl = navCtrl;
@@ -745,9 +1340,9 @@ var FisherPersonalPage = /** @class */ (function () {
             'nickname': [
                 { type: 'required', message: 'Nickame is required.' }
             ],
-            'gender': [
-                { type: 'required', message: 'Gender is required.' }
-            ],
+            // 'gender': [
+            //     {type: 'required', message: 'Gender is required.'}
+            // ],
             'ID': [
                 { type: 'required', message: 'ID is required.' },
                 { type: 'minlength', message: 'ID number too short.' },
@@ -772,14 +1367,14 @@ var FisherPersonalPage = /** @class */ (function () {
             ]
         };
         this.personalForm = this.formBuilder.group({
-            "surname": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            "name": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            "nickname": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            "gender": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            "ID": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].pattern('^[0-9]+$'), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(13), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(13)])],
-            "cell": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].pattern('^[0-9]+$'), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(10)])],
-            "password1": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            "password2": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]
+            "surname": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required],
+            "name": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required],
+            "nickname": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required],
+            "gender": ['',],
+            "ID": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern('^[0-9]+$'), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].minLength(13), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].maxLength(13)])],
+            "cell": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern('^[0-9]+$'), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].maxLength(10)])],
+            "password1": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required],
+            "password2": ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]
         }, { validator: goodPasswords('password1', 'password2', 'name', 'surname') });
     }
     FisherPersonalPage.prototype.ionViewDidLoad = function () {
@@ -815,7 +1410,7 @@ var FisherPersonalPage = /** @class */ (function () {
     };
     FisherPersonalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-fisher-personal',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-personal\fisher-personal.html"*/'<ion-header>\n\n        <ion-navbar>\n\n                <ion-title>Abalobi Register</ion-title>\n\n        </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding title="fisher-personal-form" id="page5">\n\n\n\n    <form [formGroup] = "personalForm">\n\n            <ion-item>\n\n                      <ion-label stacked>* Surname</ion-label>\n\n                    <ion-input type="text" formControlName="surname" placeholder="Enter your surname here"(ionChange)="surnameChanged()"></ion-input>\n\n            </ion-item>\n\n\n\n            <div style="color:red" text-wrap align="center" class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.surname" >\n\n                                <div class="error-message" *ngIf="personalForm.get(\'surname\').hasError(validation.type) && (personalForm.get(\'surname\').dirty || personalForm.get(\'surname\').touched)">\n\n                                    {{ validation.message }}\n\n                                </div>\n\n                        </ng-container>\n\n            </div>\n\n\n\n\n\n            <ion-item>\n\n                        <ion-label stacked>* First Name</ion-label>\n\n                        <ion-input type="text" formControlName="name" placeholder="Enter your name here"(ionChange)="nameChanged()"></ion-input>\n\n            </ion-item>\n\n\n\n            <div class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.name" >\n\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'name\').hasError(validation.type) && (personalForm.get(\'name\').dirty || personalForm.get(\'name\').touched)">\n\n                                        {{ validation.message }}\n\n                                </div>\n\n                        </ng-container>\n\n            </div>\n\n\n\n\n\n            <ion-item>\n\n                        <ion-label stacked>* Nickname</ion-label>\n\n                        <ion-input type="text" formControlName="nickname" placeholder="What do people usually call you?"(ionChange)="nickNameChanged()"></ion-input>\n\n            </ion-item>\n\n\n\n            <div class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.nickname" >\n\n                                    <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'nickname\').hasError(validation.type) && (personalForm.get(\'nickname\').dirty || personalForm.get(\'nickname\').touched)">\n\n                                            {{ validation.message }}\n\n                                    </div>\n\n                        </ng-container>\n\n            </div>\n\n\n\n\n\n            <ion-item>\n\n                    <ion-label stacked>* Gender (Required)\n\n                    </ion-label>\n\n                        <ion-select formControlName="gender" (ionChange)=" genderChanged()">\n\n                                  <ion-option value = "male">Male</ion-option>\n\n                                  <ion-option value = "female">Female</ion-option>\n\n                        </ion-select>\n\n            </ion-item>\n\n            <div class="validation-errors">\n\n                    <ng-container *ngFor="let validation of validation_messages.gender" >\n\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'gender\').hasError(validation.type) && (personalForm.get(\'gender\').dirty || personalForm.get(\'gender\').touched)">\n\n                                    {{ validation.message }}\n\n                            </div>\n\n                    </ng-container>\n\n            </div>\n\n\n\n\n\n            <ion-item>\n\n                      <ion-label stacked>* ID Number</ion-label>\n\n                      <ion-input formControlName="ID"  type="text"  placeholder="Enter your ID Number here"(ionChange)="IDchanged()"></ion-input>\n\n            </ion-item>\n\n            <div class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.ID" >\n\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'ID\').hasError(validation.type) && (personalForm.get(\'ID\').dirty || personalForm.get(\'ID\').touched)">\n\n                                    {{ validation.message }}\n\n                                </div>\n\n                        </ng-container>\n\n            </div>\n\n\n\n\n\n            <ion-item>\n\n                        <ion-label text-wrap stacked>* Personal Cellphone Number</ion-label>\n\n                        <ion-input formControlName="cell"  type="text"   placeholder="Enter your cell number here"(ionChange)="cellChanged()"></ion-input>\n\n            </ion-item>\n\n            <div style="color:red" text-wrap align="center" class="validation-errors">\n\n                    <ng-container *ngFor="let validation of validation_messages.cell" >\n\n                            <div class="error-message" *ngIf="personalForm.get(\'cell\').hasError(validation.type) && (personalForm.get(\'cell\').dirty || personalForm.get(\'cell\').touched)">\n\n                                    {{ validation.message }}\n\n                            </div>\n\n                    </ng-container>\n\n            </div>\n\n\n\n\n\n            <!--Password 1-->\n\n            <ion-item>\n\n                    <ion-label stacked>* Password</ion-label>\n\n                    <ion-input  type="text"  formControlName="password1" placeholder="Please choose a password"(ionChange)="password1Changed()"></ion-input>\n\n            </ion-item>\n\n            <div class="validation-errors">\n\n                    <ng-container *ngFor="let validation of validation_messages.password1" >\n\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'password1\').hasError(validation.type) && (personalForm.get(\'password1\').dirty || personalForm.get(\'password1\').touched)">\n\n                                    {{ validation.message }}\n\n                            </div>\n\n                    </ng-container>\n\n            </div>\n\n            <!--span style="color:red" text-wrap align="center" class="validation-error" *ngIf="personalForm.get(\'password1\').touched && personalForm.get(\'password1\').errors?.notEqual"> Passwords do not match</span-->\n\n\n\n            <!--Password 2-->\n\n            <ion-item>\n\n                    <ion-label stacked>* Retype password</ion-label>\n\n                    <ion-input  type="text"  formControlName="password2" placeholder="Please re-type password"(ionChange)="password2Changed()"></ion-input>\n\n            </ion-item>\n\n            <div class="validation-errors">\n\n                    <ng-container *ngFor="let validation of validation_messages.password2" >\n\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'password2\').hasError(validation.type) && (personalForm.get(\'password2\').dirty || personalForm.get(\'password2\').touched)">\n\n                                {{ validation.message }}\n\n                            </div>\n\n                    </ng-container>\n\n            </div>\n\n\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&(personalForm.get(\'password2\').value.length >= 1)&& personalForm.hasError(\'mismatchedPasswords\')">Passwords do not match.</span>\n\n            <!--span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'badPasswords\')">Passwords must have at least 6 characters.</span-->\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'badPasswords\')">Passwords must have at least 6 characters.</span>\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidWords\')">Password contains invalid word "password"</span>\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidName\')">Password cannot contain name</span>\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidSurname\')">Password cannot contain surname</span>\n\n        <!--span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noUpperCase\')">Password must contain at least one uppercase letter.</span>\n\n        <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noLowerCase\')">Password must contain at least one lower case letter.</span>\n\n        <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noNum\')">Password must contain at least one digit.</span-->\n\n\n\n\n\n            <button ion-button type="submit"  [disabled]="!personalForm.valid" full  (click)="onFisherFinishPersonal()">Next</button>\n\n    </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-personal\fisher-personal.html"*/,
+            selector: 'page-fisher-personal',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-personal\fisher-personal.html"*/'<ion-header>\n        <ion-navbar>\n                <ion-title>Abalobi Register</ion-title>\n        </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding title="fisher-personal-form" id="page5">\n\n    <form [formGroup] = "personalForm">\n            <ion-item>\n                      <ion-label stacked>* Surname</ion-label>\n                    <ion-input type="text" formControlName="surname" placeholder="Enter your surname here"(ionChange)="surnameChanged()"></ion-input>\n            </ion-item>\n\n            <div style="color:red" text-wrap align="center" class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.surname" >\n                                <div class="error-message" *ngIf="personalForm.get(\'surname\').hasError(validation.type) && (personalForm.get(\'surname\').dirty || personalForm.get(\'surname\').touched)">\n                                    {{ validation.message }}\n                                </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                        <ion-label stacked>* First Name</ion-label>\n                        <ion-input type="text" formControlName="name" placeholder="Enter your name here"(ionChange)="nameChanged()"></ion-input>\n            </ion-item>\n\n            <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.name" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'name\').hasError(validation.type) && (personalForm.get(\'name\').dirty || personalForm.get(\'name\').touched)">\n                                        {{ validation.message }}\n                                </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                        <ion-label stacked>* Nickname</ion-label>\n                        <ion-input type="text" formControlName="nickname" placeholder="What do people usually call you?"(ionChange)="nickNameChanged()"></ion-input>\n            </ion-item>\n\n            <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.nickname" >\n                                    <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'nickname\').hasError(validation.type) && (personalForm.get(\'nickname\').dirty || personalForm.get(\'nickname\').touched)">\n                                            {{ validation.message }}\n                                    </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                    <ion-label stacked>Gender\n                    </ion-label>\n                        <ion-select formControlName="gender" (ionChange)=" genderChanged()">\n                                  <ion-option value = "male">Male</ion-option>\n                                  <ion-option value = "female">Female</ion-option>\n                        </ion-select>\n            </ion-item>\n            <!--<div class="validation-errors">-->\n                    <!--<ng-container *ngFor="let validation of validation_messages.gender" >-->\n                            <!--<div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'gender\').hasError(validation.type) && (personalForm.get(\'gender\').dirty || personalForm.get(\'gender\').touched)">-->\n                                    <!--{{ validation.message }}-->\n                            <!--</div>-->\n                    <!--</ng-container>-->\n            <!--</div>-->\n\n\n            <ion-item>\n                      <ion-label stacked>* ID Number</ion-label>\n                      <ion-input formControlName="ID"  type="text"  placeholder="Enter your ID Number here"(ionChange)="IDchanged()"></ion-input>\n            </ion-item>\n            <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.ID" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'ID\').hasError(validation.type) && (personalForm.get(\'ID\').dirty || personalForm.get(\'ID\').touched)">\n                                    {{ validation.message }}\n                                </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                        <ion-label text-wrap stacked>* Personal Cellphone Number</ion-label>\n                        <ion-input formControlName="cell"  type="text"   placeholder="Enter your cell number here"(ionChange)="cellChanged()"></ion-input>\n            </ion-item>\n            <div style="color:red" text-wrap align="center" class="validation-errors">\n                    <ng-container *ngFor="let validation of validation_messages.cell" >\n                            <div class="error-message" *ngIf="personalForm.get(\'cell\').hasError(validation.type) && (personalForm.get(\'cell\').dirty || personalForm.get(\'cell\').touched)">\n                                    {{ validation.message }}\n                            </div>\n                    </ng-container>\n            </div>\n\n\n            <!--Password 1-->\n            <ion-item>\n                    <ion-label stacked>* Password</ion-label>\n                    <ion-input  type="text"  formControlName="password1" placeholder="Please choose a password"(ionChange)="password1Changed()"></ion-input>\n            </ion-item>\n            <div class="validation-errors">\n                    <ng-container *ngFor="let validation of validation_messages.password1" >\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'password1\').hasError(validation.type) && (personalForm.get(\'password1\').dirty || personalForm.get(\'password1\').touched)">\n                                    {{ validation.message }}\n                            </div>\n                    </ng-container>\n            </div>\n            <!--span style="color:red" text-wrap align="center" class="validation-error" *ngIf="personalForm.get(\'password1\').touched && personalForm.get(\'password1\').errors?.notEqual"> Passwords do not match</span-->\n\n            <!--Password 2-->\n            <ion-item>\n                    <ion-label stacked>* Retype password</ion-label>\n                    <ion-input  type="text"  formControlName="password2" placeholder="Please re-type password"(ionChange)="password2Changed()"></ion-input>\n            </ion-item>\n            <div class="validation-errors">\n                    <ng-container *ngFor="let validation of validation_messages.password2" >\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'password2\').hasError(validation.type) && (personalForm.get(\'password2\').dirty || personalForm.get(\'password2\').touched)">\n                                {{ validation.message }}\n                            </div>\n                    </ng-container>\n            </div>\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&(personalForm.get(\'password2\').value.length >= 1)&& personalForm.hasError(\'mismatchedPasswords\')">Passwords do not match.</span>\n            <!--span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'badPasswords\')">Passwords must have at least 6 characters.</span-->\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'badPasswords\')">Passwords must have at least 6 characters.</span>\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidWords\')">Password contains invalid word "password"</span>\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidName\')">Password cannot contain name</span>\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidSurname\')">Password cannot contain surname</span>\n        <!--span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noUpperCase\')">Password must contain at least one uppercase letter.</span>\n        <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noLowerCase\')">Password must contain at least one lower case letter.</span>\n        <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noNum\')">Password must contain at least one digit.</span-->\n\n\n            <button ion-button type="submit"  [disabled]="!personalForm.valid" full  (click)="onFisherFinishPersonal()">Next</button>\n    </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-personal\fisher-personal.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
     ], FisherPersonalPage);
@@ -826,13 +1421,13 @@ var FisherPersonalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 111:
+/***/ 175:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherNotUniquePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -870,13 +1465,13 @@ var FisherNotUniquePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 112:
+/***/ 176:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherRegisterFailurePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -914,527 +1509,279 @@ var FisherRegisterFailurePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 125:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 125;
-
-/***/ }),
-
-/***/ 169:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"../pages/after-register/after-register.module": [
-		302,
-		8
-	],
-	"../pages/fisher-community/fisher-community.module": [
-		301,
-		7
-	],
-	"../pages/fisher-confirm/fisher-confirm.module": [
-		303,
-		6
-	],
-	"../pages/fisher-not-unique/fisher-not-unique.module": [
-		304,
-		5
-	],
-	"../pages/fisher-personal/fisher-personal.module": [
-		307,
-		4
-	],
-	"../pages/fisher-register-failure/fisher-register-failure.module": [
-		305,
-		3
-	],
-	"../pages/fisher-register-success/fisher-register-success.module": [
-		306,
-		2
-	],
-	"../pages/fisher-role/fisher-role.module": [
-		308,
-		1
-	],
-	"../pages/fisher-useterms/fisher-useterms.module": [
-		309,
-		0
-	]
-};
-function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids)
-		return Promise.reject(new Error("Cannot find module '" + req + "'."));
-	return __webpack_require__.e(ids[1]).then(function() {
-		return __webpack_require__(ids[0]);
-	});
-};
-webpackAsyncContext.keys = function webpackAsyncContextKeys() {
-	return Object.keys(map);
-};
-webpackAsyncContext.id = 169;
-module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 170:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Registree; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var Registree = /** @class */ (function () {
-    function Registree() {
-        //Role details
-        this.role = "";
-        //Terms of use details
-        this.terms_agreed = false;
-        this.assistant_agreed = false;
-        this.DAFF_agreed = false;
-        //Personal details
-        this.surname = "";
-        this.firstname = "";
-        this.nickname = "";
-        this.gender = "";
-        this.IDnum = "";
-        this.cellNo = "";
-        this.password = "";
-        //Community details
-        this.province = "";
-        this.community = "";
-        this.custom_community = "";
-        this.comm_not_listed = false;
-        this.IRP_selected = false;
-        this.commercial_selected = false;
-        this.recreational_selected = false;
-        this.other_seleted = false;
-    }
-    Registree = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [])
-    ], Registree);
-    return Registree;
-}()); //end class registree
-
-//# sourceMappingURL=registree_class.js.map
-
-/***/ }),
-
-/***/ 171:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Secrets; });
-var Secrets = /** @class */ (function () {
-    function Secrets() {
-        this.marketplaceCheckUserURL = "https://market.abalobi.live/api/users/find/?username=";
-        this.marketplaceAddUserURL = "https://market.abalobi.live/api/users/create/";
-        this.fisherCheckUserIDurl = "http://server.abalobi.info/api/users/id/checkidexists?id=";
-        this.fisherAddUserURL = "https://www.openfn.org/inbox/3afab0f1-3937-4ca8-95a3-5491f6f32a4e";
-        this.testPostURL = "http://server.abalobi.info/api/testpost";
-    }
-    return Secrets;
-}());
-
-//# sourceMappingURL=secrets.js.map
-
-/***/ }),
-
-/***/ 172:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonalInfoClass; });
-var PersonalInfoClass = /** @class */ (function () {
-    function PersonalInfoClass() {
-        this.personal_surname = "";
-        this.personal_firstname = "";
-        this.personal_nickname = "";
-        this.personal_gender = "";
-        this.personal_IDnum = "";
-        this.personal_cellNo = "";
-        this.personal_password1 = "";
-        this.personal_password2 = "";
-    }
-    return PersonalInfoClass;
-}());
-
-//# sourceMappingURL=personal_info_class.js.map
-
-/***/ }),
-
-/***/ 173:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketplaceHome; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__after_register_after_register__ = __webpack_require__(107);
-/**
- * Generated class for the MarketplaceHomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var MarketplaceHome = /** @class */ (function () {
-    function MarketplaceHome(loadingCtrl, marketplaceService, navCtrl, http, zone) {
-        this.loadingCtrl = loadingCtrl;
-        this.marketplaceService = marketplaceService;
-        this.navCtrl = navCtrl;
-        this.http = http;
-        this.zone = zone;
-        this.loaderShowing = false;
-        this.captchaPassed = false;
-    }
-    // called from the UI when the register button has been clicked
-    MarketplaceHome.prototype.registerBtnClick = function () {
-        var _this = this;
-        // validate the user's input
-        this.validate().then(function () {
-            // TODO: Re-enable this again when the time comes
-            // validate the captcha
-            //   return this.validateCaptcha();
-            // }).then(() => {
-            // after validation -> attempt to register the user
-            _this.showLoader('Submitting your details');
-            return _this.register();
-        }).then(function () {
-            // on succesful registration -> alert the user
-            // alert("You have successfully been registered with ABALOBI Marketplace");
-            // clear fields
-            _this.email = null;
-            _this.password = null;
-            _this.repeat_password = null;
-            _this.name = null;
-            _this.surname = null;
-            _this.cell_number = null;
-            _this.name_of_establishment = null;
-            // this.company_details = null;
-            _this.extra_email_1 = null;
-            _this.extra_email_2 = null;
-            _this.extra_email_3 = null;
-            _this.extra_email_4 = null;
-            _this.extra_email_5 = null;
-            _this.company_name = null;
-            _this.vat_number = null;
-            _this.address = null;
-            _this.city = null;
-            _this.postal_code = null;
-            _this.instagram_handle = null;
-            // navigate to the successful sign up page
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__after_register_after_register__["a" /* AfterRegisterPage */]);
-            _this.dismissLoader();
-        }).catch(function (error) {
-            // alert the user to any errors that may have occurred
-            alert(error);
-            _this.dismissLoader();
-        });
-    };
-    MarketplaceHome.prototype.validateEmail = function (email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    };
-    MarketplaceHome.prototype.validateCaptcha = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            if (!_this.captchaPassed) {
-                reject("Please tick the \"I'm not a robot\" box at the bottom");
-            }
-            else {
-                var data = {
-                    captchaResponse: _this.captchaResponse
-                };
-                _this.http.post('http://server.abalobi.info:8080/api/users/recaptcha', data).toPromise().then(function () {
-                    resolve();
-                }, function () {
-                    console.log("Got error");
-                    reject("Failed validating reCAPTCHA with server. Please try refreshing page");
-                });
-            }
-        });
-    };
-    MarketplaceHome.prototype.trimFields = function () {
-        // Trim all fields
-        if (this.email) {
-            this.email = this.email.trim();
-        }
-        if (this.password) {
-            this.password = this.password.trim();
-        }
-        if (this.repeat_password) {
-            this.repeat_password = this.repeat_password.trim();
-        }
-        if (this.name) {
-            this.name = this.name.trim();
-        }
-        if (this.surname) {
-            this.surname = this.surname.trim();
-        }
-        if (this.cell_number) {
-            this.cell_number = this.cell_number.trim();
-        }
-        if (this.name_of_establishment) {
-            this.name_of_establishment = this.name_of_establishment.trim();
-        }
-        if (this.extra_email_1) {
-            this.extra_email_1 = this.extra_email_1.trim();
-        }
-        if (this.extra_email_2) {
-            this.extra_email_2 = this.extra_email_2.trim();
-        }
-        if (this.extra_email_3) {
-            this.extra_email_3 = this.extra_email_3.trim();
-        }
-        if (this.extra_email_4) {
-            this.extra_email_4 = this.extra_email_4.trim();
-        }
-        if (this.extra_email_5) {
-            this.extra_email_5 = this.extra_email_5.trim();
-        }
-        if (this.company_name) {
-            this.company_name = this.company_name.trim();
-        }
-        if (this.vat_number) {
-            this.vat_number = this.vat_number.trim();
-        }
-        if (this.address) {
-            this.address = this.address.trim();
-        }
-        if (this.city) {
-            this.city = this.city.trim();
-        }
-        if (this.postal_code) {
-            this.postal_code = this.postal_code.trim();
-        }
-        if (this.instagram_handle) {
-            this.instagram_handle = this.instagram_handle.trim();
-        }
-    };
-    // validates the user on the client and server side to ensure that they can be registered
-    MarketplaceHome.prototype.validate = function () {
-        // if (!this.validateCaptcha())
-        //   return Promise.reject("Failed validating captcha.  Please try refreshing page");
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.trimFields();
-            // check that all fields are filled in
-            if (!(_this.email && _this.password && _this.name && _this.surname && _this.cell_number && _this.name_of_establishment && _this.company_name && _this.vat_number)) {
-                reject("Please fill in all required fields (marked with an '*')");
-            }
-            // Validate e-mail address(es)
-            if (!_this.validateEmail(_this.email)) {
-                reject("Please use a valid e-mail address");
-            }
-            if (_this.extra_email_1) {
-                if (!_this.validateEmail(_this.extra_email_1)) {
-                    reject("Please use a valid e-mail address for notifications e-mail 1");
-                }
-            }
-            if (_this.extra_email_2) {
-                if (!_this.validateEmail(_this.extra_email_2)) {
-                    reject("Please use a valid e-mail address for notifications e-mail 2");
-                }
-            }
-            if (_this.extra_email_3) {
-                if (!_this.validateEmail(_this.extra_email_3)) {
-                    reject("Please use a valid e-mail address for notifications e-mail 3");
-                }
-            }
-            if (_this.extra_email_4) {
-                if (!_this.validateEmail(_this.extra_email_4)) {
-                    reject("Please use a valid e-mail address for notifications e-mail 4");
-                }
-            }
-            if (_this.extra_email_5) {
-                if (!_this.validateEmail(_this.extra_email_5)) {
-                    reject("Please use a valid e-mail address for notifications e-mail 5");
-                }
-            }
-            // check that the passwords match
-            if (_this.password !== _this.repeat_password) {
-                reject("The passwords you have entered do not match");
-            }
-            // rudimentarily check that the cell number is valid
-            if (_this.cell_number.length !== 10 || isNaN(parseFloat(_this.cell_number))) {
-                reject("Please enter a valid phone number. Phone numbers should contain 10 digits. Only South African numbers are allowed at present. Example: 0821234567");
-            }
-            // check that the user does not already exist
-            _this.marketplaceService.checkIfUserAlreadyExists(_this.email).then(function (user) {
-                if (user[0]) {
-                    reject("This username is already taken");
-                }
-                else {
-                    resolve();
-                }
-            }).catch(function (error) {
-                console.log(error);
-                // alert(error);
-            });
-        }).catch(function (error) {
-            return Promise.reject(error);
-        });
-    };
-    // attempts to register the user on the marketplace
-    MarketplaceHome.prototype.register = function () {
-        var user = {
-            username: this.email,
-            password: this.password,
-            firstname: this.name,
-            lastname: this.surname,
-            h2c_buyer_company: this.name_of_establishment,
-            // buyer_details : this.company_details.split("\n"),
-            buyer_details: {
-                company_name: this.company_name,
-                vat_number: this.vat_number,
-                address: this.address,
-                city: this.city,
-                postal_code: this.postal_code
-            },
-            sellerEnabled: false,
-            abalobiId: null,
-            cell_number: this.cell_number,
-            instagram_handle: this.instagram_handle,
-            approved: false,
-            buyer_notifications: {
-                extra_invoice_1: this.extra_email_1,
-                extra_invoice_2: this.extra_email_2,
-                extra_qr_1: this.extra_email_3,
-                extra_qr_2: this.extra_email_4,
-                extra_qr_3: this.extra_email_5
-            }
-        };
-        return this.marketplaceService.registerUser(user).then(function () {
-            return Promise.resolve();
-        }).catch(function (error) {
-            return Promise.reject(error);
-        });
-    };
-    MarketplaceHome.prototype.showLoader = function (msg) {
-        this.loading = this.loadingCtrl.create({
-            content: msg
-        });
-        this.loading.present();
-        this.loaderShowing = true;
-    };
-    MarketplaceHome.prototype.dismissLoader = function () {
-        if (this.loaderShowing) {
-            this.loading.dismiss();
-            this.loaderShowing = false;
-        }
-    };
-    MarketplaceHome.prototype.captchaResolved = function (response) {
-        var _this = this;
-        console.log("captchaResolved");
-        console.log(response);
-        this.zone.run(function () {
-            // If the recaptcha expired then reset the state
-            _this.captchaPassed = !!response;
-            _this.captchaResponse = response;
-        });
-    };
-    MarketplaceHome = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-marketplace-home',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Register for ABALOBI Marketplace\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n      <p id="header-text" style="color:#000000;">\n\n        Complete this form if you&#39;d like to be able to\n\n        <strong>\n\n          BUY seafood\n\n        </strong>\n\n        using the ABALOBI Marketplace app\n\n      </p>\n\n      <hr>\n\n\n\n      <p>\n\n        Thank you for your interest in sourcing traceable, storied seafood by empowered small-scale fishers!\n\n      </p>\n\n\n\n      <p>\n\n        Use of the Marketplace app is not (yet) open to the general public - our group of users is being grown with\n\n        hand-picked restaurants and chefs who understand and buy into what we\'re trying to achieve through ABALOBI.\n\n      </p>\n\n\n\n      <p>\n\n        If you feel that you fit the bill and are keen to become (or already are) an ambassador for traceable, storied\n\n        seafood by empowered small-scale fishers, then please register here and send a short motivation to\n\n        <a href="mailto:hello@abalobi.org">hello@abalobi.org</a> - we\'d love to hear more about your enterprise.\n\n      </p>\n\n    </div>\n\n\n\n\n\n\n\n    <ion-item-divider color="light" id="page-list-item-divider1">\n\n      Login Details\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input2">\n\n      <ion-label>\n\n        * Email\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input3">\n\n      <ion-label>\n\n        * Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input4">\n\n      <ion-label>\n\n        * Repeat Password\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n\n    </ion-item>\n\n  </form>\n\n\n\n\n\n\n\n\n\n\n\n  <form id="page-form3">\n\n    <ion-item-divider color="light" id="page-list-item-divider3">\n\n      Your Details\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input8">\n\n      <ion-label>\n\n        * Name\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input9">\n\n      <ion-label>\n\n        * Surname\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input10">\n\n      <ion-label>\n\n        * Cell Number\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. 0821234567"></ion-input>\n\n    </ion-item>\n\n  </form>\n\n\n\n\n\n\n\n\n\n  <form id="page-form5">\n\n    <ion-item-divider color="light" id="page-list-item-divider5">\n\n      Your Company\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input14">\n\n      <ion-label stacked>\n\n        * Name of establishment\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text" placeholder="The name shown to the client"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input15">\n\n      <ion-label stacked>\n\n        * Company Name (for invoice)\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="company_name" name="company_name" type="text" placeholder="The name of the company as shown on invoice"></ion-input>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input16">\n\n      <ion-label stacked>\n\n        * VAT number\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="The VAT number of the company"></ion-input>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input17">\n\n      <ion-label stacked>\n\n        Address (mutiple lines allowed)\n\n      </ion-label>\n\n      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input18">\n\n      <ion-label stacked>\n\n        Town/City\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input19">\n\n      <ion-label stacked>\n\n        Postal Code\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>>\n\n    </ion-item>\n\n  </form>\n\n\n\n  <form id="page-form6">\n\n    <ion-item-divider color="light" id="page-list-item-divider6">\n\n      Social Media\n\n    </ion-item-divider>\n\n\n\n    <ion-item id="page-input20">\n\n      <ion-label stacked>\n\n        Instagram handle\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>>\n\n    </ion-item>\n\n  </form>\n\n\n\n  <form id="page-form7">\n\n    <ion-item-divider color="light" id="page-list-item-divider7">\n\n      Notifications\n\n    </ion-item-divider>\n\n\n\n    <div>Invoices and QR codes are sent to you by e-mail. Please list any others who should receive these too (e.g.\n\n      finance department, floor manager etc.) The QR codes are for printing and displaying to restaurant patrons -\n\n      they scan these to view the HookToCook page for the seafood. New QR codes are provided with each purchase from\n\n      ABALOBI Marketplace.\n\n    </div>\n\n\n\n\n\n    <ion-item id="page-input21">\n\n      <ion-label stacked>\n\n        Also e-mail invoices and QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input22">\n\n      <ion-label stacked>\n\n        Also e-mail invoices and QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input23">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input24">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item id="page-input25">\n\n      <ion-label stacked>\n\n        Also e-mail QR codes to\n\n      </ion-label>\n\n      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional" [email]="true"></ion-input>\n\n    </ion-item>\n\n\n\n    <!-- TODO: Re-enable this again when the word comes -->\n\n    <!--<re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>-->\n\n    <div id="page-container1"></div>\n\n\n\n    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n\n      Register\n\n    </button>\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]])
-    ], MarketplaceHome);
-    return MarketplaceHome;
-}());
-
-//# sourceMappingURL=marketplace-home.js.map
-
-/***/ }),
-
-/***/ 174:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketplaceService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_secrets__ = __webpack_require__(171);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var MarketplaceService = /** @class */ (function () {
-    function MarketplaceService(http) {
-        this.http = http;
-        this.secrets = new __WEBPACK_IMPORTED_MODULE_2__classes_secrets__["a" /* Secrets */]();
-    }
-    MarketplaceService.prototype.checkIfUserAlreadyExists = function (username) {
-        return this.http.get(this.secrets.marketplaceCheckUserURL + username).toPromise();
-    };
-    MarketplaceService.prototype.registerUser = function (user) {
-        return this.http.post(this.secrets.marketplaceAddUserURL, user).toPromise();
-    };
-    MarketplaceService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
-    ], MarketplaceService);
-    return MarketplaceService;
-}());
-
-//# sourceMappingURL=MarketplaceService.js.map
-
-/***/ }),
-
-/***/ 218:
+/***/ 177:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(238);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherConfirmPageModule", function() { return FisherConfirmPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_confirm__ = __webpack_require__(165);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherConfirmPageModule = /** @class */ (function () {
+    function FisherConfirmPageModule() {
+    }
+    FisherConfirmPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_confirm__["a" /* FisherConfirmPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_confirm__["a" /* FisherConfirmPage */]),
+            ],
+        })
+    ], FisherConfirmPageModule);
+    return FisherConfirmPageModule;
+}());
+
+//# sourceMappingURL=fisher-confirm.module.js.map
+
+/***/ }),
+
+/***/ 178:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherNotUniqueModule", function() { return FisherNotUniqueModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__ = __webpack_require__(175);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherNotUniqueModule = /** @class */ (function () {
+    function FisherNotUniqueModule() {
+    }
+    FisherNotUniqueModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */]),
+            ],
+        })
+    ], FisherNotUniqueModule);
+    return FisherNotUniqueModule;
+}());
+
+//# sourceMappingURL=fisher-not-unique.module.js.map
+
+/***/ }),
+
+/***/ 179:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherPersonalPageModule", function() { return FisherPersonalPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal__ = __webpack_require__(174);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherPersonalPageModule = /** @class */ (function () {
+    function FisherPersonalPageModule() {
+    }
+    FisherPersonalPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
+            ],
+        })
+    ], FisherPersonalPageModule);
+    return FisherPersonalPageModule;
+}());
+
+//# sourceMappingURL=fisher-personal.module.js.map
+
+/***/ }),
+
+/***/ 180:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherRegisterFailurePageModule", function() { return FisherRegisterFailurePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_register_failure__ = __webpack_require__(176);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherRegisterFailurePageModule = /** @class */ (function () {
+    function FisherRegisterFailurePageModule() {
+    }
+    FisherRegisterFailurePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_register_failure__["a" /* FisherRegisterFailurePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_failure__["a" /* FisherRegisterFailurePage */]),
+            ],
+        })
+    ], FisherRegisterFailurePageModule);
+    return FisherRegisterFailurePageModule;
+}());
+
+//# sourceMappingURL=fisher-register-failure.module.js.map
+
+/***/ }),
+
+/***/ 181:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherRegisterSuccessPageModule", function() { return FisherRegisterSuccessPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__ = __webpack_require__(169);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherRegisterSuccessPageModule = /** @class */ (function () {
+    function FisherRegisterSuccessPageModule() {
+    }
+    FisherRegisterSuccessPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */]),
+            ],
+        })
+    ], FisherRegisterSuccessPageModule);
+    return FisherRegisterSuccessPageModule;
+}());
+
+//# sourceMappingURL=fisher-register-success.module.js.map
+
+/***/ }),
+
+/***/ 182:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherRolePageModule", function() { return FisherRolePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_role__ = __webpack_require__(172);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherRolePageModule = /** @class */ (function () {
+    function FisherRolePageModule() {
+    }
+    FisherRolePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_role__["a" /* FisherRolePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_role__["a" /* FisherRolePage */]),
+            ],
+        })
+    ], FisherRolePageModule);
+    return FisherRolePageModule;
+}());
+
+//# sourceMappingURL=fisher-role.module.js.map
+
+/***/ }),
+
+/***/ 183:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherUsetermsPageModule", function() { return FisherUsetermsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_useterms__ = __webpack_require__(173);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherUsetermsPageModule = /** @class */ (function () {
+    function FisherUsetermsPageModule() {
+    }
+    FisherUsetermsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_useterms__["a" /* FisherUsetermsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_useterms__["a" /* FisherUsetermsPage */]),
+            ],
+        })
+    ], FisherUsetermsPageModule);
+    return FisherUsetermsPageModule;
+}());
+
+//# sourceMappingURL=fisher-useterms.module.js.map
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(247);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1442,34 +1789,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 238:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(309);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_fisher_community_fisher_community__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_fisher_confirm_fisher_confirm__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_fisher_personal_fisher_personal__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_fisher_role_fisher_role__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_fisher_useterms_fisher_useterms__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fisher_register_success_fisher_register_success__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fisher_not_unique_fisher_not_unique__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fisher_register_failure_fisher_register_failure__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_marketplace_home_marketplace_home__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_MarketplaceService__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_FisherService__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__classes_registree_class__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_after_register_after_register__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_marketplace_home_marketplace_home__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_MarketplaceService__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_FisherService__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__classes_registree_class__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_after_register_after_register_module__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fisher_community_fisher_community_module__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fisher_confirm_fisher_confirm_module__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fisher_not_unique_fisher_not_unique_module__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_fisher_personal_fisher_personal_module__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_fisher_register_failure_fisher_register_failure_module__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fisher_register_success_fisher_register_success_module__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_fisher_role_fisher_role_module__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_fisher_useterms_fisher_useterms_module__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__classes_confirm_password_validator_directive__ = __webpack_require__(310);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1489,17 +1837,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //Common landing page
 
 //Fisher registration pages
-
-
-
-
-
-
-
-
 //Marketplace registration pages
 
 //Imported services
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1512,56 +1861,48 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_fisher_community_fisher_community__["a" /* FisherCommunityPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_fisher_confirm_fisher_confirm__["a" /* FisherConfirmPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_fisher_personal_fisher_personal__["a" /* FisherPersonalPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_fisher_role_fisher_role__["a" /* FisherRolePage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_fisher_useterms_fisher_useterms__["a" /* FisherUsetermsPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_fisher_register_success_fisher_register_success__["a" /* FisherRegisterSuccessPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_fisher_not_unique_fisher_not_unique__["a" /* FisherNotUniquePage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_fisher_register_failure_fisher_register_failure__["a" /* FisherRegisterFailurePage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_marketplace_home_marketplace_home__["a" /* MarketplaceHome */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_after_register_after_register__["a" /* AfterRegisterPage */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_marketplace_home_marketplace_home__["a" /* MarketplaceHome */],
+                __WEBPACK_IMPORTED_MODULE_22__classes_confirm_password_validator_directive__["a" /* confirmEqualValidatorsDirective */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/fisher-community/fisher-community.module#FisherCommunityPageModule', name: 'FisherCommunityPage', segment: 'fisher-community', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/after-register/after-register.module#AfterRegisterPageModule', name: 'AfterRegisterPage', segment: 'after-register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-community/fisher-community.module#FisherCommunityPageModule', name: 'FisherCommunityPage', segment: 'fisher-community', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-confirm/fisher-confirm.module#FisherConfirmPageModule', name: 'FisherConfirmPage', segment: 'fisher-confirm', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-not-unique/fisher-not-unique.module#FisherNotUniqueModule', name: 'FisherNotUniquePage', segment: 'fisher-not-unique', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-register-failure/fisher-register-failure.module#FisherRegisterFailurePageModule', name: 'FisherRegisterFailurePage', segment: 'fisher-register-failure', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-register-success/fisher-register-success.module#FisherRegisterSuccessPageModule', name: 'FisherRegisterSuccessPage', segment: 'fisher-register-success', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-role/fisher-role.module#FisherRolePageModule', name: 'FisherRolePage', segment: 'fisher-role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-useterms/fisher-useterms.module#FisherUsetermsPageModule', name: 'FisherUsetermsPage', segment: 'fisher-useterms', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__["RecaptchaModule"].forRoot()
+                __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__["RecaptchaModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_13__pages_after_register_after_register_module__["AfterRegisterPageModule"],
+                __WEBPACK_IMPORTED_MODULE_14__pages_fisher_community_fisher_community_module__["FisherCommunityPageModule"],
+                __WEBPACK_IMPORTED_MODULE_15__pages_fisher_confirm_fisher_confirm_module__["FisherConfirmPageModule"],
+                __WEBPACK_IMPORTED_MODULE_16__pages_fisher_not_unique_fisher_not_unique_module__["FisherNotUniqueModule"],
+                __WEBPACK_IMPORTED_MODULE_17__pages_fisher_personal_fisher_personal_module__["FisherPersonalPageModule"],
+                __WEBPACK_IMPORTED_MODULE_18__pages_fisher_register_failure_fisher_register_failure_module__["FisherRegisterFailurePageModule"],
+                __WEBPACK_IMPORTED_MODULE_19__pages_fisher_register_success_fisher_register_success_module__["FisherRegisterSuccessPageModule"],
+                __WEBPACK_IMPORTED_MODULE_20__pages_fisher_role_fisher_role_module__["FisherRolePageModule"],
+                __WEBPACK_IMPORTED_MODULE_21__pages_fisher_useterms_fisher_useterms_module__["FisherUsetermsPageModule"]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_fisher_community_fisher_community__["a" /* FisherCommunityPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_fisher_confirm_fisher_confirm__["a" /* FisherConfirmPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_fisher_personal_fisher_personal__["a" /* FisherPersonalPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_fisher_role_fisher_role__["a" /* FisherRolePage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_fisher_useterms_fisher_useterms__["a" /* FisherUsetermsPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_fisher_register_success_fisher_register_success__["a" /* FisherRegisterSuccessPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_fisher_not_unique_fisher_not_unique__["a" /* FisherNotUniquePage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_fisher_register_failure_fisher_register_failure__["a" /* FisherRegisterFailurePage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_marketplace_home_marketplace_home__["a" /* MarketplaceHome */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_after_register_after_register__["a" /* AfterRegisterPage */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_marketplace_home_marketplace_home__["a" /* MarketplaceHome */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_18__providers_MarketplaceService__["a" /* MarketplaceService */],
-                __WEBPACK_IMPORTED_MODULE_19__providers_FisherService__["a" /* FisherService */],
-                __WEBPACK_IMPORTED_MODULE_20__classes_registree_class__["a" /* Registree */],
+                __WEBPACK_IMPORTED_MODULE_10__providers_MarketplaceService__["a" /* MarketplaceService */],
+                __WEBPACK_IMPORTED_MODULE_11__providers_FisherService__["a" /* FisherService */],
+                __WEBPACK_IMPORTED_MODULE_12__classes_registree_class__["a" /* Registree */],
                 { provide: __WEBPACK_IMPORTED_MODULE_3__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -1573,7 +1914,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1603,7 +1944,7 @@ var Fisher = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 272:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1621,7 +1962,7 @@ var FisherUsetermsClass = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 273:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1644,7 +1985,7 @@ var CommunityInfoClass = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 274:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1662,15 +2003,15 @@ var CommunityClass = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 300:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1708,6 +2049,57 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 310:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return confirmEqualValidatorsDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var confirmEqualValidatorsDirective = /** @class */ (function () {
+    function confirmEqualValidatorsDirective() {
+    }
+    confirmEqualValidatorsDirective_1 = confirmEqualValidatorsDirective;
+    confirmEqualValidatorsDirective.prototype.validate = function (control) {
+        var controlToCompare = control.parent.get(this.appConfirmEqualValidator);
+        if (controlToCompare && controlToCompare.value !== control.value) {
+            return { 'notEqual': true };
+        }
+        return null;
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], confirmEqualValidatorsDirective.prototype, "appConfirmEqualValidator", void 0);
+    confirmEqualValidatorsDirective = confirmEqualValidatorsDirective_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"])({
+            selector: '[appConfirmEqualValidator]',
+            providers: [{
+                    provide: __WEBPACK_IMPORTED_MODULE_0__angular_forms__["c" /* NG_VALIDATORS */],
+                    useExisting: confirmEqualValidatorsDirective_1,
+                    multi: true
+                }]
+        })
+    ], confirmEqualValidatorsDirective);
+    return confirmEqualValidatorsDirective;
+    var confirmEqualValidatorsDirective_1;
+}());
+
+//# sourceMappingURL=confirm-password-validator-directive.js.map
+
+/***/ }),
+
 /***/ 35:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1715,9 +2107,9 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_fisher_class__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_secrets__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_fisher_class__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_base_urls__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1737,7 +2129,7 @@ var FisherService = /** @class */ (function () {
     function FisherService(http, registree) {
         this.http = http;
         this.registree = registree;
-        this.secrets = new __WEBPACK_IMPORTED_MODULE_4__classes_secrets__["a" /* Secrets */]();
+        this.urls = new __WEBPACK_IMPORTED_MODULE_4__classes_base_urls__["a" /* BaseUrls */]();
     }
     FisherService.prototype.fisherUpdateRole = function (role_info) {
         this.registree.role = role_info;
@@ -1829,7 +2221,7 @@ var FisherService = /** @class */ (function () {
     FisherService.prototype.checkIfFisherAlreadyExists = function (ID) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.http.get(_this.secrets.fisherCheckUserIDurl + ID).toPromise()
+            _this.http.get(_this.urls.fisherCheckUserIDurl + ID).toPromise()
                 .then(function () {
                 reject();
             })
@@ -1841,7 +2233,7 @@ var FisherService = /** @class */ (function () {
     //Go ahead and actually try to register the fisher
     FisherService.prototype.registerFisher = function (fisher) {
         //console.log("Posting fisher registration")
-        return this.http.post(this.secrets.fisherAddUserURL, fisher).toPromise();
+        return this.http.post(this.urls.fisherAddUserURL, fisher).toPromise();
     };
     FisherService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1860,9 +2252,9 @@ var FisherService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__marketplace_home_marketplace_home__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fisher_role_fisher_role__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__marketplace_home_marketplace_home__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fisher_role_fisher_role__ = __webpack_require__(172);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1900,5 +2292,5 @@ var HomePage = /** @class */ (function () {
 
 /***/ })
 
-},[218]);
+},[227]);
 //# sourceMappingURL=main.js.map
