@@ -93,8 +93,30 @@
     </ion-item>
   </form>
 
+  <form id="page-form4">
+    <ion-item-divider color="light" id="page-list-item-divider4">
+      Type of Registration
+    </ion-item-divider>
 
-  <form id="page-form5">
+      <ion-label stacked>
+        Type:
+      </ion-label>
+      <div [formGroup]="myGroup">
+        <!--<ion-list formControlName="selectedItem" radio-group>-->
+        <ion-list [formControl]="personalForm.controls.selectedItem" radio-group>
+          <ion-item *ngFor="let item of userTypes">
+            <ion-label>{{item.label}}</ion-label>
+            <ion-radio item-left value="{{item.typeid}}"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    <!--<div class="radio" *ngFor="let u of user_type_list">-->
+      <!--<label><input type="radio" name="optradio" [(ngModel)]="selected_user_type" [value]="u.typeid">&nbsp; {{u.label}}</label>-->
+    <!--</div>-->
+  </form>
+
+  <form id="page-form5" *ngIf="personalForm.get('selectedItem').value !== 'individual'">
     <ion-item-divider color="light" id="page-list-item-divider5">
       Your Company
     </ion-item-divider>
@@ -149,7 +171,7 @@
     </ion-item>
   </form>
 
-  <ion-item>
+  <ion-item *ngIf="personalForm.get('selectedItem').value !== 'individual'">
     <ion-label>Physical location is same as above address</ion-label>
     <ion-checkbox checked="false" [(ngModel)]="matchingAddresses"></ion-checkbox>
   </ion-item>

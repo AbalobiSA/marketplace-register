@@ -10,6 +10,7 @@ import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
 import {HttpClient} from '@angular/common/http';
 import {AfterRegisterPage} from "../after-register/after-register";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'page-marketplace-home',
@@ -45,16 +46,44 @@ export class MarketplaceHome {
   loading: any;
   loaderShowing = false;
 
+  myGroup: any;
+  userTypes: any;
+
   matchingAddresses = false;
 
   private captchaPassed: boolean = false;
   private captchaResponse: string;
 
+  personalForm: any;
+
   constructor(public loadingCtrl: LoadingController,
               public  marketplaceService: MarketplaceService,
               public navCtrl: NavController,
-              private http: HttpClient, private zone: NgZone) {
+              private http: HttpClient, private zone: NgZone,
+              public formBuilder: FormBuilder) {
+    this.myGroup = new FormGroup({
+      selectedItem: new FormControl()
+    });
+    this.personalForm = this.formBuilder.group({
+      selectedItem: ['individual'],
+    });
 
+  // private addItemForm = this.formBuilder.group({
+  //     selectedItem: ['individual'],
+  //   });
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MarketplaceHome');
+    this.showLoader('Loading user types');
+    this.marketplaceService.getUserTypes().then(result => {
+      this.userTypes = result;
+      this.dismissLoader();
+      console.log(this.personalForm.value.selectedItem);
+      console.log(result);
+    }).catch(error => {
+      console.log("Error: ", error);
+    });
   }
 
   // called from the UI when the register button has been clicked
@@ -203,6 +232,12 @@ export class MarketplaceHome {
     return new Promise((resolve, reject) => {
       this.trimFields();
 
+      let user_type = this.personalForm.get("selectedItem").value;
+      if (user_type === 'individual') {
+        this.name_of_establishment = `CSF ${this.name} ${this.surname}`;
+        this.company_name = `CSF ${this.name} ${this.surname}`;
+      }
+
       // check that all fields are filled in
       if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name)) {
         reject("Please fill in all required fields (marked with an '*')");
@@ -284,6 +319,8 @@ export class MarketplaceHome {
       this.location_postal_code = this.postal_code;
     }
 
+    let user_type = this.personalForm.get("selectedItem").value;
+
     const user = {
       username: this.email,
       password: this.password,
@@ -316,7 +353,8 @@ export class MarketplaceHome {
         loc_address: this.location_address,
         loc_city: this.location_city,
         loc_postal_code: this.location_postal_code
-      }
+      },
+      user_type: user_type
     };
 
     return this.marketplaceService.registerUser(user).then(() => {
