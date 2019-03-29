@@ -116,7 +116,7 @@
     <!--</div>-->
   </form>
 
-  <form id="page-form5">
+  <form id="page-form5" *ngIf="personalForm.get('selectedItem').value !== 'individual'">
     <ion-item-divider color="light" id="page-list-item-divider5">
       Your Company
     </ion-item-divider>
@@ -171,7 +171,7 @@
     </ion-item>
   </form>
 
-  <ion-item>
+  <ion-item *ngIf="personalForm.get('selectedItem').value !== 'individual'">
     <ion-label>Physical location is same as above address</ion-label>
     <ion-checkbox checked="false" [(ngModel)]="matchingAddresses"></ion-checkbox>
   </ion-item>
