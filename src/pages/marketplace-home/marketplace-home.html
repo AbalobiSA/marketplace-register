@@ -93,6 +93,20 @@
     </ion-item>
   </form>
 
+  <form id="page-form4">
+    <ion-item-divider color="light" id="page-list-item-divider4">
+      Type of Registration
+    </ion-item-divider>
+
+    <div [formGroup]="myGroup">
+      <ion-list formControlName="selectedItem" radio-group>
+        <ion-item>
+          <ion-label>Test</ion-label>
+          <ion-radio item-left slot="start" value="test">Test</ion-radio>
+        </ion-item>
+      </ion-list>
+    </div>
+  </form>
 
   <form id="page-form5">
     <ion-item-divider color="light" id="page-list-item-divider5">

@@ -10,6 +10,7 @@ import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
 import {HttpClient} from '@angular/common/http';
 import {AfterRegisterPage} from "../after-register/after-register";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'page-marketplace-home',
@@ -45,6 +46,8 @@ export class MarketplaceHome {
   loading: any;
   loaderShowing = false;
 
+  myGroup: any;
+
   matchingAddresses = false;
 
   private captchaPassed: boolean = false;
@@ -54,7 +57,9 @@ export class MarketplaceHome {
               public  marketplaceService: MarketplaceService,
               public navCtrl: NavController,
               private http: HttpClient, private zone: NgZone) {
-
+    this.myGroup = new FormGroup({
+      selectedItem: new FormControl()
+    });
   }
 
   // called from the UI when the register button has been clicked
