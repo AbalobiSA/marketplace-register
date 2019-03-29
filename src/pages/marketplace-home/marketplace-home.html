@@ -102,13 +102,18 @@
         Type:
       </ion-label>
       <div [formGroup]="myGroup">
-        <ion-list formControlName="selectedItem" radio-group>
+        <!--<ion-list formControlName="selectedItem" radio-group>-->
+        <ion-list [formControl]="personalForm.controls.selectedItem" radio-group>
           <ion-item *ngFor="let item of userTypes">
             <ion-label>{{item.label}}</ion-label>
             <ion-radio item-left value="{{item.typeid}}" [checked]="item.typeid === 'individual'"></ion-radio>
           </ion-item>
         </ion-list>
       </div>
+
+    <!--<div class="radio" *ngFor="let u of user_type_list">-->
+      <!--<label><input type="radio" name="optradio" [(ngModel)]="selected_user_type" [value]="u.typeid">&nbsp; {{u.label}}</label>-->
+    <!--</div>-->
   </form>
 
   <form id="page-form5">

@@ -64,6 +64,9 @@ export class MarketplaceHome {
     this.myGroup = new FormGroup({
       selectedItem: new FormControl()
     });
+    this.personalForm = this.formBuilder.group({
+      selectedItem: ['individual'],
+    });
 
   // private addItemForm = this.formBuilder.group({
   //     selectedItem: ['individual'],
@@ -75,9 +78,6 @@ export class MarketplaceHome {
     this.showLoader('Loading user types');
     this.marketplaceService.getUserTypes().then(result => {
       this.userTypes = result;
-      this.personalForm = this.formBuilder.group({
-        selectedItem: ['individual'],
-      });
       this.dismissLoader();
       console.log(this.personalForm.value.selectedItem);
       console.log(result);
@@ -88,6 +88,7 @@ export class MarketplaceHome {
 
   registerDebugBtnClick() {
     console.log(this.personalForm.value.selectedItem);
+    console.log("seletectedItem: ", this.personalForm.get("selectedItem").value);
   }
 
   // called from the UI when the register button has been clicked
