@@ -89,6 +89,43 @@ export class MarketplaceHome {
   registerDebugBtnClick() {
     console.log(this.personalForm.value.selectedItem);
     console.log("seletectedItem: ", this.personalForm.get("selectedItem").value);
+
+    const user = {
+      username: this.email,
+      password: this.password,
+      firstname: this.name,
+      lastname: this.surname,
+      h2c_buyer_company: this.name_of_establishment,
+      // buyer_details : this.company_details.split("\n"),
+      buyer_details: {
+        company_name: this.company_name,
+        vat_number: this.vat_number,
+        address: this.address,
+        city: this.city,
+        postal_code: this.postal_code
+      },
+      sellerEnabled: false,
+      abalobiId: null,
+      cell_number: this.cell_number,
+      instagram_handle: this.instagram_handle,
+      approved: false,
+      buyer_notifications: {
+        extra_invoice_1: this.extra_email_1,
+        extra_invoice_2: this.extra_email_2,
+        extra_qr_1: this.extra_email_3,
+        extra_qr_2: this.extra_email_4,
+        extra_qr_3: this.extra_email_5
+      },
+      location: {
+        lat: null,
+        lon: null,
+        loc_address: this.location_address,
+        loc_city: this.location_city,
+        loc_postal_code: this.location_postal_code
+      }
+    };
+
+    console.log("User: ", user);
   }
 
   // called from the UI when the register button has been clicked
@@ -318,6 +355,8 @@ export class MarketplaceHome {
       this.location_postal_code = this.postal_code;
     }
 
+    let user_type = this.personalForm.get("selectedItem").value
+
     const user = {
       username: this.email,
       password: this.password,
@@ -350,7 +389,8 @@ export class MarketplaceHome {
         loc_address: this.location_address,
         loc_city: this.location_city,
         loc_postal_code: this.location_postal_code
-      }
+      },
+      user_type: user_type
     };
 
     return this.marketplaceService.registerUser(user).then(() => {
