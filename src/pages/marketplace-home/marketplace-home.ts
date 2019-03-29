@@ -86,6 +86,10 @@ export class MarketplaceHome {
     });
   }
 
+  registerDebugBtnClick() {
+    console.log(this.personalForm.value.selectedItem);
+  }
+
   // called from the UI when the register button has been clicked
   registerBtnClick() {
     // validate the user's input
