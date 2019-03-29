@@ -592,6 +592,7 @@ var BaseUrls = /** @class */ (function () {
     function BaseUrls() {
         this.marketplaceCheckUserURL = "https://market.abalobi.org/api/users/find/?username=";
         this.marketplaceAddUserURL = "https://market.abalobi.org/api/users/create/";
+        this.marketplaceGetUserTypesURL = "https://market.abalobi.org/api/listings/user-type-list";
         this.fisherCheckUserIDurl = "http://server.abalobi.org/api/users/id/checkidexists?id=";
         this.fisherAddUserURL = "https://server.abalobi.org/register";
         this.testPostURL = "http://server.abalobi.org/api/testpost";
@@ -716,6 +717,18 @@ var MarketplaceHome = /** @class */ (function () {
             selectedItem: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]()
         });
     }
+    MarketplaceHome.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('ionViewDidLoad MarketplaceHome');
+        this.showLoader('Loading user types');
+        this.marketplaceService.getUserTypes().then(function (result) {
+            _this.userTypes = result;
+            _this.dismissLoader();
+            console.log(result);
+        }).catch(function (error) {
+            console.log("Error: ", error);
+        });
+    };
     // called from the UI when the register button has been clicked
     MarketplaceHome.prototype.registerBtnClick = function () {
         var _this = this;
@@ -1026,11 +1039,15 @@ var MarketplaceService = /** @class */ (function () {
     MarketplaceService.prototype.registerUser = function (user) {
         return this.http.post(this.urls.marketplaceAddUserURL, user).toPromise();
     };
+    MarketplaceService.prototype.getUserTypes = function () {
+        return this.http.get(this.urls.marketplaceGetUserTypesURL).toPromise();
+    };
     MarketplaceService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], MarketplaceService);
     return MarketplaceService;
+    var _a;
 }());
 
 //# sourceMappingURL=MarketplaceService.js.map

@@ -47,6 +47,7 @@ export class MarketplaceHome {
   loaderShowing = false;
 
   myGroup: any;
+  userTypes: any;
 
   matchingAddresses = false;
 
@@ -59,6 +60,18 @@ export class MarketplaceHome {
               private http: HttpClient, private zone: NgZone) {
     this.myGroup = new FormGroup({
       selectedItem: new FormControl()
+    });
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MarketplaceHome');
+    this.showLoader('Loading user types');
+    this.marketplaceService.getUserTypes().then(result => {
+      this.userTypes = result;
+      this.dismissLoader();
+      console.log(result);
+    }).catch(error => {
+      console.log("Error: ", error);
     });
   }
 

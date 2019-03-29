@@ -18,6 +18,10 @@ urls: BaseUrls = new BaseUrls();
   registerUser(user): Promise<any> {
     return this.http.post(this.urls.marketplaceAddUserURL, user).toPromise();
   }
+
+  getUserTypes(): Promise<any> {
+    return this.http.get(this.urls.marketplaceGetUserTypesURL).toPromise();
+  }
 }
 
 
