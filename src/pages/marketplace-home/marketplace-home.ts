@@ -10,7 +10,7 @@ import {LoadingController, NavController} from 'ionic-angular';
 import {MarketplaceService} from "../../providers/MarketplaceService";
 import {HttpClient} from '@angular/common/http';
 import {AfterRegisterPage} from "../after-register/after-register";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'page-marketplace-home',
@@ -54,13 +54,20 @@ export class MarketplaceHome {
   private captchaPassed: boolean = false;
   private captchaResponse: string;
 
+  personalForm: any;
+
   constructor(public loadingCtrl: LoadingController,
               public  marketplaceService: MarketplaceService,
               public navCtrl: NavController,
-              private http: HttpClient, private zone: NgZone) {
+              private http: HttpClient, private zone: NgZone,
+              public formBuilder: FormBuilder) {
     this.myGroup = new FormGroup({
       selectedItem: new FormControl()
     });
+
+  // private addItemForm = this.formBuilder.group({
+  //     selectedItem: ['individual'],
+  //   });
   }
 
   ionViewDidLoad() {
@@ -68,7 +75,11 @@ export class MarketplaceHome {
     this.showLoader('Loading user types');
     this.marketplaceService.getUserTypes().then(result => {
       this.userTypes = result;
+      this.personalForm = this.formBuilder.group({
+        selectedItem: ['individual'],
+      });
       this.dismissLoader();
+      console.log(this.personalForm.value.selectedItem);
       console.log(result);
     }).catch(error => {
       console.log("Error: ", error);
