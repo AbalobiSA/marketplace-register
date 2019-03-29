@@ -106,7 +106,7 @@
         <ion-list [formControl]="personalForm.controls.selectedItem" radio-group>
           <ion-item *ngFor="let item of userTypes">
             <ion-label>{{item.label}}</ion-label>
-            <ion-radio item-left value="{{item.typeid}}" [checked]="item.typeid === 'individual'"></ion-radio>
+            <ion-radio item-left value="{{item.typeid}}"></ion-radio>
           </ion-item>
         </ion-list>
       </div>
