@@ -100,9 +100,9 @@
 
     <div [formGroup]="myGroup">
       <ion-list formControlName="selectedItem" radio-group>
-        <ion-item>
-          <ion-label>Test</ion-label>
-          <ion-radio item-left slot="start" value="test">Test</ion-radio>
+        <ion-item *ngFor="let item of userTypes">
+          <ion-label>{{item.label}}</ion-label>
+          <ion-radio item-left [value]="item.typeid"></ion-radio>
         </ion-item>
       </ion-list>
     </div>
