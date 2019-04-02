@@ -65,7 +65,7 @@ export class MarketplaceHome {
       selectedItem: new FormControl()
     });
     this.personalForm = this.formBuilder.group({
-      selectedItem: ['individual'],
+      selectedItem: [],
     });
 
   // private addItemForm = this.formBuilder.group({
