@@ -191,7 +191,7 @@
 
     <ion-item id="page-input21">
       <ion-label stacked>
-        Town/City
+        * Town/City
       </ion-label>
       <ion-input [(ngModel)]="location_city" name="city" type="text" placeholder="Optional"></ion-input>
       >
@@ -220,7 +220,7 @@
     </ion-item>
   </form>
 
-  <form id="page-form8">
+  <form id="page-form8" *ngIf="personalForm.get('selectedItem').value !== 'individual'">
     <ion-item-divider color="light" id="page-list-item-divider8">
       Notifications
     </ion-item-divider>
@@ -276,9 +276,9 @@
     <!--<re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>-->
     <div id="page-container1"></div>
 
-    <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>
-      Register
-    </button>
   </form>
+  <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>
+    Register
+  </button>
 
 </ion-content>

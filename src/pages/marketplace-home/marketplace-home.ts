@@ -240,7 +240,7 @@ export class MarketplaceHome {
       }
 
       // check that all fields are filled in
-      if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && user_type)) {
+      if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && user_type && this.location_city)) {
         reject("Please fill in all required fields (marked with an '*')");
       }
 
