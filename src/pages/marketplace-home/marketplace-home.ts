@@ -65,7 +65,7 @@ export class MarketplaceHome {
       selectedItem: new FormControl()
     });
     this.personalForm = this.formBuilder.group({
-      selectedItem: ['individual'],
+      selectedItem: [undefined],
     });
 
   // private addItemForm = this.formBuilder.group({
@@ -233,13 +233,14 @@ export class MarketplaceHome {
       this.trimFields();
 
       let user_type = this.personalForm.get("selectedItem").value;
+      console.log(`user_type = ${user_type}`);
       if (user_type === 'individual') {
         this.name_of_establishment = `CSF ${this.name} ${this.surname}`;
         this.company_name = `CSF ${this.name} ${this.surname}`;
       }
 
       // check that all fields are filled in
-      if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name)) {
+      if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && user_type)) {
         reject("Please fill in all required fields (marked with an '*')");
       }
 
