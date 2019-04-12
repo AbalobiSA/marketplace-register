@@ -30,6 +30,10 @@ function getProvinceAbbrev(province: string): string {
             return "SEY";
         }
 
+        case "Namibia": {
+            return "NAM";
+        }
+
         //add more cases as they arise
         default :{
             return "abbrev not found";
@@ -191,7 +195,8 @@ export class FisherCommunityPage {
             "strand,WC,Strand,Strand,west_coast",
             "strandfontein_falsebay,WC,Strandfontein (False Bay),Strandfontein (Valsbaai),west_coast",
             "struisbaai,WC,Struis Bay,Struisbaai,west_coast",
-            "yzerfontein,WC,Yzerfontein,Yzerfontein,west_coast"
+            "yzerfontein,WC,Yzerfontein,Yzerfontein,west_coast",
+            "nam_hentiesbaai,NAM,Hentiesbaai,Hentiesbaai,namibia"
         ];
 
 
