@@ -29,7 +29,6 @@ function getProvinceAbbrev(province: string): string {
         case "Seychelles":{
             return "SEY";
         }
-
         case "Namibia": {
             return "NAM";
         }
