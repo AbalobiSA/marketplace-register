@@ -931,9 +931,7 @@ var MarketplaceHome = /** @class */ (function () {
                 reject("Please enter a valid phone number. Phone numbers should contain 10 digits. Only South African numbers are allowed at present. Example: 0821234567");
             }
             // check that the user does not already exist
-            console.log('Checking username existence...');
             _this.marketplaceService.checkIfUserAlreadyExists(_this.email).then(function (user) {
-                console.log(user);
                 if (user[0]) {
                     reject("This username is already taken");
                 }

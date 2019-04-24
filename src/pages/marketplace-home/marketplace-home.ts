@@ -300,10 +300,7 @@ export class MarketplaceHome {
       }
 
       // check that the user does not already exist
-      console.log('Checking username existence...');
       this.marketplaceService.checkIfUserAlreadyExists(this.email).then((user) => {
-        console.log(user);
-
         if (user[0]) {
           reject("This username is already taken");
         } else {
