@@ -243,6 +243,10 @@ export class MarketplaceHome {
         this.location_address = this.address;
         this.location_city = this.city;
         this.location_postal_code = this.postal_code;
+
+        if (!(this.city)) {
+          reject("Please fill in Town/City as it is required for physical location");
+        }
       }
 
       // check that all fields are filled in
@@ -299,7 +303,7 @@ export class MarketplaceHome {
       console.log('Checking username existence...');
       this.marketplaceService.checkIfUserAlreadyExists(this.email).then((user) => {
         console.log(user);
-        
+
         if (user[0]) {
           reject("This username is already taken");
         } else {
