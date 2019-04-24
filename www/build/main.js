@@ -881,6 +881,14 @@ var MarketplaceHome = /** @class */ (function () {
                 _this.name_of_establishment = "CSF " + _this.name + " " + _this.surname;
                 _this.company_name = "CSF " + _this.name + " " + _this.surname;
             }
+            if (_this.matchingAddresses) {
+                _this.location_address = _this.address;
+                _this.location_city = _this.city;
+                _this.location_postal_code = _this.postal_code;
+                if (!(_this.city)) {
+                    reject("Please fill in Town/City as it is required for physical location");
+                }
+            }
             // check that all fields are filled in
             if (!(_this.email && _this.password && _this.name && _this.surname && _this.cell_number && _this.name_of_establishment && _this.company_name && user_type && _this.location_city)) {
                 reject("Please fill in all required fields (marked with an '*')");
@@ -944,11 +952,6 @@ var MarketplaceHome = /** @class */ (function () {
         if (!this.vat_number) {
             this.vat_number = '-';
         }
-        if (this.matchingAddresses) {
-            this.location_address = this.address;
-            this.location_city = this.city;
-            this.location_postal_code = this.postal_code;
-        }
         var user_type = this.personalForm.get("selectedItem").value;
         var user = {
             username: this.email,
@@ -988,6 +991,7 @@ var MarketplaceHome = /** @class */ (function () {
         return this.marketplaceService.registerUser(user).then(function () {
             return Promise.resolve();
         }).catch(function (error) {
+            console.log("Error: ", error);
             return Promise.reject(error);
         });
     };

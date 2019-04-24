@@ -239,6 +239,16 @@ export class MarketplaceHome {
         this.company_name = `CSF ${this.name} ${this.surname}`;
       }
 
+      if (this.matchingAddresses) {
+        this.location_address = this.address;
+        this.location_city = this.city;
+        this.location_postal_code = this.postal_code;
+
+        if (!(this.city)) {
+          reject("Please fill in Town/City as it is required for physical location");
+        }
+      }
+
       // check that all fields are filled in
       if (!(this.email && this.password && this.name && this.surname && this.cell_number && this.name_of_establishment && this.company_name && user_type && this.location_city)) {
         reject("Please fill in all required fields (marked with an '*')");
@@ -314,12 +324,6 @@ export class MarketplaceHome {
       this.vat_number = '-';
     }
 
-    if (this.matchingAddresses) {
-      this.location_address = this.address;
-      this.location_city = this.city;
-      this.location_postal_code = this.postal_code;
-    }
-
     let user_type = this.personalForm.get("selectedItem").value;
 
     const user = {
@@ -361,6 +365,7 @@ export class MarketplaceHome {
     return this.marketplaceService.registerUser(user).then(() => {
       return Promise.resolve();
     }).catch((error) => {
+      console.log("Error: ", error);
       return Promise.reject(error);
     });
   }
