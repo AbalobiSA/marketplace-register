@@ -188,7 +188,7 @@ export class FisherCommunityPage {
             "paternoster,WC,Paternoster,Paternoster,west_coast",
             "portnolloth,NC,Port Nolloth,Port Nolloth,west_coast",
             "pringlebay,WC,Pringle Bay,Pringlebaai,west_coast",
-            "sainthelena,WC,Saint Helena,Saint Helena,west_coast",
+            "steenbergscove,WC,Steenberg's Cove,Steenberg's Cove,west_coast",
             "simonstown,WC,Simon's Town,Simonstad,west_coast",
             "sainthelenaisland,SHI,St Helena Island,St Helena Eiland,saint_helena_island",
             "strand,WC,Strand,Strand,west_coast",
