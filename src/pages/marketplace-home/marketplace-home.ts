@@ -295,8 +295,8 @@ export class MarketplaceHome {
       }
 
       // rudimentarily check that the cell number is valid
-      if (this.cell_number.length !== 10 || isNaN(parseFloat(this.cell_number))) {
-        reject("Please enter a valid phone number. Phone numbers should contain 10 digits. Only South African numbers are allowed at present. Example: 0821234567");
+      if (this.cell_number.length < 2 || isNaN(parseFloat(this.cell_number)) || this.cell_number[0] !== '+') {
+        reject("Please enter a valid phone number. Phone numbers should be in international format Example: +27821234567");
       }
 
       // check that the user does not already exist
