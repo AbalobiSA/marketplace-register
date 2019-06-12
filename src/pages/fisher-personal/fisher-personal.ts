@@ -213,7 +213,7 @@ export class FisherPersonalPage {
                         "name":     ['', Validators.required],
                         "nickname": ['', Validators.required],
                         "gender":   ['', ],
-                        "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(13), Validators.maxLength(13)])],
+                        "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
                         "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[+][0-9]+$')])],
                         "password1":['', Validators.required],
                         "password2":['', Validators.required]
