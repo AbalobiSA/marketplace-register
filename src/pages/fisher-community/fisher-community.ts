@@ -5,6 +5,7 @@ import {FisherService} from "../../providers/FisherService";
 import{CommunityInfoClass} from "../../classes/community_info_class";
 import {CommunityClass} from "../../classes/community_class";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {qR} from "@angular/core/src/render3";
 
 
 
@@ -159,8 +160,10 @@ export class FisherCommunityPage {
             "sey_mahe_grandanse,SEY,Mahé - Grand Anse,Mahé - Grand Anse,seychelles",
             "sey_mahe_takamaka,SEY,Mahé - Takamaka,Mahé - Takamaka,seychelles",
             "sey_mahe_victoria,SEY,Mahé - Victoria,Mahé - Victoria,seychelles",
+            "sey_mahe_laretraite,SEY,Mahé - La Retraite,Mahé - La Retraite,seychelles",
             "sey_ladigues,SEY,La Digues,La Digues,seychelles",
             "sey_praslin,SEY,Praslin,Praslin,seychelles",
+            "sey_fregate,SEY,Fregate,Fregate,seychelles",
             "arniston,WC,Arniston,Waenhuiskrans,west_coast",
             "bellville,WC,Bellville,Bellville,west_coast",
             "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
