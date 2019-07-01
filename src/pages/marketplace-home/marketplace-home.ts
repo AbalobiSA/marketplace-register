@@ -145,6 +145,20 @@ export class MarketplaceHome {
     return re.test(String(email).toLowerCase());
   }
 
+  validatePassword(password) {
+    let hasNumber = false;
+    for (let i = 0; i < password.length; i++) {
+      if (password[i] === '0' || password[i] === '1' || password[i] === '2' || password[i] === '3' || password[i] === '4' || password[i] === '5'|| password[i] === '6'|| password[i] === '7'|| password[i] === '8'|| password[i] === '9') {
+        hasNumber = true;
+        break;
+      }
+    }
+    if (password.length < 6 || !hasNumber) {
+      return false;
+    }
+    return true;
+  }
+
   validateCaptcha(): Promise<any> {
     return new Promise((resolve, reject) => {
       if (!this.captchaPassed) {
@@ -257,6 +271,10 @@ export class MarketplaceHome {
       // Validate e-mail address(es)
       if (!this.validateEmail(this.email)) {
         reject("Please use a valid e-mail address");
+      }
+
+      if (!this.validatePassword(this.password)) {
+        reject('Password must be at least 6 characters long and include a number');
       }
 
       if (this.extra_email_1) {
