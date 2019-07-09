@@ -18,6 +18,8 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class FisherUsetermsPage {
 
+        terms: string;
+
         terms_status    : FisherUsetermsClass = new FisherUsetermsClass ();
         termsForm:any;
         validation_messages = {
@@ -35,6 +37,14 @@ export class FisherUsetermsPage {
         }
 
         ionViewDidLoad() {
+            console.log('Loading Terms & Conditions');
+            this.fisherService.fisherGetTerms()
+            .then((result: any) => {
+                this.terms = result.terms;
+                console.log(this.terms);
+            }).catch(error => {
+                console.log("Failed getting Ts&Cs: ", error);
+            });
         }
 
         onFisherFinishTerms(){
