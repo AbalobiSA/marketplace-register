@@ -27,6 +27,17 @@ export class FisherService {
         console.log("Fisher Service successfully updates role");
   }
 
+  fisherGetTerms() {
+      return new Promise((resolve, reject) => {
+          this.http.get(this.urls.fisherGetTermsURL).toPromise()
+          .then(result => {
+              resolve(result);
+          }).catch(error => {
+              reject(error);
+          });
+      });
+  }
+
   fisherUpdateTerms(terms_status  : FisherUsetermsClass){
         this.registree.terms_agreed       = terms_status.terms_use_agreed;
         this.registree.assistant_agreed   = terms_status.terms_assistant_agreed;

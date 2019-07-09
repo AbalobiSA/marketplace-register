@@ -600,6 +600,7 @@ var BaseUrls = /** @class */ (function () {
         this.marketplaceAddUserURL = "https://market.abalobi.org/api/users/create/";
         this.marketplaceGetUserTypesURL = "https://market.abalobi.org/api/listings/user-type-list";
         this.fisherCheckUserIDurl = "http://server.abalobi.org/api/users/id/checkidexists?id=";
+        this.fisherGetTermsURL = "https://server.abalobi.org/api/terms";
         this.fisherAddUserURL = "https://server.abalobi.org/register";
         this.testPostURL = "http://server.abalobi.org/api/testpost";
     }
@@ -1208,6 +1209,15 @@ var FisherUsetermsPage = /** @class */ (function () {
         this.termsForm.reset('agree'); //reset the checkbox upon creation
     }
     FisherUsetermsPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('Loading Terms & Conditions');
+        this.fisherService.fisherGetTerms()
+            .then(function (result) {
+            _this.terms = result.terms;
+            console.log(_this.terms);
+        }).catch(function (error) {
+            console.log("Failed getting Ts&Cs: ", error);
+        });
     };
     FisherUsetermsPage.prototype.onFisherFinishTerms = function () {
         this.fisherService.fisherUpdateTerms(this.terms_status);
@@ -1218,7 +1228,7 @@ var FisherUsetermsPage = /** @class */ (function () {
     };
     FisherUsetermsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-fisher-useterms',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/'<!--\n\n  Generated template for the FisherUsetermsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n        <ion-navbar>\n\n                <ion-title>Terms of Use</ion-title>\n\n        </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding="true" title="Terms of Use" id="fisher-terms-form">\n\n\n\n            <form [formGroup] = "termsForm">\n\n\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->\n\n                                <b>Your data belongs to you. In order to maintain the Abalobi system it is possible for the core Abalobi team to access all data, however all data submitted will be treated with the utmost privacy. No individual fisher data will be shared with 3rd parties without express consent\n\n                                    of the fisher, however aggregated catch data for all fishers together may be published. (e.g. Total kg Snoek catch recorded in South Africa in Nov 2016.) If you allocate some of your catch to the co-op, the co-op will be able to receive that information.\n\n                                    You will always be able to access your own data on the Abalobi system.\n\n                                </b>\n\n                        </p>\n\n\n\n\n\n                        <ion-item>\n\n                                <ion-label>* I Agree</ion-label>\n\n                                <ion-checkbox formControlName=\'agree\' (ionChange)="termsChanged()"></ion-checkbox>\n\n                        </ion-item>\n\n\n\n                        <div style="color:red" text-wrap align="center" class="validation-errors">\n\n                            <ng-container *ngFor="let validation of validation_messages.agree" >\n\n                                    <div class="error-message" *ngIf="!termsForm.get(\'agree\').value"><!-- && ( termsForm.get(\'agree\').dirty || termsForm.get(\'agree\')).touched"-->\n\n                                                {{ validation.message }}\n\n                                    </div>\n\n                            </ng-container>\n\n                        </div>\n\n\n\n\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n\n                                <b> I further consent to share my data with the following parties (tick where applicable):</b>\n\n                        </p>\n\n\n\n\n\n                        <ion-list text-wrap id="termsOfUse-list2">\n\n                                <ion-item>\n\n                                        <ion-label> Abalobi Local Fisher Assistant</ion-label>\n\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_assistant_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n\n                                </ion-item>\n\n\n\n\n\n                                <ion-item>\n\n                                        <ion-label > DAFF (Department of Agriculture, Forestry and Fisheries)</ion-label>\n\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_DAFF_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n\n                                </ion-item>\n\n                        </ion-list>\n\n\n\n                        <button ion-button full  [disabled]="!termsForm.valid" (click)="onFisherFinishTerms()">Next</button>\n\n\n\n            </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/,
+            selector: 'page-fisher-useterms',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/'<!--\n  Generated template for the FisherUsetermsPage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n        <ion-navbar>\n                <ion-title>Terms of Use</ion-title>\n        </ion-navbar>\n</ion-header>\n\n\n<ion-content padding="true" title="Terms of Use" id="fisher-terms-form">\n\n            <form [formGroup] = "termsForm">\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->\n                                <b>{{terms}}</b>\n                        </p>\n\n\n                        <ion-item>\n                                <ion-label>* I Agree</ion-label>\n                                <ion-checkbox formControlName=\'agree\' (ionChange)="termsChanged()"></ion-checkbox>\n                        </ion-item>\n\n                        <div style="color:red" text-wrap align="center" class="validation-errors">\n                            <ng-container *ngFor="let validation of validation_messages.agree" >\n                                    <div class="error-message" *ngIf="!termsForm.get(\'agree\').value"><!-- && ( termsForm.get(\'agree\').dirty || termsForm.get(\'agree\')).touched"-->\n                                                {{ validation.message }}\n                                    </div>\n                            </ng-container>\n                        </div>\n\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n                                <b> I further consent to share my data with the following parties (tick where applicable):</b>\n                        </p>\n\n\n                        <ion-list text-wrap id="termsOfUse-list2">\n                                <ion-item>\n                                        <ion-label> Abalobi Local Fisher Assistant</ion-label>\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_assistant_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                                </ion-item>\n\n\n                                <ion-item>\n                                        <ion-label > DAFF (Department of Agriculture, Forestry and Fisheries)</ion-label>\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_DAFF_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                                </ion-item>\n                        </ion-list>\n\n                        <button ion-button full  [disabled]="!termsForm.valid" (click)="onFisherFinishTerms()">Next</button>\n\n            </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]])
     ], FisherUsetermsPage);
@@ -2199,6 +2209,17 @@ var FisherService = /** @class */ (function () {
         this.registree.role = role_info;
         //update the registree in storage;--return a promise
         console.log("Fisher Service successfully updates role");
+    };
+    FisherService.prototype.fisherGetTerms = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.get(_this.urls.fisherGetTermsURL).toPromise()
+                .then(function (result) {
+                resolve(result);
+            }).catch(function (error) {
+                reject(error);
+            });
+        });
     };
     FisherService.prototype.fisherUpdateTerms = function (terms_status) {
         this.registree.terms_agreed = terms_status.terms_use_agreed;
