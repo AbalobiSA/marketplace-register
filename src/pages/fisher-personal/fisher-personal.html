@@ -50,6 +50,19 @@
                         </ng-container>
             </div>
 
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" formControlName="email" placeholder="Optional e-mail where you can be reached"(ionChange)="emailChanged()"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email" >
+          <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get('email').hasError(validation.type) && (personalForm.get('email').dirty || personalForm.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
 
             <ion-item>
                     <ion-label stacked>Gender

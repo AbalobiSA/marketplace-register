@@ -212,6 +212,7 @@ export class FisherPersonalPage {
                         "surname":  ['', Validators.required],
                         "name":     ['', Validators.required],
                         "nickname": ['', Validators.required],
+                        "email":    ['', ],
                         "gender":   ['', ],
                         "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(13), Validators.maxLength(13)])],
                         "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(10), Validators.maxLength(10)])],
@@ -240,6 +241,10 @@ export class FisherPersonalPage {
 
             nickNameChanged(){
                     this.personal_info.personal_nickname = this.personalForm.get("nickname").value;
+            }
+
+            emailChanged() {
+                    this.personal_info.personal_email = this.personalForm.get('email').value;
             }
 
             genderChanged(){
