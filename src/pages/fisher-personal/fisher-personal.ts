@@ -194,7 +194,7 @@ export class FisherPersonalPage {
                 {type: 'minLength', message: 'Cell Number too short.'},
                 {type: 'maxlength', message: 'Cell Number too long.'},
                 {type: 'maxLength', message: 'Cell Number too long.'},
-                {type: 'pattern',   message: 'Unacceptable symbols in Cell Number.'}
+                {type: 'pattern',   message: 'Number must be in international format.'}
             ],
 
 
@@ -213,8 +213,8 @@ export class FisherPersonalPage {
                         "name":     ['', Validators.required],
                         "nickname": ['', Validators.required],
                         "gender":   ['', ],
-                        "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(13), Validators.maxLength(13)])],
-                        "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(10), Validators.maxLength(10)])],
+                        "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
+                        "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[+][0-9]+$')])],
                         "password1":['', Validators.required],
                         "password2":['', Validators.required]
                     } , {validator: goodPasswords('password1', 'password2', 'name', 'surname')})
