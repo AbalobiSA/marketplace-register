@@ -51,6 +51,7 @@ export class FisherService {
         this.registree.surname    = personal_info.personal_surname;
         this.registree.firstname  = personal_info.personal_firstname;
         this.registree.nickname   = personal_info.personal_nickname;
+        this.registree.email      = personal_info.personal_email;
         this.registree.gender     = personal_info.personal_gender;
         this.registree.IDnum      = personal_info.personal_IDnum;
         this.registree.cellNo     = personal_info.personal_cellNo;
@@ -90,6 +91,7 @@ export class FisherService {
         fisher.name                             =   this.registree.firstname;
         fisher.surname                          =   this.registree.surname;
         fisher.nickname                         =   this.registree.nickname;
+        fisher.email                            =   this.registree.email;
         fisher.password                         =   this.registree.password;
         fisher.cell                             =   this.registree.cellNo;
         fisher.gender                           =   this.registree.gender;
@@ -121,6 +123,7 @@ export class FisherService {
       this.registree.surname    = "";
       this.registree.firstname  = "";
       this.registree.nickname   = "";
+      this.registree.email      = '';
       this.registree.gender     = "";
       this.registree.IDnum      = "";
       this.registree.cellNo     = "";

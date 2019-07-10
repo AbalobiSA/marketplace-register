@@ -8,6 +8,7 @@ export  class Fisher{
     "name"                          : string;
     "surname"                       : string;
     "nickname"                      : string;
+    "email"                         : string;
     "password"                      : string;
     "cell"                          : string;
     "gender"                        : string;

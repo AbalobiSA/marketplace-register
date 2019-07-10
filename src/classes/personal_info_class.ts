@@ -5,6 +5,7 @@ export class PersonalInfoClass{
       personal_firstname  : string = "";
       personal_nickname   : string = "";
       personal_gender     : string = "";
+      personal_email      : string = '';
       personal_IDnum      : string = "";
       personal_cellNo     : string = "";
       personal_password1  : string = "";
