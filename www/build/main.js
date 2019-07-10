@@ -564,6 +564,7 @@ var Registree = /** @class */ (function () {
         this.surname = "";
         this.firstname = "";
         this.nickname = "";
+        this.email = '';
         this.gender = "";
         this.IDnum = "";
         this.cellNo = "";
@@ -2238,6 +2239,7 @@ var FisherService = /** @class */ (function () {
         this.registree.surname = personal_info.personal_surname;
         this.registree.firstname = personal_info.personal_firstname;
         this.registree.nickname = personal_info.personal_nickname;
+        this.registree.email = personal_info.personal_email;
         this.registree.gender = personal_info.personal_gender;
         this.registree.IDnum = personal_info.personal_IDnum;
         this.registree.cellNo = personal_info.personal_cellNo;
@@ -2268,6 +2270,7 @@ var FisherService = /** @class */ (function () {
         fisher.name = this.registree.firstname;
         fisher.surname = this.registree.surname;
         fisher.nickname = this.registree.nickname;
+        fisher.email = this.registree.email;
         fisher.password = this.registree.password;
         fisher.cell = this.registree.cellNo;
         fisher.gender = this.registree.gender;
@@ -2293,6 +2296,7 @@ var FisherService = /** @class */ (function () {
         this.registree.surname = "";
         this.registree.firstname = "";
         this.registree.nickname = "";
+        this.registree.email = '';
         this.registree.gender = "";
         this.registree.IDnum = "";
         this.registree.cellNo = "";
@@ -2328,9 +2332,10 @@ var FisherService = /** @class */ (function () {
     };
     FisherService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]) === "function" && _b || Object])
     ], FisherService);
     return FisherService;
+    var _a, _b;
 }()); //end class
 
 //# sourceMappingURL=FisherService.js.map

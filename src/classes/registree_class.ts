@@ -15,6 +15,7 @@ export class Registree{
         surname    : string = "";
         firstname  : string = "";
         nickname   : string = "";
+        email      : string = '';
         gender     : string = "";
         IDnum      : string = "";
         cellNo     : string = "";
