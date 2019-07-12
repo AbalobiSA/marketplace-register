@@ -73,6 +73,10 @@ export class FisherCommunityPage {
         public hideCustomComm   : boolean = true;//hide the option to enter a custom community on DOM
 
         validation_messages = {
+                'country': [
+                        {type: 'required', message: 'Please select a country.'}
+                ],
+
                 'province': [
                         {type: 'required', message: 'Please select a province.'}
                 ],
@@ -84,6 +88,7 @@ export class FisherCommunityPage {
 
         constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
                 this.communityForm = this.formBuilder.group({
+                    "country"   : ['', Validators.required],
                     "province"  : ['', Validators.required],
                     "community" : ['', Validators.required],
                     "custom"    : [null,null],
@@ -94,6 +99,10 @@ export class FisherCommunityPage {
                     let line :string []= (this.list_of_communities[i]).split(",");
                     this.all_comms.push(new CommunityClass(line[0],line[1],line[2]));
                 }
+        }
+
+        countryChanged() {
+                this.community_info.comm_country = this.communityForm.get('country').value;
         }
 
         provinceChanged(){

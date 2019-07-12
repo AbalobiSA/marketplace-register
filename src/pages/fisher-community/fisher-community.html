@@ -19,6 +19,24 @@
                 <p style="text-align:center"><b>Community / Landing</b></p>
 
                 <ion-item>
+                        <ion-label text-wrap>Please select your country
+                        </ion-label>
+                        <ion-select text-wrap formControlName="country" (ionChange)="countryChanged()">
+                                <ion-option value="South Africa">South Africa</ion-option>
+                                <ion-option value="Seychelles">Seychelles</ion-option>
+                                <ion-option value="Namibia">Namibia</ion-option>
+                        </ion-select>
+                </ion-item>
+
+                <div class="validation-errors">
+                        <ng-container *ngFor="let validation of validation_messages.province" >
+                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get('country').hasError(validation.type) && (communityForm.get('country').dirty || communityForm.get('country').touched)">
+                                      {{ validation.message }}
+                                </div>
+                        </ng-container>
+                </div>
+
+                <ion-item>
                         <ion-label text-wrap>Please select  your province
                         </ion-label>
                                 <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">

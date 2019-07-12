@@ -1,9 +1,10 @@
 
 export class CommunityInfoClass{
 
+  comm_country                              : string="";
   comm_province                             : string="";
   comm_community                            : string="";
-  custom_community                          : string=""
+  custom_community                          : string="";
   comm_not_listed                           : boolean=false;
   comm_IRP_chosen                           : boolean=false;
   comm_small_scale_chosen                   : boolean=false;
