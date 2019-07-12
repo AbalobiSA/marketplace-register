@@ -2313,7 +2313,9 @@ var FisherService = /** @class */ (function () {
         this.registree.custom_community = "";
         this.registree.comm_not_listed = false;
         this.registree.IRP_selected = false;
-        this.registree.commercial_selected = false;
+        this.registree.small_scale_selected = false;
+        this.registree.traditional_line_fish_selected = false;
+        this.registree.near_shore_commercial_lobster_selected = false;
         this.registree.recreational_selected = false;
         this.registree.other_seleted = false;
         //console.log("........Fisher Service Cleared User Details........");
