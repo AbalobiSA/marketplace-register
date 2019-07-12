@@ -5,7 +5,7 @@ import {FisherService} from "../../providers/FisherService";
 import{CommunityInfoClass} from "../../classes/community_info_class";
 import {CommunityClass} from "../../classes/community_class";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {qR} from "@angular/core/src/render3";
+//import {qR} from "@angular/core/src/render3";
 
 
 
