@@ -86,7 +86,17 @@
                         </ion-item>
 
                         <ion-item>
-                                <ion-label> Commercial</ion-label>
+                                <ion-label> Small-scale</ion-label>
+                                <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Traditional Line-fish</ion-label>
+                                <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Near-shore commercial lobster</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
