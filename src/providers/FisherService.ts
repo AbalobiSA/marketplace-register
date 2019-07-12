@@ -90,21 +90,24 @@ export class FisherService {
     //parse fisher data to a format congruent to what the backend expects
     parseFisher(fisher: Fisher)  {
 
-        fisher.name                             =   this.registree.firstname;
-        fisher.surname                          =   this.registree.surname;
-        fisher.nickname                         =   this.registree.nickname;
-        fisher.email                            =   this.registree.email;
-        fisher.password                         =   this.registree.password;
-        fisher.cell                             =   this.registree.cellNo;
-        fisher.gender                           =   this.registree.gender;
-        fisher.id                               =   this.registree.IDnum;
-        fisher.usertype                         =   this.registree.role;
-        fisher.landingsite                      =   this.registree.community;
-        fisher.landingsite_custom               =   this.registree.custom_community;
-        fisher.fisher_license_irp               =   this.registree.IRP_selected;
-        fisher.fisher_license_recreational      =   this.registree.recreational_selected;
-        fisher.permission_local_implementer     =   this.registree.assistant_agreed;
-        fisher.permission_daff                  =   this.registree.DAFF_agreed;
+        fisher.name                                         = this.registree.firstname;
+        fisher.surname                                      = this.registree.surname;
+        fisher.nickname                                     = this.registree.nickname;
+        fisher.email                                        = this.registree.email;
+        fisher.password                                     = this.registree.password;
+        fisher.cell                                         = this.registree.cellNo;
+        fisher.gender                                       = this.registree.gender;
+        fisher.id                                           = this.registree.IDnum;
+        fisher.usertype                                     = this.registree.role;
+        fisher.landingsite                                  = this.registree.community;
+        fisher.landingsite_custom                           = this.registree.custom_community;
+        fisher.fisher_license_irp                           = this.registree.IRP_selected;
+        fisher.fisher_license_small_scale                   = this.registree.small_scale_selected;
+        fisher.fisher_license_traditional_line_fish         = this.registree.traditional_line_fish_selected;
+        fisher.fisher_license_near_shore_commercial_lobster = this.registree.near_shore_commercial_lobster_selected;
+        fisher.fisher_license_recreational                  = this.registree.recreational_selected;
+        fisher.permission_local_implementer                 = this.registree.assistant_agreed;
+        fisher.permission_daff                              = this.registree.DAFF_agreed;
 
 }
 
