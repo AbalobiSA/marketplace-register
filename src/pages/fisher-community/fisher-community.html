@@ -110,6 +110,11 @@
                                 <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
+                        <ion-item *ngIf="community_info.comm_other_chosen">
+                                <ion-label text-wrap stacked>Other permit</ion-label>
+                                <ion-input type="text"   placeholder="Enter your other permit here"(ionChange)="cellChanged()"></ion-input>
+                        </ion-item>
+
                 </ion-list>
 
                 <button ion-button full  [disabled]="!communityForm.valid" (click)="onFisherFinishCommunity()">Next</button>
