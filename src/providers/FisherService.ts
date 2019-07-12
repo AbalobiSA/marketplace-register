@@ -63,14 +63,16 @@ export class FisherService {
 
 
   fisherUpdateCommunity(community_info: CommunityInfoClass){
-        this.registree.province                 = community_info.comm_province;
-        this.registree.community                = community_info.comm_community;
-        this.registree.custom_community         = community_info.custom_community;
-        this.registree.comm_not_listed          = community_info.comm_not_listed;
-        this.registree.IRP_selected             = community_info.comm_IRP_chosen;
-        this.registree.commercial_selected      = community_info.comm_commercial_chosen;
-        this.registree.recreational_selected    = community_info.comm_recreational_chosen;
-        this.registree.other_seleted            = community_info.comm_other_chosen;
+        this.registree.province                               = community_info.comm_province;
+        this.registree.community                              = community_info.comm_community;
+        this.registree.custom_community                       = community_info.custom_community;
+        this.registree.comm_not_listed                        = community_info.comm_not_listed;
+        this.registree.IRP_selected                           = community_info.comm_IRP_chosen;
+        this.registree.small_scale_selected                   = community_info.comm_small_scale_chosen;
+        this.registree.traditional_line_fish_selected         = community_info.comm_traditional_line_fish_chosen;
+        this.registree.near_shore_commercial_lobster_selected = community_info.comm_near_shore_commercial_lobster_chosen;
+        this.registree.recreational_selected                  = community_info.comm_recreational_chosen;
+        this.registree.other_seleted                          = community_info.comm_other_chosen;
   }
 
 

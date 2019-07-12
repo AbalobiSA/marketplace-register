@@ -575,7 +575,10 @@ var Registree = /** @class */ (function () {
         this.custom_community = "";
         this.comm_not_listed = false;
         this.IRP_selected = false;
-        this.commercial_selected = false;
+        this.small_scale_selected = false;
+        this.traditional_line_fish_selected = false;
+        this.near_shore_commercial_lobster_selected = false;
+        // commercial_selected   :boolean=false;
         this.recreational_selected = false;
         this.other_seleted = false;
     }
@@ -2254,7 +2257,9 @@ var FisherService = /** @class */ (function () {
         this.registree.custom_community = community_info.custom_community;
         this.registree.comm_not_listed = community_info.comm_not_listed;
         this.registree.IRP_selected = community_info.comm_IRP_chosen;
-        this.registree.commercial_selected = community_info.comm_commercial_chosen;
+        this.registree.small_scale_selected = community_info.comm_small_scale_chosen;
+        this.registree.traditional_line_fish_selected = community_info.comm_traditional_line_fish_chosen;
+        this.registree.near_shore_commercial_lobster_selected = community_info.comm_near_shore_commercial_lobster_chosen;
         this.registree.recreational_selected = community_info.comm_recreational_chosen;
         this.registree.other_seleted = community_info.comm_other_chosen;
     };
@@ -2333,9 +2338,10 @@ var FisherService = /** @class */ (function () {
     };
     FisherService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]) === "function" && _b || Object])
     ], FisherService);
     return FisherService;
+    var _a, _b;
 }()); //end class
 
 //# sourceMappingURL=FisherService.js.map
