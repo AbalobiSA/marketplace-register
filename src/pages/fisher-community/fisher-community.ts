@@ -92,7 +92,14 @@ export class FisherCommunityPage {
                     "province"  : ['', Validators.required],
                     "community" : ['', Validators.required],
                     "custom"    : [null,null],
-                }, {validator: customCommEntered('community', 'custom')} )
+                }, {validator: customCommEntered('community', 'custom')} );
+
+                console.log('Getting fisher communities...');
+                fisherService.fisherGetCommunities().then(result => {
+                    console.log('Done getting communities');
+                }).catch(error => {
+                    console.log("Error getting communities: ", error);
+                });
 
                 //construct the list of all communities upon and creation instantiate once
                 for (let i = 1;i <this.list_of_communities.length;i++){//ignore headings, start at second line

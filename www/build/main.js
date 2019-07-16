@@ -332,6 +332,12 @@ var FisherCommunityPage = /** @class */ (function () {
             "community": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["i" /* Validators */].required],
             "custom": [null, null],
         }, { validator: customCommEntered('community', 'custom') });
+        console.log('Getting fisher communities...');
+        fisherService.fisherGetCommunities().then(function (result) {
+            console.log('Done getting communities');
+        }).catch(function (error) {
+            console.log("Error getting communities: ", error);
+        });
         //construct the list of all communities upon and creation instantiate once
         for (var i = 1; i < this.list_of_communities.length; i++) {
             var line = (this.list_of_communities[i]).split(",");
