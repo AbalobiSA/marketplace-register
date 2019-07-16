@@ -96,16 +96,20 @@ export class FisherCommunityPage {
 
                 console.log('Getting fisher communities...');
                 fisherService.fisherGetCommunities().then(result => {
-                    console.log('Done getting communities');
+                    console.log("Done getting communities: ", result);
+                    let communities = result['abalobi-communities'];
+                    for (let i = 0; i < communities.length; i++) {
+                        this.all_comms.push(new CommunityClass(communities[i]['Name'], communities[i]['province_abbreviation__c'], communities[i]['name_eng__c']));
+                    }
                 }).catch(error => {
                     console.log("Error getting communities: ", error);
                 });
 
                 //construct the list of all communities upon and creation instantiate once
-                for (let i = 1;i <this.list_of_communities.length;i++){//ignore headings, start at second line
-                    let line :string []= (this.list_of_communities[i]).split(",");
-                    this.all_comms.push(new CommunityClass(line[0],line[1],line[2]));
-                }
+                // for (let i = 1;i <this.list_of_communities.length;i++){//ignore headings, start at second line
+                //     let line :string []= (this.list_of_communities[i]).split(",");
+                //     this.all_comms.push(new CommunityClass(line[0],line[1],line[2]));
+                // }
         }
 
         countryChanged() {

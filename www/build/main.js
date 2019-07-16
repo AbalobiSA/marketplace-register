@@ -256,6 +256,7 @@ function customCommEntered(selectedCommKey, customCommKey) {
 }
 var FisherCommunityPage = /** @class */ (function () {
     function FisherCommunityPage(navCtrl, navParams, fisherService, formBuilder) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.fisherService = fisherService;
@@ -334,15 +335,19 @@ var FisherCommunityPage = /** @class */ (function () {
         }, { validator: customCommEntered('community', 'custom') });
         console.log('Getting fisher communities...');
         fisherService.fisherGetCommunities().then(function (result) {
-            console.log('Done getting communities');
+            console.log("Done getting communities: ", result);
+            var communities = result['abalobi-communities'];
+            for (var i = 0; i < communities.length; i++) {
+                _this.all_comms.push(new __WEBPACK_IMPORTED_MODULE_5__classes_community_class__["a" /* CommunityClass */](communities[i]['Name'], communities[i]['province_abbreviation__c'], communities[i]['name_eng__c']));
+            }
         }).catch(function (error) {
             console.log("Error getting communities: ", error);
         });
         //construct the list of all communities upon and creation instantiate once
-        for (var i = 1; i < this.list_of_communities.length; i++) {
-            var line = (this.list_of_communities[i]).split(",");
-            this.all_comms.push(new __WEBPACK_IMPORTED_MODULE_5__classes_community_class__["a" /* CommunityClass */](line[0], line[1], line[2]));
-        }
+        // for (let i = 1;i <this.list_of_communities.length;i++){//ignore headings, start at second line
+        //     let line :string []= (this.list_of_communities[i]).split(",");
+        //     this.all_comms.push(new CommunityClass(line[0],line[1],line[2]));
+        // }
     }
     FisherCommunityPage.prototype.countryChanged = function () {
         this.community_info.comm_country = this.communityForm.get('country').value;
