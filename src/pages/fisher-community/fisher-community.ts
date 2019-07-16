@@ -124,6 +124,10 @@ export class FisherCommunityPage {
             }
         }
 
+        permitOtherChanged() {
+
+        }
+
 
         //Record the name of the entered custom community
         customCommunityEntered(){
