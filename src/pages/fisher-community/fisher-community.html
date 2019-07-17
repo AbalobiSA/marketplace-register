@@ -36,7 +36,7 @@
                         </ng-container>
                 </div>
 
-                <ion-item>
+                <ion-item *ngIf="community_info.comm_country === 'South Africa'">
                         <ion-label text-wrap>Please select  your province
                         </ion-label>
                                 <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">

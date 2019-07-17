@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, AlertOptions, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FisherConfirmPage} from "../fisher-confirm/fisher-confirm";
 import {FisherService} from "../../providers/FisherService";
 import{CommunityInfoClass} from "../../classes/community_info_class";
 import {CommunityClass} from "../../classes/community_class";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {HomePage} from "../home/home";
 //import {qR} from "@angular/core/src/render3";
 
 
@@ -84,9 +85,21 @@ export class FisherCommunityPage {
                 'community': [
                         {type: 'required', message: 'Please select a community.'}
                 ],
+        };
+
+        async presentAlert() {
+          const alert = await this.alertController.create({
+            title: 'Error',
+            subTitle: 'Error',
+            message: 'Failed loading community list. You will be returned to home page',
+            buttons: ['OK']
+          });
+
+          await alert.present();
         }
 
-        constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
+        constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder,
+        public alertController: AlertController) {
                 this.communityForm = this.formBuilder.group({
                     "country"   : ['', Validators.required],
                     "province"  : ['', Validators.required],
@@ -103,6 +116,8 @@ export class FisherCommunityPage {
                     }
                 }).catch(error => {
                     console.log("Error getting communities: ", error);
+                    this.presentAlert();
+                    this.navCtrl.push(HomePage);
                 });
 
                 //construct the list of all communities upon and creation instantiate once
