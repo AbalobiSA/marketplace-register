@@ -2391,6 +2391,7 @@ var FisherService = /** @class */ (function () {
         fisher.fisher_license_traditional_line_fish = this.registree.traditional_line_fish_selected;
         fisher.fisher_license_near_shore_commercial_lobster = this.registree.near_shore_commercial_lobster_selected;
         fisher.fisher_license_recreational = this.registree.recreational_selected;
+        fisher.fisher_license_other = this.registree.permit_other_manual;
         fisher.permission_local_implementer = this.registree.assistant_agreed;
         fisher.permission_daff = this.registree.DAFF_agreed;
     };
@@ -2423,6 +2424,7 @@ var FisherService = /** @class */ (function () {
         this.registree.near_shore_commercial_lobster_selected = false;
         this.registree.recreational_selected = false;
         this.registree.other_seleted = false;
+        this.registree.permit_other_manual = '';
         //console.log("........Fisher Service Cleared User Details........");
     };
     //Check if fisher with the proposed ID doesn't exist already

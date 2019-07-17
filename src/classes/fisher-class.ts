@@ -20,6 +20,7 @@ export  class Fisher{
     "fisher_license_traditional_line_fish"         : boolean;
     "fisher_license_near_shore_commercial_lobster" : boolean;
     "fisher_license_recreational"                  : boolean;
+    "fisher_license_other"                         : string;
     "permission_local_implementer"                 : boolean;
     "permission_daff"                              : boolean;
     //Required
