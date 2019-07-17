@@ -22,6 +22,7 @@ export class Registree{
         password   : string = "";
 
         //Community details
+        country                                :string='';
         province                               :string="";
         community                              :string="";
         custom_community                       :string="";
@@ -33,6 +34,7 @@ export class Registree{
         // commercial_selected   :boolean=false;
         recreational_selected                  :boolean=false;
         other_seleted                          :boolean=false;
+        permit_other_manual                    :string='';
 
         constructor(){
 

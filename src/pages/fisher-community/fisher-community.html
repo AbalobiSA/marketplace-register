@@ -130,7 +130,7 @@
 
                         <ion-item *ngIf="community_info.comm_other_chosen || community_info.comm_country === 'Seychelles' || community_info.comm_country === 'Namibia'">
                                 <ion-label text-wrap stacked>Other permit</ion-label>
-                                <ion-input type="text"   placeholder="Enter your other permit here" (ionChange)="permitOtherChanged()"></ion-input>
+                                <ion-input formControlName="permit_other" type="text"   placeholder="Enter your other permit here" (ionChange)="permitOtherChanged()"></ion-input>
                         </ion-item>
 
                 </ion-list>

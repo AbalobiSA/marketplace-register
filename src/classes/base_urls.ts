@@ -15,7 +15,7 @@ export class BaseUrls {
         this.fisherCheckUserIDurl       = "https://server.abalobi.org/api/users/id/checkidexists?id=";
         this.fisherGetTermsURL          = "https://server.abalobi.org/api/terms";
         this.fisherGetCommunitiesURL    = "https://server.abalobi.org/api/communities";
-        this.fisherAddUserURL           = "https://server.abalobi.org/register";
+        this.fisherAddUserURL           = "http://localhost:8080/register";
         this.testPostURL                = "http://server.abalobi.org/api/testpost";
     }
 }

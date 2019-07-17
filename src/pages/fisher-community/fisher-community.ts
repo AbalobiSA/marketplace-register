@@ -105,6 +105,7 @@ export class FisherCommunityPage {
                     "province"  : ['', Validators.required],
                     "community" : ['', Validators.required],
                     "custom"    : [null,null],
+                    "permit_other" : [null, null]
                 }, {validator: customCommEntered('community', 'custom')} );
 
                 console.log('Getting fisher communities...');
@@ -151,7 +152,7 @@ export class FisherCommunityPage {
         }
 
         permitOtherChanged() {
-
+            this.community_info.comm_permit_other_manual = this.communityForm.get('permit_other').value;
         }
 
 

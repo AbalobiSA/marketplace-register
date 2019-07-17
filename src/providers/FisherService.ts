@@ -74,6 +74,7 @@ export class FisherService {
 
 
   fisherUpdateCommunity(community_info: CommunityInfoClass){
+        this.registree.country                                = community_info.comm_country;
         this.registree.province                               = community_info.comm_province;
         this.registree.community                              = community_info.comm_community;
         this.registree.custom_community                       = community_info.custom_community;
@@ -84,6 +85,7 @@ export class FisherService {
         this.registree.near_shore_commercial_lobster_selected = community_info.comm_near_shore_commercial_lobster_chosen;
         this.registree.recreational_selected                  = community_info.comm_recreational_chosen;
         this.registree.other_seleted                          = community_info.comm_other_chosen;
+        this.registree.permit_other_manual                    = community_info.comm_permit_other_manual;
   }
 
 

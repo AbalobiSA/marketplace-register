@@ -12,6 +12,7 @@ export class CommunityInfoClass{
   comm_near_shore_commercial_lobster_chosen : boolean=false;
   comm_recreational_chosen                  : boolean=false;
   comm_other_chosen                         : boolean=false;
+  comm_permit_other_manual                  : string='';
 
   constructor(){
 
