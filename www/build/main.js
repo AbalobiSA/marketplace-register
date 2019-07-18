@@ -28,19 +28,19 @@ var map = {
 		163
 	],
 	"../pages/fisher-confirm/fisher-confirm.module": [
-		178
-	],
-	"../pages/fisher-not-unique/fisher-not-unique.module": [
 		177
 	],
-	"../pages/fisher-personal/fisher-personal.module": [
-		181
+	"../pages/fisher-not-unique/fisher-not-unique.module": [
+		178
 	],
-	"../pages/fisher-register-failure/fisher-register-failure.module": [
+	"../pages/fisher-personal/fisher-personal.module": [
 		179
 	],
-	"../pages/fisher-register-success/fisher-register-success.module": [
+	"../pages/fisher-register-failure/fisher-register-failure.module": [
 		180
+	],
+	"../pages/fisher-register-success/fisher-register-success.module": [
+		181
 	],
 	"../pages/fisher-role/fisher-role.module": [
 		182
@@ -315,56 +315,6 @@ var FisherCommunityPage = /** @class */ (function () {
                 { type: 'required', message: 'Please select a community.' }
             ],
         };
-        //TODO -- improve this to read these communities from a csv file/from an API call
-        this.list_of_communities = [
-            "name_key,province,name_Eng,name_Afr,region",
-            "sey_mahe_anseauxpins,SEY,Mahé - Anse Aux Pins,Mahé - Anse Aux Pins,seychelles",
-            "sey_mahe_anseroyale,SEY,Mahé - Anse Royale,Mahé - Anse Royale,seychelles",
-            "sey_mahe_beauvallon,SEY,Mahé - Beau Vallon,Mahé - Beau Vallon,seychelles",
-            "sey_mahe_edenisland,SEY,Mahé - Roche Caiman (Eden Island),Mahé - Roche Caiman (Eden Island),seychelles",
-            "sey_mahe_grandanse,SEY,Mahé - Grand Anse,Mahé - Grand Anse,seychelles",
-            "sey_mahe_takamaka,SEY,Mahé - Takamaka,Mahé - Takamaka,seychelles",
-            "sey_mahe_victoria,SEY,Mahé - Victoria,Mahé - Victoria,seychelles",
-            "sey_mahe_laretraite,SEY,Mahé - La Retraite,Mahé - La Retraite,seychelles",
-            "sey_ladigues,SEY,La Digues,La Digues,seychelles",
-            "sey_praslin,SEY,Praslin,Praslin,seychelles",
-            "sey_fregate,SEY,Fregate,Fregate,seychelles",
-            "arniston,WC,Arniston,Waenhuiskrans,west_coast",
-            "bellville,WC,Bellville,Bellville,west_coast",
-            "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
-            "buffelsjagbaai,WC,Buffeljagsbaai,Buffeljagsbaai,west_coast",
-            "cape_flats,WC,Cape Flats,Cape Flats,west_coast",
-            "capetown,WC,Cape Town,Cape Town,west_coast",
-            "coffeebay,KZN,Coffee Bay,Koffiebaai,kwazulunatal eastern_cape",
-            "democommunity,WC,Demo Community,Demo Gemeenskap,west_coast",
-            "doringbaai,WC,Doring Bay,Doringbaai,west_coast",
-            "elandsbaai,WC,Elands Bay,Elandsbaai,west_coast",
-            "fishhoek,WC,Fishhoek,Vishoek,west_coast",
-            "gordons_bay,WC,Gordon's Bay,Gordonsbaai,west_coast",
-            "grassy_park,WC,Grassy Park,Grassy Park,west_coast",
-            "hermanus,WC,Hermanus,Hermanus,west_coast",
-            "hondeklipbaai,NC,Hondeklip Bay,Hondeklipbaai,west_coast",
-            "hout_bay,WC,Hout Bay,Houtbaai,west_coast",
-            "kalk_bay,WC,Kalk Bay,Kalkbaai,west_coast",
-            "kleinmond,WC,Kleinmond,Kleinmond,west_coast",
-            "lambertsbaai,WC,Lamberts Bay,Lambertsbaai,west_coast",
-            "langebaan,WC,Langebaan,Langebaan,west_coast",
-            "millers_point,WC,Millers Point,Millers Point,west_coast",
-            "muizenberg,WC,Muizenberg,Muizenberg,west_coast",
-            "ocean_view,WC,Ocean View,Ocean View,west_coast",
-            "olifants,WC,Olifants,Olifants,west_coast",
-            "paternoster,WC,Paternoster,Paternoster,west_coast",
-            "portnolloth,NC,Port Nolloth,Port Nolloth,west_coast",
-            "pringlebay,WC,Pringle Bay,Pringlebaai,west_coast",
-            "steenbergscove,WC,Steenberg's Cove,Steenberg's Cove,west_coast",
-            "simonstown,WC,Simon's Town,Simonstad,west_coast",
-            "sainthelenaisland,SHI,St Helena Island,St Helena Eiland,saint_helena_island",
-            "strand,WC,Strand,Strand,west_coast",
-            "strandfontein_falsebay,WC,Strandfontein (False Bay),Strandfontein (Valsbaai),west_coast",
-            "struisbaai,WC,Struis Bay,Struisbaai,west_coast",
-            "yzerfontein,WC,Yzerfontein,Yzerfontein,west_coast",
-            "nam_hentiesbaai,NAM,Hentiesbaai,Hentiesbaai,namibia"
-        ];
         this.communityForm = this.formBuilder.group({
             "country": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["i" /* Validators */].required],
             "province": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["i" /* Validators */].required],
@@ -384,11 +334,6 @@ var FisherCommunityPage = /** @class */ (function () {
             _this.presentAlert();
             _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__home_home__["a" /* HomePage */]);
         });
-        //construct the list of all communities upon and creation instantiate once
-        // for (let i = 1;i <this.list_of_communities.length;i++){//ignore headings, start at second line
-        //     let line :string []= (this.list_of_communities[i]).split(",");
-        //     this.all_comms.push(new CommunityClass(line[0],line[1],line[2]));
-        // }
     }
     FisherCommunityPage.prototype.presentAlert = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -475,10 +420,10 @@ var FisherCommunityPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-community',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-community\fisher-community.html"*/'<!--\n  Generated template for the FisherCommunityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n        <ion-navbar>\n              <ion-title>Abalobi Register</ion-title>\n        </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n        <form [formGroup] = "communityForm">\n\n\n                <p style="text-align:center"><b>Community / Landing</b></p>\n\n                <ion-item>\n                        <ion-label text-wrap>Please select your country\n                        </ion-label>\n                        <ion-select text-wrap formControlName="country" (ionChange)="countryChanged()">\n                                <ion-option value="South Africa">South Africa</ion-option>\n                                <ion-option value="Seychelles">Seychelles</ion-option>\n                                <ion-option value="Namibia">Namibia</ion-option>\n                        </ion-select>\n                </ion-item>\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'country\').hasError(validation.type) && (communityForm.get(\'country\').dirty || communityForm.get(\'country\').touched)">\n                                      {{ validation.message }}\n                                </div>\n                        </ng-container>\n                </div>\n\n                <ion-item *ngIf="community_info.comm_country === \'South Africa\'">\n                        <ion-label text-wrap>Please select  your province\n                        </ion-label>\n                                <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">\n                                        <ion-option value="Western Cape">Western Cape</ion-option>\n                                        <ion-option value="Northern Cape">Northern Cape</ion-option>\n                                        <ion-option value="Eastern Cape">Eastern Cape</ion-option>\n                                        <ion-option value="North West"> North West</ion-option>\n                                        <ion-option value="Mpumalanga">Mpumalanga</ion-option>\n                                        <ion-option value="Limpopo">Limpopo</ion-option>\n                                        <ion-option value="Gauteng">Gauteng</ion-option>\n                                        <ion-option value="Free State">Free State</ion-option>\n                                        <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>\n                                        <ion-option value="Seychelles">Seychelles</ion-option>\n                                        <ion-option value="Namibia">Namibia</ion-option>\n                                </ion-select>\n                </ion-item>\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'province\').hasError(validation.type) && (communityForm.get(\'province\').dirty || communityForm.get(\'province\').touched)">\n                                        {{ validation.message }}\n                                </div>\n                        </ng-container>\n                </div>\n\n\n                <ion-item >\n                            <ion-label text-wrap>Please select  your community\n                            </ion-label>\n                                        <ion-select text-wrap formControlName="community" (ionChange)=" communityChanged()">\n                                                <ion-option  text-wrap *ngFor="let c of filterComms(all_comms, communityForm.get(\'province\').value)">{{c.name_Eng}}</ion-option>\n                                                <ion-option  text-wrap value="Other">Other</ion-option>\n                                        </ion-select>\n                </ion-item>\n\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.community" >\n                                 <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'community\').hasError(validation.type) && (communityForm.get(\'community\').dirty || communityForm.get(\'community\').touched)">\n                                        {{ validation.message }}\n                                 </div>\n                        </ng-container>\n                </div>\n\n\n\n                <ion-item [hidden]="hideCustomComm">\n                        <ion-label text-wrap stacked>Please enter your community</ion-label>\n                        <ion-input  type="text" formControlName="custom" placeholder="Enter your community here" (ionChange)="customCommunityEntered()"></ion-input>\n                </ion-item>\n\n                <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="communityForm.hasError(\'missingCustomComm\')">Custom community required.</span>\n\n\n\n\n\n                <p style="text-align:center"><b>Do you have a fishing permit ?</b></p>\n\n\n                <ion-list >\n                        <ion-item>\n                                <ion-label> IRP / Exemption</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Small-scale</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_small_scale_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Traditional Line-fish</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_traditional_line_fish_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Near-shore commercial lobster</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_near_shore_commercial_lobster_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Recreational</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Other</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item *ngIf="community_info.comm_other_chosen || community_info.comm_country === \'Seychelles\' || community_info.comm_country === \'Namibia\'">\n                                <ion-label text-wrap stacked>Other permit</ion-label>\n                                <ion-input formControlName="permit_other" type="text"   placeholder="Enter your other permit here" (ionChange)="permitOtherChanged()"></ion-input>\n                        </ion-item>\n\n                </ion-list>\n\n                <button ion-button full  [disabled]="!communityForm.valid" (click)="onFisherFinishCommunity()">Next</button>\n        </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-community\fisher-community.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
     ], FisherCommunityPage);
     return FisherCommunityPage;
+    var _a, _b, _c, _d, _e;
 }()); //end class
 
 //# sourceMappingURL=fisher-community.js.map
@@ -693,7 +638,7 @@ var BaseUrls = /** @class */ (function () {
         this.fisherCheckUserIDurl = "https://server.abalobi.org/api/users/id/checkidexists?id=";
         this.fisherGetTermsURL = "https://server.abalobi.org/api/terms";
         this.fisherGetCommunitiesURL = "https://server.abalobi.org/api/communities";
-        this.fisherAddUserURL = "http://localhost:8080/register";
+        this.fisherAddUserURL = "https://server.abalobi.org/register";
         this.testPostURL = "http://server.abalobi.org/api/testpost";
     }
     return BaseUrls;
@@ -1685,44 +1630,6 @@ var FisherRegisterFailurePage = /** @class */ (function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherNotUniqueModule", function() { return FisherNotUniqueModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__ = __webpack_require__(175);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var FisherNotUniqueModule = /** @class */ (function () {
-    function FisherNotUniqueModule() {
-    }
-    FisherNotUniqueModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */]),
-            ],
-        })
-    ], FisherNotUniqueModule);
-    return FisherNotUniqueModule;
-}());
-
-//# sourceMappingURL=fisher-not-unique.module.js.map
-
-/***/ }),
-
-/***/ 178:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherConfirmPageModule", function() { return FisherConfirmPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
@@ -1756,7 +1663,83 @@ var FisherConfirmPageModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 178:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherNotUniqueModule", function() { return FisherNotUniqueModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__ = __webpack_require__(175);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherNotUniqueModule = /** @class */ (function () {
+    function FisherNotUniqueModule() {
+    }
+    FisherNotUniqueModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */]),
+            ],
+        })
+    ], FisherNotUniqueModule);
+    return FisherNotUniqueModule;
+}());
+
+//# sourceMappingURL=fisher-not-unique.module.js.map
+
+/***/ }),
+
 /***/ 179:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherPersonalPageModule", function() { return FisherPersonalPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal__ = __webpack_require__(174);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FisherPersonalPageModule = /** @class */ (function () {
+    function FisherPersonalPageModule() {
+    }
+    FisherPersonalPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
+            ],
+        })
+    ], FisherPersonalPageModule);
+    return FisherPersonalPageModule;
+}());
+
+//# sourceMappingURL=fisher-personal.module.js.map
+
+/***/ }),
+
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1794,7 +1777,7 @@ var FisherRegisterFailurePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 180:
+/***/ 181:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1829,44 +1812,6 @@ var FisherRegisterSuccessPageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=fisher-register-success.module.js.map
-
-/***/ }),
-
-/***/ 181:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherPersonalPageModule", function() { return FisherPersonalPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal__ = __webpack_require__(174);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var FisherPersonalPageModule = /** @class */ (function () {
-    function FisherPersonalPageModule() {
-    }
-    FisherPersonalPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
-            ],
-        })
-    ], FisherPersonalPageModule);
-    return FisherPersonalPageModule;
-}());
-
-//# sourceMappingURL=fisher-personal.module.js.map
 
 /***/ }),
 
@@ -1981,11 +1926,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__classes_registree_class__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_after_register_after_register_module__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fisher_community_fisher_community_module__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fisher_confirm_fisher_confirm_module__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fisher_not_unique_fisher_not_unique_module__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_fisher_personal_fisher_personal_module__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_fisher_register_failure_fisher_register_failure_module__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fisher_register_success_fisher_register_success_module__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fisher_confirm_fisher_confirm_module__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fisher_not_unique_fisher_not_unique_module__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_fisher_personal_fisher_personal_module__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_fisher_register_failure_fisher_register_failure_module__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fisher_register_success_fisher_register_success_module__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_fisher_role_fisher_role_module__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_fisher_useterms_fisher_useterms_module__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__classes_confirm_password_validator_directive__ = __webpack_require__(310);
@@ -2041,11 +1986,11 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/after-register/after-register.module#AfterRegisterPageModule', name: 'AfterRegisterPage', segment: 'after-register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-community/fisher-community.module#FisherCommunityPageModule', name: 'FisherCommunityPage', segment: 'fisher-community', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fisher-not-unique/fisher-not-unique.module#FisherNotUniqueModule', name: 'FisherNotUniquePage', segment: 'fisher-not-unique', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-confirm/fisher-confirm.module#FisherConfirmPageModule', name: 'FisherConfirmPage', segment: 'fisher-confirm', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-not-unique/fisher-not-unique.module#FisherNotUniqueModule', name: 'FisherNotUniquePage', segment: 'fisher-not-unique', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-register-failure/fisher-register-failure.module#FisherRegisterFailurePageModule', name: 'FisherRegisterFailurePage', segment: 'fisher-register-failure', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-register-success/fisher-register-success.module#FisherRegisterSuccessPageModule', name: 'FisherRegisterSuccessPage', segment: 'fisher-register-success', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-role/fisher-role.module#FisherRolePageModule', name: 'FisherRolePage', segment: 'fisher-role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-useterms/fisher-useterms.module#FisherUsetermsPageModule', name: 'FisherUsetermsPage', segment: 'fisher-useterms', priority: 'low', defaultHistory: [] }
                     ]
