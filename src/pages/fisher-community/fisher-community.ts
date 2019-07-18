@@ -16,7 +16,7 @@ import {HomePage} from "../home/home";
 
 //TODO- provinces would have to be added as they arise
 function getProvinceAbbrev(province: string): string {
-
+    // console.log(`getProvinceAbbrev(${province})`);
     switch(province){
 
         case "Western Cape":{
@@ -123,7 +123,16 @@ export class FisherCommunityPage {
         }
 
         countryChanged() {
+                console.log('countryChanged()');
                 this.community_info.comm_country = this.communityForm.get('country').value;
+                console.log("Country: ", this.community_info.comm_country);
+                if (this.community_info.comm_country === 'Seychelles' || this.community_info.comm_country === 'Namibia') {
+                    console.log('Going to filter communities');
+                    this.communityForm.get('province').value = this.community_info.comm_country;
+                    // this.community_info.comm_province = this.community_info.comm_country;
+                    // this.filtered_comms = this.filterComms(this.all_comms,this.community_info.comm_province);//generate trhe filtered comms based on province selection
+                    this.provinceChanged();
+                }
         }
 
         provinceChanged(){
