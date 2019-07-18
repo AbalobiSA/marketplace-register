@@ -4,6 +4,7 @@ export class BaseUrls {
     marketplaceGetUserTypesURL :string;
     fisherCheckUserIDurl       :string;
     fisherGetTermsURL          :string;
+    fisherGetCommunitiesURL    :string;
     fisherAddUserURL           :string;
     testPostURL                :string;
 
@@ -13,6 +14,7 @@ export class BaseUrls {
         this.marketplaceGetUserTypesURL = "https://market.abalobi.org/api/listings/user-type-list";
         this.fisherCheckUserIDurl       = "https://server.abalobi.org/api/users/id/checkidexists?id=";
         this.fisherGetTermsURL          = "https://server.abalobi.org/api/terms";
+        this.fisherGetCommunitiesURL    = "https://server.abalobi.org/api/communities";
         this.fisherAddUserURL           = "https://server.abalobi.org/register";
         this.testPostURL                = "http://server.abalobi.org/api/testpost";
     }

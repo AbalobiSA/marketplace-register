@@ -38,6 +38,17 @@ export class FisherService {
       });
   }
 
+  fisherGetCommunities() {
+      return new Promise((resolve, reject) => {
+          this.http.get(this.urls.fisherGetCommunitiesURL).toPromise()
+            .then(result => {
+              resolve(result);
+            }).catch(error => {
+              reject(error);
+          })
+      });
+  }
+
   fisherUpdateTerms(terms_status  : FisherUsetermsClass){
         this.registree.terms_agreed       = terms_status.terms_use_agreed;
         this.registree.assistant_agreed   = terms_status.terms_assistant_agreed;
@@ -63,14 +74,18 @@ export class FisherService {
 
 
   fisherUpdateCommunity(community_info: CommunityInfoClass){
-        this.registree.province                 = community_info.comm_province;
-        this.registree.community                = community_info.comm_community;
-        this.registree.custom_community         = community_info.custom_community;
-        this.registree.comm_not_listed          = community_info.comm_not_listed;
-        this.registree.IRP_selected             = community_info.comm_IRP_chosen;
-        this.registree.commercial_selected      = community_info.comm_commercial_chosen;
-        this.registree.recreational_selected    = community_info.comm_recreational_chosen;
-        this.registree.other_seleted            = community_info.comm_other_chosen;
+        this.registree.country                                = community_info.comm_country;
+        this.registree.province                               = community_info.comm_province;
+        this.registree.community                              = community_info.comm_community;
+        this.registree.custom_community                       = community_info.custom_community;
+        this.registree.comm_not_listed                        = community_info.comm_not_listed;
+        this.registree.IRP_selected                           = community_info.comm_IRP_chosen;
+        this.registree.small_scale_selected                   = community_info.comm_small_scale_chosen;
+        this.registree.traditional_line_fish_selected         = community_info.comm_traditional_line_fish_chosen;
+        this.registree.near_shore_commercial_lobster_selected = community_info.comm_near_shore_commercial_lobster_chosen;
+        this.registree.recreational_selected                  = community_info.comm_recreational_chosen;
+        this.registree.other_seleted                          = community_info.comm_other_chosen;
+        this.registree.permit_other_manual                    = community_info.comm_permit_other_manual;
   }
 
 
@@ -88,21 +103,25 @@ export class FisherService {
     //parse fisher data to a format congruent to what the backend expects
     parseFisher(fisher: Fisher)  {
 
-        fisher.name                             =   this.registree.firstname;
-        fisher.surname                          =   this.registree.surname;
-        fisher.nickname                         =   this.registree.nickname;
-        fisher.email                            =   this.registree.email;
-        fisher.password                         =   this.registree.password;
-        fisher.cell                             =   this.registree.cellNo;
-        fisher.gender                           =   this.registree.gender;
-        fisher.id                               =   this.registree.IDnum;
-        fisher.usertype                         =   this.registree.role;
-        fisher.landingsite                      =   this.registree.community;
-        fisher.landingsite_custom               =   this.registree.custom_community;
-        fisher.fisher_license_irp               =   this.registree.IRP_selected;
-        fisher.fisher_license_recreational      =   this.registree.recreational_selected;
-        fisher.permission_local_implementer     =   this.registree.assistant_agreed;
-        fisher.permission_daff                  =   this.registree.DAFF_agreed;
+        fisher.name                                         = this.registree.firstname;
+        fisher.surname                                      = this.registree.surname;
+        fisher.nickname                                     = this.registree.nickname;
+        fisher.email                                        = this.registree.email;
+        fisher.password                                     = this.registree.password;
+        fisher.cell                                         = this.registree.cellNo;
+        fisher.gender                                       = this.registree.gender;
+        fisher.id                                           = this.registree.IDnum;
+        fisher.usertype                                     = this.registree.role;
+        fisher.landingsite                                  = this.registree.community;
+        fisher.landingsite_custom                           = this.registree.custom_community;
+        fisher.fisher_license_irp                           = this.registree.IRP_selected;
+        fisher.fisher_license_small_scale                   = this.registree.small_scale_selected;
+        fisher.fisher_license_traditional_line_fish         = this.registree.traditional_line_fish_selected;
+        fisher.fisher_license_near_shore_commercial_lobster = this.registree.near_shore_commercial_lobster_selected;
+        fisher.fisher_license_recreational                  = this.registree.recreational_selected;
+        fisher.fisher_license_other                         = this.registree.permit_other_manual;
+        fisher.permission_local_implementer                 = this.registree.assistant_agreed;
+        fisher.permission_daff                              = this.registree.DAFF_agreed;
 
 }
 
@@ -130,14 +149,17 @@ export class FisherService {
       this.registree.password   = "";
 
       //Community details
-      this.registree.province              ="";
-      this.registree.community             ="";
-      this.registree.custom_community      = "";
-      this.registree.comm_not_listed       =false;
-      this.registree.IRP_selected          =false;
-      this.registree.commercial_selected   =false;
-      this.registree.recreational_selected =false;
-      this.registree.other_seleted         =false;
+      this.registree.province                               ="";
+      this.registree.community                              ="";
+      this.registree.custom_community                       = "";
+      this.registree.comm_not_listed                        =false;
+      this.registree.IRP_selected                           =false;
+      this.registree.small_scale_selected                   =false;
+      this.registree.traditional_line_fish_selected         =false;
+      this.registree.near_shore_commercial_lobster_selected =false;
+      this.registree.recreational_selected                  =false;
+      this.registree.other_seleted                          =false;
+      this.registree.permit_other_manual                    ='';
 
       //console.log("........Fisher Service Cleared User Details........");
   }

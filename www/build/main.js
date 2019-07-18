@@ -92,7 +92,7 @@ var AfterRegisterPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__after_register__["a" /* AfterRegisterPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__after_register__["a" /* AfterRegisterPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__after_register__["a" /* AfterRegisterPage */]),
             ],
         })
     ], AfterRegisterPageModule);
@@ -139,7 +139,7 @@ var AfterRegisterPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-after-register',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/'<!--\n\n  Generated template for the AfterRegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Registration successful</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <p>Thank you for registering for ABALOBI Marketplace.</p>\n\n  <p><strong>Note that you can\'t login yet - a human needs to approve your application.</strong></p>\n\n  <p>Please watch your e-mail for further details.</p>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\after-register\after-register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], AfterRegisterPage);
     return AfterRegisterPage;
 }());
@@ -175,7 +175,7 @@ var FisherCommunityPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_community__["a" /* FisherCommunityPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_community__["a" /* FisherCommunityPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_community__["a" /* FisherCommunityPage */]),
             ],
         })
     ], FisherCommunityPageModule);
@@ -198,6 +198,7 @@ var FisherCommunityPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_community_class__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -207,6 +208,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -214,11 +250,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+//import {qR} from "@angular/core/src/render3";
 // function isInThisProvince(comms: CommunityClass, provinceFull : string){
 //     return  this.province_abbrev == getProvinceAbbrev(provinceFull);
 // }
 //TODO- provinces would have to be added as they arise
 function getProvinceAbbrev(province) {
+    // console.log(`getProvinceAbbrev(${province})`);
     switch (province) {
         case "Western Cape": {
             return "WC";
@@ -254,17 +293,22 @@ function customCommEntered(selectedCommKey, customCommKey) {
     };
 }
 var FisherCommunityPage = /** @class */ (function () {
-    function FisherCommunityPage(navCtrl, navParams, fisherService, formBuilder) {
+    function FisherCommunityPage(navCtrl, navParams, fisherService, formBuilder, alertController) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.fisherService = fisherService;
         this.formBuilder = formBuilder;
+        this.alertController = alertController;
         this.all_comms = [];
         this.filtered_comms = []; //communities filtered according to province selected
         this.community_info = new __WEBPACK_IMPORTED_MODULE_4__classes_community_info_class__["a" /* CommunityInfoClass */]();
         this.confirm_personal = new Object();
         this.hideCustomComm = true; //hide the option to enter a custom community on DOM
         this.validation_messages = {
+            'country': [
+                { type: 'required', message: 'Please select a country.' }
+            ],
             'province': [
                 { type: 'required', message: 'Please select a province.' }
             ],
@@ -272,67 +316,59 @@ var FisherCommunityPage = /** @class */ (function () {
                 { type: 'required', message: 'Please select a community.' }
             ],
         };
-        //TODO -- improve this to read these communities from a csv file/from an API call
-        this.list_of_communities = [
-            "name_key,province,name_Eng,name_Afr,region",
-            "sey_mahe_anseauxpins,SEY,Mahé - Anse Aux Pins,Mahé - Anse Aux Pins,seychelles",
-            "sey_mahe_anseroyale,SEY,Mahé - Anse Royale,Mahé - Anse Royale,seychelles",
-            "sey_mahe_beauvallon,SEY,Mahé - Beau Vallon,Mahé - Beau Vallon,seychelles",
-            "sey_mahe_edenisland,SEY,Mahé - Roche Caiman (Eden Island),Mahé - Roche Caiman (Eden Island),seychelles",
-            "sey_mahe_grandanse,SEY,Mahé - Grand Anse,Mahé - Grand Anse,seychelles",
-            "sey_mahe_takamaka,SEY,Mahé - Takamaka,Mahé - Takamaka,seychelles",
-            "sey_mahe_victoria,SEY,Mahé - Victoria,Mahé - Victoria,seychelles",
-            "sey_mahe_laretraite,SEY,Mahé - La Retraite,Mahé - La Retraite,seychelles",
-            "sey_ladigues,SEY,La Digues,La Digues,seychelles",
-            "sey_praslin,SEY,Praslin,Praslin,seychelles",
-            "sey_fregate,SEY,Fregate,Fregate,seychelles",
-            "arniston,WC,Arniston,Waenhuiskrans,west_coast",
-            "bellville,WC,Bellville,Bellville,west_coast",
-            "bettysbay,WC,Bettys Bay,Bettysbaai,west_coast",
-            "buffelsjagbaai,WC,Buffeljagsbaai,Buffeljagsbaai,west_coast",
-            "cape_flats,WC,Cape Flats,Cape Flats,west_coast",
-            "capetown,WC,Cape Town,Cape Town,west_coast",
-            "coffeebay,KZN,Coffee Bay,Koffiebaai,kwazulunatal eastern_cape",
-            "democommunity,WC,Demo Community,Demo Gemeenskap,west_coast",
-            "doringbaai,WC,Doring Bay,Doringbaai,west_coast",
-            "elandsbaai,WC,Elands Bay,Elandsbaai,west_coast",
-            "fishhoek,WC,Fishhoek,Vishoek,west_coast",
-            "gordons_bay,WC,Gordon's Bay,Gordonsbaai,west_coast",
-            "grassy_park,WC,Grassy Park,Grassy Park,west_coast",
-            "hermanus,WC,Hermanus,Hermanus,west_coast",
-            "hondeklipbaai,NC,Hondeklip Bay,Hondeklipbaai,west_coast",
-            "hout_bay,WC,Hout Bay,Houtbaai,west_coast",
-            "kalk_bay,WC,Kalk Bay,Kalkbaai,west_coast",
-            "kleinmond,WC,Kleinmond,Kleinmond,west_coast",
-            "lambertsbaai,WC,Lamberts Bay,Lambertsbaai,west_coast",
-            "langebaan,WC,Langebaan,Langebaan,west_coast",
-            "millers_point,WC,Millers Point,Millers Point,west_coast",
-            "muizenberg,WC,Muizenberg,Muizenberg,west_coast",
-            "ocean_view,WC,Ocean View,Ocean View,west_coast",
-            "olifants,WC,Olifants,Olifants,west_coast",
-            "paternoster,WC,Paternoster,Paternoster,west_coast",
-            "portnolloth,NC,Port Nolloth,Port Nolloth,west_coast",
-            "pringlebay,WC,Pringle Bay,Pringlebaai,west_coast",
-            "steenbergscove,WC,Steenberg's Cove,Steenberg's Cove,west_coast",
-            "simonstown,WC,Simon's Town,Simonstad,west_coast",
-            "sainthelenaisland,SHI,St Helena Island,St Helena Eiland,saint_helena_island",
-            "strand,WC,Strand,Strand,west_coast",
-            "strandfontein_falsebay,WC,Strandfontein (False Bay),Strandfontein (Valsbaai),west_coast",
-            "struisbaai,WC,Struis Bay,Struisbaai,west_coast",
-            "yzerfontein,WC,Yzerfontein,Yzerfontein,west_coast",
-            "nam_hentiesbaai,NAM,Hentiesbaai,Hentiesbaai,namibia"
-        ];
         this.communityForm = this.formBuilder.group({
+            "country": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["i" /* Validators */].required],
             "province": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["i" /* Validators */].required],
             "community": ['', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["i" /* Validators */].required],
             "custom": [null, null],
+            "permit_other": [null, null]
         }, { validator: customCommEntered('community', 'custom') });
-        //construct the list of all communities upon and creation instantiate once
-        for (var i = 1; i < this.list_of_communities.length; i++) {
-            var line = (this.list_of_communities[i]).split(",");
-            this.all_comms.push(new __WEBPACK_IMPORTED_MODULE_5__classes_community_class__["a" /* CommunityClass */](line[0], line[1], line[2]));
-        }
+        console.log('Getting fisher communities...');
+        fisherService.fisherGetCommunities().then(function (result) {
+            console.log("Done getting communities: ", result);
+            var communities = result['abalobi-communities'];
+            for (var i = 0; i < communities.length; i++) {
+                _this.all_comms.push(new __WEBPACK_IMPORTED_MODULE_5__classes_community_class__["a" /* CommunityClass */](communities[i]['Name'], communities[i]['province_abbreviation__c'], communities[i]['name_eng__c']));
+            }
+        }).catch(function (error) {
+            console.log("Error getting communities: ", error);
+            _this.presentAlert();
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__home_home__["a" /* HomePage */]);
+        });
     }
+    FisherCommunityPage.prototype.presentAlert = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertController.create({
+                            title: 'Error',
+                            subTitle: 'Error',
+                            message: 'Failed loading community list. You will be returned to home page',
+                            buttons: ['OK']
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    FisherCommunityPage.prototype.countryChanged = function () {
+        console.log('countryChanged()');
+        this.community_info.comm_country = this.communityForm.get('country').value;
+        console.log("Country: ", this.community_info.comm_country);
+        if (this.community_info.comm_country === 'Seychelles' || this.community_info.comm_country === 'Namibia') {
+            console.log('Going to filter communities');
+            this.communityForm.get('province').value = this.community_info.comm_country;
+            // this.community_info.comm_province = this.community_info.comm_country;
+            // this.filtered_comms = this.filterComms(this.all_comms,this.community_info.comm_province);//generate trhe filtered comms based on province selection
+            this.provinceChanged();
+        }
+    };
     FisherCommunityPage.prototype.provinceChanged = function () {
         this.community_info.comm_province = this.communityForm.get('province').value;
         this.filtered_comms = this.filterComms(this.all_comms, this.community_info.comm_province); //generate trhe filtered comms based on province selection
@@ -347,6 +383,9 @@ var FisherCommunityPage = /** @class */ (function () {
             this.community_info.comm_community = 'other';
             this.hideCustomComm = false;
         }
+    };
+    FisherCommunityPage.prototype.permitOtherChanged = function () {
+        this.community_info.comm_permit_other_manual = this.communityForm.get('permit_other').value;
     };
     //Record the name of the entered custom community
     FisherCommunityPage.prototype.customCommunityEntered = function () {
@@ -389,11 +428,12 @@ var FisherCommunityPage = /** @class */ (function () {
     };
     FisherCommunityPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-fisher-community',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-community\fisher-community.html"*/'<!--\n  Generated template for the FisherCommunityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n        <ion-navbar>\n              <ion-title>Abalobi Register</ion-title>\n        </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n        <form [formGroup] = "communityForm">\n\n\n                <p style="text-align:center"><b>Community / Landing</b></p>\n\n                <ion-item>\n                        <ion-label text-wrap>Please select  your province\n                        </ion-label>\n                                <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">\n                                        <ion-option value="Western Cape">Western Cape</ion-option>\n                                        <ion-option value="Northern Cape">Northern Cape</ion-option>\n                                        <ion-option value="Eastern Cape">Eastern Cape</ion-option>\n                                        <ion-option value="North West"> North West</ion-option>\n                                        <ion-option value="Mpumalanga">Mpumalanga</ion-option>\n                                        <ion-option value="Limpopo">Limpopo</ion-option>\n                                        <ion-option value="Gauteng">Gauteng</ion-option>\n                                        <ion-option value="Free State">Free State</ion-option>\n                                        <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>\n                                        <ion-option value="Seychelles">Seychelles</ion-option>\n                                        <ion-option value="Namibia">Namibia</ion-option>\n                                </ion-select>\n                </ion-item>\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'province\').hasError(validation.type) && (communityForm.get(\'province\').dirty || communityForm.get(\'province\').touched)">\n                                        {{ validation.message }}\n                                </div>\n                        </ng-container>\n                </div>\n\n\n                <ion-item >\n                            <ion-label text-wrap>Please select  your community\n                            </ion-label>\n                                        <ion-select text-wrap formControlName="community" (ionChange)=" communityChanged()">\n                                                <ion-option  text-wrap *ngFor="let c of filterComms(all_comms, communityForm.get(\'province\').value)">{{c.name_Eng}}</ion-option>\n                                                <ion-option  text-wrap value="Other">Other</ion-option>\n                                        </ion-select>\n                </ion-item>\n\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.community" >\n                                 <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'community\').hasError(validation.type) && (communityForm.get(\'community\').dirty || communityForm.get(\'community\').touched)">\n                                        {{ validation.message }}\n                                 </div>\n                        </ng-container>\n                </div>\n\n\n\n                <ion-item [hidden]="hideCustomComm">\n                        <ion-label text-wrap stacked>Please enter your community</ion-label>\n                        <ion-input  type="text" formControlName="custom" placeholder="Enter your community here" (ionChange)="customCommunityEntered()"></ion-input>\n                </ion-item>\n\n                <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="communityForm.hasError(\'missingCustomComm\')">Custom community required.</span>\n\n\n\n\n\n                <p style="text-align:center"><b>Do you have a fishing permit ?</b></p>\n\n\n                <ion-list >\n                        <ion-item>\n                                <ion-label> IRP / Exemption</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Commercial</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Recreational</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Other</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                </ion-list>\n\n                <button ion-button full  [disabled]="!communityForm.valid" (click)="onFisherFinishCommunity()">Next</button>\n        </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-community\fisher-community.html"*/,
+            selector: 'page-fisher-community',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-community\fisher-community.html"*/'<!--\n  Generated template for the FisherCommunityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n        <ion-navbar>\n              <ion-title>Abalobi Register</ion-title>\n        </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n        <form [formGroup] = "communityForm">\n\n\n                <p style="text-align:center"><b>Community / Landing</b></p>\n\n                <ion-item>\n                        <ion-label text-wrap>Please select your country\n                        </ion-label>\n                        <ion-select text-wrap formControlName="country" (ionChange)="countryChanged()">\n                                <ion-option value="South Africa">South Africa</ion-option>\n                                <ion-option value="Seychelles">Seychelles</ion-option>\n                                <ion-option value="Namibia">Namibia</ion-option>\n                        </ion-select>\n                </ion-item>\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'country\').hasError(validation.type) && (communityForm.get(\'country\').dirty || communityForm.get(\'country\').touched)">\n                                      {{ validation.message }}\n                                </div>\n                        </ng-container>\n                </div>\n\n                <ion-item *ngIf="community_info.comm_country === \'South Africa\'">\n                        <ion-label text-wrap>Please select  your province\n                        </ion-label>\n                                <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">\n                                        <ion-option value="Western Cape">Western Cape</ion-option>\n                                        <ion-option value="Northern Cape">Northern Cape</ion-option>\n                                        <ion-option value="Eastern Cape">Eastern Cape</ion-option>\n                                        <ion-option value="North West"> North West</ion-option>\n                                        <ion-option value="Mpumalanga">Mpumalanga</ion-option>\n                                        <ion-option value="Limpopo">Limpopo</ion-option>\n                                        <ion-option value="Gauteng">Gauteng</ion-option>\n                                        <ion-option value="Free State">Free State</ion-option>\n                                        <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>\n                                        <!--<ion-option value="Seychelles">Seychelles</ion-option>-->\n                                        <!--<ion-option value="Namibia">Namibia</ion-option>-->\n                                </ion-select>\n                </ion-item>\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.province" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'province\').hasError(validation.type) && (communityForm.get(\'province\').dirty || communityForm.get(\'province\').touched)">\n                                        {{ validation.message }}\n                                </div>\n                        </ng-container>\n                </div>\n\n\n                <ion-item >\n                            <ion-label text-wrap>Please select  your community\n                            </ion-label>\n                                        <ion-select text-wrap formControlName="community" (ionChange)=" communityChanged()">\n                                                <ion-option  text-wrap *ngFor="let c of filterComms(all_comms, communityForm.get(\'province\').value)">{{c.name_Eng}}</ion-option>\n                                                <ion-option  text-wrap value="Other">Other</ion-option>\n                                        </ion-select>\n                </ion-item>\n\n\n                <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.community" >\n                                 <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get(\'community\').hasError(validation.type) && (communityForm.get(\'community\').dirty || communityForm.get(\'community\').touched)">\n                                        {{ validation.message }}\n                                 </div>\n                        </ng-container>\n                </div>\n\n\n\n                <ion-item [hidden]="hideCustomComm">\n                        <ion-label text-wrap stacked>Please enter your community</ion-label>\n                        <ion-input  type="text" formControlName="custom" placeholder="Enter your community here" (ionChange)="customCommunityEntered()"></ion-input>\n                </ion-item>\n\n                <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="communityForm.hasError(\'missingCustomComm\')">Custom community required.</span>\n\n\n\n\n\n                <p style="text-align:center"><b>Do you have a fishing permit ?</b></p>\n\n\n                <ion-list >\n                        <ion-item>\n                                <ion-label> IRP / Exemption</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Small-scale</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_small_scale_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Traditional Line-fish</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_traditional_line_fish_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Near-shore commercial lobster</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_near_shore_commercial_lobster_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Recreational</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item>\n                                <ion-label> Other</ion-label>\n                                <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                        </ion-item>\n\n                        <ion-item *ngIf="community_info.comm_other_chosen || community_info.comm_country === \'Seychelles\' || community_info.comm_country === \'Namibia\'">\n                                <ion-label text-wrap stacked>Other permit</ion-label>\n                                <ion-input formControlName="permit_other" type="text"   placeholder="Enter your other permit here" (ionChange)="permitOtherChanged()"></ion-input>\n                        </ion-item>\n\n                </ion-list>\n\n                <button ion-button full  [disabled]="!communityForm.valid" (click)="onFisherFinishCommunity()">Next</button>\n        </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-community\fisher-community.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
     ], FisherCommunityPage);
     return FisherCommunityPage;
+    var _a, _b, _c, _d, _e;
 }()); //end class
 
 //# sourceMappingURL=fisher-community.js.map
@@ -412,7 +452,7 @@ var FisherCommunityPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fisher_register_success_fisher_register_success__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fisher_not_unique_fisher_not_unique__ = __webpack_require__(175);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fisher_register_failure_fisher_register_failure__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -522,10 +562,10 @@ var FisherConfirmPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-confirm',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-confirm\fisher-confirm.html"*/'<!--\n\n  Generated template for the FisherConfirmPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n\n\n<ion-header>\n\n          <ion-navbar>\n\n                  <ion-title>Abalobi Register</ion-title>\n\n          </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding title="Abalobi Register-confirm" id="fisher-register-confirm">\n\n\n\n          <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n\n                    If everything is correct please press the Register button below. Otherwise please go back and correct the info.\n\n          </p>\n\n\n\n          <form text-wrap>\n\n                    <ion-item>\n\n                          <ion-label>Name: {{confirm_info.personal_firstname}}</ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>Surname: {{confirm_info.personal_surname}}</ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>ID Number: {{confirm_info.personal_IDnum}} </ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n\n\n                    <ion-item>\n\n                          <ion-label>Cell Number:{{confirm_info.personal_cellNo}} </ion-label>\n\n                          <ion-input placeholder=""></ion-input>\n\n                    </ion-item>\n\n\n\n              <button text-wrap="true" ion-button full  (click)="onFisherSubmit()">Register</button>\n\n          </form>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-confirm\fisher-confirm.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_FisherService__["a" /* FisherService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]])
     ], FisherConfirmPage);
@@ -570,14 +610,19 @@ var Registree = /** @class */ (function () {
         this.cellNo = "";
         this.password = "";
         //Community details
+        this.country = '';
         this.province = "";
         this.community = "";
         this.custom_community = "";
         this.comm_not_listed = false;
         this.IRP_selected = false;
-        this.commercial_selected = false;
+        this.small_scale_selected = false;
+        this.traditional_line_fish_selected = false;
+        this.near_shore_commercial_lobster_selected = false;
+        // commercial_selected   :boolean=false;
         this.recreational_selected = false;
         this.other_seleted = false;
+        this.permit_other_manual = '';
     }
     Registree = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -602,6 +647,7 @@ var BaseUrls = /** @class */ (function () {
         this.marketplaceGetUserTypesURL = "https://market.abalobi.org/api/listings/user-type-list";
         this.fisherCheckUserIDurl = "https://server.abalobi.org/api/users/id/checkidexists?id=";
         this.fisherGetTermsURL = "https://server.abalobi.org/api/terms";
+        this.fisherGetCommunitiesURL = "https://server.abalobi.org/api/communities";
         this.fisherAddUserURL = "https://server.abalobi.org/register";
         this.testPostURL = "http://server.abalobi.org/api/testpost";
     }
@@ -643,7 +689,7 @@ var PersonalInfoClass = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherRegisterSuccessPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -671,7 +717,7 @@ var FisherRegisterSuccessPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-register-success',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-register-success\fisher-register-success.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-wrap>\n\n      Registration Successful\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n\n\n      <hr>\n\n      <p text-wrap="true" align="center">\n\n        Your registration has been submitted. You should receive a confirmation SMS shortly.\n\n      </p>\n\n      <hr>\n\n\n\n    </div>\n\n\n\n\n\n    <button ion-button full  (click)="onbackToHome()">Back to Home</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-register-success\fisher-register-success.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], FisherRegisterSuccessPage);
     return FisherRegisterSuccessPage;
 }());
@@ -688,7 +734,7 @@ var FisherRegisterSuccessPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__after_register_after_register__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(12);
 /**
@@ -1043,9 +1089,9 @@ var MarketplaceHome = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-marketplace-home',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Register for ABALOBI Marketplace\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding id="page1">\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png"\n       style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>\n\n  <form id="page-form1">\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n      <p id="header-text" style="color:#000000;">\n        Complete this form if you&#39;d like to be able to\n        <strong>\n          BUY seafood\n        </strong>\n        using the ABALOBI Marketplace app\n      </p>\n      <hr>\n\n      <p>\n        Thank you for your interest in sourcing traceable, storied seafood by empowered small-scale fishers!\n      </p>\n\n      <p>\n        Use of the Marketplace app is not (yet) open to the general public - our group of users is being grown with\n        hand-picked restaurants and chefs who understand and buy into what we\'re trying to achieve through ABALOBI.\n      </p>\n\n      <p>\n        If you feel that you fit the bill and are keen to become (or already are) an ambassador for traceable, storied\n        seafood by empowered small-scale fishers, then please register here and send a short motivation to\n        <a href="mailto:hello@abalobi.org">hello@abalobi.org</a> - we\'d love to hear more about your enterprise.\n      </p>\n    </div>\n\n\n    <ion-item-divider color="light" id="page-list-item-divider1">\n      Login Details\n    </ion-item-divider>\n\n    <ion-item id="page-input2">\n      <ion-label>\n        * Email\n      </ion-label>\n      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="e.g. jsmith@gmail.com"\n                 [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input3">\n      <ion-label>\n        * Password\n      </ion-label>\n      <ion-input [(ngModel)]="password" name="password" type="password" placeholder=""></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input4">\n      <ion-label>\n        * Repeat Password\n      </ion-label>\n      <ion-input [(ngModel)]="repeat_password" name="repeat_password" type="password" placeholder=""></ion-input>\n    </ion-item>\n  </form>\n\n\n  <form id="page-form3">\n    <ion-item-divider color="light" id="page-list-item-divider3">\n      Your Details\n    </ion-item-divider>\n\n    <ion-item id="page-input8">\n      <ion-label>\n        * Name\n      </ion-label>\n      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="e.g. John"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input9">\n      <ion-label>\n        * Surname\n      </ion-label>\n      <ion-input [(ngModel)]="surname" name="surname" type="text" placeholder="e.g. Smith"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input10">\n      <ion-label>\n        * Cell Number\n      </ion-label>\n      <ion-input [(ngModel)]="cell_number" name="cell_number" type="tel" placeholder="e.g. +27821234567"></ion-input>\n    </ion-item>\n  </form>\n\n  <form id="page-form4">\n    <ion-item-divider color="light" id="page-list-item-divider4">\n      Type of Registration\n    </ion-item-divider>\n\n      <ion-label>\n        * Type (please select one):\n      </ion-label>\n      <div [formGroup]="myGroup">\n        <!--<ion-list formControlName="selectedItem" radio-group>-->\n        <ion-list [formControl]="personalForm.controls.selectedItem" radio-group>\n          <ion-item *ngFor="let item of userTypes">\n            <ion-label>{{item.label}}</ion-label>\n            <ion-radio item-left value="{{item.typeid}}"></ion-radio>\n          </ion-item>\n        </ion-list>\n      </div>\n\n    <!--<div class="radio" *ngFor="let u of user_type_list">-->\n      <!--<label><input type="radio" name="optradio" [(ngModel)]="selected_user_type" [value]="u.typeid">&nbsp; {{u.label}}</label>-->\n    <!--</div>-->\n  </form>\n\n  <form id="page-form5" *ngIf="personalForm.get(\'selectedItem\').value !== \'individual\'">\n    <ion-item-divider color="light" id="page-list-item-divider5">\n      Your Company\n    </ion-item-divider>\n\n    <ion-item id="page-input14">\n      <ion-label stacked>\n        * Name of establishment\n      </ion-label>\n      <ion-input [(ngModel)]="name_of_establishment" name="name_of_establishment" type="text"\n                 placeholder="The name shown to your patrons when they scan a QR code"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input15">\n      <ion-label stacked>\n        * Company Name (for invoice)\n      </ion-label>\n      <ion-input [(ngModel)]="company_name" name="company_name" type="text"\n                 placeholder="The name of the company as shown on invoice"></ion-input>\n      >\n    </ion-item>\n\n    <ion-item id="page-input16">\n      <ion-label stacked>\n        VAT number of Company\n      </ion-label>\n      <ion-input [(ngModel)]="vat_number" name="vat_number" type="text" placeholder="Optional"></ion-input>\n      >\n    </ion-item>\n\n    <ion-item id="page-input17">\n      <ion-label stacked>\n        Address (multiple lines allowed)\n      </ion-label>\n      <ion-textarea [(ngModel)]="address" name="address" type="text" placeholder="Optional"></ion-textarea>\n      >\n    </ion-item>\n\n    <ion-item id="page-input18">\n      <ion-label stacked>\n        Town/City\n      </ion-label>\n      <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Optional"></ion-input>\n      >\n    </ion-item>\n\n    <ion-item id="page-input19">\n      <ion-label stacked>\n        Postal Code\n      </ion-label>\n      <ion-input [(ngModel)]="postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>\n      >\n    </ion-item>\n  </form>\n\n  <ion-item *ngIf="personalForm.get(\'selectedItem\').value !== \'individual\'">\n    <ion-label>Physical location is same as above address</ion-label>\n    <ion-checkbox checked="false" [(ngModel)]="matchingAddresses"></ion-checkbox>\n  </ion-item>\n\n  <form *ngIf="!matchingAddresses" id="page-form6">\n    <ion-item-divider color="light" id="page-list-item-divider6">\n      Location\n    </ion-item-divider>\n\n    <ion-item id="page-input20">\n      <ion-label stacked>\n        Address (multiple lines allowed)\n      </ion-label>\n      <ion-textarea [(ngModel)]="location_address" name="address" type="text" placeholder="Optional"></ion-textarea>\n      >\n    </ion-item>\n\n    <ion-item id="page-input21">\n      <ion-label stacked>\n        * Town/City\n      </ion-label>\n      <ion-input [(ngModel)]="location_city" name="city" type="text" placeholder="Optional"></ion-input>\n      >\n    </ion-item>\n\n    <ion-item id="page-input22">\n      <ion-label stacked>\n        Postal Code\n      </ion-label>\n      <ion-input [(ngModel)]="location_postal_code" name="postal_code" type="text" placeholder="Optional"></ion-input>\n      >\n    </ion-item>\n  </form>\n\n  <form id="page-form7">\n    <ion-item-divider color="light" id="page-list-item-divider7">\n      Social Media\n    </ion-item-divider>\n\n    <ion-item id="page-input23">\n      <ion-label stacked>\n        Instagram handle\n      </ion-label>\n      <ion-input [(ngModel)]="instagram_handle" name="instagram_handle" type="text" placeholder="Optional"></ion-input>\n      >\n    </ion-item>\n  </form>\n\n  <form id="page-form8" *ngIf="personalForm.get(\'selectedItem\').value !== \'individual\'">\n    <ion-item-divider color="light" id="page-list-item-divider8">\n      Notifications\n    </ion-item-divider>\n\n    <div>Invoices and QR codes are sent to you by e-mail. Please list any others who should receive these too (e.g.\n      finance department, floor manager etc.) The QR codes are for printing and displaying to restaurant patrons -\n      they scan these to view the HookToCook page for the seafood. New QR codes are provided with each purchase from\n      ABALOBI Marketplace.\n    </div>\n\n\n    <ion-item id="page-input24">\n      <ion-label stacked>\n        Also e-mail invoices and QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_1" name="extra_email_1" type="email" placeholder="Optional"\n                 [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input25">\n      <ion-label stacked>\n        Also e-mail invoices and QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_2" name="extra_email_2" type="email" placeholder="Optional"\n                 [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input26">\n      <ion-label stacked>\n        Also e-mail QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_3" name="extra_email_3" type="email" placeholder="Optional"\n                 [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input27">\n      <ion-label stacked>\n        Also e-mail QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_4" name="extra_email_4" type="email" placeholder="Optional"\n                 [email]="true"></ion-input>\n    </ion-item>\n\n    <ion-item id="page-input28">\n      <ion-label stacked>\n        Also e-mail QR codes to\n      </ion-label>\n      <ion-input [(ngModel)]="extra_email_5" name="extra_email_5" type="email" placeholder="Optional"\n                 [email]="true"></ion-input>\n    </ion-item>\n\n    <!-- TODO: Re-enable this again when the word comes -->\n    <!--<re-captcha (resolved)="captchaResolved($event)" siteKey="6LdWBF4UAAAAAK8gVGD8yWcTbHsNaNEFtnFMJUU3"></re-captcha>-->\n    <div id="page-container1"></div>\n\n  </form>\n  <button id="page-button1" (click)="registerBtnClick()" ion-button color="positive" block>\n    Register\n  </button>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\marketplace-home\marketplace-home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_MarketplaceService__["a" /* MarketplaceService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
             __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]])
     ], MarketplaceHome);
@@ -1062,7 +1108,7 @@ var MarketplaceHome = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketplaceService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_base_urls__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1155,7 +1201,7 @@ var FisherRolePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-role',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-role\fisher-role.html"*/'\n\n<ion-header>\n\n    <ion-navbar>\n\n            <ion-title>Abalobi Register</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding title="Abalobi Register-role" id="fisher-role-form">\n\n    <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n\n\n    <form [formGroup] = "roleForm">\n\n\n\n                <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n                        <p id="header-text" style="color:#000000;">\n\n                            Complete this form if you&#39;d like to be able to\n\n                            <strong>\n\n                                LOG YOUR CATCH\n\n                            </strong>\n\n                            on the ABALOBI Fisher app.\n\n                        </p>\n\n                        <hr>\n\n                </div>\n\n\n\n                <ion-list radio-group type="text" formControlName=\'role\' (ionChange)="roleChanged()">\n\n                        <ion-item>\n\n                                <ion-label text-wrap>Fisher</ion-label>\n\n                                <ion-radio  type="text" value ="fisher" ></ion-radio>\n\n                        </ion-item>\n\n\n\n                        <ion-item>\n\n                                <ion-label text-wrap>Local Fisher Assistant</ion-label>\n\n                                <ion-radio type="text" value ="fisher_manager"></ion-radio>\n\n                        </ion-item>\n\n\n\n\n\n                        <ion-item>\n\n                                <ion-label text-wrap>Local Assistant AND Fisher (I will be logging my own catch)</ion-label>\n\n                                <ion-radio type="text" value ="fisher,fisher_manager"></ion-radio>\n\n                        </ion-item>\n\n                </ion-list>\n\n\n\n                <div style="color:red" text-wrap align="center" class="validation-errors">\n\n                        <ng-container *ngFor="let validation of validation_messages.role" >\n\n                                <div class="error-message" *ngIf="roleForm.get(\'role\').hasError(validation.type)"> <!-- && (roleForm.get(\'role\').dirty || roleForm.get(\'role\').touched)"-->\n\n                                        {{ validation.message }}\n\n                                </div>\n\n                        </ng-container>\n\n                </div>\n\n\n\n            <button ion-button full [disabled]="!roleForm.valid" (click)="nextFromFisherRole()">Next</button>\n\n    </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-role\fisher-role.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
     ], FisherRolePage);
     return FisherRolePage;
 }());
@@ -1232,7 +1278,7 @@ var FisherUsetermsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-useterms',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/'<!--\n  Generated template for the FisherUsetermsPage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n        <ion-navbar>\n                <ion-title>Terms of Use</ion-title>\n        </ion-navbar>\n</ion-header>\n\n\n<ion-content padding="true" title="Terms of Use" id="fisher-terms-form">\n\n            <form [formGroup] = "termsForm">\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->\n                                <b>{{terms}}</b>\n                        </p>\n\n\n                        <ion-item>\n                                <ion-label>* I Agree</ion-label>\n                                <ion-checkbox formControlName=\'agree\' (ionChange)="termsChanged()"></ion-checkbox>\n                        </ion-item>\n\n                        <div style="color:red" text-wrap align="center" class="validation-errors">\n                            <ng-container *ngFor="let validation of validation_messages.agree" >\n                                    <div class="error-message" *ngIf="!termsForm.get(\'agree\').value"><!-- && ( termsForm.get(\'agree\').dirty || termsForm.get(\'agree\')).touched"-->\n                                                {{ validation.message }}\n                                    </div>\n                            </ng-container>\n                        </div>\n\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n                                <b> I further consent to share my data with the following parties (tick where applicable):</b>\n                        </p>\n\n\n                        <ion-list text-wrap id="termsOfUse-list2">\n                                <ion-item>\n                                        <ion-label> Abalobi Local Fisher Assistant</ion-label>\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_assistant_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                                </ion-item>\n\n\n                                <ion-item>\n                                        <ion-label > DAFF (Department of Agriculture, Forestry and Fisheries)</ion-label>\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_DAFF_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                                </ion-item>\n                        </ion-list>\n\n                        <button ion-button full  [disabled]="!termsForm.valid" (click)="onFisherFinishTerms()">Next</button>\n\n            </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]])
     ], FisherUsetermsPage);
     return FisherUsetermsPage;
 }()); //end class
@@ -1492,7 +1538,7 @@ var FisherPersonalPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-personal',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-personal\fisher-personal.html"*/'<ion-header>\n        <ion-navbar>\n                <ion-title>Abalobi Register</ion-title>\n        </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding title="fisher-personal-form" id="page5">\n\n    <form [formGroup] = "personalForm">\n            <ion-item>\n                      <ion-label stacked>* Surname</ion-label>\n                    <ion-input type="text" formControlName="surname" placeholder="Enter your surname here"(ionChange)="surnameChanged()"></ion-input>\n            </ion-item>\n\n            <div style="color:red" text-wrap align="center" class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.surname" >\n                                <div class="error-message" *ngIf="personalForm.get(\'surname\').hasError(validation.type) && (personalForm.get(\'surname\').dirty || personalForm.get(\'surname\').touched)">\n                                    {{ validation.message }}\n                                </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                        <ion-label stacked>* First Name</ion-label>\n                        <ion-input type="text" formControlName="name" placeholder="Enter your name here"(ionChange)="nameChanged()"></ion-input>\n            </ion-item>\n\n            <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.name" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'name\').hasError(validation.type) && (personalForm.get(\'name\').dirty || personalForm.get(\'name\').touched)">\n                                        {{ validation.message }}\n                                </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                        <ion-label stacked>* Nickname</ion-label>\n                        <ion-input type="text" formControlName="nickname" placeholder="What do people usually call you?"(ionChange)="nickNameChanged()"></ion-input>\n            </ion-item>\n\n            <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.nickname" >\n                                    <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'nickname\').hasError(validation.type) && (personalForm.get(\'nickname\').dirty || personalForm.get(\'nickname\').touched)">\n                                            {{ validation.message }}\n                                    </div>\n                        </ng-container>\n            </div>\n\n      <ion-item>\n        <ion-label stacked>E-mail</ion-label>\n        <ion-input type="text" formControlName="email" placeholder="Optional e-mail where you can be reached"(ionChange)="emailChanged()"></ion-input>\n      </ion-item>\n\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.email" >\n          <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'email\').hasError(validation.type) && (personalForm.get(\'email\').dirty || personalForm.get(\'email\').touched)">\n            {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n            <ion-item>\n                    <ion-label stacked>Gender\n                    </ion-label>\n                        <ion-select formControlName="gender" (ionChange)=" genderChanged()">\n                                  <ion-option value = "male">Male</ion-option>\n                                  <ion-option value = "female">Female</ion-option>\n                        </ion-select>\n            </ion-item>\n            <!--<div class="validation-errors">-->\n                    <!--<ng-container *ngFor="let validation of validation_messages.gender" >-->\n                            <!--<div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'gender\').hasError(validation.type) && (personalForm.get(\'gender\').dirty || personalForm.get(\'gender\').touched)">-->\n                                    <!--{{ validation.message }}-->\n                            <!--</div>-->\n                    <!--</ng-container>-->\n            <!--</div>-->\n\n\n            <ion-item>\n                      <ion-label stacked>* ID Number</ion-label>\n                      <ion-input formControlName="ID"  type="text"  placeholder="Enter your ID Number here"(ionChange)="IDchanged()"></ion-input>\n            </ion-item>\n            <div class="validation-errors">\n                        <ng-container *ngFor="let validation of validation_messages.ID" >\n                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'ID\').hasError(validation.type) && (personalForm.get(\'ID\').dirty || personalForm.get(\'ID\').touched)">\n                                    {{ validation.message }}\n                                </div>\n                        </ng-container>\n            </div>\n\n\n            <ion-item>\n                        <ion-label text-wrap stacked>* Personal Cellphone Number</ion-label>\n                        <ion-input formControlName="cell"  type="text"   placeholder="Enter your cell number here"(ionChange)="cellChanged()"></ion-input>\n            </ion-item>\n            <div style="color:red" text-wrap align="center" class="validation-errors">\n                    <ng-container *ngFor="let validation of validation_messages.cell" >\n                            <div class="error-message" *ngIf="personalForm.get(\'cell\').hasError(validation.type) && (personalForm.get(\'cell\').dirty || personalForm.get(\'cell\').touched)">\n                                    {{ validation.message }}\n                            </div>\n                    </ng-container>\n            </div>\n\n\n            <!--Password 1-->\n            <ion-item>\n                    <ion-label stacked>* Password</ion-label>\n                    <ion-input  type="text"  formControlName="password1" placeholder="Please choose a password"(ionChange)="password1Changed()"></ion-input>\n            </ion-item>\n            <div class="validation-errors">\n                    <ng-container *ngFor="let validation of validation_messages.password1" >\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'password1\').hasError(validation.type) && (personalForm.get(\'password1\').dirty || personalForm.get(\'password1\').touched)">\n                                    {{ validation.message }}\n                            </div>\n                    </ng-container>\n            </div>\n            <!--span style="color:red" text-wrap align="center" class="validation-error" *ngIf="personalForm.get(\'password1\').touched && personalForm.get(\'password1\').errors?.notEqual"> Passwords do not match</span-->\n\n            <!--Password 2-->\n            <ion-item>\n                    <ion-label stacked>* Retype password</ion-label>\n                    <ion-input  type="text"  formControlName="password2" placeholder="Please re-type password"(ionChange)="password2Changed()"></ion-input>\n            </ion-item>\n            <div class="validation-errors">\n                    <ng-container *ngFor="let validation of validation_messages.password2" >\n                            <div style="color:red" text-wrap align="center" class="error-message" *ngIf="personalForm.get(\'password2\').hasError(validation.type) && (personalForm.get(\'password2\').dirty || personalForm.get(\'password2\').touched)">\n                                {{ validation.message }}\n                            </div>\n                    </ng-container>\n            </div>\n\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&(personalForm.get(\'password2\').value.length >= 1)&& personalForm.hasError(\'mismatchedPasswords\')">Passwords do not match.</span>\n            <!--span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'badPasswords\')">Passwords must have at least 6 characters.</span-->\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'badPasswords\')">Passwords must have at least 6 characters.</span>\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidWords\')">Password contains invalid word "password"</span>\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidName\')">Password cannot contain name</span>\n            <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1) && personalForm.hasError(\'containsInvalidSurname\')">Password cannot contain surname</span>\n        <!--span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noUpperCase\')">Password must contain at least one uppercase letter.</span>\n        <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noLowerCase\')">Password must contain at least one lower case letter.</span>\n        <span style="color:red" text-wrap align="center" class="validation-errors" *ngIf="(personalForm.get(\'password1\').value.length >= 1)&&!personalForm.hasError(\'mismatchedPasswords\')&& personalForm.hasError(\'noNum\')">Password must contain at least one digit.</span-->\n\n\n            <button ion-button type="submit"  [disabled]="!personalForm.valid" full  (click)="onFisherFinishPersonal()">Next</button>\n    </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-personal\fisher-personal.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
     ], FisherPersonalPage);
     return FisherPersonalPage;
 }()); //end class
@@ -1508,7 +1554,7 @@ var FisherPersonalPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherNotUniquePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1536,7 +1582,7 @@ var FisherNotUniquePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-not-unique',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-not-unique\fisher-not-unique.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-wrap="true">\n\n      Registration Failure\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n\n\n      <hr>\n\n      <p align="center" text-wrap="true">\n\n        A registration with the specified ID number already exists on the ABALOBI sysytem. Please try again with a unique ID number.\n\n      </p>\n\n      <hr>\n\n\n\n    </div>\n\n\n\n\n\n    <button ion-button full  (click)="onbackToHome()">Back to Home</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-not-unique\fisher-not-unique.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], FisherNotUniquePage);
     return FisherNotUniquePage;
 }());
@@ -1552,7 +1598,7 @@ var FisherNotUniquePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherRegisterFailurePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1580,7 +1626,7 @@ var FisherRegisterFailurePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-register-failure',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-register-failure\fisher-register-failure.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-wrap>\n\n      Registration Failure\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n\n\n\n  <form id="page-form1">\n\n    <div id="page-markdown1" class="show-list-numbers-and-dots">\n\n\n\n      <hr>\n\n      <p align="center">\n\n        Your registration could not be completed. Please try again after a while.\n\n      </p>\n\n      <hr>\n\n\n\n    </div>\n\n\n\n\n\n    <button ion-button full  (click)="onbackToHome()">Back to Home</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-register-failure\fisher-register-failure.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], FisherRegisterFailurePage);
     return FisherRegisterFailurePage;
 }());
@@ -1616,7 +1662,7 @@ var FisherConfirmPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_confirm__["a" /* FisherConfirmPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_confirm__["a" /* FisherConfirmPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_confirm__["a" /* FisherConfirmPage */]),
             ],
         })
     ], FisherConfirmPageModule);
@@ -1654,7 +1700,7 @@ var FisherNotUniqueModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_not_unique__["a" /* FisherNotUniquePage */]),
             ],
         })
     ], FisherNotUniqueModule);
@@ -1692,7 +1738,7 @@ var FisherPersonalPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
             ],
         })
     ], FisherPersonalPageModule);
@@ -1730,7 +1776,7 @@ var FisherRegisterFailurePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_register_failure__["a" /* FisherRegisterFailurePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_failure__["a" /* FisherRegisterFailurePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_failure__["a" /* FisherRegisterFailurePage */]),
             ],
         })
     ], FisherRegisterFailurePageModule);
@@ -1768,7 +1814,7 @@ var FisherRegisterSuccessPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */]),
             ],
         })
     ], FisherRegisterSuccessPageModule);
@@ -1806,7 +1852,7 @@ var FisherRolePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_role__["a" /* FisherRolePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_role__["a" /* FisherRolePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_role__["a" /* FisherRolePage */]),
             ],
         })
     ], FisherRolePageModule);
@@ -1844,7 +1890,7 @@ var FisherUsetermsPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__fisher_useterms__["a" /* FisherUsetermsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_useterms__["a" /* FisherUsetermsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_useterms__["a" /* FisherUsetermsPage */]),
             ],
         })
     ], FisherUsetermsPageModule);
@@ -1874,7 +1920,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_recaptcha___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng_recaptcha__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(33);
@@ -1883,7 +1929,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_marketplace_home_marketplace_home__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_MarketplaceService__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_FisherService__ = __webpack_require__(35);
@@ -1946,7 +1992,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/after-register/after-register.module#AfterRegisterPageModule', name: 'AfterRegisterPage', segment: 'after-register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-community/fisher-community.module#FisherCommunityPageModule', name: 'FisherCommunityPage', segment: 'fisher-community', priority: 'low', defaultHistory: [] },
@@ -1971,7 +2017,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_20__pages_fisher_role_fisher_role_module__["FisherRolePageModule"],
                 __WEBPACK_IMPORTED_MODULE_21__pages_fisher_useterms_fisher_useterms_module__["FisherUsetermsPageModule"]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
@@ -1983,7 +2029,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__providers_MarketplaceService__["a" /* MarketplaceService */],
                 __WEBPACK_IMPORTED_MODULE_11__providers_FisherService__["a" /* FisherService */],
                 __WEBPACK_IMPORTED_MODULE_12__classes_registree_class__["a" /* Registree */],
-                { provide: __WEBPACK_IMPORTED_MODULE_3__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_3__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -2049,14 +2095,18 @@ var FisherUsetermsClass = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommunityInfoClass; });
 var CommunityInfoClass = /** @class */ (function () {
     function CommunityInfoClass() {
+        this.comm_country = "";
         this.comm_province = "";
         this.comm_community = "";
         this.custom_community = "";
         this.comm_not_listed = false;
         this.comm_IRP_chosen = false;
-        this.comm_commercial_chosen = false;
+        this.comm_small_scale_chosen = false;
+        this.comm_traditional_line_fish_chosen = false;
+        this.comm_near_shore_commercial_lobster_chosen = false;
         this.comm_recreational_chosen = false;
         this.comm_other_chosen = false;
+        this.comm_permit_other_manual = '';
     }
     return CommunityInfoClass;
 }());
@@ -2092,7 +2142,7 @@ var CommunityClass = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2120,7 +2170,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\dev\marketplace-register\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -2186,7 +2236,7 @@ var confirmEqualValidatorsDirective = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FisherService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_fisher_class__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_base_urls__ = __webpack_require__(167);
@@ -2227,6 +2277,17 @@ var FisherService = /** @class */ (function () {
             });
         });
     };
+    FisherService.prototype.fisherGetCommunities = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.get(_this.urls.fisherGetCommunitiesURL).toPromise()
+                .then(function (result) {
+                resolve(result);
+            }).catch(function (error) {
+                reject(error);
+            });
+        });
+    };
     FisherService.prototype.fisherUpdateTerms = function (terms_status) {
         this.registree.terms_agreed = terms_status.terms_use_agreed;
         this.registree.assistant_agreed = terms_status.terms_assistant_agreed;
@@ -2247,14 +2308,18 @@ var FisherService = /** @class */ (function () {
         console.log("Fisher Service successfully updates personal info");
     };
     FisherService.prototype.fisherUpdateCommunity = function (community_info) {
+        this.registree.country = community_info.comm_country;
         this.registree.province = community_info.comm_province;
         this.registree.community = community_info.comm_community;
         this.registree.custom_community = community_info.custom_community;
         this.registree.comm_not_listed = community_info.comm_not_listed;
         this.registree.IRP_selected = community_info.comm_IRP_chosen;
-        this.registree.commercial_selected = community_info.comm_commercial_chosen;
+        this.registree.small_scale_selected = community_info.comm_small_scale_chosen;
+        this.registree.traditional_line_fish_selected = community_info.comm_traditional_line_fish_chosen;
+        this.registree.near_shore_commercial_lobster_selected = community_info.comm_near_shore_commercial_lobster_chosen;
         this.registree.recreational_selected = community_info.comm_recreational_chosen;
         this.registree.other_seleted = community_info.comm_other_chosen;
+        this.registree.permit_other_manual = community_info.comm_permit_other_manual;
     };
     //Build the fisher object
     FisherService.prototype.fisherBuild = function () {
@@ -2278,7 +2343,11 @@ var FisherService = /** @class */ (function () {
         fisher.landingsite = this.registree.community;
         fisher.landingsite_custom = this.registree.custom_community;
         fisher.fisher_license_irp = this.registree.IRP_selected;
+        fisher.fisher_license_small_scale = this.registree.small_scale_selected;
+        fisher.fisher_license_traditional_line_fish = this.registree.traditional_line_fish_selected;
+        fisher.fisher_license_near_shore_commercial_lobster = this.registree.near_shore_commercial_lobster_selected;
         fisher.fisher_license_recreational = this.registree.recreational_selected;
+        fisher.fisher_license_other = this.registree.permit_other_manual;
         fisher.permission_local_implementer = this.registree.assistant_agreed;
         fisher.permission_daff = this.registree.DAFF_agreed;
     };
@@ -2306,9 +2375,12 @@ var FisherService = /** @class */ (function () {
         this.registree.custom_community = "";
         this.registree.comm_not_listed = false;
         this.registree.IRP_selected = false;
-        this.registree.commercial_selected = false;
+        this.registree.small_scale_selected = false;
+        this.registree.traditional_line_fish_selected = false;
+        this.registree.near_shore_commercial_lobster_selected = false;
         this.registree.recreational_selected = false;
         this.registree.other_seleted = false;
+        this.registree.permit_other_manual = '';
         //console.log("........Fisher Service Cleared User Details........");
     };
     //Check if fisher with the proposed ID doesn't exist already
@@ -2340,7 +2412,7 @@ var FisherService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 43:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2377,7 +2449,7 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-home',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\home\home.html"*/'<ion-header>\n\n        <ion-navbar>\n\n              <ion-title>\n\n                Abalobi Register\n\n              </ion-title>\n\n        </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding="true"  padding id="page1">\n\n  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;">\n\n    <br>\n\n  <button text-wrap ion-button full (click)="onSelectFisherRegistration()">Register to use Fisher Logbook</button>\n\n    <br>\n\n  <button text-wrap ion-button full  (click)="onSelectMarketplaceRegistration()">Register to buy on Marketplace</button>\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
     ], HomePage);
     return HomePage;
 }()); //end class homepage

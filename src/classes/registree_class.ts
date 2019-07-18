@@ -22,14 +22,19 @@ export class Registree{
         password   : string = "";
 
         //Community details
-        province              :string="";
-        community             :string="";
-        custom_community      :string="";
-        comm_not_listed       :boolean=false;
-        IRP_selected          :boolean=false;
-        commercial_selected   :boolean=false;
-        recreational_selected :boolean=false;
-        other_seleted         :boolean=false;
+        country                                :string='';
+        province                               :string="";
+        community                              :string="";
+        custom_community                       :string="";
+        comm_not_listed                        :boolean=false;
+        IRP_selected                           :boolean=false;
+        small_scale_selected                   :boolean=false;
+        traditional_line_fish_selected         :boolean=false;
+        near_shore_commercial_lobster_selected :boolean=false;
+        // commercial_selected   :boolean=false;
+        recreational_selected                  :boolean=false;
+        other_seleted                          :boolean=false;
+        permit_other_manual                    :string='';
 
         constructor(){
 

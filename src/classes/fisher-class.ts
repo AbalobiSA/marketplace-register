@@ -5,34 +5,38 @@ export  class Fisher{
     //device:Device = new Device(); // to be implemented later
 
     //Implemented
-    "name"                          : string;
-    "surname"                       : string;
-    "nickname"                      : string;
-    "email"                         : string;
-    "password"                      : string;
-    "cell"                          : string;
-    "gender"                        : string;
-    "id"                            : string;
-    "usertype"                      : string;
-    "landingsite"                   : string;
-    "fisher_license_irp"            : boolean;
-    "fisher_license_recreational"   : boolean;
-    "permission_local_implementer"  : boolean;
-    "permission_daff"               : boolean;
+    "name"                                         : string;
+    "surname"                                      : string;
+    "nickname"                                     : string;
+    "email"                                        : string;
+    "password"                                     : string;
+    "cell"                                         : string;
+    "gender"                                       : string;
+    "id"                                           : string;
+    "usertype"                                     : string;
+    "landingsite"                                  : string;
+    "fisher_license_irp"                           : boolean;
+    "fisher_license_small_scale"                   : boolean;
+    "fisher_license_traditional_line_fish"         : boolean;
+    "fisher_license_near_shore_commercial_lobster" : boolean;
+    "fisher_license_recreational"                  : boolean;
+    "fisher_license_other"                         : string;
+    "permission_local_implementer"                 : boolean;
+    "permission_daff"                              : boolean;
     //Required
-    "preferred_language"            : string;
-    "filter"                        : string;
+    "preferred_language"                           : string;
+    "filter"                                       : string;
     //might be required
-    "landingsite_custom"            : string;
-    "app_version"                   : string;
-    "device_version"                : string;
-    "device_uuid"                   : string;
-    "device_model"                  : string;
-    "device_manufacturer"           : string;
-    "device_platform"               : string;
-    "device_serial"                 : string;
-    "birth_date"                    : string;
-    "uuid_timestamp"                : string;
+    "landingsite_custom"                           : string;
+    "app_version"                                  : string;
+    "device_version"                               : string;
+    "device_uuid"                                  : string;
+    "device_model"                                 : string;
+    "device_manufacturer"                          : string;
+    "device_platform"                              : string;
+    "device_serial"                                : string;
+    "birth_date"                                   : string;
+    "uuid_timestamp"                               : string;
 
 
     constructor(){

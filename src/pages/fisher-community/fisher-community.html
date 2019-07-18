@@ -19,6 +19,24 @@
                 <p style="text-align:center"><b>Community / Landing</b></p>
 
                 <ion-item>
+                        <ion-label text-wrap>Please select your country
+                        </ion-label>
+                        <ion-select text-wrap formControlName="country" (ionChange)="countryChanged()">
+                                <ion-option value="South Africa">South Africa</ion-option>
+                                <ion-option value="Seychelles">Seychelles</ion-option>
+                                <ion-option value="Namibia">Namibia</ion-option>
+                        </ion-select>
+                </ion-item>
+
+                <div class="validation-errors">
+                        <ng-container *ngFor="let validation of validation_messages.province" >
+                                <div style="color:red" text-wrap align="center" class="error-message" *ngIf="communityForm.get('country').hasError(validation.type) && (communityForm.get('country').dirty || communityForm.get('country').touched)">
+                                      {{ validation.message }}
+                                </div>
+                        </ng-container>
+                </div>
+
+                <ion-item *ngIf="community_info.comm_country === 'South Africa'">
                         <ion-label text-wrap>Please select  your province
                         </ion-label>
                                 <ion-select text-wrap formControlName="province" (ionChange)=" provinceChanged()">
@@ -31,8 +49,8 @@
                                         <ion-option value="Gauteng">Gauteng</ion-option>
                                         <ion-option value="Free State">Free State</ion-option>
                                         <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>
-                                        <ion-option value="Seychelles">Seychelles</ion-option>
-                                        <ion-option value="Namibia">Namibia</ion-option>
+                                        <!--<ion-option value="Seychelles">Seychelles</ion-option>-->
+                                        <!--<ion-option value="Namibia">Namibia</ion-option>-->
                                 </ion-select>
                 </ion-item>
 
@@ -86,8 +104,18 @@
                         </ion-item>
 
                         <ion-item>
-                                <ion-label> Commercial</ion-label>
-                                <ion-checkbox [(ngModel)]="community_info.comm_commercial_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                                <ion-label> Small-scale</ion-label>
+                                <ion-checkbox [(ngModel)]="community_info.comm_small_scale_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Traditional Line-fish</ion-label>
+                                <ion-checkbox [(ngModel)]="community_info.comm_traditional_line_fish_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Near-shore commercial lobster</ion-label>
+                                <ion-checkbox [(ngModel)]="community_info.comm_near_shore_commercial_lobster_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
                         <ion-item>
@@ -98,6 +126,11 @@
                         <ion-item>
                                 <ion-label> Other</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                        </ion-item>
+
+                        <ion-item *ngIf="community_info.comm_other_chosen || community_info.comm_country === 'Seychelles' || community_info.comm_country === 'Namibia'">
+                                <ion-label text-wrap stacked>Other permit</ion-label>
+                                <ion-input formControlName="permit_other" type="text"   placeholder="Enter your other permit here" (ionChange)="permitOtherChanged()"></ion-input>
                         </ion-item>
 
                 </ion-list>
