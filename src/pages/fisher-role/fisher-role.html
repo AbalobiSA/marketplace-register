@@ -52,6 +52,44 @@
 
                 <div *ngIf="roleForm.get('role').value === 'fisher' || roleForm.get('role').value === 'fisher,fisher_manager'">
                         <ion-label>I have the following roles:</ion-label>
+
+                  <ion-list>
+                    <ion-item>
+                      <ion-label> IRP / Exemption</ion-label>
+                      <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Small-scale</ion-label>
+                      <ion-checkbox [(ngModel)]="community_info.comm_small_scale_chosen"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Traditional Line-fish</ion-label>
+                      <ion-checkbox [(ngModel)]="community_info.comm_traditional_line_fish_chosen"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Near-shore commercial lobster</ion-label>
+                      <ion-checkbox [(ngModel)]="community_info.comm_near_shore_commercial_lobster_chosen"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Recreational</ion-label>
+                      <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Other</ion-label>
+                      <ion-checkbox [(ngModel)]="community_info.comm_other_chosen"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+                  </ion-list>
                 </div>
 
             <button ion-button full [disabled]="!roleForm.valid" (click)="nextFromFisherRole()">Next</button>
