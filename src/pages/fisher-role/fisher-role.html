@@ -22,7 +22,8 @@
                         <hr>
                 </div>
 
-                <ion-label>I am a:</ion-label>
+                <!--<ion-label>I am a:</ion-label>-->
+                <p style="text-align:center"><b>I am a</b></p>
 
                 <ion-list radio-group type="text" formControlName='role' (ionChange)="roleChanged()">
                         <ion-item>
@@ -51,42 +52,49 @@
                 </div>
 
                 <div *ngIf="roleForm.get('role').value === 'fisher' || roleForm.get('role').value === 'fisher,fisher_manager'">
-                        <ion-label>I have the following roles:</ion-label>
+                        <!--<ion-label>I have the following roles:</ion-label>-->
+                  <p style="text-align:center"><b>I have the following roles</b></p>
 
                   <ion-list>
                     <ion-item>
-                      <ion-label> IRP / Exemption</ion-label>
-                      <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen"
+                      <ion-label> Crew</ion-label>
+                      <ion-checkbox [(ngModel)]="is_crew"
                                     [ngModelOptions]="{standalone: true}"></ion-checkbox>
                     </ion-item>
 
                     <ion-item>
-                      <ion-label> Small-scale</ion-label>
-                      <ion-checkbox [(ngModel)]="community_info.comm_small_scale_chosen"
+                      <ion-label> Skipper</ion-label>
+                      <ion-checkbox [(ngModel)]="is_skipper"
                                     [ngModelOptions]="{standalone: true}"></ion-checkbox>
                     </ion-item>
 
                     <ion-item>
-                      <ion-label> Traditional Line-fish</ion-label>
-                      <ion-checkbox [(ngModel)]="community_info.comm_traditional_line_fish_chosen"
+                      <ion-label> Shore Harvester</ion-label>
+                      <ion-checkbox [(ngModel)]="is_shore_harvester"
                                     [ngModelOptions]="{standalone: true}"></ion-checkbox>
                     </ion-item>
 
                     <ion-item>
-                      <ion-label> Near-shore commercial lobster</ion-label>
-                      <ion-checkbox [(ngModel)]="community_info.comm_near_shore_commercial_lobster_chosen"
+                      <ion-label> Shore Harvest Group Leader</ion-label>
+                      <ion-checkbox [(ngModel)]="is_shore_harvest_group_leader"
                                     [ngModelOptions]="{standalone: true}"></ion-checkbox>
                     </ion-item>
 
                     <ion-item>
-                      <ion-label> Recreational</ion-label>
-                      <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen"
+                      <ion-label> Fish Cleaner</ion-label>
+                      <ion-checkbox [(ngModel)]="is_fish_cleaner"
                                     [ngModelOptions]="{standalone: true}"></ion-checkbox>
                     </ion-item>
 
                     <ion-item>
-                      <ion-label> Other</ion-label>
-                      <ion-checkbox [(ngModel)]="community_info.comm_other_chosen"
+                      <ion-label> Quality Control Officer</ion-label>
+                      <ion-checkbox [(ngModel)]="is_quality_control_officer"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Coastal Product Producer</ion-label>
+                      <ion-checkbox [(ngModel)]="is_coastal_product_producer"
                                     [ngModelOptions]="{standalone: true}"></ion-checkbox>
                     </ion-item>
                   </ion-list>

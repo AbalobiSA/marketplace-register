@@ -14,6 +14,13 @@ import{FormBuilder, Validators} from "@angular/forms";
 export class FisherRolePage {
         role            : string;
         public roleForm : any;
+        is_crew                       : boolean;
+        is_skipper                    : boolean;
+        is_shore_harvester            : boolean;
+        is_shore_harvest_group_leader : boolean;
+        is_fish_cleaner               : boolean;
+        is_quality_control_officer    : boolean;
+        is_coastal_product_producer   : boolean;
 
         validation_messages = {
                 'role': [
