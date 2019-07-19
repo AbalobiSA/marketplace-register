@@ -5,6 +5,7 @@ export class Registree{
 
         //Role details
         role       :  string="";
+        user_roles :  string='';
 
         //Terms of use details
         terms_agreed      : boolean=false;

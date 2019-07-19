@@ -21,10 +21,12 @@ export class FisherService {
 
   }
 
-  fisherUpdateRole(role_info     : string) {
+  fisherUpdateRole(role_info: string, user_roles: string) {
         this.registree.role = role_info;
+        this.registree.user_roles = user_roles;
         //update the registree in storage;--return a promise
         console.log("Fisher Service successfully updates role");
+        console.log("Got user roles: ", user_roles);
   }
 
   fisherGetTerms() {

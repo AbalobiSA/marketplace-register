@@ -596,6 +596,7 @@ var Registree = /** @class */ (function () {
     function Registree() {
         //Role details
         this.role = "";
+        this.user_roles = '';
         //Terms of use details
         this.terms_agreed = false;
         this.assistant_agreed = false;
@@ -1191,7 +1192,29 @@ var FisherRolePage = /** @class */ (function () {
         console.log('ionViewDidLoad FisherRolePage');
     };
     FisherRolePage.prototype.nextFromFisherRole = function () {
-        this.fisherService.fisherUpdateRole(this.role);
+        var user_roles = [];
+        if (this.is_crew) {
+            user_roles.push('1');
+        }
+        if (this.is_skipper) {
+            user_roles.push('2');
+        }
+        if (this.is_shore_harvester) {
+            user_roles.push('3');
+        }
+        if (this.is_shore_harvest_group_leader) {
+            user_roles.push('4');
+        }
+        if (this.is_fish_cleaner) {
+            user_roles.push('5');
+        }
+        if (this.is_quality_control_officer) {
+            user_roles.push('6');
+        }
+        if (this.is_coastal_product_producer) {
+            user_roles.push('7');
+        }
+        this.fisherService.fisherUpdateRole(this.role, user_roles.join(' '));
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__fisher_useterms_fisher_useterms__["a" /* FisherUsetermsPage */]);
     };
     FisherRolePage.prototype.roleChanged = function () {
@@ -2262,10 +2285,12 @@ var FisherService = /** @class */ (function () {
         this.registree = registree;
         this.urls = new __WEBPACK_IMPORTED_MODULE_4__classes_base_urls__["a" /* BaseUrls */]();
     }
-    FisherService.prototype.fisherUpdateRole = function (role_info) {
+    FisherService.prototype.fisherUpdateRole = function (role_info, user_roles) {
         this.registree.role = role_info;
+        this.registree.user_roles = user_roles;
         //update the registree in storage;--return a promise
         console.log("Fisher Service successfully updates role");
+        console.log("Got user roles: ", user_roles);
     };
     FisherService.prototype.fisherGetTerms = function () {
         var _this = this;
@@ -2404,9 +2429,10 @@ var FisherService = /** @class */ (function () {
     };
     FisherService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]) === "function" && _b || Object])
     ], FisherService);
     return FisherService;
+    var _a, _b;
 }()); //end class
 
 //# sourceMappingURL=FisherService.js.map

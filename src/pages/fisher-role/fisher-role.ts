@@ -39,8 +39,30 @@ export class FisherRolePage {
         }
 
         nextFromFisherRole(){
-                        this.fisherService.fisherUpdateRole(this.role);
-                        this.navCtrl.push(FisherUsetermsPage);
+            let user_roles = [];
+            if (this.is_crew) {
+                user_roles.push('1');
+            }
+            if (this.is_skipper) {
+                user_roles.push('2');
+            }
+            if (this.is_shore_harvester) {
+                user_roles.push('3');
+            }
+            if (this.is_shore_harvest_group_leader) {
+                user_roles.push('4');
+            }
+            if (this.is_fish_cleaner) {
+                user_roles.push('5');
+            }
+            if (this.is_quality_control_officer) {
+                user_roles.push('6');
+            }
+            if (this.is_coastal_product_producer) {
+                user_roles.push('7');
+            }
+            this.fisherService.fisherUpdateRole(this.role, user_roles.join(' '));
+            this.navCtrl.push(FisherUsetermsPage);
         }
 
         roleChanged(){
