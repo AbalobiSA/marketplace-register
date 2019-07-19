@@ -194,7 +194,7 @@ export class FisherPersonalPage {
                 {type: 'minLength', message: 'Cell Number too short.'},
                 {type: 'maxlength', message: 'Cell Number too long.'},
                 {type: 'maxLength', message: 'Cell Number too long.'},
-                {type: 'pattern',   message: 'Number must be in international format.'}
+                {type: 'pattern',   message: 'Number must be in international format. e.g. instead of 0841111111 use +27841111111 for South African numbers'}
             ],
 
 
