@@ -2366,6 +2366,7 @@ var FisherService = /** @class */ (function () {
         fisher.gender = this.registree.gender;
         fisher.id = this.registree.IDnum;
         fisher.usertype = this.registree.role;
+        fisher.user_roles = this.registree.user_roles;
         fisher.landingsite = this.registree.community;
         fisher.landingsite_custom = this.registree.custom_community;
         fisher.fisher_license_irp = this.registree.IRP_selected;
@@ -2382,6 +2383,7 @@ var FisherService = /** @class */ (function () {
         //Reset the registree fields after attempted registration
         //Role details
         this.registree.role = "";
+        this.registree.user_roles = '';
         //Terms of use details
         this.registree.terms_agreed = false;
         this.registree.assistant_agreed = false;

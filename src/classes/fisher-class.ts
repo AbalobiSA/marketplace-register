@@ -14,6 +14,7 @@ export  class Fisher{
     "gender"                                       : string;
     "id"                                           : string;
     "usertype"                                     : string;
+    "user_roles"                                   : string;
     "landingsite"                                  : string;
     "fisher_license_irp"                           : boolean;
     "fisher_license_small_scale"                   : boolean;
