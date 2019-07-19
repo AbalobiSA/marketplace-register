@@ -50,6 +50,10 @@
                         </ng-container>
                 </div>
 
+                <div *ngIf="roleForm.get('role').value === 'fisher' || roleForm.get('role').value === 'fisher,fisher_manager'">
+                        <ion-label>I have the following roles:</ion-label>
+                </div>
+
             <button ion-button full [disabled]="!roleForm.valid" (click)="nextFromFisherRole()">Next</button>
     </form>
 
