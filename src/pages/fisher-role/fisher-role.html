@@ -22,6 +22,9 @@
                         <hr>
                 </div>
 
+                <!--<ion-label>I am a:</ion-label>-->
+                <p style="text-align:center"><b>I am a</b></p>
+
                 <ion-list radio-group type="text" formControlName='role' (ionChange)="roleChanged()">
                         <ion-item>
                                 <ion-label text-wrap>Fisher</ion-label>
@@ -46,6 +49,55 @@
                                         {{ validation.message }}
                                 </div>
                         </ng-container>
+                </div>
+
+                <div *ngIf="roleForm.get('role').value === 'fisher' || roleForm.get('role').value === 'fisher,fisher_manager'">
+                        <!--<ion-label>I have the following roles:</ion-label>-->
+                  <p style="text-align:center"><b>I have the following roles</b></p>
+
+                  <ion-list>
+                    <ion-item>
+                      <ion-label> Crew</ion-label>
+                      <ion-checkbox [(ngModel)]="is_crew"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Skipper</ion-label>
+                      <ion-checkbox [(ngModel)]="is_skipper"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Shore Harvester</ion-label>
+                      <ion-checkbox [(ngModel)]="is_shore_harvester"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Shore Harvest Group Leader</ion-label>
+                      <ion-checkbox [(ngModel)]="is_shore_harvest_group_leader"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Fish Cleaner</ion-label>
+                      <ion-checkbox [(ngModel)]="is_fish_cleaner"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Quality Control Officer</ion-label>
+                      <ion-checkbox [(ngModel)]="is_quality_control_officer"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label> Coastal Product Producer</ion-label>
+                      <ion-checkbox [(ngModel)]="is_coastal_product_producer"
+                                    [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+                  </ion-list>
                 </div>
 
             <button ion-button full [disabled]="!roleForm.valid" (click)="nextFromFisherRole()">Next</button>

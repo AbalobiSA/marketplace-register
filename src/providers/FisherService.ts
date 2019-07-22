@@ -21,10 +21,12 @@ export class FisherService {
 
   }
 
-  fisherUpdateRole(role_info     : string) {
+  fisherUpdateRole(role_info: string, user_roles: string) {
         this.registree.role = role_info;
+        this.registree.user_roles = user_roles;
         //update the registree in storage;--return a promise
         console.log("Fisher Service successfully updates role");
+        console.log("Got user roles: ", user_roles);
   }
 
   fisherGetTerms() {
@@ -112,6 +114,7 @@ export class FisherService {
         fisher.gender                                       = this.registree.gender;
         fisher.id                                           = this.registree.IDnum;
         fisher.usertype                                     = this.registree.role;
+        fisher.user_roles                                   = this.registree.user_roles;
         fisher.landingsite                                  = this.registree.community;
         fisher.landingsite_custom                           = this.registree.custom_community;
         fisher.fisher_license_irp                           = this.registree.IRP_selected;
@@ -132,6 +135,7 @@ export class FisherService {
         //Reset the registree fields after attempted registration
       //Role details
       this.registree.role  = "";
+      this.registree.user_roles = '';
 
       //Terms of use details
       this.registree.terms_agreed      =false;
