@@ -40,7 +40,7 @@ export class FisherUsetermsPage {
             console.log('Loading Terms & Conditions');
             this.fisherService.fisherGetTerms()
             .then((result: any) => {
-                this.terms = result.terms;
+                this.terms = result.terms_afr;
                 console.log(this.terms);
             }).catch(error => {
                 console.log("Failed getting Ts&Cs: ", error);
