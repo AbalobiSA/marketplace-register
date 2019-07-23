@@ -15,12 +15,23 @@
 
             <form [formGroup] = "termsForm">
 
-                        <p style="text-align:center"><b>Terme in Afrikaans</b></p>
 
-                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->
-                                <b>{{terms}}</b>
-                        </p>
 
+                        <div *ngIf="display_afr === false">
+                                <p style="text-align:center"><b>Terms in English</b></p>
+                                <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->
+                                        <b>{{terms}}</b>
+                                </p>
+                        </div>
+
+                        <div *ngIf="display_afr === true">
+                                <p style="text-align:center"><b>Terme in Afrikaans</b></p>
+                                <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->
+                                        <b>{{terms_afr}}</b>
+                                </p>
+                        </div>
+
+                        <a button href="#" clear item-right (click)="clickToggle()">{{getText()}}</a>
 
                         <ion-item>
                                 <ion-label>* I Agree</ion-label>
