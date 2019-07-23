@@ -18,7 +18,10 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class FisherUsetermsPage {
 
-        terms: string;
+        terms    : string;
+        terms_afr: string;
+
+        display_afr: boolean = true;
 
         terms_status    : FisherUsetermsClass = new FisherUsetermsClass ();
         termsForm:any;
@@ -41,6 +44,7 @@ export class FisherUsetermsPage {
             this.fisherService.fisherGetTerms()
             .then((result: any) => {
                 this.terms = result.terms;
+                this.terms_afr = result.terms_afr;
                 console.log(this.terms);
             }).catch(error => {
                 console.log("Failed getting Ts&Cs: ", error);
@@ -54,5 +58,13 @@ export class FisherUsetermsPage {
 
         termsChanged(){
                 this.terms_status.terms_use_agreed = this.termsForm.get('agree').value;
+        }
+
+        clickToggle() {
+                this.display_afr = !this.display_afr;
+        }
+
+        getText() {
+                return this.display_afr ? 'Read in English' : 'Lees in Afrikaans';
         }
 }//end class
