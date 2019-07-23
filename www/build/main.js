@@ -34,13 +34,13 @@ var map = {
 		177
 	],
 	"../pages/fisher-personal/fisher-personal.module": [
-		181
+		179
 	],
 	"../pages/fisher-register-failure/fisher-register-failure.module": [
 		180
 	],
 	"../pages/fisher-register-success/fisher-register-success.module": [
-		179
+		181
 	],
 	"../pages/fisher-role/fisher-role.module": [
 		182
@@ -1309,10 +1309,9 @@ var FisherUsetermsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-fisher-useterms',template:/*ion-inline-start:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/'<!--\n  Generated template for the FisherUsetermsPage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n        <ion-navbar>\n                <ion-title>Terms of Use</ion-title>\n        </ion-navbar>\n</ion-header>\n\n\n<ion-content padding="true" title="Terms of Use" id="fisher-terms-form">\n\n            <form [formGroup] = "termsForm">\n\n\n\n                        <div *ngIf="display_afr === false">\n                                <p style="text-align:center"><b>Terms in English</b></p>\n                                <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->\n                                        <b>{{terms}}</b>\n                                </p>\n                        </div>\n\n                        <div *ngIf="display_afr === true">\n                                <p style="text-align:center"><b>Terme in Afrikaans</b></p>\n                                <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->\n                                        <b>{{terms_afr}}</b>\n                                </p>\n                        </div>\n\n                        <a button href="#" clear item-right (click)="clickToggle()">{{getText()}}</a>\n\n                        <ion-item>\n                                <ion-label>* I Agree</ion-label>\n                                <ion-checkbox formControlName=\'agree\' (ionChange)="termsChanged()"></ion-checkbox>\n                        </ion-item>\n\n                        <div style="color:red" text-wrap align="center" class="validation-errors">\n                            <ng-container *ngFor="let validation of validation_messages.agree" >\n                                    <div class="error-message" *ngIf="!termsForm.get(\'agree\').value"><!-- && ( termsForm.get(\'agree\').dirty || termsForm.get(\'agree\')).touched"-->\n                                                {{ validation.message }}\n                                    </div>\n                            </ng-container>\n                        </div>\n\n\n                        <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">\n                                <b> I further consent to share my data with the following parties (tick where applicable):</b>\n                        </p>\n\n\n                        <ion-list text-wrap id="termsOfUse-list2">\n                                <ion-item>\n                                        <ion-label> Abalobi Local Fisher Assistant</ion-label>\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_assistant_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                                </ion-item>\n\n\n                                <ion-item>\n                                        <ion-label > DAFF (Department of Agriculture, Forestry and Fisheries)</ion-label>\n                                        <ion-checkbox [(ngModel)]="terms_status.terms_DAFF_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>\n                                </ion-item>\n                        </ion-list>\n\n                        <button ion-button full  [disabled]="!termsForm.valid" (click)="onFisherFinishTerms()">Next</button>\n\n            </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\dev\marketplace-register\src\pages\fisher-useterms\fisher-useterms.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_FisherService__["a" /* FisherService */], __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]])
     ], FisherUsetermsPage);
     return FisherUsetermsPage;
-    var _a, _b, _c, _d;
 }()); //end class
 
 //# sourceMappingURL=fisher-useterms.js.map
@@ -1748,10 +1747,10 @@ var FisherConfirmPageModule = /** @class */ (function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherRegisterSuccessPageModule", function() { return FisherRegisterSuccessPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherPersonalPageModule", function() { return FisherPersonalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal__ = __webpack_require__(174);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1761,23 +1760,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FisherRegisterSuccessPageModule = /** @class */ (function () {
-    function FisherRegisterSuccessPageModule() {
+var FisherPersonalPageModule = /** @class */ (function () {
+    function FisherPersonalPageModule() {
     }
-    FisherRegisterSuccessPageModule = __decorate([
+    FisherPersonalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
             ],
         })
-    ], FisherRegisterSuccessPageModule);
-    return FisherRegisterSuccessPageModule;
+    ], FisherPersonalPageModule);
+    return FisherPersonalPageModule;
 }());
 
-//# sourceMappingURL=fisher-register-success.module.js.map
+//# sourceMappingURL=fisher-personal.module.js.map
 
 /***/ }),
 
@@ -1824,10 +1823,10 @@ var FisherRegisterFailurePageModule = /** @class */ (function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherPersonalPageModule", function() { return FisherPersonalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FisherRegisterSuccessPageModule", function() { return FisherRegisterSuccessPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_personal__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1837,23 +1836,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FisherPersonalPageModule = /** @class */ (function () {
-    function FisherPersonalPageModule() {
+var FisherRegisterSuccessPageModule = /** @class */ (function () {
+    function FisherRegisterSuccessPageModule() {
     }
-    FisherPersonalPageModule = __decorate([
+    FisherRegisterSuccessPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_personal__["a" /* FisherPersonalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fisher_register_success__["a" /* FisherRegisterSuccessPage */]),
             ],
         })
-    ], FisherPersonalPageModule);
-    return FisherPersonalPageModule;
+    ], FisherRegisterSuccessPageModule);
+    return FisherRegisterSuccessPageModule;
 }());
 
-//# sourceMappingURL=fisher-personal.module.js.map
+//# sourceMappingURL=fisher-register-success.module.js.map
 
 /***/ }),
 
@@ -1970,9 +1969,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fisher_community_fisher_community_module__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fisher_confirm_fisher_confirm_module__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fisher_not_unique_fisher_not_unique_module__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_fisher_personal_fisher_personal_module__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_fisher_personal_fisher_personal_module__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_fisher_register_failure_fisher_register_failure_module__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fisher_register_success_fisher_register_success_module__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_fisher_register_success_fisher_register_success_module__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_fisher_role_fisher_role_module__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_fisher_useterms_fisher_useterms_module__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__classes_confirm_password_validator_directive__ = __webpack_require__(310);
@@ -2030,9 +2029,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/fisher-community/fisher-community.module#FisherCommunityPageModule', name: 'FisherCommunityPage', segment: 'fisher-community', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-not-unique/fisher-not-unique.module#FisherNotUniqueModule', name: 'FisherNotUniquePage', segment: 'fisher-not-unique', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-confirm/fisher-confirm.module#FisherConfirmPageModule', name: 'FisherConfirmPage', segment: 'fisher-confirm', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fisher-register-success/fisher-register-success.module#FisherRegisterSuccessPageModule', name: 'FisherRegisterSuccessPage', segment: 'fisher-register-success', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fisher-register-failure/fisher-register-failure.module#FisherRegisterFailurePageModule', name: 'FisherRegisterFailurePage', segment: 'fisher-register-failure', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-personal/fisher-personal.module#FisherPersonalPageModule', name: 'FisherPersonalPage', segment: 'fisher-personal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-register-failure/fisher-register-failure.module#FisherRegisterFailurePageModule', name: 'FisherRegisterFailurePage', segment: 'fisher-register-failure', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fisher-register-success/fisher-register-success.module#FisherRegisterSuccessPageModule', name: 'FisherRegisterSuccessPage', segment: 'fisher-register-success', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-role/fisher-role.module#FisherRolePageModule', name: 'FisherRolePage', segment: 'fisher-role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fisher-useterms/fisher-useterms.module#FisherUsetermsPageModule', name: 'FisherUsetermsPage', segment: 'fisher-useterms', priority: 'low', defaultHistory: [] }
                     ]
