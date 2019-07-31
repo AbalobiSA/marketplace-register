@@ -226,7 +226,7 @@ export class FisherPersonalPage {
             ionViewDidLoad() {
                         console.log('ionViewDidLoad FisherPersonalPage');
                         const fileInput = document.getElementById('file-input');
-                        fileInput.addEventListener('change', (e) => this.doSomethingWithFiles(e.target.files))
+                        fileInput.addEventListener('change', (e: any) => this.doSomethingWithFiles(e.target.files))
             }
 
             onFisherFinishPersonal(){
