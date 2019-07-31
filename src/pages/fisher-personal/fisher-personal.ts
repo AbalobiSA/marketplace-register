@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {FisherCommunityPage}  from "../fisher-community/fisher-community";
 import{FisherService}         from "../../providers/FisherService";
@@ -207,7 +207,12 @@ export class FisherPersonalPage {
                 {type: 'required', message: 'Password confirmation required.'},
             ]}
 
-            constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder, private camera: Camera) {
+            constructor (public navCtrl: NavController,
+                         public navParams: NavParams,
+                         public fisherService : FisherService,
+                         public formBuilder: FormBuilder,
+                         private camera: Camera,
+                         public platform: Platform) {
 
                     this.personalForm = this.formBuilder.group({
                         "surname":  ['', Validators.required],
@@ -270,17 +275,21 @@ export class FisherPersonalPage {
             }
 
             takePicture() {
-                const options: CameraOptions = {
-                    quality: 100,
-                    destinationType: this.camera.DestinationType.FILE_URI,
-                    encodingType: this.camera.EncodingType.JPEG,
-                    mediaType: this.camera.MediaType.PICTURE
-                };
-                this.camera.getPicture(options
-                ).then(imageData => {
-                  this.base64Image = 'data:image/jpeg;base64,' + imageData;
-                }, err => {
-                    console.log(err);
+                this.platform.ready().then(() => {
+                    if (this.platform.is('cordova')) {
+                        const options: CameraOptions = {
+                          quality: 100,
+                          destinationType: this.camera.DestinationType.FILE_URI,
+                          encodingType: this.camera.EncodingType.JPEG,
+                          mediaType: this.camera.MediaType.PICTURE
+                        };
+                        this.camera.getPicture(options
+                        ).then(imageData => {
+                          this.base64Image = 'data:image/jpeg;base64,' + imageData;
+                        }, err => {
+                          console.log(err);
+                        });
+                    }
                 });
             }
 
