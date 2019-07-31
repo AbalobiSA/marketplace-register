@@ -55,6 +55,7 @@
       </ion-item>
       <button (click)="takePicture()">Take Selfie</button>
       <img [src]="base64Image" *ngIf="base64Image"/>
+      <input type="file" accept="image/*" capture/>
 
       <ion-item>
         <ion-label stacked>E-mail</ion-label>
