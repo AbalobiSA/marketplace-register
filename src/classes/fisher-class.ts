@@ -13,6 +13,7 @@ export  class Fisher{
     "cell"                                         : string;
     "gender"                                       : string;
     "id"                                           : string;
+    "photo_selfie"                                 : string;
     "usertype"                                     : string;
     "user_roles"                                   : string;
     "landingsite"                                  : string;

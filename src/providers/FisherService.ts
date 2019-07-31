@@ -114,6 +114,7 @@ export class FisherService {
         fisher.cell                                         = this.registree.cellNo;
         fisher.gender                                       = this.registree.gender;
         fisher.id                                           = this.registree.IDnum;
+        fisher.photo_selfie                                 = this.registree.selfie;
         fisher.usertype                                     = this.registree.role;
         fisher.user_roles                                   = this.registree.user_roles;
         fisher.landingsite                                  = this.registree.community;
@@ -152,6 +153,7 @@ export class FisherService {
       this.registree.IDnum      = "";
       this.registree.cellNo     = "";
       this.registree.password   = "";
+      this.registree.selfie     = '';
 
       //Community details
       this.registree.province                               ="";
