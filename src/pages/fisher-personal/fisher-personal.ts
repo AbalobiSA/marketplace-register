@@ -158,6 +158,7 @@ function goodPasswords(passwordKey: string, confirmPasswordKey: string, nameKey:
       templateUrl: 'fisher-personal.html',
 })
 export class FisherPersonalPage {
+        private base64Image: string;
 
         personal_info : PersonalInfoClass = new PersonalInfoClass();
         passwordContainsInvalidWords: boolean = false;
@@ -224,6 +225,8 @@ export class FisherPersonalPage {
 
             ionViewDidLoad() {
                         console.log('ionViewDidLoad FisherPersonalPage');
+                        const fileInput = document.getElementById('file-input');
+                        fileInput.addEventListener('change', (e: any) => this.doSomethingWithFiles(e.target.files))
             }
 
             onFisherFinishPersonal(){
@@ -266,6 +269,27 @@ export class FisherPersonalPage {
 
             password2Changed(){
                     this.personal_info.personal_password2= this.personalForm.get("password2").value;
+            }
+
+            doSomethingWithFiles(files) {
+                    console.log("doSomethingWithFiles: ", files);
+                    let file = null;
+                    for (let i = 0; i < files.length; i++) {
+                        if (files[i].type.match(/^image\//)) {
+                            file = files[i];
+                            break;
+                        }
+                    }
+
+                    if (file !== null) {
+                        let reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onloadend = () => {
+                            this.base64Image = reader.result;
+                            // console.log("Got image: ", reader.result);
+                            this.personal_info.personal_selfie = this.base64Image;
+                        }
+                    }
             }
 
 }//end class
