@@ -158,6 +158,7 @@ function goodPasswords(passwordKey: string, confirmPasswordKey: string, nameKey:
       templateUrl: 'fisher-personal.html',
 })
 export class FisherPersonalPage {
+        public base64Image: string;
 
         personal_info : PersonalInfoClass = new PersonalInfoClass();
         passwordContainsInvalidWords: boolean = false;
@@ -206,7 +207,7 @@ export class FisherPersonalPage {
                 {type: 'required', message: 'Password confirmation required.'},
             ]}
 
-            constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
+            constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder, private camera: Camera) {
 
                     this.personalForm = this.formBuilder.group({
                         "surname":  ['', Validators.required],
@@ -266,6 +267,21 @@ export class FisherPersonalPage {
 
             password2Changed(){
                     this.personal_info.personal_password2= this.personalForm.get("password2").value;
+            }
+
+            takePicture() {
+                const options: CameraOptions = {
+                    quality: 100,
+                    destinationType: this.camera.DestinationType.FILE_URI,
+                    encodingType: this.camera.EncodingType.JPEG,
+                    mediaType: this.camera.MediaType.PICTURE
+                };
+                this.camera.getPicture(options
+                ).then(imageData => {
+                  this.base64Image = 'data:image/jpeg;base64,' + imageData;
+                }, err => {
+                    console.log(err);
+                });
             }
 
 }//end class

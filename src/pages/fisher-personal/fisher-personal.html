@@ -51,6 +51,11 @@
             </div>
 
       <ion-item>
+        <ion-label stacked>Selfie</ion-label>
+      </ion-item>
+      <button (click)="takePicture()">Take Selfie</button>
+
+      <ion-item>
         <ion-label stacked>E-mail</ion-label>
         <ion-input type="text" formControlName="email" placeholder="Optional e-mail where you can be reached"(ionChange)="emailChanged()"></ion-input>
       </ion-item>
