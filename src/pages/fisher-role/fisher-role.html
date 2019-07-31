@@ -45,7 +45,7 @@
 
                 <div style="color:red" text-wrap align="center" class="validation-errors">
                         <ng-container *ngFor="let validation of validation_messages.role" >
-                                <div class="error-message" *ngIf="roleForm.get('role').hasError(validation.type)"> <!-- && (roleForm.get('role').dirty || roleForm.get('role').touched)"-->
+                                <div class="error-message" *ngIf="roleForm.get('role').hasError(validation.type) && (roleForm.get('role').dirty || roleForm.get('role').touched)"> <!-- && (roleForm.get('role').dirty || roleForm.get('role').touched)"-->
                                         {{ validation.message }}
                                 </div>
                         </ng-container>
