@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {FisherCommunityPage}  from "../fisher-community/fisher-community";
 import{FisherService}         from "../../providers/FisherService";
 import {PersonalInfoClass}    from "../../classes/personal_info_class";
-
+import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
 
 
 //Function to check for matching passwords
