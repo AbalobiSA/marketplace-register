@@ -13,11 +13,11 @@
 
                 <div id="page-markdown1" class="show-list-numbers-and-dots">
                         <p id="header-text" style="color:#000000;">
-                            Complete this form if you&#39;d like to be able to
+                            Welcome to ABALOBI, to be able to
                             <strong>
                                 LOG YOUR CATCH
                             </strong>
-                            on the ABALOBI Fisher app.
+                            on the ABALOBI Fisher app, please complete this short form:
                         </p>
                         <hr>
                 </div>
@@ -38,14 +38,14 @@
 
 
                         <ion-item>
-                                <ion-label text-wrap>Local Assistant AND Fisher (I will be logging my own catch)</ion-label>
+                                <ion-label text-wrap>Local Assistant AND Fisher (I will also be logging my own catch)</ion-label>
                                 <ion-radio type="text" value ="fisher,fisher_manager"></ion-radio>
                         </ion-item>
                 </ion-list>
 
                 <div style="color:red" text-wrap align="center" class="validation-errors">
                         <ng-container *ngFor="let validation of validation_messages.role" >
-                                <div class="error-message" *ngIf="roleForm.get('role').hasError(validation.type)"> <!-- && (roleForm.get('role').dirty || roleForm.get('role').touched)"-->
+                                <div class="error-message" *ngIf="roleForm.get('role').hasError(validation.type) && (roleForm.get('role').dirty || roleForm.get('role').touched)"> <!-- && (roleForm.get('role').dirty || roleForm.get('role').touched)"-->
                                         {{ validation.message }}
                                 </div>
                         </ng-container>
