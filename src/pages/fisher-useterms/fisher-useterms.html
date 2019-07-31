@@ -15,32 +15,30 @@
 
             <form [formGroup] = "termsForm">
 
-
+                        <a button href="#" clear item-right (click)="clickToggle()">{{getText()}}</a>
 
                         <div *ngIf="display_afr === false">
-                                <p style="text-align:center"><b>Terms in English</b></p>
+                                <p style="text-align:center"><b>Terms and Conditions</b></p>
                                 <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->
                                         <b>{{terms}}</b>
                                 </p>
                         </div>
 
                         <div *ngIf="display_afr === true">
-                                <p style="text-align:center"><b>Terme in Afrikaans</b></p>
+                                <p style="text-align:center"><b>Bepalings en Voorwaardes</b></p>
                                 <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em"><!--style="padding-left:0.5em;padding-right:0.5em;text-align: center"-->
                                         <b>{{terms_afr}}</b>
                                 </p>
                         </div>
 
-                        <a button href="#" clear item-right (click)="clickToggle()">{{getText()}}</a>
-
                         <ion-item>
-                                <ion-label>* I Agree</ion-label>
+                                <ion-label>* I Agree to the terms and conditions above.</ion-label>
                                 <ion-checkbox formControlName='agree' (ionChange)="termsChanged()"></ion-checkbox>
                         </ion-item>
 
                         <div style="color:red" text-wrap align="center" class="validation-errors">
                             <ng-container *ngFor="let validation of validation_messages.agree" >
-                                    <div class="error-message" *ngIf="!termsForm.get('agree').value"><!-- && ( termsForm.get('agree').dirty || termsForm.get('agree')).touched"-->
+                                    <div class="error-message" *ngIf="!termsForm.get('agree').value && ( termsForm.get('agree').dirty || termsForm.get('agree')).touched"><!-- && ( termsForm.get('agree').dirty || termsForm.get('agree')).touched"-->
                                                 {{ validation.message }}
                                     </div>
                             </ng-container>
@@ -48,7 +46,7 @@
 
 
                         <p text-wrap style="text-align:center;padding-left:0.5em;padding-right:0.5em">
-                                <b> I further consent to share my data with the following parties (tick where applicable):</b>
+                                <b> I further consent to share my data with the following parties (tick where applicable - not mandatory):</b>
                         </p>
 
 
@@ -60,7 +58,7 @@
 
 
                                 <ion-item>
-                                        <ion-label > DAFF (Department of Agriculture, Forestry and Fisheries)</ion-label>
+                                        <ion-label > DEFF (Department of Environment, Forestry and Fisheries) or relevant Local Regulatory Authority</ion-label>
                                         <ion-checkbox [(ngModel)]="terms_status.terms_DAFF_agreed" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                                 </ion-item>
                         </ion-list>
