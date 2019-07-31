@@ -275,8 +275,11 @@ export class FisherPersonalPage {
             }
 
             takePicture() {
+                console.log('Going to try to take a picture...');
                 this.platform.ready().then(() => {
+                    console.log('Platform is ready...');
                     if (this.platform.is('cordova')) {
+                        console.log('This is cordova platform');
                         const options: CameraOptions = {
                           quality: 100,
                           destinationType: this.camera.DestinationType.FILE_URI,
@@ -289,6 +292,8 @@ export class FisherPersonalPage {
                         }, err => {
                           console.log(err);
                         });
+                    } else {
+                        console.log('This is not cordova platform. What happens now?');
                     }
                 });
             }
