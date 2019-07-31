@@ -87,6 +87,18 @@
                     <!--</ng-container>-->
             <!--</div>-->
 
+            <ion-item>
+              <ion-label stacked>Language preference
+              </ion-label>
+              <ion-select formControlName="language" (ionChange)="languageChanged()">
+                <ion-option value = "afrikaans">Afrikaans</ion-option>
+                <ion-option value = "english">English</ion-option>
+                <ion-option value = "xhosa">isiXhosa</ion-option>
+                <ion-option value = "zulu">isiZulu</ion-option>
+                <ion-option value = "other">Other</ion-option>
+              </ion-select>
+            </ion-item>
+
 
             <ion-item>
                       <ion-label stacked>* ID Number</ion-label>
