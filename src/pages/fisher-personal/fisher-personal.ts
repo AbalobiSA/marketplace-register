@@ -271,14 +271,7 @@ export class FisherPersonalPage {
                     this.personal_info.personal_password2= this.personalForm.get("password2").value;
             }
 
-            selfieChanged(ev) {
-                    console.log('Selfie changed');
-                    console.log("Event: ", ev);
-                    console.log(ev.target.files);
-            }
-
             doSomethingWithFiles(files) {
-                    const outputSelfie = document.getElementById('output-selfie');
                     console.log("doSomethingWithFiles: ", files);
                     let file = null;
                     for (let i = 0; i < files.length; i++) {
@@ -293,10 +286,9 @@ export class FisherPersonalPage {
                         reader.readAsDataURL(file);
                         reader.onloadend = () => {
                             this.base64Image = reader.result;
+                            // console.log("Got image: ", reader.result);
+                            this.personal_info.personal_selfie = this.base64Image;
                         }
-                        // const theURL = URL.createObjectURL(file);
-                        // console.log("Image URL: ", theURL);
-                        // outputSelfie.src = theURL;
                     }
             }
 

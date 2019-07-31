@@ -10,6 +10,7 @@ export class PersonalInfoClass{
       personal_cellNo     : string = "";
       personal_password1  : string = "";
       personal_password2  : string = "";
+      personal_selfie     : string = '';
 
       constructor(){
 

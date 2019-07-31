@@ -21,6 +21,7 @@ export class Registree{
         IDnum      : string = "";
         cellNo     : string = "";
         password   : string = "";
+        selfie     : string = '';
 
         //Community details
         country                                :string='';

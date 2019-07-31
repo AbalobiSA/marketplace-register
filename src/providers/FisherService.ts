@@ -69,6 +69,7 @@ export class FisherService {
         this.registree.IDnum      = personal_info.personal_IDnum;
         this.registree.cellNo     = personal_info.personal_cellNo;
         this.registree.password   = personal_info.personal_password1;//only use one copy of the 2 identical passwords
+        this.registree.selfie     = personal_info.personal_selfie;
         //update the registree in storage;
         console.log("Fisher Service successfully updates personal info");
 

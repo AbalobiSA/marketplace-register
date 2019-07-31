@@ -610,6 +610,7 @@ var Registree = /** @class */ (function () {
         this.IDnum = "";
         this.cellNo = "";
         this.password = "";
+        this.selfie = '';
         //Community details
         this.country = '';
         this.province = "";
@@ -675,6 +676,7 @@ var PersonalInfoClass = /** @class */ (function () {
         this.personal_cellNo = "";
         this.personal_password1 = "";
         this.personal_password2 = "";
+        this.personal_selfie = '';
     }
     return PersonalInfoClass;
 }());
@@ -1568,14 +1570,8 @@ var FisherPersonalPage = /** @class */ (function () {
     FisherPersonalPage.prototype.password2Changed = function () {
         this.personal_info.personal_password2 = this.personalForm.get("password2").value;
     };
-    FisherPersonalPage.prototype.selfieChanged = function (ev) {
-        console.log('Selfie changed');
-        console.log("Event: ", ev);
-        console.log(ev.target.files);
-    };
     FisherPersonalPage.prototype.doSomethingWithFiles = function (files) {
         var _this = this;
-        var outputSelfie = document.getElementById('output-selfie');
         console.log("doSomethingWithFiles: ", files);
         var file = null;
         for (var i = 0; i < files.length; i++) {
@@ -1589,10 +1585,9 @@ var FisherPersonalPage = /** @class */ (function () {
             reader_1.readAsDataURL(file);
             reader_1.onloadend = function () {
                 _this.base64Image = reader_1.result;
+                // console.log("Got image: ", reader.result);
+                _this.personal_info.personal_selfie = _this.base64Image;
             };
-            // const theURL = URL.createObjectURL(file);
-            // console.log("Image URL: ", theURL);
-            // outputSelfie.src = theURL;
         }
     };
     FisherPersonalPage = __decorate([
@@ -2368,6 +2363,7 @@ var FisherService = /** @class */ (function () {
         this.registree.IDnum = personal_info.personal_IDnum;
         this.registree.cellNo = personal_info.personal_cellNo;
         this.registree.password = personal_info.personal_password1; //only use one copy of the 2 identical passwords
+        this.registree.selfie = personal_info.personal_selfie;
         //update the registree in storage;
         console.log("Fisher Service successfully updates personal info");
     };
@@ -2469,9 +2465,10 @@ var FisherService = /** @class */ (function () {
     };
     FisherService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_registree_class__["a" /* Registree */]) === "function" && _b || Object])
     ], FisherService);
     return FisherService;
+    var _a, _b;
 }()); //end class
 
 //# sourceMappingURL=FisherService.js.map
