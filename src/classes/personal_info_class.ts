@@ -11,6 +11,7 @@ export class PersonalInfoClass{
       personal_password1  : string = "";
       personal_password2  : string = "";
       personal_selfie     : string = '';
+      personal_language   : string = '';
 
       constructor(){
 
