@@ -215,6 +215,7 @@ export class FisherPersonalPage {
                         "nickname": ['', Validators.required],
                         "email":    ['', ],
                         "gender":   ['', ],
+                        "language": ['', ],
                         "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
                         "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^[+][0-9]+$')])],
                         "password1":['', Validators.required],
@@ -269,6 +270,10 @@ export class FisherPersonalPage {
 
             password2Changed(){
                     this.personal_info.personal_password2= this.personalForm.get("password2").value;
+            }
+
+            languageChanged() {
+                    this.personal_info.personal_language = this.personalForm.get('language').value;
             }
 
             doSomethingWithFiles(files) {
