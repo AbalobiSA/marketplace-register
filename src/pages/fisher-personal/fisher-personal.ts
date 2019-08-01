@@ -205,7 +205,7 @@ export class FisherPersonalPage {
 
             'password2': [
                 {type: 'required', message: 'Password confirmation required.'},
-            ]}
+            ]};
 
             constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
 
