@@ -106,6 +106,10 @@ export class FisherService {
 
     //parse fisher data to a format congruent to what the backend expects
     parseFisher(fisher: Fisher)  {
+        if (!this.registree.preferred_language) {
+            console.log('Changing preferred language to English');
+            this.registree.preferred_language = 'English';
+        }
         console.log("Preferred language: ", this.registree.preferred_language);
 
         fisher.name                                         = this.registree.firstname;
