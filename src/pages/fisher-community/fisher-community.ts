@@ -189,6 +189,7 @@ export class FisherCommunityPage {
         }
 
        onFisherFinishCommunity()   {
+                // Fix cellphone number based on country selected
                 this.fisherService.fisherUpdateCommunity(this.community_info);
                 this.navCtrl.push(FisherConfirmPage,this.confirm_personal);
         }
