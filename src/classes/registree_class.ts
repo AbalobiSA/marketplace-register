@@ -13,15 +13,16 @@ export class Registree{
         DAFF_agreed       : boolean=false;
 
         //Personal details
-        surname    : string = "";
-        firstname  : string = "";
-        nickname   : string = "";
-        email      : string = '';
-        gender     : string = "";
-        IDnum      : string = "";
-        cellNo     : string = "";
-        password   : string = "";
-        selfie     : string = '';
+        surname            : string = "";
+        firstname          : string = "";
+        nickname           : string = "";
+        email              : string = '';
+        gender             : string = "";
+        IDnum              : string = "";
+        cellNo             : string = "";
+        password           : string = "";
+        selfie             : string = '';
+        preferred_language : string = '';
 
         //Community details
         country                                :string='';

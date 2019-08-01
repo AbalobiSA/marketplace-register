@@ -61,15 +61,16 @@ export class FisherService {
 
   fisherUpdatePersonal(personal_info : PersonalInfoClass){
 
-        this.registree.surname    = personal_info.personal_surname;
-        this.registree.firstname  = personal_info.personal_firstname;
-        this.registree.nickname   = personal_info.personal_nickname;
-        this.registree.email      = personal_info.personal_email;
-        this.registree.gender     = personal_info.personal_gender;
-        this.registree.IDnum      = personal_info.personal_IDnum;
-        this.registree.cellNo     = personal_info.personal_cellNo;
-        this.registree.password   = personal_info.personal_password1;//only use one copy of the 2 identical passwords
-        this.registree.selfie     = personal_info.personal_selfie;
+        this.registree.surname            = personal_info.personal_surname;
+        this.registree.firstname          = personal_info.personal_firstname;
+        this.registree.nickname           = personal_info.personal_nickname;
+        this.registree.email              = personal_info.personal_email;
+        this.registree.gender             = personal_info.personal_gender;
+        this.registree.IDnum              = personal_info.personal_IDnum;
+        this.registree.cellNo             = personal_info.personal_cellNo;
+        this.registree.password           = personal_info.personal_password1;//only use one copy of the 2 identical passwords
+        this.registree.selfie             = personal_info.personal_selfie;
+        this.registree.preferred_language = personal_info.personal_language;
         //update the registree in storage;
         console.log("Fisher Service successfully updates personal info");
 
@@ -105,6 +106,7 @@ export class FisherService {
 
     //parse fisher data to a format congruent to what the backend expects
     parseFisher(fisher: Fisher)  {
+        console.log("Preferred language: ", this.registree.preferred_language);
 
         fisher.name                                         = this.registree.firstname;
         fisher.surname                                      = this.registree.surname;
@@ -115,6 +117,7 @@ export class FisherService {
         fisher.gender                                       = this.registree.gender;
         fisher.id                                           = this.registree.IDnum;
         fisher.photo_selfie                                 = this.registree.selfie;
+        fisher.preferred_language                           = this.registree.preferred_language;
         fisher.usertype                                     = this.registree.role;
         fisher.user_roles                                   = this.registree.user_roles;
         fisher.landingsite                                  = this.registree.community;
@@ -145,15 +148,16 @@ export class FisherService {
       this.registree.DAFF_agreed       =false;
 
       //Personal details
-      this.registree.surname    = "";
-      this.registree.firstname  = "";
-      this.registree.nickname   = "";
-      this.registree.email      = '';
-      this.registree.gender     = "";
-      this.registree.IDnum      = "";
-      this.registree.cellNo     = "";
-      this.registree.password   = "";
-      this.registree.selfie     = '';
+      this.registree.surname            = "";
+      this.registree.firstname          = "";
+      this.registree.nickname           = "";
+      this.registree.email              = '';
+      this.registree.gender             = "";
+      this.registree.IDnum              = "";
+      this.registree.cellNo             = "";
+      this.registree.password           = "";
+      this.registree.selfie             = '';
+      this.registree.preferred_language = '';
 
       //Community details
       this.registree.province                               ="";
