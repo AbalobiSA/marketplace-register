@@ -195,7 +195,7 @@ export class FisherPersonalPage {
                 {type: 'minLength', message: 'Cell Number too short.'},
                 {type: 'maxlength', message: 'Cell Number too long.'},
                 {type: 'maxLength', message: 'Cell Number too long.'},
-                {type: 'pattern',   message: 'Number must be in international format. e.g. instead of 0841111111 use +27841111111 for South African numbers'}
+                {type: 'pattern',   message: 'Number must start with a zero'}
             ],
 
 
@@ -217,7 +217,7 @@ export class FisherPersonalPage {
                         "gender":   ['', ],
                         "language": ['', ],
                         "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
-                        "cell":     ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
+                        "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^0[0-9]*'), Validators.minLength(10), Validators.maxLength(10)])],
                         "password1":['', Validators.required],
                         "password2":['', Validators.required]
                     } , {validator: goodPasswords('password1', 'password2', 'name', 'surname')})

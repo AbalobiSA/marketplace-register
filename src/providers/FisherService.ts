@@ -78,6 +78,18 @@ export class FisherService {
 
 
   fisherUpdateCommunity(community_info: CommunityInfoClass){
+        // Change cellphone number based on country they selected
+        let countryCode = '+27';
+        switch (community_info.comm_country) {
+            case 'Seychelles':
+                countryCode = '+248';
+                break;
+
+            case 'Namibia':
+                countryCode = '+264';
+                break;
+        }
+
         this.registree.country                                = community_info.comm_country;
         this.registree.province                               = community_info.comm_province;
         this.registree.community                              = community_info.comm_community;
