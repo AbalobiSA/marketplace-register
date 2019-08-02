@@ -106,7 +106,7 @@ export class FisherCommunityPage {
                     "community" : ['', Validators.required],
                     "custom"    : [null,null],
                     "permit_other" : [null, null]
-                }, {validator: customCommEntered('community', 'custom')} );
+                }, {validators: [customCommEntered('community', 'custom')]} );
 
                 console.log('Getting fisher communities...');
                 fisherService.fisherGetCommunities().then(result => {
