@@ -72,6 +72,7 @@ export class FisherCommunityPage {
         confirm_personal        : Object = new Object();
         public communityForm    : any;
         public hideCustomComm   : boolean = true;//hide the option to enter a custom community on DOM
+        permitString = '<b>Do you have a fishing permit?</b><br>(can select multiple)';
 
         validation_messages = {
                 'country': [
@@ -134,9 +135,11 @@ export class FisherCommunityPage {
                     provinceControl.setValidators([Validators.required]);
                     provinceControl.reset();
                     communityControl.reset();
+                    this.permitString = '<b>Do you have a fishing permit?</b><br>(can select multiple)';
                 } else {
                     provinceControl.setValidators(null);
                     communityControl.reset();
+                    this.permitString = '<b>Do you have a fishing permit?</b>';
                 }
 
                 provinceControl.updateValueAndValidity();

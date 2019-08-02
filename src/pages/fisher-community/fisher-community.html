@@ -89,43 +89,43 @@
 
 
 
-                <p style="text-align:center"><b>Do you have a fishing permit?</b><br>(can select multiple)</p>
+                <p style="text-align:center" [innerHTML]="permitString"></p>
 
 
                 <ion-list >
-                        <ion-item>
+                        <ion-item *ngIf="community_info.comm_country !== 'Seychelles' && community_info.comm_country !== 'Namibia'">
                                 <ion-label> IRP / Exemption</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_IRP_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
-                        <ion-item>
+                        <ion-item *ngIf="community_info.comm_country !== 'Seychelles' && community_info.comm_country !== 'Namibia'">
                                 <ion-label> Small-scale</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_small_scale_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
-                        <ion-item>
+                        <ion-item *ngIf="community_info.comm_country !== 'Seychelles' && community_info.comm_country !== 'Namibia'">
                                 <ion-label> Near-shore commercial lobster</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_near_shore_commercial_lobster_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
-                        <ion-item>
+                        <ion-item *ngIf="community_info.comm_country !== 'Seychelles' && community_info.comm_country !== 'Namibia'">
                                 <ion-label> Traditional Line-fish</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_traditional_line_fish_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
-                        <ion-item>
+                        <ion-item *ngIf="community_info.comm_country !== 'Seychelles' && community_info.comm_country !== 'Namibia'">
                                 <ion-label> Recreational</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_recreational_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
-                        <ion-item>
+                        <ion-item *ngIf="community_info.comm_country !== 'Seychelles' && community_info.comm_country !== 'Namibia'">
                                 <ion-label> Other</ion-label>
                                 <ion-checkbox [(ngModel)]="community_info.comm_other_chosen" [ngModelOptions]="{standalone: true}"></ion-checkbox>
                         </ion-item>
 
                         <ion-item *ngIf="community_info.comm_other_chosen || community_info.comm_country === 'Seychelles' || community_info.comm_country === 'Namibia'">
-                                <ion-label text-wrap stacked>Other permit</ion-label>
-                                <ion-input formControlName="permit_other" type="text"   placeholder="Enter your other permit here" (ionChange)="permitOtherChanged()"></ion-input>
+                                <ion-label text-wrap stacked>Permit Type</ion-label>
+                                <ion-input formControlName="permit_other" type="text"   placeholder="Enter your permit type here" (ionChange)="permitOtherChanged()"></ion-input>
                         </ion-item>
 
                 </ion-list>
