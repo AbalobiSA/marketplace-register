@@ -108,6 +108,8 @@ export class FisherCommunityPage {
                     "permit_other" : [null, null]
                 }, {validator: customCommEntered('community', 'custom')} );
 
+                this.setValidators();
+
                 console.log('Getting fisher communities...');
                 fisherService.fisherGetCommunities().then(result => {
                     console.log("Done getting communities: ", result);
@@ -120,6 +122,26 @@ export class FisherCommunityPage {
                     this.presentAlert();
                     this.navCtrl.push(HomePage);
                 });
+        }
+
+        setValidators() {
+            const countryControl = this.communityForm.get('country');
+            const provinceControl = this.communityForm.get('province');
+            const communityControl = this.communityForm.get('community');
+
+            countryControl.valueChanges.subscribe(countryCode => {
+                if (countryCode === 'South Africa') {
+                    provinceControl.setValidators([Validators.required]);
+                    provinceControl.reset();
+                    communityControl.reset();
+                } else {
+                    provinceControl.setValidators(null);
+                    communityControl.reset();
+                }
+
+                provinceControl.updateValueAndValidity();
+                communityControl.updateValueAndValidity();
+            });
         }
 
         countryChanged() {
