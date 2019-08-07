@@ -28,6 +28,9 @@ function getProvinceAbbrev(province: string): string {
         case "Northern Cape":{
             return "NC";
         }
+        case "Eastern Cape": {
+            return "EC";
+        }
         case "Seychelles":{
             return "SEY";
         }
