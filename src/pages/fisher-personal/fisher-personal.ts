@@ -217,7 +217,7 @@ export class FisherPersonalPage {
                         "gender":   ['', ],
                         "language": ['', ],
                         "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
-                        "cell":     ['', Validators.compose([Validators.required, Validators.pattern('^0[0-9]*'), Validators.minLength(10), Validators.maxLength(10)])],
+                        "cell":     ['', Validators.compose([Validators.required])],
                         "password1":['', Validators.required],
                         "password2":['', Validators.required]
                     } , {validator: goodPasswords('password1', 'password2', 'name', 'surname')})
