@@ -90,11 +90,17 @@ export class FisherService {
                 break;
         }
 
-        if (this.registree.cellNo.charAt(0) === '0' && this.registree.cellNo.length === 10) {
-            console.log("Converting cell number to international format. Input: ", this.registree.cellNo);
+        // if (this.registree.cellNo.charAt(0) === '0' && this.registree.cellNo.length === 10) {
+        //     console.log("Converting cell number to international format. Input: ", this.registree.cellNo);
+        //     this.registree.cellNo = countryCode + this.registree.cellNo.substring(1);
+        //     console.log("Output: ", this.registree.cellNo);
+        // }
+        if (this.registree.cellNo.charAt(0) === '0') {
             this.registree.cellNo = countryCode + this.registree.cellNo.substring(1);
-            console.log("Output: ", this.registree.cellNo);
+        } else {
+            this.registree.cellNo = countryCode + this.registree.cellNo;
         }
+        console.log("Processed number: ", this.registree.cellNo);
 
         this.registree.country                                = community_info.comm_country;
         this.registree.province                               = community_info.comm_province;
