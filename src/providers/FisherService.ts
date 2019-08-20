@@ -15,7 +15,7 @@ import {BaseUrls} from "../classes/base_urls";
 export class FisherService {
 
     urls: BaseUrls = new BaseUrls();
-    availableCountryCodes: any[] = [
+    availableCountryCodes: any[] = [ // source: https://gist.github.com/Goles/3196253#gistcomment-2100757
         { "name": "Afghanistan", "dial_code": "+93", "code": "AF"},
         { "name": "Aland Islands", "dial_code": "+358", "code": "AX" },
         { "name": "Albania", "dial_code": "+355", "code": "AL" },
@@ -321,30 +321,6 @@ export class FisherService {
 
 
   fisherUpdateCommunity(community_info: CommunityInfoClass){
-        // Change cellphone number based on country they selected
-        let countryCode = '27';
-        switch (community_info.comm_country) {
-            case 'Seychelles':
-                countryCode = '248';
-                break;
-
-            case 'Namibia':
-                countryCode = '264';
-                break;
-        }
-
-        // if (this.registree.cellNo.charAt(0) === '0' && this.registree.cellNo.length === 10) {
-        //     console.log("Converting cell number to international format. Input: ", this.registree.cellNo);
-        //     this.registree.cellNo = countryCode + this.registree.cellNo.substring(1);
-        //     console.log("Output: ", this.registree.cellNo);
-        // }
-        if (this.registree.cellNo.charAt(0) === '0') {
-            this.registree.cellNo = countryCode + this.registree.cellNo.substring(1);
-        } else {
-            this.registree.cellNo = countryCode + this.registree.cellNo;
-        }
-        console.log("Processed number: ", this.registree.cellNo);
-
         this.registree.country                                = community_info.comm_country;
         this.registree.province                               = community_info.comm_province;
         this.registree.community                              = community_info.comm_community;

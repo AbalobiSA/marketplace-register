@@ -223,7 +223,12 @@ export class FisherPersonalPage {
                             if (cellNum.charAt(0) === '0') {
                                 cellNum = cellNum.slice(1);
                             }
-                            if ((dialCode.value + cellNum).length < 11) {
+
+                            if (dialCode.value === '+27' && ((dialCode.value + cellNum).length < 12)) {
+                                return {
+                                    'minLength': true
+                                };
+                            } else if ((dialCode.value + cellNum).length < 11) {
                                 return {
                                     'minLength': true
                                 };
@@ -258,8 +263,15 @@ export class FisherPersonalPage {
             }
 
             onFisherFinishPersonal(){
-                        this.fisherService.fisherUpdatePersonal(this.personal_info);
-                        this.navCtrl.push(FisherCommunityPage, this.personal_info);
+                let countryCode = this.personal_info.personal_countryCode.slice(1);
+                let cellNum = this.personal_info.personal_cellNo;
+                if (cellNum.charAt(0) === '0') {
+                    cellNum = cellNum.slice(1);
+                }
+                this.personal_info.personal_cellNo = countryCode + cellNum;
+                console.log(this.personal_info.personal_cellNo);
+                this.fisherService.fisherUpdatePersonal(this.personal_info);
+                this.navCtrl.push(FisherCommunityPage, this.personal_info);
             }
 
             surnameChanged(){
@@ -288,6 +300,7 @@ export class FisherPersonalPage {
 
             countryCodeChanged() {
                 this.personal_info.personal_countryCode = this.personalForm.get("dialcode").value;
+                this.personalForm.get('cell').updateValueAndValidity();
             }
 
             cellChanged(){
