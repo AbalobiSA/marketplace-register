@@ -163,6 +163,7 @@ export class FisherPersonalPage {
         personal_info : PersonalInfoClass = new PersonalInfoClass();
         passwordContainsInvalidWords: boolean = false;
         public personalForm: any;
+        mobileNumLengthValidator;
         validation_messages = {
             'surname': [
                 {type: 'required', message: 'Surname is required.'}
@@ -189,13 +190,17 @@ export class FisherPersonalPage {
                 {type: 'pattern',   message: 'Unacceptable symbols in ID.'}
             ],
 
+            'dialcode': [
+                {type: 'required', message: 'Country code is required.'}
+            ],
+
             'cell': [
                 {type: 'required',  message: 'Cell Number is required.'},
                 {type: 'minlength', message: 'Cell Number too short.'},
                 {type: 'minLength', message: 'Cell Number too short.'},
                 {type: 'maxlength', message: 'Cell Number too long.'},
                 {type: 'maxLength', message: 'Cell Number too long.'},
-                {type: 'pattern',   message: 'Number must start with a zero'}
+                {type: 'pattern',   message: 'Must only contain numbers.'}
             ],
 
 
@@ -209,6 +214,32 @@ export class FisherPersonalPage {
 
             constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
 
+                this.mobileNumLengthValidator = (cellNumControl) : {[key: string]: any} => {
+                    if (this.personalForm) {
+                        let dialCode = this.personalForm.get('dialcode');
+                        let cellNum: string = cellNumControl.value;
+
+                        if (cellNum && (cellNumControl.dirty || cellNumControl.touched)) {
+                            if (cellNum.charAt(0) === '0') {
+                                cellNum = cellNum.slice(1);
+                            }
+
+                            if (dialCode.value === '+27' && ((dialCode.value + cellNum).length < 12)) {
+                                return {
+                                    'minLength': true
+                                };
+                            } else if ((dialCode.value + cellNum).length < 11) {
+                                return {
+                                    'minLength': true
+                                };
+                            } else if ((dialCode.value + cellNum).length > 12) {
+                                return {
+                                    'maxLength': true
+                                };
+                            }
+                        }
+                    }
+                };
                     this.personalForm = this.formBuilder.group({
                         "surname":  ['', Validators.required],
                         "name":     ['', Validators.required],
@@ -217,10 +248,11 @@ export class FisherPersonalPage {
                         "gender":   ['', ],
                         "language": ['', ],
                         "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
-                        "cell":     ['', Validators.compose([Validators.required])],
+                        "dialcode": ['', Validators.required],
+                        "cell":     ['', Validators.compose([Validators.required, Validators.pattern('[0-9]*'), this.mobileNumLengthValidator])],
                         "password1":['', Validators.required],
                         "password2":['', Validators.required]
-                    } , {validator: goodPasswords('password1', 'password2', 'name', 'surname')})
+                    } , {validator: goodPasswords('password1', 'password2', 'name', 'surname')});
             }
 
 
@@ -231,8 +263,15 @@ export class FisherPersonalPage {
             }
 
             onFisherFinishPersonal(){
-                        this.fisherService.fisherUpdatePersonal(this.personal_info);
-                        this.navCtrl.push(FisherCommunityPage, this.personal_info);
+                let countryCode = this.personal_info.personal_countryCode.slice(1);
+                let cellNum = this.personal_info.personal_cellNo;
+                if (cellNum.charAt(0) === '0') {
+                    cellNum = cellNum.slice(1);
+                }
+                this.personal_info.personal_cellNo = countryCode + cellNum;
+                console.log(this.personal_info.personal_cellNo);
+                this.fisherService.fisherUpdatePersonal(this.personal_info);
+                this.navCtrl.push(FisherCommunityPage, this.personal_info);
             }
 
             surnameChanged(){
@@ -257,6 +296,11 @@ export class FisherPersonalPage {
 
             IDchanged(){
                     this.personal_info.personal_IDnum = this.personalForm.get("ID").value;
+            }
+
+            countryCodeChanged() {
+                this.personal_info.personal_countryCode = this.personalForm.get("dialcode").value;
+                this.personalForm.get('cell').updateValueAndValidity();
             }
 
             cellChanged(){

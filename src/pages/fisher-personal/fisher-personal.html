@@ -112,10 +112,25 @@
                         </ng-container>
             </div>
 
-
-            <ion-item>
-                        <ion-label text-wrap stacked>* Personal Cellphone Number</ion-label>
-                        <ion-input formControlName="cell"  type="text"   placeholder="Enter your cell number here"(ionChange)="cellChanged()"></ion-input>
+            <ion-item margin-top>
+                    <ion-label text-wrap stacked>* Country Code:</ion-label>
+                    <ion-select formControlName="dialcode" (ionChange)="countryCodeChanged()">
+                            <ion-option value="+27">South Africa (+27)</ion-option>
+                            <ion-option value="+248">Seychelles (+248)</ion-option>
+                            <ion-option value="+264">Namibia (+264)</ion-option>
+                            <ion-option *ngFor="let c of fisherService.availableCountryCodes" [value]="c.dial_code">{{c.name}} ({{c.dial_code}})</ion-option>
+                    </ion-select>
+            </ion-item>
+            <div style="color:red" text-wrap align="center" class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.dialcode" >
+                        <div class="error-message" *ngIf="personalForm.get('dialcode').hasError(validation.type) && (personalForm.get('dialcode').dirty || personalForm.get('dialcode').touched)">
+                                {{ validation.message }}
+                        </div>
+                </ng-container>
+            </div>
+            <ion-item margin-bottom>
+                        <ion-label text-wrap stacked>* Personal Cellphone/Mobile Number</ion-label>
+                        <ion-input formControlName="cell"  type="text"   placeholder="e.g 0841234567 or 841234567"(ionChange)="cellChanged()"></ion-input>
             </ion-item>
             <div style="color:red" text-wrap align="center" class="validation-errors">
                     <ng-container *ngFor="let validation of validation_messages.cell" >
