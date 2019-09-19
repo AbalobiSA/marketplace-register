@@ -247,7 +247,7 @@ export class FisherPersonalPage {
                         "email":    ['', ],
                         "gender":   ['', ],
                         "language": ['', ],
-                        "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
+                        "ID":       ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9-]+$')])],
                         "dialcode": ['', Validators.required],
                         "cell":     ['', Validators.compose([Validators.required, Validators.pattern('[0-9]*'), this.mobileNumLengthValidator])],
                         "password1":['', Validators.required],
