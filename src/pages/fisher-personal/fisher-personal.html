@@ -52,7 +52,7 @@
 
       <ion-item>
         <ion-label stacked>Selfie</ion-label>
-        <ion-input type="file" accept="image/*" capture id="file-input">asdasdasdd</ion-input>
+        <ion-input type="file" accept="image/*" capture id="file-input" (change)="changeListener($event)">asdasdasdd</ion-input>
       </ion-item>
       <img id="output-selfie" [src]="base64Image" *ngIf="base64Image"/>
       <!--<button (click)="takePicture()">Take Selfie</button>-->
