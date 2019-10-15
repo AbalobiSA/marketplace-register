@@ -258,8 +258,8 @@ export class FisherPersonalPage {
 
             ionViewDidLoad() {
                         console.log('ionViewDidLoad FisherPersonalPage');
-                        const fileInput = document.getElementById('file-input');
-                        fileInput.addEventListener('change', (e: any) => this.doSomethingWithFiles(e.target.files));
+                        // const fileInput = document.getElementById('file-input');
+                        // fileInput.addEventListener('change', (e: any) => this.doSomethingWithFiles(e.target.files))
             }
 
             onFisherFinishPersonal(){
@@ -340,6 +340,10 @@ export class FisherPersonalPage {
                             this.personal_info.personal_selfie = this.base64Image;
                         }
                     }
+            }
+
+            changeListener($event) : void {
+                    this.doSomethingWithFiles($event.target.files);
             }
 
 }//end class
