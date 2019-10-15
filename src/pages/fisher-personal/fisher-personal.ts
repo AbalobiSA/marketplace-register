@@ -272,6 +272,7 @@ export class FisherPersonalPage {
                 console.log(this.personal_info.personal_cellNo);
                 this.fisherService.fisherUpdatePersonal(this.personal_info);
                 this.navCtrl.push(FisherCommunityPage, this.personal_info);
+                this.personal_info.personal_cellNo = cellNum;
             }
 
             surnameChanged(){

@@ -15,7 +15,7 @@ import {BaseUrls} from "../classes/base_urls";
 export class FisherService {
 
     urls: BaseUrls = new BaseUrls();
-    availableCountryCodes: any[] = [ // source: https://gist.github.com/Goles/3196253#gistcomment-2100757
+    availableCountryCodes: any[] = [ // source: https://gist.github.com/Goles/3196253#gistcomment-2100757 [2019]
         { "name": "Afghanistan", "dial_code": "+93", "code": "AF"},
         { "name": "Aland Islands", "dial_code": "+358", "code": "AX" },
         { "name": "Albania", "dial_code": "+355", "code": "AL" },
