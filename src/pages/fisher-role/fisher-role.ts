@@ -52,8 +52,8 @@ export class FisherRolePage {
             console.log('Loading communities');
             this.fisherService.fisherGetCommunities().then(result => {
                 console.log('Loading terms');
-                // return this.fisherService.fisherGetTerms();
-                return Promise.reject('hello');
+                return this.fisherService.fisherGetTerms();
+                // return Promise.reject('hello');
             }).then(result => {
                 console.log('Done loading communities and terms');
             }).catch(error => {
