@@ -41,14 +41,16 @@ export class FisherUsetermsPage {
 
         ionViewDidLoad() {
             console.log('Loading Terms & Conditions');
-            this.fisherService.fisherGetTerms()
-            .then((result: any) => {
-                this.terms = result.terms;
-                this.terms_afr = result.terms_afr;
-                console.log(this.terms);
-            }).catch(error => {
-                console.log("Failed getting Ts&Cs: ", error);
-            });
+            this.terms = this.fisherService.terms.terms;
+            this.terms_afr = this.fisherService.terms.terms_afr;
+            // this.fisherService.fisherGetTerms()
+            // .then((result: any) => {
+            //     this.terms = result.terms;
+            //     this.terms_afr = result.terms_afr;
+            //     console.log(this.terms);
+            // }).catch(error => {
+            //     console.log("Failed getting Ts&Cs: ", error);
+            // });
         }
 
         onFisherFinishTerms(){
