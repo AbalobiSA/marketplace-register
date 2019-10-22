@@ -115,17 +115,21 @@ export class FisherCommunityPage {
                 this.setValidators();
 
                 console.log('Getting fisher communities...');
-                fisherService.fisherGetCommunities().then(result => {
-                    console.log("Done getting communities: ", result);
-                    let communities = result['abalobi-communities'];
-                    for (let i = 0; i < communities.length; i++) {
-                        this.all_comms.push(new CommunityClass(communities[i]['Name'], communities[i]['province_abbreviation__c'], communities[i]['name_eng__c']));
-                    }
-                }).catch(error => {
-                    console.log("Error getting communities: ", error);
-                    this.presentAlert();
-                    this.navCtrl.push(HomePage);
-                });
+                let communities = this.fisherService.communities['abalobi-communities'];
+                for (let i = 0; i < communities.length; i++) {
+                   this.all_comms.push(new CommunityClass(communities[i]['Name'], communities[i]['province_abbreviation__c'], communities[i]['name_eng__c']));
+                }
+                // fisherService.fisherGetCommunities().then(result => {
+                //     console.log("Done getting communities: ", result);
+                //     let communities = result['abalobi-communities'];
+                //     for (let i = 0; i < communities.length; i++) {
+                //         this.all_comms.push(new CommunityClass(communities[i]['Name'], communities[i]['province_abbreviation__c'], communities[i]['name_eng__c']));
+                //     }
+                // }).catch(error => {
+                //     console.log("Error getting communities: ", error);
+                //     this.presentAlert();
+                //     this.navCtrl.push(HomePage);
+                // });
         }
 
         setValidators() {
