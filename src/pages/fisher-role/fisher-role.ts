@@ -34,6 +34,7 @@ export class FisherRolePage {
             });
 
             console.log('Loading communities');
+
             console.log('Loading terms');
         }
 
