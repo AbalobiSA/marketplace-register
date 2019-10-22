@@ -26,12 +26,15 @@ export class FisherRolePage {
                 'role': [
                         {type: 'required', message: 'Please select your role.'}
                     ],
-        }
+        };
 
         constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
-                this.roleForm = this.formBuilder.group({
-                    "role": ['', Validators.required],
-                })
+            this.roleForm = this.formBuilder.group({
+                "role": ['', Validators.required],
+            });
+
+            console.log('Loading communities');
+            console.log('Loading terms');
         }
 
         ionViewDidLoad() {
