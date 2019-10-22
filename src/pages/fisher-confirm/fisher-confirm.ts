@@ -65,8 +65,7 @@ import {HttpClient} from "@angular/common/http";
         .then(()=>{//ID is unique
           //Go ahead and attempt to register unique fisher
           //alert('ID number is unique');
-          // this.fisherService.registerFisher(this.fisher)//attempts to register user
-          Promise.reject('hello')
+          this.fisherService.registerFisher(this.fisher)//attempts to register user
             .then (()=> {
 
               //alert('User registration successful');
