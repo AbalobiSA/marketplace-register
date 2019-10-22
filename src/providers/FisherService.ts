@@ -15,6 +15,8 @@ import {BaseUrls} from "../classes/base_urls";
 export class FisherService {
 
     urls: BaseUrls = new BaseUrls();
+    communities: any;
+    terms: any;
     availableCountryCodes: any[] = [ // source: https://gist.github.com/Goles/3196253#gistcomment-2100757 [2019]
         { "name": "Afghanistan", "dial_code": "+93", "code": "AF"},
         { "name": "Aland Islands", "dial_code": "+358", "code": "AX" },
@@ -276,6 +278,7 @@ export class FisherService {
       return new Promise((resolve, reject) => {
           this.http.get(this.urls.fisherGetTermsURL).toPromise()
           .then(result => {
+              this.terms = result;
               resolve(result);
           }).catch(error => {
               reject(error);
@@ -287,6 +290,7 @@ export class FisherService {
       return new Promise((resolve, reject) => {
           this.http.get(this.urls.fisherGetCommunitiesURL).toPromise()
             .then(result => {
+              this.communities = result;
               resolve(result);
             }).catch(error => {
               reject(error);

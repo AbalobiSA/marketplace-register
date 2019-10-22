@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FisherUsetermsPage} from "../fisher-useterms/fisher-useterms";
 //Imported service
 import{FisherService} from "../../providers/FisherService";
 import{FormBuilder, Validators} from "@angular/forms";
+import {HomePage} from "../home/home";
 
 
 @IonicPage()
@@ -26,12 +27,39 @@ export class FisherRolePage {
                 'role': [
                         {type: 'required', message: 'Please select your role.'}
                     ],
+        };
+
+        async presentAlert() {
+            const alert = await this.alertController.create({
+              title: 'Error',
+              subTitle: 'Error',
+              message: 'Failed loading required data.  Hit Reload to try and reload data.  Hit home to go to main registration page',
+              buttons: [{text: 'Home', handler: () => {
+                    this.navCtrl.push(HomePage);
+                }}, {text: 'Reload', handler: () => {
+                    this.navCtrl.push(FisherRolePage);
+                }}]
+            });
+
+            await alert.present();
         }
 
-        constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder) {
-                this.roleForm = this.formBuilder.group({
-                    "role": ['', Validators.required],
-                })
+        constructor (public navCtrl: NavController, public navParams: NavParams, public fisherService : FisherService, public formBuilder: FormBuilder, public alertController: AlertController) {
+            this.roleForm = this.formBuilder.group({
+                "role": ['', Validators.required],
+            });
+
+            console.log('Loading communities');
+            this.fisherService.fisherGetCommunities().then(result => {
+                console.log('Loading terms');
+                return this.fisherService.fisherGetTerms();
+                // return Promise.reject('hello');
+            }).then(result => {
+                console.log('Done loading communities and terms');
+            }).catch(error => {
+                console.log('Failed loading either communities or terms');
+                this.presentAlert();
+            });
         }
 
         ionViewDidLoad() {
