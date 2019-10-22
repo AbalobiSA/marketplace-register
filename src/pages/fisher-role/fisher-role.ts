@@ -34,8 +34,14 @@ export class FisherRolePage {
             });
 
             console.log('Loading communities');
-
-            console.log('Loading terms');
+            this.fisherService.fisherGetCommunities().then(result => {
+                console.log('Loading terms');
+                return this.fisherService.fisherGetTerms();
+            }).then(result => {
+                console.log('Done loading communities and terms');
+            }).catch(error => {
+                console.log('Failed loading either communities or terms');
+            });
         }
 
         ionViewDidLoad() {
