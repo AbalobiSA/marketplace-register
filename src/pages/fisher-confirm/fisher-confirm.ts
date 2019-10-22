@@ -74,7 +74,7 @@ import {HttpClient} from "@angular/common/http";
             })
             .catch( ()=>{//failure to register , but ID is unique
               //alert('User registration failed');
-              this.navController.push(FisherRegisterFailurePage);
+              this.navController.push(FisherRegisterFailurePage, this.confirm_info);
 
             })
         })
