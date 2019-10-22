@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
+import {FisherConfirmPage} from "../fisher-confirm/fisher-confirm";
 
 @IonicPage()
 @Component({
@@ -22,5 +23,9 @@ export class FisherRegisterFailurePage {
 
     onbackToHome(){
         this.navCtrl.push(HomePage);
+    }
+
+    onRetry() {
+        this.navCtrl.push(FisherConfirmPage);
     }
 }
