@@ -38,7 +38,8 @@ export class FisherRolePage {
                     this.navCtrl.push(HomePage);
                 }}, {text: 'Reload', handler: () => {
                     this.navCtrl.push(FisherRolePage);
-                }}]
+                }}],
+              enableBackdropDismiss: false
             });
 
             await alert.present();
