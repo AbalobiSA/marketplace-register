@@ -47,7 +47,7 @@ export  class Fisher{
         this.filter                 = "abalobi_registration"
         //Might be required
         this.landingsite_custom     =   "";
-        this.app_version            =   "web_1.0.1";
+        this.app_version            =   "web_1.1.0";
         /*this.device_version         =   this.device.version;
         this.device_uuid            =   this.device.uuid;
         this.device_model           =   this.device.model;
