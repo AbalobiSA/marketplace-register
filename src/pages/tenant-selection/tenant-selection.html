@@ -1,0 +1,40 @@
+<!--
+  Generated template for the TenantSelectionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>ABALOBI Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row justify-content-center margin-top>
+    <ion-col col-sm-10 col-md-6>
+      <div style="text-align: center;">
+        <img class="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png">
+      </div>
+
+      <p padding>{{explanationText}}</p>
+      
+      <ion-list radio-group [formControl]="selectedTenant">
+        <ion-item *ngFor="let tenant of tenantArr">
+          <ion-label>{{tenant.label}}</ion-label>
+          <ion-radio [value]="tenant.key"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <div style="text-align: right;">
+        <button ion-button icon-end (click)="clickNext()">
+          Next
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

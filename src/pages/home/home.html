@@ -1,19 +1,21 @@
 <ion-header>
-        <ion-navbar>
-              <ion-title>
-                Abalobi Registration
-              </ion-title>
-        </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>
+      ABALOBI Registration
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
-
-
-<ion-content padding="true"  padding id="page1">
-  <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;">
-    <br>
-  <button text-wrap ion-button full (click)="onSelectFisherRegistration()">Register to use Fisher Logbook</button>
-    <br>
-  <button text-wrap ion-button full  (click)="onSelectMarketplaceRegistration()">Register to buy on Marketplace</button>
+<ion-content id="page1">
+  <ion-row justify-content-center margin-top>
+    <ion-col col-sm-10 col-md-6 col-lg-5>
+      <div style="text-align: center;">
+        <img id="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png" style="max-width: 100%;">
+      </div>
+      <button text-wrap ion-button full (click)="onSelectFisherRegistration()">Register to use Fisher Logbook</button>
+      <button text-wrap ion-button full  (click)="onSelectMarketplaceRegistration()">Register to buy on Marketplace</button>
+    </ion-col>
+  </ion-row>
 </ion-content>
 
 

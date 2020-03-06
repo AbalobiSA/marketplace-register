@@ -1,6 +1,6 @@
 //Modules
-import {HttpClientModule}       from "@angular/common/http";
-import {RecaptchaModule}        from "ng-recaptcha";
+import { HttpClientModule } from "@angular/common/http";
+import { RecaptchaModule } from "ng-recaptcha";
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -10,15 +10,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 //Development
 import { MyApp }                from './app.component';
 //Common landing page
-import { HomePage }               from '../pages/home/home';
+// import { HomePage }               from '../pages/home/home';
 //Fisher registration pages
 //Marketplace registration pages
 import { MarketplaceHome }      from '../pages/marketplace-home/marketplace-home';
 
 //Imported services
 import {MarketplaceService}     from "../providers/MarketplaceService";
-import{FisherService}           from "../providers/FisherService";
-import{Registree}               from "../classes/registree_class";
+import {FisherService}           from "../providers/FisherService";
+import { TenantServiceProvider } from '../providers/tenant-service';
+import {Registree}               from "../classes/registree_class";
+import { TenantSelectionPageModule } from "../pages/tenant-selection/tenant-selection.module";
 import {AfterRegisterPageModule} from "../pages/after-register/after-register.module";
 import {FisherCommunityPageModule} from "../pages/fisher-community/fisher-community.module";
 import {FisherConfirmPageModule} from "../pages/fisher-confirm/fisher-confirm.module";
@@ -29,14 +31,12 @@ import {FisherRegisterSuccessPageModule} from "../pages/fisher-register-success/
 import {FisherRolePageModule} from "../pages/fisher-role/fisher-role.module";
 import {FisherUsetermsPageModule} from "../pages/fisher-useterms/fisher-useterms.module";
 import {confirmEqualValidatorsDirective} from "../classes/confirm-password-validator-directive";
-
-
+import { TenantSelectionPage } from "../pages/tenant-selection/tenant-selection";
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     MarketplaceHome,
     confirmEqualValidatorsDirective
   ],
@@ -53,12 +53,12 @@ import {confirmEqualValidatorsDirective} from "../classes/confirm-password-valid
     FisherRegisterFailurePageModule,
     FisherRegisterSuccessPageModule,
     FisherRolePageModule,
-    FisherUsetermsPageModule
+    FisherUsetermsPageModule,
+    TenantSelectionPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     MarketplaceHome
   ],
   providers: [
@@ -66,6 +66,7 @@ import {confirmEqualValidatorsDirective} from "../classes/confirm-password-valid
     SplashScreen,
     MarketplaceService,
     FisherService,
+    TenantServiceProvider,
     Registree,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
