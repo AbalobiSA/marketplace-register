@@ -7,19 +7,20 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>ABALOBI Register</ion-title>
+    <ion-title>ABALOBI Registration</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <ion-row justify-content-center margin-top>
+  <ion-row justify-content-center margin-vertical>
     <ion-col col-sm-10 col-md-6>
       <div style="text-align: center;">
         <img class="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png">
       </div>
 
+      <h2 padding-horizontal>Select a Tenant:</h2>
       <p padding>{{explanationText}}</p>
       
       <ion-list radio-group [formControl]="selectedTenant">
@@ -29,8 +30,8 @@
         </ion-item>
       </ion-list>
 
-      <div style="text-align: right;">
-        <button ion-button icon-end (click)="clickNext()">
+      <div text-right>
+        <button ion-button icon-end (click)="clickNext()" [disabled]="selectedTenant.invalid">
           Next
           <ion-icon name="arrow-forward"></ion-icon>
         </button>

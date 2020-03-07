@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TenantServiceProvider } from '../../providers/tenant-service';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
-@IonicPage()
+@IonicPage({
+    segment: 'tenant'
+})
 @Component({
     selector: 'page-tenant-selection',
     templateUrl: 'tenant-selection.html',
@@ -11,7 +13,7 @@ import { FormControl } from '@angular/forms';
 export class TenantSelectionPage {
     public explanationText: string;
     public tenantArr: Array<any>;
-    public selectedTenant = new FormControl('');
+    public selectedTenant = new FormControl('', Validators.required);
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public tenantService: TenantServiceProvider) {
         this.explanationText = "Choose the country you will be situated in when using ABALOBI services";

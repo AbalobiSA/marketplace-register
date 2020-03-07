@@ -9,6 +9,7 @@ import {CommunityInfoClass}     from "../classes/community_info_class";
 
 import{Fisher} from "../classes/fisher-class";
 import {BaseUrls} from "../classes/base_urls";
+import { TenantServiceProvider } from "./tenant-service";
 
 
 @Injectable()
@@ -262,9 +263,12 @@ export class FisherService {
         { "name": "Zimbabwe", "dial_code": "+263", "code": "ZW" }
     ];
 
-    constructor(private http: HttpClient, public registree: Registree ) {
-
-  }
+    constructor(private http: HttpClient, public tenantService: TenantServiceProvider, public registree: Registree ) {
+        const selectedTenant = tenantService.selectedTenant;
+        if (selectedTenant) {
+            this.urls.setTenant(selectedTenant.key);
+        }
+    }
 
   fisherUpdateRole(role_info: string, user_roles: string) {
         this.registree.role = role_info;

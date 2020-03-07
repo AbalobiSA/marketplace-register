@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class TenantServiceProvider {
-    public selectedTenant;
+    public selectedTenant: any;
     private TENANT_DB: Array<any> = [
         {
             "key" : "rsa",
@@ -45,12 +45,12 @@ export class TenantServiceProvider {
         }
     ];
 
-    constructor(public http: HttpClient) {
-        console.log('Hello TenantServiceProvider Provider');
-    }
-
     getTenants() {
         return this.TENANT_DB;
+    }
+
+    getTenant(tenantKey: string) {
+        return this.TENANT_DB.find(tenant => tenant.key === tenantKey);
     }
 
 }

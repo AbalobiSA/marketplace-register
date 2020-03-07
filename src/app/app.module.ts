@@ -20,7 +20,6 @@ import {MarketplaceService}     from "../providers/MarketplaceService";
 import {FisherService}           from "../providers/FisherService";
 import { TenantServiceProvider } from '../providers/tenant-service';
 import {Registree}               from "../classes/registree_class";
-import { TenantSelectionPageModule } from "../pages/tenant-selection/tenant-selection.module";
 import {AfterRegisterPageModule} from "../pages/after-register/after-register.module";
 import {FisherCommunityPageModule} from "../pages/fisher-community/fisher-community.module";
 import {FisherConfirmPageModule} from "../pages/fisher-confirm/fisher-confirm.module";
@@ -31,7 +30,6 @@ import {FisherRegisterSuccessPageModule} from "../pages/fisher-register-success/
 import {FisherRolePageModule} from "../pages/fisher-role/fisher-role.module";
 import {FisherUsetermsPageModule} from "../pages/fisher-useterms/fisher-useterms.module";
 import {confirmEqualValidatorsDirective} from "../classes/confirm-password-validator-directive";
-import { TenantSelectionPage } from "../pages/tenant-selection/tenant-selection";
 
 
 @NgModule({
@@ -53,8 +51,7 @@ import { TenantSelectionPage } from "../pages/tenant-selection/tenant-selection"
     FisherRegisterFailurePageModule,
     FisherRegisterSuccessPageModule,
     FisherRolePageModule,
-    FisherUsetermsPageModule,
-    TenantSelectionPageModule
+    FisherUsetermsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
