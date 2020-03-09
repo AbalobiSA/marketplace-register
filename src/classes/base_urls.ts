@@ -1,5 +1,7 @@
 export class BaseUrls {
     private tenant : string;
+    private marketBaseUrl : string;
+    private fisherBaseUrl : string;
 
     constructor() {
         // Set default tenant
@@ -8,37 +10,44 @@ export class BaseUrls {
 
     setTenant(tenantKey: string) {
         this.tenant = tenantKey;
+        if (tenantKey === 'rsa') {
+            this.marketBaseUrl = 'https://market.abalobi.org';
+            this.fisherBaseUrl = 'https://server.abalobi.org';
+        } else {
+            this.marketBaseUrl = `https://market-${tenantKey}.abalobi.org`;
+            this.fisherBaseUrl = `https://server-${tenantKey}.abalobi.org`;
+        }
     }
 
     get marketplaceCheckUserURL() {
-        return `https://market-${this.tenant}.abalobi.org/api/users/find/?username=`;
+        return `${this.marketBaseUrl}/api/users/find/?username=`;
     }
 
     get marketplaceAddUserURL() {
-        return `https://market-${this.tenant}.abalobi.org/api/users/create/`;
+        return `${this.marketBaseUrl}/api/users/create/`;
     }
 
     get marketplaceGetUserTypesURL() {
-        return `https://market-${this.tenant}.abalobi.org/api/listings/user-type-list`;
+        return `${this.marketBaseUrl}/api/listings/user-type-list`;
     }
 
     get fisherCheckUserIDurl() {
-        return `https://server-${this.tenant}.abalobi.org/api/users/id/checkidexists?id=`;
+        return `${this.fisherBaseUrl}/api/users/id/checkidexists?id=`;
     }
 
     get fisherGetTermsURL() {
-        return `https://server-${this.tenant}.abalobi.org/api/terms`;
+        return `${this.fisherBaseUrl}/api/terms`;
     }
 
     get fisherGetCommunitiesURL() {
-        return `https://server-${this.tenant}.abalobi.org/api/communities`;
+        return `${this.fisherBaseUrl}/api/communities`;
     }
 
     get fisherAddUserURL() {
-        return `https://server-${this.tenant}.abalobi.org/register`;
+        return `${this.fisherBaseUrl}/register`;
     }
 
     get testPostURL() {
-        return `http://server-${this.tenant}.abalobi.org/api/testpost`;
+        return `${this.fisherBaseUrl}/api/testpost`;
     }
 }
