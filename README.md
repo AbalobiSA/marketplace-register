@@ -1,3 +1,6 @@
+# DEPRECATED - moved to Bitbucket
+  https://bitbucket.org/abalobi/register-page
+
 # marketplace-register
 
 This webpage allows new users to sign up for Abalobi Marketplace. By default, after registering, their approval status is set to `false`
