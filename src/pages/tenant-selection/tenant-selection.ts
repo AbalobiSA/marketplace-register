@@ -12,21 +12,38 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class TenantSelectionPage {
     public explanationText: string;
+    public isLoadingTenants: boolean;
     public tenantArr: Array<any>;
     public selectedTenant = new FormControl('', Validators.required);
+    public errorLoadingTenants: boolean;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public tenantService: TenantServiceProvider) {
-        this.explanationText = "Choose the country you will be situated in when using ABALOBI services";
-        this.tenantArr = tenantService.getTenants();
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public tenantService: TenantServiceProvider
+    ) {
+        this.explanationText = "Where will you be using ABALOBI services?";
+        this.fetchTenants();
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad TenantSelectionPage');
+    async fetchTenants() {
+        this.isLoadingTenants = true;
+        try {
+            this.tenantArr = await this.tenantService.getTenants();
+        } catch (err) {
+            this.errorLoadingTenants = true;
+        }
+        this.isLoadingTenants = false;
     }
 
     clickNext() {
         this.navCtrl.push('HomePage', {
             tenant: this.selectedTenant.value
         });
+    }
+
+    retryFetchTenants() {
+        this.errorLoadingTenants = false;
+        this.fetchTenants();
     }
 }

@@ -14,15 +14,28 @@
 
 
 <ion-content>
-  <ion-row justify-content-center margin-vertical>
-    <ion-col col-sm-10 col-md-6>
+  <ion-row class="margin-sm-vertical" justify-content-center>
+    <ion-col col-sm-10 col-md-6 col-xl-5>
       <div style="text-align: center;">
         <img class="banner-img" src="https://res.cloudinary.com/techairos/image/upload/v1523889571/QR_app_Banner_ylefpe.png">
       </div>
 
       <h2 padding-horizontal>Select a Tenant:</h2>
-      <p padding>{{explanationText}}</p>
+      <p *ngIf="!errorLoadingTenants" padding-horizontal>{{explanationText}}</p>
       
+      <div *ngIf="isLoadingTenants" text-center>
+        <ion-spinner color="primary"></ion-spinner>
+      </div>
+      <div *ngIf="errorLoadingTenants">
+        <p style="font-size: 1.6rem; color: red" padding-horizontal>
+          Failed to retrieve tenants
+        </p>
+
+        <button ion-button block clear icon-end no-margin color="danger" (click)="retryFetchTenants()">
+          Retry
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+      </div>
       <ion-list radio-group [formControl]="selectedTenant">
         <ion-item *ngFor="let tenant of tenantArr">
           <ion-label>{{tenant.label}}</ion-label>
@@ -30,8 +43,8 @@
         </ion-item>
       </ion-list>
 
-      <div text-right>
-        <button ion-button icon-end (click)="clickNext()" [disabled]="selectedTenant.invalid">
+      <div *ngIf="!isLoadingTenants && !errorLoadingTenants">
+        <button ion-button block icon-end (click)="clickNext()" [disabled]="selectedTenant.invalid">
           Next
           <ion-icon name="arrow-forward"></ion-icon>
         </button>

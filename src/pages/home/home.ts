@@ -23,7 +23,11 @@ export class HomePage {
             this.navParams.data.tenant = 'rsa';
         }
         const tenantKey = this.navParams.get('tenant');
-        this.tenantService.selectedTenant = this.tenantService.getTenant(tenantKey);
+        this.setTenantByKey(tenantKey);
+    }
+
+    async setTenantByKey(tenantKey: string) {
+        this.tenantService.selectedTenant = await this.tenantService.getTenant(tenantKey);
         if (!this.tenantService.selectedTenant) {
             this.changeTenant();
         }

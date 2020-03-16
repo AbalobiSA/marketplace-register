@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TenantServiceProvider {
     public selectedTenant: any;
+    private tenantsUrl: string = 'https://api-staging.abalobi.org/v1/tenants';
     private TENANT_DB: Array<any> = [
         {
             "key" : "rsa",
@@ -45,12 +46,18 @@ export class TenantServiceProvider {
         }
     ];
 
-    getTenants() {
-        return this.TENANT_DB;
+    constructor(private http: HttpClient) {
     }
 
-    getTenant(tenantKey: string) {
-        return this.TENANT_DB.find(tenant => tenant.key === tenantKey);
+    async getTenants() {
+        const tenantsData: any = await this.http.get(this.tenantsUrl).toPromise();
+        return tenantsData.data;
+        // return this.TENANT_DB;
+    }
+
+    async getTenant(tenantKey: string) {
+        const tenantsArr = await this.getTenants();
+        return tenantsArr.find(tenant => tenant.key === tenantKey);
     }
 
 }

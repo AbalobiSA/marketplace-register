@@ -2,4 +2,11 @@ page-tenant-selection {
     .banner-img {
         width: 100%;
     }
+    @media (min-width: map-get($grid-breakpoints, sm)) {
+        .margin-sm-vertical {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
 }

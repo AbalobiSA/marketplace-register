@@ -1,5 +1,4 @@
 export class BaseUrls {
-    private tenant : string;
     private marketBaseUrl : string;
     private fisherBaseUrl : string;
 
@@ -9,7 +8,6 @@ export class BaseUrls {
     }
 
     setTenant(tenantKey: string) {
-        this.tenant = tenantKey;
         if (tenantKey === 'rsa') {
             this.marketBaseUrl = 'https://market.abalobi.org';
             this.fisherBaseUrl = 'https://server.abalobi.org';
